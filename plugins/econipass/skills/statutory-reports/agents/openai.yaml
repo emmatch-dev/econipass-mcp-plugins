@@ -1,0 +1,4 @@
+interface:
+  display_name: "EcoNiPass 法定帳票"
+  short_description: "法定帳票の不足項目・補完提案・旧XMLを承認と提出の境界を守って扱う"
+  default_prompt: "$statutory-reports を使って、対象年度の法定帳票の不足項目と補完手順を確認してください。"

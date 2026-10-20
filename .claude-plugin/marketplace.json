@@ -1,0 +1,12 @@
+{
+  "name": "econipass-plugins",
+  "owner": {"name": "EcoNiPass"},
+  "plugins": [
+    {
+      "name": "econipass",
+      "source": "./plugins/econipass",
+      "description": "EcoNiPass DEV MCPと業務スキル",
+      "version": "1.1.0"
+    }
+  ]
+}

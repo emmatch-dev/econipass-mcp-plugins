@@ -1,0 +1,4 @@
+interface:
+  display_name: "EcoNiPass 接続・事業所確認"
+  short_description: "EcoNiPassの接続先と事業所権限を確認し、必要な業務スキルへ案内します"
+  default_prompt: "$setup を使ってEcoNiPassの接続先と利用できる事業所を確認してください。"

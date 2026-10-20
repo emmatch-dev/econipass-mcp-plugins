@@ -1,0 +1,984 @@
+{
+  "schema_version": 1,
+  "reviewed_on": "2026-10-08",
+  "source_revision": "7ca723a1e877500f4df7f49a3c76a46a48dbb9bd",
+  "scope": "Repository-documented connection surfaces and provider packaging evidence, not general-availability certification.",
+  "global_constraints": [
+    "Standard endpoint is /mcp over Streamable HTTP; QueryPie DEV compatibility alone uses /sse.",
+    "Skill delivery supplies routing instructions, not credentials, scopes, authorization or guaranteed tool visibility.",
+    "Never bundle credentials, issue tokens, perform logins, alter user settings or run bridge installers as part of package generation.",
+    "Client-side allowed-tools and confirmation UI do not replace EcoNiPass organization authorization, OAuth scopes, audit gates or one-use write confirmation.",
+    "Use actual tools/list for catalog acceptance; historical 55/64/71 counts in older guides are not release criteria."
+  ],
+  "platforms": [
+    {
+      "id": "codex",
+      "label": "Codex (desktop / CLI / IDE)",
+      "delivery": {
+        "kind": "agent_plugins",
+        "instructions": "Native skill discovery from skills/; compatibility manifest may point to ./skills/.",
+        "configuration": "Root plugin.json using Agent Plugins 1.0 schema; skills/<name>/SKILL.md; root mcp.json using matching MCP schema with mcpServers.<name>.type=streamable-http and url. Codex compatibility: .codex-plugin/plugin.json + .mcp.json; direct config.toml uses mcp_servers.<name>.url."
+      },
+      "auth": {
+        "mode": "oauth_authorization_code",
+        "default_scope": "mcp:read recommended; inspect actual consent scopes",
+        "prerequisites": [
+          "User login and consent; exact authorized callback; client and environment acceptance."
+        ]
+      },
+      "official_sources": [
+        "https://developers.openai.com/plugins/build/plugins",
+        "https://learn.chatgpt.com/docs/extend/mcp?surface=cli"
+      ],
+      "repository_sources": [
+        "services/mcp-server/README.md:24"
+      ],
+      "limitations": [
+        "Package support does not imply installation, marketplace publication or endpoint acceptance."
+      ],
+      "acceptance": "not_live_tested",
+      "repository_status": "documented_connection"
+    },
+    {
+      "id": "chatgpt",
+      "label": "ChatGPT / ChatGPT Work",
+      "delivery": {
+        "kind": "agent_plugins",
+        "instructions": "Plugin skills are imported with the package; MCP URL alone does not import skill instructions.",
+        "configuration": "Root plugin.json using Agent Plugins 1.0 schema; skills/<name>/SKILL.md; root mcp.json using matching MCP schema with mcpServers.<name>.type=streamable-http and url. Hosted upload, workspace distribution or public directory publication depends on surface and workspace controls."
+      },
+      "auth": {
+        "mode": "oauth_authorization_code",
+        "default_scope": "mcp:read recommended; inspect actual consent scopes",
+        "prerequisites": [
+          "User login and consent; exact authorized callback; client and environment acceptance."
+        ]
+      },
+      "official_sources": [
+        "https://developers.openai.com/plugins/build/plugins",
+        "https://developers.openai.com/plugins/deploy/submission"
+      ],
+      "repository_sources": [
+        "services/mcp-server/README.md:16",
+        "services/mcp-server/README.md:1061"
+      ],
+      "limitations": [
+        "Local marketplace availability varies by surface; public directory publication requires its own submission.",
+        "MCP catalog and skill snapshots may require refresh or resubmission after updates."
+      ],
+      "acceptance": "not_live_tested",
+      "repository_status": "documented_connection"
+    },
+    {
+      "id": "claude-code",
+      "label": "Claude Code",
+      "delivery": {
+        "kind": "claude_plugin",
+        "instructions": "Native plugin skills/<name>/SKILL.md.",
+        "configuration": ".claude-plugin/plugin.json; mcpServers may reference ./.mcp.json; mcpServers.<name> has type=http and url."
+      },
+      "auth": {
+        "mode": "oauth_authorization_code",
+        "default_scope": "mcp:read recommended; inspect actual consent scopes",
+        "prerequisites": [
+          "User login and consent; exact authorized callback; client and environment acceptance."
+        ]
+      },
+      "official_sources": [
+        "https://code.claude.com/docs/en/plugins-reference",
+        "https://code.claude.com/docs/en/mcp"
+      ],
+      "repository_sources": [
+        "services/mcp-server/README.md:427"
+      ],
+      "limitations": [],
+      "acceptance": "not_live_tested",
+      "repository_status": "documented_connection"
+    },
+    {
+      "id": "claude-hosted",
+      "label": "Claude hosted (Web / Desktop / mobile / Cowork)",
+      "delivery": {
+        "kind": "claude_plugin_or_skill_zip",
+        "instructions": "Upload custom plugin through Customize; alternatively upload each skill ZIP and connect remote MCP separately.",
+        "configuration": "Claude plugin package for supported hosted import; remote connector URL and OAuth in Connectors. Local desktop-extension manifests are not the remote MCP format."
+      },
+      "auth": {
+        "mode": "oauth_authorization_code",
+        "default_scope": "mcp:read recommended; inspect actual consent scopes",
+        "prerequisites": [
+          "User login and consent; exact authorized callback; client and environment acceptance."
+        ]
+      },
+      "official_sources": [
+        "https://support.claude.com/en/articles/13837440-use-plugins-in-claude",
+        "https://support.claude.com/en/articles/12512180-use-skills-in-claude"
+      ],
+      "repository_sources": [
+        "services/mcp-server/README.md:415"
+      ],
+      "limitations": [
+        "Hosted capabilities, especially mobile setup, must be checked per surface/account; no per-surface live acceptance was performed.",
+        "Local MCP servers run in Cowork/Claude Code, not hosted chat; this bundle uses remote HTTPS."
+      ],
+      "acceptance": "not_live_tested",
+      "repository_status": "documented_connection"
+    },
+    {
+      "id": "querypie-aip",
+      "label": "QueryPie AIP",
+      "delivery": {
+        "kind": "ui_instructions",
+        "instructions": "Agent Configuration > Instruction; attach required instruction cards or enter them as Skills, then select MCP Integrations.",
+        "configuration": "Custom Remote MCP with user OAuth; repository-specific DEV endpoint /sse; retain canonical OAuth resource /mcp."
+      },
+      "auth": {
+        "mode": "oauth_authorization_code",
+        "default_scope": "mcp:read recommended; inspect actual consent scopes",
+        "prerequisites": [
+          "User login and consent; exact authorized callback; client and environment acceptance."
+        ]
+      },
+      "official_sources": [
+        "https://aip-docs.app.querypie.com/en/user-guide/agents",
+        "https://aip-docs.app.querypie.com/en/admin-guide/agent-management"
+      ],
+      "repository_sources": [
+        "services/mcp-server/README.md:235",
+        "services/mcp-server/README.md:466"
+      ],
+      "limitations": [
+        "Only DEV/dev-lite legacy SSE is implemented for this compatibility path.",
+        "UI connection.json is setup data, not a QueryPie import manifest.",
+        "Select user authentication; do not replace user delegation with shared administrator credentials."
+      ],
+      "acceptance": "not_live_tested",
+      "repository_status": "documented_connection"
+    },
+    {
+      "id": "github-copilot-cli",
+      "label": "GitHub Copilot CLI",
+      "delivery": {
+        "kind": "agent_plugins",
+        "instructions": "Native skills/ in an Agent Plugins package.",
+        "configuration": "Root plugin.json using Agent Plugins 1.0 schema; skills/<name>/SKILL.md; root mcp.json using matching MCP schema with mcpServers.<name>.type=streamable-http and url. Direct ~/.copilot/mcp-config.json uses mcpServers.<name> with type=http,url,tools,deferTools,timeout."
+      },
+      "auth": {
+        "mode": "oauth_authorization_code",
+        "default_scope": "mcp:read recommended; inspect actual consent scopes",
+        "prerequisites": [
+          "User login and consent; exact authorized callback; client and environment acceptance."
+        ]
+      },
+      "official_sources": [
+        "https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-plugin-reference",
+        "https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference"
+      ],
+      "repository_sources": [
+        "services/mcp-server/docs/copilot-gemini-clients.md:58"
+      ],
+      "limitations": [
+        "Keep client tool confirmations; verify scopes returned by discovery/DCR."
+      ],
+      "acceptance": "not_live_tested",
+      "repository_status": "documented_connection"
+    },
+    {
+      "id": "vscode-copilot",
+      "label": "GitHub Copilot in VS Code Desktop",
+      "delivery": {
+        "kind": "agent_plugins",
+        "instructions": "Native plugin skills; alternatively project .github/skills or .agents/skills.",
+        "configuration": "Agent Plugins 1.0 package; direct .vscode/mcp.json uses servers.<name> with type=http and url. Plugin loading requires chat.plugins.enabled and policy permission."
+      },
+      "auth": {
+        "mode": "oauth_authorization_code",
+        "default_scope": "mcp:read recommended; inspect actual consent scopes",
+        "prerequisites": [
+          "User login and consent; exact authorized callback; client and environment acceptance."
+        ]
+      },
+      "official_sources": [
+        "https://code.visualstudio.com/docs/agent-customization/agent-plugins",
+        "https://code.visualstudio.com/api/extension-guides/ai/mcp"
+      ],
+      "repository_sources": [
+        "services/mcp-server/docs/copilot-gemini-clients.md:96"
+      ],
+      "limitations": [
+        "User trust and OAuth are separate from skill installation; Insiders callback differs."
+      ],
+      "acceptance": "not_live_tested",
+      "repository_status": "documented_connection"
+    },
+    {
+      "id": "copilot-studio",
+      "label": "Microsoft Copilot Studio",
+      "delivery": {
+        "kind": "ui_instructions",
+        "instructions": "Put routing instructions into agent Instructions; add selected MCP tools through the onboarding wizard.",
+        "configuration": "Tools > New tool > Model Context Protocol; Server URL=/mcp; OAuth 2.0 Dynamic discovery; existing OpenAPI fallback remains available."
+      },
+      "auth": {
+        "mode": "oauth_confidential_dcr",
+        "default_scope": "mcp:read",
+        "prerequisites": [
+          "Authorized Power Platform callback and feature setting; actual DCR/refresh trace remains an acceptance requirement."
+        ]
+      },
+      "official_sources": [
+        "https://learn.microsoft.com/en-us/microsoft-copilot-studio/mcp-add-existing-server-to-agent",
+        "https://learn.microsoft.com/en-us/microsoft-copilot-studio/authoring-instructions"
+      ],
+      "repository_sources": [
+        "services/mcp-server/docs/copilot-studio.md:59"
+      ],
+      "limitations": [
+        "Generative orchestration and tenant data policy must allow the connector.",
+        "Turn Allow all off and select required reads; instruction cards are not a Power Platform solution package.",
+        "Initial EcoNiPass confidential-DCR profile is read-only."
+      ],
+      "acceptance": "not_live_tested",
+      "repository_status": "documented_connection"
+    },
+    {
+      "id": "gemini-cli",
+      "label": "Gemini CLI",
+      "delivery": {
+        "kind": "gemini_extension",
+        "instructions": "Native skills/ plus GEMINI.md routing context loaded by contextFileName.",
+        "configuration": "gemini-extension.json with name,version,mcpServers,contextFileName; server type=http,url,oauth.enabled=false,oauth.scopes=[mcp:read],trust=false,timeout=60000."
+      },
+      "auth": {
+        "mode": "oauth_authorization_code",
+        "default_scope": "mcp:read recommended; inspect actual consent scopes",
+        "prerequisites": [
+          "User login and consent; exact authorized callback; client and environment acceptance."
+        ]
+      },
+      "official_sources": [
+        "https://geminicli.com/docs/extensions/reference/",
+        "https://geminicli.com/docs/tools/mcp-server/",
+        "https://github.com/google-gemini/gemini-cli/blob/v0.55.1/packages/core/src/config/config.ts#L475-L480"
+      ],
+      "repository_sources": [
+        "services/mcp-server/docs/copilot-gemini-clients.md:115"
+      ],
+      "limitations": [
+        "Repository-tested v0.55.1 flow uses /mcp auth manually; automatic OAuth can request all discovered scopes.",
+        "Client version and current Google account/product availability require acceptance.",
+        "The pinned v0.55.1 official config source documents type=http with url and deprecates httpUrl; older web documentation describes the earlier url/SSE split. Use the installed client version contract, not a mix of both."
+      ],
+      "acceptance": "not_live_tested",
+      "repository_status": "documented_connection"
+    },
+    {
+      "id": "gemini-code-assist",
+      "label": "Gemini Code Assist for VS Code (Agent mode)",
+      "delivery": {
+        "kind": "context_and_mcp",
+        "instructions": "Use supplied Markdown context/instruction cards; CLI extensions can supply context, but validate installed Agent-mode capabilities.",
+        "configuration": "~/.gemini/settings.json mcpServers uses the Gemini CLI shape; Agent mode offers /mcp. MCP installation via VS Code command palette is not this path."
+      },
+      "auth": {
+        "mode": "oauth_authorization_code",
+        "default_scope": "mcp:read recommended; inspect actual consent scopes",
+        "prerequisites": [
+          "User login and consent; exact authorized callback; client and environment acceptance."
+        ]
+      },
+      "official_sources": [
+        "https://docs.cloud.google.com/gemini/docs/codeassist/use-agentic-chat-pair-programmer",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/code-overview"
+      ],
+      "repository_sources": [
+        "services/mcp-server/docs/copilot-gemini-clients.md:21"
+      ],
+      "limitations": [
+        "Agent mode does not expose every Gemini CLI command.",
+        "Google documents migration of individual/AI Pro/Ultra tiers to Antigravity; confirm the supported Standard/Enterprise account and client.",
+        "Do not claim an extension installer was exercised inside Code Assist."
+      ],
+      "acceptance": "not_live_tested",
+      "repository_status": "documented_connection"
+    },
+    {
+      "id": "cursor-desktop",
+      "label": "Cursor Desktop",
+      "delivery": {
+        "kind": "agent_plugins",
+        "instructions": "Native skills/ in the portable package; Cursor plugin format also supported.",
+        "configuration": "Root plugin.json using Agent Plugins 1.0 schema; skills/<name>/SKILL.md; root mcp.json using matching MCP schema with mcpServers.<name>.type=streamable-http and url. Cursor-native alternative: .cursor-plugin/plugin.json with mcpServers path; mcp.json. Direct .cursor/mcp.json uses mcpServers.<name>.url."
+      },
+      "auth": {
+        "mode": "oauth_authorization_code",
+        "default_scope": "mcp:read recommended; inspect actual consent scopes",
+        "prerequisites": [
+          "User login and consent; exact authorized callback; client and environment acceptance."
+        ]
+      },
+      "official_sources": [
+        "https://cursor.com/docs/reference/plugins",
+        "https://cursor.com/docs/mcp"
+      ],
+      "repository_sources": [
+        "services/mcp-server/docs/other-clients.md:30"
+      ],
+      "limitations": [
+        "Cursor does not expand portable ${PLUGIN_ROOT}/${PLUGIN_DATA} in MCP definitions; this remote-only package needs neither."
+      ],
+      "acceptance": "not_live_tested",
+      "repository_status": "documented_connection"
+    },
+    {
+      "id": "cursor-hosted",
+      "label": "Cursor Web / Cloud Agents / Automations",
+      "delivery": {
+        "kind": "context_and_mcp",
+        "instructions": "Use the hosted agent/project instruction surface or supplied instruction cards; do not assume IDE plugin installation propagates.",
+        "configuration": "Hosted MCP settings with /mcp URL; exact hosted OAuth redirect URI must be observed and allowlisted."
+      },
+      "auth": {
+        "mode": "oauth_authorization_code",
+        "default_scope": "mcp:read recommended; inspect actual consent scopes",
+        "prerequisites": [
+          "User login and consent; exact authorized callback; client and environment acceptance."
+        ]
+      },
+      "official_sources": [
+        "https://cursor.com/docs/mcp",
+        "https://cursor.com/docs/reference/plugins"
+      ],
+      "repository_sources": [
+        "services/mcp-server/docs/other-clients.md:51"
+      ],
+      "limitations": [
+        "Callback host/path is not guessed from an example; tenant/environment setup and hosted acceptance are pending."
+      ],
+      "acceptance": "not_live_tested",
+      "repository_status": "documented_connection"
+    },
+    {
+      "id": "m365-copilot",
+      "label": "Microsoft 365 Copilot declarative agent",
+      "delivery": {
+        "kind": "ui_instructions",
+        "instructions": "Agent instructions route workflows; MCP is an agent action/connector configured using Microsoft 365 tooling.",
+        "configuration": "Microsoft 365 app/agent manifest with remote MCP connector and OAuth DCR; build a tenant-specific app in Agents Toolkit. Generic setup JSON is not a validated Teams app package."
+      },
+      "auth": {
+        "mode": "oauth_confidential_dcr",
+        "default_scope": "mcp:read initial profile",
+        "prerequisites": [
+          "Tenant app distribution and exact Microsoft callback profile."
+        ]
+      },
+      "official_sources": [
+        "https://learn.microsoft.com/en-us/microsoftteams/platform/m365-apps/agent-connectors",
+        "https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/plugin-authentication-dynamic-client-registration"
+      ],
+      "repository_sources": [
+        "services/mcp-server/docs/other-clients.md:60"
+      ],
+      "limitations": [
+        "Client credential/callback behavior and read-only normalization need actual acceptance before offering writes."
+      ],
+      "acceptance": "not_live_tested",
+      "repository_status": "documented_connection"
+    },
+    {
+      "id": "gemini-enterprise",
+      "label": "Gemini Enterprise Custom MCP",
+      "delivery": {
+        "kind": "ui_instructions",
+        "instructions": "Attach routing cards to the agent/task instructions; this is not a Gemini CLI extension import.",
+        "configuration": "Admin custom MCP data-store connector: Streamable HTTP URL, OAuth client ID/secret and displayed redirect URI; confidential preregistration in EcoNiPass."
+      },
+      "auth": {
+        "mode": "oauth_preregistered_confidential",
+        "default_scope": "mcp:read",
+        "prerequisites": [
+          "Admin-provided exact callback/client configuration and secret-store references, never secrets bundled in files."
+        ]
+      },
+      "official_sources": [
+        "https://docs.cloud.google.com/gemini/enterprise/docs/connectors/custom-mcp-server/set-up-custom-mcp-server"
+      ],
+      "repository_sources": [
+        "services/mcp-server/docs/other-clients.md:83"
+      ],
+      "limitations": [
+        "No SSE; fixed-client setup per tenant; verify actual token authentication method against EcoNiPass client_secret_basic profile."
+      ],
+      "acceptance": "not_live_tested",
+      "repository_status": "documented_connection"
+    },
+    {
+      "id": "perplexity",
+      "label": "Perplexity custom remote connector / Computer",
+      "delivery": {
+        "kind": "ui_instructions",
+        "instructions": "Provide routing cards in the task or applicable workspace instruction surface; no automatic SKILL.md loader is assumed.",
+        "configuration": "Account/Enterprise connector UI: name, remote HTTPS MCP URL and OAuth."
+      },
+      "auth": {
+        "mode": "oauth_authorization_code",
+        "default_scope": "mcp:read recommended; inspect actual consent scopes",
+        "prerequisites": [
+          "User login and consent; exact authorized callback; client and environment acceptance."
+        ]
+      },
+      "official_sources": [
+        "https://www.perplexity.ai/en-GB/changelog/what-we-shipped---march-13-2026"
+      ],
+      "repository_sources": [
+        "services/mcp-server/docs/other-clients.md:118"
+      ],
+      "limitations": [
+        "Observed exact callback and account access required.",
+        "The old repository macOS-only statement is not used as a current restriction; official 2026 material describes remote connectors for Computer/conversations."
+      ],
+      "acceptance": "not_live_tested",
+      "repository_status": "documented_connection"
+    },
+    {
+      "id": "windsurf",
+      "label": "Windsurf Cascade / successor Devin Desktop",
+      "delivery": {
+        "kind": "skills_and_mcp",
+        "instructions": "Copy skills into .windsurf/skills (legacy supported), .devin/skills or .agents/skills.",
+        "configuration": "mcp_config.json: mcpServers.<name>.serverUrl (url also supported); OAuth and tool permissions stay interactive."
+      },
+      "auth": {
+        "mode": "oauth_authorization_code",
+        "default_scope": "mcp:read recommended; inspect actual consent scopes",
+        "prerequisites": [
+          "User login and consent; exact authorized callback; client and environment acceptance."
+        ]
+      },
+      "official_sources": [
+        "https://docs.devin.ai/desktop/cascade/skills",
+        "https://docs.devin.ai/desktop/cascade/mcp"
+      ],
+      "repository_sources": [
+        "services/mcp-server/docs/other-clients.md:125"
+      ],
+      "limitations": [
+        "Official Windsurf URLs now redirect to Devin Desktop docs; existing Windsurf version must be checked."
+      ],
+      "acceptance": "not_live_tested",
+      "repository_status": "documented_connection"
+    },
+    {
+      "id": "jetbrains-junie",
+      "label": "JetBrains Junie",
+      "delivery": {
+        "kind": "skills_and_mcp",
+        "instructions": "Use .junie/skills/<name>/SKILL.md or .agents/skills; .junie/guidelines.md can carry routing context.",
+        "configuration": "Settings > Tools > AI Assistant > MCP: JSON mcpServers.<name>.url; select HTTP and authorize."
+      },
+      "auth": {
+        "mode": "oauth_authorization_code",
+        "default_scope": "mcp:read recommended; inspect actual consent scopes",
+        "prerequisites": [
+          "User login and consent; exact authorized callback; client and environment acceptance."
+        ]
+      },
+      "official_sources": [
+        "https://www.jetbrains.com/help/air/skills.html",
+        "https://www.jetbrains.com/help/ai-assistant/mcp.html",
+        "https://www.jetbrains.com/guide/ai/article/junie/"
+      ],
+      "repository_sources": [
+        "services/mcp-server/docs/other-clients.md:125"
+      ],
+      "limitations": [
+        "Skill discovery and OAuth must be checked in the installed Junie/IDE version; Air docs do not establish every historical IDE version."
+      ],
+      "acceptance": "not_live_tested",
+      "repository_status": "documented_connection"
+    },
+    {
+      "id": "zed",
+      "label": "Zed Agent",
+      "delivery": {
+        "kind": "skills_and_mcp",
+        "instructions": "Native .agents/skills/<name>/SKILL.md.",
+        "configuration": "settings.json: context_servers.<name>.url; omit Authorization header to use OAuth."
+      },
+      "auth": {
+        "mode": "oauth_authorization_code",
+        "default_scope": "mcp:read recommended; inspect actual consent scopes",
+        "prerequisites": [
+          "User login and consent; exact authorized callback; client and environment acceptance."
+        ]
+      },
+      "official_sources": [
+        "https://zed.dev/docs/ai/skills",
+        "https://zed.dev/docs/ai/mcp"
+      ],
+      "repository_sources": [
+        "services/mcp-server/docs/other-clients.md:125"
+      ],
+      "limitations": [
+        "These settings apply to Zed Agent; ACP/external agents and terminal threads may use their own configuration."
+      ],
+      "acceptance": "not_live_tested",
+      "repository_status": "documented_connection"
+    },
+    {
+      "id": "goose",
+      "label": "goose",
+      "delivery": {
+        "kind": "skills_and_mcp",
+        "instructions": "Native .agents/skills; optional plugin.json + skills package. MCP extension is configured separately.",
+        "configuration": "~/.config/goose/config.yaml: extensions.<name> with type=streamable_http,uri,enabled,timeout,scopes=[mcp:read]; omit preregistered client fields for DCR."
+      },
+      "auth": {
+        "mode": "oauth_authorization_code",
+        "default_scope": "mcp:read recommended; inspect actual consent scopes",
+        "prerequisites": [
+          "User login and consent; exact authorized callback; client and environment acceptance."
+        ]
+      },
+      "official_sources": [
+        "https://goose-docs.ai/docs/getting-started/using-extensions/",
+        "https://goose-docs.ai/docs/guides/context-engineering/using-skills/",
+        "https://goose-docs.ai/docs/guides/context-engineering/plugins/"
+      ],
+      "repository_sources": [
+        "services/mcp-server/docs/other-clients.md:125"
+      ],
+      "limitations": [
+        "Do not confuse extension uri with deeplink url.",
+        "Goose plugin docs list skills/hooks; this package does not assume plugin import also configures MCP."
+      ],
+      "acceptance": "not_live_tested",
+      "repository_status": "documented_connection"
+    },
+    {
+      "id": "amazon-q-cli",
+      "label": "Amazon Q Developer CLI (legacy product name)",
+      "delivery": {
+        "kind": "context_and_mcp",
+        "instructions": "Provide routing cards through agent prompt/context; do not assume the old CLI discovers portable plugins.",
+        "configuration": "Agent configuration: mcpServers.<name> with type=http and url; start /mcp authentication."
+      },
+      "auth": {
+        "mode": "oauth_authorization_code",
+        "default_scope": "mcp:read recommended; inspect actual consent scopes",
+        "prerequisites": [
+          "User login and consent; exact authorized callback; client and environment acceptance."
+        ]
+      },
+      "official_sources": [
+        "https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/command-line-mcp-config-CLI.html",
+        "https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/qdev-mcp.html",
+        "https://kiro.dev/docs/custom-agents/configuration-reference/"
+      ],
+      "repository_sources": [
+        "services/mcp-server/docs/other-clients.md:125"
+      ],
+      "limitations": [
+        "AWS also documents Kiro as the successor. Kiro paths/skills are different and require separate version acceptance; legacy Q config is retained here."
+      ],
+      "acceptance": "not_live_tested",
+      "repository_status": "documented_connection"
+    },
+    {
+      "id": "cline",
+      "label": "Cline",
+      "delivery": {
+        "kind": "skills_and_mcp",
+        "instructions": "Native .cline/skills/<name>/SKILL.md.",
+        "configuration": "mcpServers.<name>: type=streamableHttp,url,disabled=false,autoApprove=[]; use the remote-server OAuth wizard."
+      },
+      "auth": {
+        "mode": "oauth_authorization_code",
+        "default_scope": "mcp:read recommended; inspect actual consent scopes",
+        "prerequisites": [
+          "User login and consent; exact authorized callback; client and environment acceptance."
+        ]
+      },
+      "official_sources": [
+        "https://docs.cline.bot/customization/skills",
+        "https://docs.cline.bot/mcp/mcp-overview"
+      ],
+      "repository_sources": [
+        "services/mcp-server/docs/other-clients.md:136"
+      ],
+      "limitations": [
+        "Current official docs support native OAuth; the old repository bridge-only statement is stale.",
+        "Installed version/native OAuth acceptance remains required; no automatic bridge download/run."
+      ],
+      "acceptance": "not_live_tested",
+      "repository_status": "documented_connection"
+    },
+    {
+      "id": "roo-code",
+      "label": "Roo Code",
+      "delivery": {
+        "kind": "skills_and_mcp",
+        "instructions": "Native .roo/skills or .agents/skills.",
+        "configuration": "Merge adapters/roo-code-bridge.json into .roo/mcp.json only after reviewing and explicitly installing mcp-remote@0.14.3 into a dedicated locked directory. Replace both absolute path placeholders with that installation and its compatible Node executable, verify package.json version and the dependency lock, then enable the disabled entry. This replaces the bare econipass remote entry; do not install both. The bridge uses http-only and OAuth public-client metadata with mcp:read. No installation, bridge execution or login is performed by package generation."
+      },
+      "auth": {
+        "mode": "oauth_bridge_required_or_unverified",
+        "default_scope": "mcp:read",
+        "prerequisites": [
+          "Review and explicitly install the pinned local bridge, including its dependencies and Node requirements; alternatively establish native OAuth support for the installed Roo version.",
+          "The user completes loopback browser OAuth and consent; the initial requested scope is mcp:read."
+        ]
+      },
+      "official_sources": [
+        "https://roocodeinc.github.io/Roo-Code/features/skills/",
+        "https://roocodeinc.github.io/Roo-Code/features/mcp/using-mcp-in-roo/",
+        "https://github.com/punkpeye/mcp-remote/blob/6a06aca546a8fd3b7beb040f39761b364893198d/README.md",
+        "https://registry.npmjs.org/mcp-remote/0.14.3"
+      ],
+      "repository_sources": [
+        "services/mcp-server/docs/other-clients.md:136"
+      ],
+      "limitations": [
+        "Official transport docs do not establish native OAuth support. A bare remote JSON config alone is not an accepted EcoNiPass OAuth connection.",
+        "Do not auto-run npx or embed PAT to conceal a missing OAuth flow.",
+        "The disabled bridge template contains path placeholders. It cannot connect until the user installs the pinned package, sets real absolute paths and enables it. This audit checked published package integrity, entrypoint and flags, not a full supply-chain security audit or live EcoNiPass authorization."
+      ],
+      "acceptance": "not_live_tested",
+      "repository_status": "documented_connection",
+      "bridge_dependency": {
+        "package": "mcp-remote",
+        "version": "0.14.3",
+        "git_commit": "6a06aca546a8fd3b7beb040f39761b364893198d",
+        "registry_metadata": "https://registry.npmjs.org/mcp-remote/0.14.3",
+        "dist_integrity": "sha512-M8eMA+LQIYbVNpntDhbCzFYNxwF9O9KozOuDxOrGTtRXbHRq/m4NuFZ6892hmJcU4Zhv4qPfpxrXyG2FPWNMKg==",
+        "entrypoint": "node_modules/mcp-remote/dist/proxy.js",
+        "verification": "Published tarball integrity matched; package version, bin entrypoint and argument support inspected without installing or executing. Transitive dependencies must be reviewed and locked at explicit installation."
+      }
+    },
+    {
+      "id": "openai-responses",
+      "label": "OpenAI Responses API",
+      "delivery": {
+        "kind": "api_instructions",
+        "instructions": "Application explicitly supplies the routing text via instructions/developer context; MCP does not load SKILL.md.",
+        "configuration": "tools[]: type=mcp,server_label,server_url,authorization,allowed_tools,require_approval. Read PAT from runtime environment."
+      },
+      "auth": {
+        "mode": "personal_access_token",
+        "default_scope": "mcp:read",
+        "prerequisites": [
+          "Both backend and MCP MCP_PERSONAL_ACCESS_TOKENS_ENABLED must be enabled; default is disabled.",
+          "Use the user-issued, expiring, revocable EcoNiPass PAT in the client secret store or runtime environment; never the upstream API token."
+        ]
+      },
+      "official_sources": [
+        "https://developers.openai.com/api/docs/guides/tools-connectors-mcp"
+      ],
+      "repository_sources": [
+        "services/mcp-server/docs/other-clients.md:155",
+        "services/mcp-server/docs/service-credentials-design.md:1"
+      ],
+      "limitations": [
+        "API-side approval is separate from EcoNiPass dry_run/one-use confirmation; keep both for any approved writes."
+      ],
+      "acceptance": "not_live_tested",
+      "repository_status": "documented_connection"
+    },
+    {
+      "id": "openai-agents-sdk",
+      "label": "OpenAI Agents SDK",
+      "delivery": {
+        "kind": "api_instructions",
+        "instructions": "Application loads routing text into Agent instructions; no automatic standalone SKILL.md import is assumed.",
+        "configuration": "The bundled example attaches HostedMCPTool to Agent.tools, with authorization, the get_my_organizations allowlist and tracing disabled. The token is sent to OpenAI for the remote call. Repository guides also describe the separately configured local MCPServerStreamableHttp alternative."
+      },
+      "auth": {
+        "mode": "personal_access_token",
+        "default_scope": "mcp:read",
+        "prerequisites": [
+          "Both backend and MCP MCP_PERSONAL_ACCESS_TOKENS_ENABLED must be enabled; default is disabled.",
+          "Use the user-issued, expiring, revocable EcoNiPass PAT in the client secret store or runtime environment; never the upstream API token."
+        ]
+      },
+      "official_sources": [
+        "https://developers.openai.com/api/docs/guides/agents",
+        "https://developers.openai.com/api/docs/guides/tools-connectors-mcp"
+      ],
+      "repository_sources": [
+        "services/mcp-server/docs/other-clients.md:155"
+      ],
+      "limitations": [
+        "SDK call shape is the repository-documented Python adapter and must match the installed SDK version."
+      ],
+      "acceptance": "not_live_tested",
+      "repository_status": "documented_connection"
+    },
+    {
+      "id": "anthropic-messages",
+      "label": "Anthropic Messages API MCP connector",
+      "delivery": {
+        "kind": "api_instructions",
+        "instructions": "Application supplies routing instructions in system context; hosted skill storage is a separate feature.",
+        "configuration": "mcp_servers[]: type=url,name,url,authorization_token; current mcp-client-2025-11-20 beta uses tools[] mcp_toolset with mcp_server_name,default_config and configs."
+      },
+      "auth": {
+        "mode": "personal_access_token",
+        "default_scope": "mcp:read",
+        "prerequisites": [
+          "Both backend and MCP MCP_PERSONAL_ACCESS_TOKENS_ENABLED must be enabled; default is disabled.",
+          "Use the user-issued, expiring, revocable EcoNiPass PAT in the client secret store or runtime environment; never the upstream API token."
+        ]
+      },
+      "official_sources": [
+        "https://platform.claude.com/docs/en/agents-and-tools/mcp-connector"
+      ],
+      "repository_sources": [
+        "services/mcp-server/docs/other-clients.md:156"
+      ],
+      "limitations": [
+        "Use a read allowlist; old tool_configuration.allowed_tools examples require their matching API version.",
+        "Native approval behavior is not a substitute for an application human-approval flow."
+      ],
+      "acceptance": "not_live_tested",
+      "repository_status": "documented_connection"
+    },
+    {
+      "id": "langchain-langgraph",
+      "label": "LangChain / LangGraph",
+      "delivery": {
+        "kind": "api_instructions",
+        "instructions": "Application explicitly loads the routing text as agent system prompt/context.",
+        "configuration": "Repository legacy adapter: MultiServerMCPClient server dict with transport=streamable_http,url,headers. Current LangChain also offers MCPAdapter; choose and pin the matching API."
+      },
+      "auth": {
+        "mode": "personal_access_token",
+        "default_scope": "mcp:read",
+        "prerequisites": [
+          "Both backend and MCP MCP_PERSONAL_ACCESS_TOKENS_ENABLED must be enabled; default is disabled.",
+          "Use the user-issued, expiring, revocable EcoNiPass PAT in the client secret store or runtime environment; never the upstream API token."
+        ]
+      },
+      "official_sources": [
+        "https://docs.langchain.com/oss/python/langchain/mcp",
+        "https://docs.langchain.com/oss/python/migrate/langchain-mcp-adapters"
+      ],
+      "repository_sources": [
+        "services/mcp-server/docs/other-clients.md:157"
+      ],
+      "limitations": [
+        "Do not mix legacy MultiServerMCPClient fields with the newer MCPAdapter API.",
+        "App must preserve human confirmation; scheduled autonomous writes are not enabled by instruction packaging."
+      ],
+      "acceptance": "not_live_tested",
+      "repository_status": "documented_connection"
+    },
+    {
+      "id": "n8n",
+      "label": "n8n",
+      "delivery": {
+        "kind": "ui_instructions",
+        "instructions": "AI Agent system message/task context receives the routing cards; MCP Client Tool supplies the tools.",
+        "configuration": "MCP Client Tool UI: endpoint, Bearer/Header credential, selected tools. Use a node/version that supports the standard /mcp HTTP endpoint."
+      },
+      "auth": {
+        "mode": "personal_access_token",
+        "default_scope": "mcp:read",
+        "prerequisites": [
+          "Both backend and MCP MCP_PERSONAL_ACCESS_TOKENS_ENABLED must be enabled; default is disabled.",
+          "Use the user-issued, expiring, revocable EcoNiPass PAT in the client secret store or runtime environment; never the upstream API token."
+        ]
+      },
+      "official_sources": [
+        "https://docs.n8n.io/integrations/builtin/cluster-nodes/sub-nodes/n8n-nodes-langchain.toolmcp"
+      ],
+      "repository_sources": [
+        "services/mcp-server/docs/other-clients.md:158"
+      ],
+      "limitations": [
+        "Docs retain an SSE Endpoint label; confirm actual Streamable HTTP behavior in installed version instead of changing EcoNiPass URL to /sse.",
+        "Generic connection.json is a setup guide, not a validated n8n workflow import."
+      ],
+      "acceptance": "not_live_tested",
+      "repository_status": "documented_connection"
+    },
+    {
+      "id": "dify",
+      "label": "Dify",
+      "delivery": {
+        "kind": "ui_instructions",
+        "instructions": "Agent instructions receive routing cards; select imported MCP tools in the app.",
+        "configuration": "Integrations > Tools > MCP: URL,name,server identifier; Custom Headers Authorization from protected PAT credential; OAuth DCR is a separate tenant-callback path."
+      },
+      "auth": {
+        "mode": "personal_access_token",
+        "default_scope": "mcp:read",
+        "prerequisites": [
+          "Both backend and MCP MCP_PERSONAL_ACCESS_TOKENS_ENABLED must be enabled; default is disabled.",
+          "Use the user-issued, expiring, revocable EcoNiPass PAT in the client secret store or runtime environment; never the upstream API token."
+        ]
+      },
+      "official_sources": [
+        "https://docs.dify.ai/en/cloud/use-dify/workspace/tools"
+      ],
+      "repository_sources": [
+        "services/mcp-server/docs/other-clients.md:158"
+      ],
+      "limitations": [
+        "Exported apps refer to MCP server identifier; recreate it in each target workspace.",
+        "Generic setup data is not a validated Dify DSL/plugin package."
+      ],
+      "acceptance": "not_live_tested",
+      "repository_status": "documented_connection"
+    },
+    {
+      "id": "github-copilot-cloud",
+      "label": "GitHub Copilot cloud coding agent / code review",
+      "delivery": {
+        "kind": "skills_and_pat_mcp",
+        "instructions": "Repository skills/instructions or supported plugin carry routing instructions. Keep server capabilities restricted independently.",
+        "configuration": "Repository Settings > Copilot > MCP servers: merge adapters/github-copilot-cloud.json. mcpServers.econipass uses type=http,url,headers and seven explicit read tools. Authorization is Bearer $COPILOT_MCP_ECONIPASS_PAT; store only the EcoNiPass PAT value in that Agents secret, without a Bearer prefix."
+      },
+      "auth": {
+        "mode": "personal_access_token",
+        "default_scope": "mcp:read",
+        "prerequisites": [
+          "Both backend and MCP MCP_PERSONAL_ACCESS_TOKENS_ENABLED must be enabled; default is disabled.",
+          "Use the user-issued, expiring, revocable EcoNiPass PAT in the client secret store or runtime environment; never the upstream API token."
+        ]
+      },
+      "official_sources": [
+        "https://docs.github.com/en/copilot/how-tos/copilot-on-github/customize-copilot/configure-mcp-servers",
+        "https://docs.github.com/en/copilot/concepts/agents/about-plugins"
+      ],
+      "repository_sources": [
+        "services/mcp-server/docs/other-clients.md:159",
+        "services/mcp-server/docs/service-credentials-design.md:1"
+      ],
+      "limitations": [
+        "Remote OAuth not supported; PAT path is distinct from interactive CLI/VS Code.",
+        "Cloud agents may invoke tools autonomously. Distribute read-only allowlists; code review also requires readOnlyHint=true.",
+        "The starter allowlist intentionally excludes writes and file downloads. MCP resources/prompts are unsupported by this surface; verify embedded binary responses separately before adding download tools. Check the selected read tools against the actual environment catalog, since enabled tags vary."
+      ],
+      "acceptance": "not_live_tested",
+      "repository_status": "documented_connection"
+    }
+  ],
+  "candidates": [
+    {
+      "id": "azure-foundry",
+      "label": "Azure AI Foundry",
+      "repository_status": "roadmap_only",
+      "acceptance": "not_live_tested",
+      "repository_sources": [
+        "services/mcp-server/docs/platform-roadmap.md"
+      ],
+      "reason": "No current EcoNiPass connection implementation/acceptance established in this package audit. Historical provider availability statements are not reasserted as current facts."
+    },
+    {
+      "id": "bedrock-agentcore",
+      "label": "AWS Bedrock AgentCore",
+      "repository_status": "roadmap_only",
+      "acceptance": "not_live_tested",
+      "repository_sources": [
+        "services/mcp-server/docs/platform-roadmap.md"
+      ],
+      "reason": "No current EcoNiPass connection implementation/acceptance established in this package audit. Historical provider availability statements are not reasserted as current facts."
+    },
+    {
+      "id": "open-webui",
+      "label": "Open WebUI",
+      "repository_status": "roadmap_only",
+      "acceptance": "not_live_tested",
+      "repository_sources": [
+        "services/mcp-server/docs/platform-roadmap.md"
+      ],
+      "reason": "No current EcoNiPass connection implementation/acceptance established in this package audit. Historical provider availability statements are not reasserted as current facts."
+    },
+    {
+      "id": "librechat",
+      "label": "LibreChat",
+      "repository_status": "roadmap_only",
+      "acceptance": "not_live_tested",
+      "repository_sources": [
+        "services/mcp-server/docs/platform-roadmap.md"
+      ],
+      "reason": "No current EcoNiPass connection implementation/acceptance established in this package audit. Historical provider availability statements are not reasserted as current facts."
+    },
+    {
+      "id": "slack-ai",
+      "label": "Slack AI",
+      "repository_status": "roadmap_only",
+      "acceptance": "not_live_tested",
+      "repository_sources": [
+        "services/mcp-server/docs/platform-roadmap.md"
+      ],
+      "reason": "No current EcoNiPass connection implementation/acceptance established in this package audit. Historical provider availability statements are not reasserted as current facts."
+    },
+    {
+      "id": "salesforce-agentforce",
+      "label": "Salesforce Agentforce",
+      "repository_status": "roadmap_only",
+      "acceptance": "not_live_tested",
+      "repository_sources": [
+        "services/mcp-server/docs/platform-roadmap.md"
+      ],
+      "reason": "No current EcoNiPass connection implementation/acceptance established in this package audit. Historical provider availability statements are not reasserted as current facts."
+    },
+    {
+      "id": "devin-cloud",
+      "label": "Devin cloud",
+      "repository_status": "roadmap_only",
+      "acceptance": "not_live_tested",
+      "repository_sources": [
+        "services/mcp-server/docs/platform-roadmap.md"
+      ],
+      "reason": "No current EcoNiPass connection implementation/acceptance established in this package audit. Historical provider availability statements are not reasserted as current facts."
+    },
+    {
+      "id": "manus",
+      "label": "Manus",
+      "repository_status": "roadmap_only",
+      "acceptance": "not_live_tested",
+      "repository_sources": [
+        "services/mcp-server/docs/platform-roadmap.md"
+      ],
+      "reason": "No current EcoNiPass connection implementation/acceptance established in this package audit. Historical provider availability statements are not reasserted as current facts."
+    },
+    {
+      "id": "gemini-consumer",
+      "label": "Gemini consumer app",
+      "repository_status": "roadmap_only",
+      "acceptance": "not_live_tested",
+      "repository_sources": [
+        "services/mcp-server/docs/platform-roadmap.md"
+      ],
+      "reason": "No current EcoNiPass connection implementation/acceptance established in this package audit. Historical provider availability statements are not reasserted as current facts."
+    },
+    {
+      "id": "amazon-q-business",
+      "label": "Amazon Q Business",
+      "repository_status": "roadmap_only",
+      "acceptance": "not_live_tested",
+      "repository_sources": [
+        "services/mcp-server/docs/platform-roadmap.md"
+      ],
+      "reason": "No current EcoNiPass connection implementation/acceptance established in this package audit. Historical provider availability statements are not reasserted as current facts."
+    },
+    {
+      "id": "exabase",
+      "label": "exaBase 生成AI",
+      "repository_status": "roadmap_only",
+      "acceptance": "not_live_tested",
+      "repository_sources": [
+        "services/mcp-server/docs/platform-roadmap.md"
+      ],
+      "reason": "No current EcoNiPass connection implementation/acceptance established in this package audit. Historical provider availability statements are not reasserted as current facts."
+    }
+  ],
+  "repository_conflicts": [
+    "The PAT implementation memo and current README supersede historical no-static-token statements for the scoped user-issued PAT path; PAT remains disabled by default.",
+    "Cline native OAuth, hosted Claude plugins, modern portable plugins and provider product names changed after the repository roadmap; current primary sources are linked per platform.",
+    "Roadmap-only does not mean the vendor currently lacks MCP; it means this repository does not establish an accepted EcoNiPass connection for that surface."
+  ]
+}

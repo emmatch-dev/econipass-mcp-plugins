@@ -1,0 +1,4 @@
+interface:
+  display_name: "EcoNiPass 排出量分析"
+  short_description: "排出量・原単位・製品別分析を対象範囲とデータ欠損を確認して整理"
+  default_prompt: "$emissions-analysis を使って、対象年度の排出量と主な増減要因を整理してください。"

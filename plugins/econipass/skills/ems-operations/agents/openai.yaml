@@ -1,0 +1,4 @@
+interface:
+  display_name: "EcoNiPass EMS操作"
+  short_description: "設備の電力分析・取込・警報・M&Vを既存の確認付き操作で実行"
+  default_prompt: "$ems-operations を使って、対象事業所の電力データを確認し、必要な操作を進めてください。"

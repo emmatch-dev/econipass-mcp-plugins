@@ -1,0 +1,855 @@
+{
+  "version": 1,
+  "source_paths": [
+    "services/mcp-server/src/econipass_mcp/server.py",
+    "services/mcp-server/src/econipass_mcp/tools/ems_catalog.py",
+    "services/mcp-server/src/econipass_mcp/tools/cfp.py",
+    "services/mcp-server/src/econipass_mcp/tools/statutory_reports_v2.py",
+    "services/mcp-server/src/econipass_mcp/tools/statutory_paper.py",
+    "services/mcp-server/src/econipass_mcp/data/ems_operations.json"
+  ],
+  "verification": {
+    "method": "Local runtime registration only; no tool calls or authenticated tenant tests.",
+    "observed_date": "2026-10-20",
+    "profile_hash_format": "SHA-256 of sorted logical tool names, joined by newline with one final newline.",
+    "availability_note": "Profiles describe source registration and tag filters, not a live environment or a grant. Actual tools, authorization, contracts and client rendering must be checked separately. The PRD read-only tag profile is a source allowlist check, not proof of PRD deployment.",
+    "source_note": "source_base_commit is the release branch base; source_files_sha256 identifies the exact registration snapshot in this package."
+  },
+  "profiles": {
+    "default_all_tags": {
+      "settings": {
+        "ENABLED_TAGS": "",
+        "STATUTORY_REPORTS_ENABLED": false,
+        "STATUTORY_REPORT_MCP_REVIEW_ENABLED": false
+      },
+      "tool_count": 228,
+      "tool_names_sha256": "4c3e4d507596c776e7be7c01de7f408ccbbcd9b03f93208550fea38550f48df2",
+      "primary_skill_counts": {
+        "activity-input": 19,
+        "cfp-input": 2,
+        "emissions-analysis": 8,
+        "ems-operations": 167,
+        "measures-targets": 12,
+        "setup": 1,
+        "statutory-reports": 19
+      }
+    },
+    "shared_reports_without_review": {
+      "settings": {
+        "ENABLED_TAGS": "",
+        "STATUTORY_REPORTS_ENABLED": true,
+        "STATUTORY_REPORT_MCP_REVIEW_ENABLED": false
+      },
+      "tool_count": 241,
+      "tool_names_sha256": "6a1eeb2b44e9be194c8e9e64d30c12f5ec253d821182979f776414650d44f896",
+      "primary_skill_counts": {
+        "activity-input": 19,
+        "cfp-input": 2,
+        "emissions-analysis": 8,
+        "ems-operations": 167,
+        "measures-targets": 12,
+        "setup": 1,
+        "statutory-reports": 32
+      }
+    },
+    "all_registered_tools": {
+      "settings": {
+        "ENABLED_TAGS": "",
+        "STATUTORY_REPORTS_ENABLED": true,
+        "STATUTORY_REPORT_MCP_REVIEW_ENABLED": true
+      },
+      "tool_count": 243,
+      "tool_names_sha256": "c9a6bbda816db596e86bf1ffa14cc29e7ed3b37628bd2ea13630bef31f880dd8",
+      "primary_skill_counts": {
+        "activity-input": 19,
+        "cfp-input": 2,
+        "emissions-analysis": 8,
+        "ems-operations": 167,
+        "measures-targets": 12,
+        "setup": 1,
+        "statutory-reports": 34
+      }
+    },
+    "prd_readonly_tag_profile": {
+      "settings": {
+        "ENABLED_TAGS": "analytics,core,data,ems,fields,master,org,report",
+        "STATUTORY_REPORTS_ENABLED": false,
+        "STATUTORY_REPORT_MCP_REVIEW_ENABLED": false
+      },
+      "tool_count": 30,
+      "tool_names_sha256": "d08d192cc410996ab0145374836014fb101b791ebd17e78ebb9b9bbc807449a7",
+      "primary_skill_counts": {
+        "activity-input": 5,
+        "emissions-analysis": 8,
+        "ems-operations": 5,
+        "setup": 1,
+        "statutory-reports": 11
+      }
+    }
+  },
+  "tools": {
+    "accept_statutory_report_proposal_v2": {
+      "primary_skill": "statutory-reports"
+    },
+    "acknowledge_ems_demand_alert_event": {
+      "primary_skill": "ems-operations"
+    },
+    "acknowledge_ems_supervision_event": {
+      "primary_skill": "ems-operations"
+    },
+    "act_ems_intake_on_job": {
+      "primary_skill": "ems-operations"
+    },
+    "add_ems_supervision_activity": {
+      "primary_skill": "ems-operations"
+    },
+    "analyze_ems_option_c": {
+      "primary_skill": "ems-operations"
+    },
+    "apply_ems_intake_plan": {
+      "primary_skill": "ems-operations"
+    },
+    "apply_statutory_report_year_carryover_v2": {
+      "primary_skill": "statutory-reports"
+    },
+    "approve_ems_mv_adjustment": {
+      "primary_skill": "ems-operations"
+    },
+    "approve_ems_mv_revision": {
+      "primary_skill": "ems-operations"
+    },
+    "assign_ems_measurement_point_edge": {
+      "primary_skill": "ems-operations"
+    },
+    "cancel_ems_intake_plan": {
+      "primary_skill": "ems-operations"
+    },
+    "cancel_ems_mv_revision": {
+      "primary_skill": "ems-operations"
+    },
+    "cancel_input_exclusion": {
+      "primary_skill": "activity-input"
+    },
+    "check_shoene_obligation": {
+      "primary_skill": "statutory-reports"
+    },
+    "close_ems_source_mapping": {
+      "primary_skill": "ems-operations"
+    },
+    "commit_ems_analysis_factors": {
+      "primary_skill": "ems-operations"
+    },
+    "commit_ems_asset_data": {
+      "primary_skill": "ems-operations"
+    },
+    "commit_ems_electrical_topology": {
+      "primary_skill": "ems-operations"
+    },
+    "commit_ems_import": {
+      "primary_skill": "ems-operations"
+    },
+    "commit_ems_intake_job": {
+      "primary_skill": "ems-operations"
+    },
+    "commit_ems_point_device_mappings": {
+      "primary_skill": "ems-operations"
+    },
+    "compare_emissions_by_fiscal_year": {
+      "primary_skill": "emissions-analysis"
+    },
+    "correct_ems_reading": {
+      "primary_skill": "ems-operations"
+    },
+    "create_ems_analysis_factor": {
+      "primary_skill": "ems-operations"
+    },
+    "create_ems_asset": {
+      "primary_skill": "ems-operations"
+    },
+    "create_ems_asset_operating_interval": {
+      "primary_skill": "ems-operations"
+    },
+    "create_ems_data_stream": {
+      "primary_skill": "ems-operations"
+    },
+    "create_ems_demand_alert_rule": {
+      "primary_skill": "ems-operations"
+    },
+    "create_ems_device": {
+      "primary_skill": "ems-operations"
+    },
+    "create_ems_electrical_edge": {
+      "primary_skill": "ems-operations"
+    },
+    "create_ems_electrical_node": {
+      "primary_skill": "ems-operations"
+    },
+    "create_ems_intake_connection": {
+      "primary_skill": "ems-operations"
+    },
+    "create_ems_intake_plan": {
+      "primary_skill": "ems-operations"
+    },
+    "create_ems_measurement_point": {
+      "primary_skill": "ems-operations"
+    },
+    "create_ems_mv_adjustment": {
+      "primary_skill": "ems-operations"
+    },
+    "create_ems_mv_plan": {
+      "primary_skill": "ems-operations"
+    },
+    "create_ems_mv_report": {
+      "primary_skill": "ems-operations"
+    },
+    "create_ems_mv_revision": {
+      "primary_skill": "ems-operations"
+    },
+    "create_ems_site": {
+      "primary_skill": "ems-operations"
+    },
+    "create_ems_source_mapping": {
+      "primary_skill": "ems-operations"
+    },
+    "create_ems_source_system": {
+      "primary_skill": "ems-operations"
+    },
+    "create_ems_supervision_rule": {
+      "primary_skill": "ems-operations"
+    },
+    "create_ems_workspace_analysis": {
+      "primary_skill": "ems-operations"
+    },
+    "create_ems_workspace_event": {
+      "primary_skill": "ems-operations"
+    },
+    "create_ems_workspace_report": {
+      "primary_skill": "ems-operations"
+    },
+    "create_ems_workspace_schedule": {
+      "primary_skill": "ems-operations"
+    },
+    "create_measure": {
+      "primary_skill": "measures-targets"
+    },
+    "create_task": {
+      "primary_skill": "measures-targets"
+    },
+    "deactivate_ems_source_system": {
+      "primary_skill": "ems-operations"
+    },
+    "decide_ems_workspace_mv_report": {
+      "primary_skill": "ems-operations"
+    },
+    "delete_ems_workspace_analysis": {
+      "primary_skill": "ems-operations"
+    },
+    "delete_ems_workspace_schedule": {
+      "primary_skill": "ems-operations"
+    },
+    "delete_energy_usage": {
+      "primary_skill": "activity-input"
+    },
+    "disable_ems_demand_alert_rule": {
+      "primary_skill": "ems-operations"
+    },
+    "download_cfp_input_template": {
+      "primary_skill": "cfp-input"
+    },
+    "download_ems_analysis_factor_template": {
+      "primary_skill": "ems-operations"
+    },
+    "download_ems_electrical_topology_template": {
+      "primary_skill": "ems-operations"
+    },
+    "download_ems_import_template": {
+      "primary_skill": "ems-operations"
+    },
+    "download_ems_mv_report_evidence": {
+      "primary_skill": "ems-operations"
+    },
+    "download_ems_point_device_mapping_template": {
+      "primary_skill": "ems-operations"
+    },
+    "estimate_ems_management_cost": {
+      "primary_skill": "ems-operations"
+    },
+    "export_ems_analysis_factors": {
+      "primary_skill": "ems-operations"
+    },
+    "export_ems_asset_data": {
+      "primary_skill": "ems-operations"
+    },
+    "export_ems_electrical_topology": {
+      "primary_skill": "ems-operations"
+    },
+    "export_ems_point_device_mappings": {
+      "primary_skill": "ems-operations"
+    },
+    "export_ems_readings": {
+      "primary_skill": "ems-operations"
+    },
+    "export_ems_workspace_report": {
+      "primary_skill": "ems-operations"
+    },
+    "fit_ems_option_c_baseline": {
+      "primary_skill": "ems-operations"
+    },
+    "generate_freon_xml_jp": {
+      "primary_skill": "statutory-reports"
+    },
+    "generate_freon_xml_ko": {
+      "primary_skill": "statutory-reports"
+    },
+    "generate_measures": {
+      "primary_skill": "measures-targets"
+    },
+    "generate_ondaiho_xml_jp": {
+      "primary_skill": "statutory-reports"
+    },
+    "generate_ondaiho_xml_ko": {
+      "primary_skill": "statutory-reports"
+    },
+    "generate_shoene_xml_jp": {
+      "primary_skill": "statutory-reports"
+    },
+    "generate_shoene_xml_ko": {
+      "primary_skill": "statutory-reports"
+    },
+    "generate_statutory_report_package_v2": {
+      "primary_skill": "statutory-reports"
+    },
+    "get_co2_emission_target": {
+      "primary_skill": "measures-targets"
+    },
+    "get_co2_forecasts": {
+      "primary_skill": "measures-targets",
+      "extra_skills": [
+        "emissions-analysis"
+      ]
+    },
+    "get_emission_factors": {
+      "primary_skill": "activity-input",
+      "extra_skills": [
+        "emissions-analysis",
+        "statutory-reports"
+      ]
+    },
+    "get_emissions_chart": {
+      "primary_skill": "emissions-analysis"
+    },
+    "get_emissions_intensity": {
+      "primary_skill": "emissions-analysis"
+    },
+    "get_emissions_summary": {
+      "primary_skill": "emissions-analysis"
+    },
+    "get_ems_asset_energy_profile": {
+      "primary_skill": "ems-operations"
+    },
+    "get_ems_dashboard": {
+      "primary_skill": "ems-operations"
+    },
+    "get_ems_dashboard_health": {
+      "primary_skill": "ems-operations"
+    },
+    "get_ems_demand_alert_rule": {
+      "primary_skill": "ems-operations"
+    },
+    "get_ems_demand_delivery_settings": {
+      "primary_skill": "ems-operations"
+    },
+    "get_ems_import": {
+      "primary_skill": "ems-operations"
+    },
+    "get_ems_intake_job": {
+      "primary_skill": "ems-operations"
+    },
+    "get_ems_intake_unassigned_analysis": {
+      "primary_skill": "ems-operations"
+    },
+    "get_ems_management_overview": {
+      "primary_skill": "ems-operations"
+    },
+    "get_ems_mv_plan": {
+      "primary_skill": "ems-operations"
+    },
+    "get_ems_mv_revision": {
+      "primary_skill": "ems-operations"
+    },
+    "get_ems_processing_job": {
+      "primary_skill": "ems-operations"
+    },
+    "get_ems_supervision_action_options": {
+      "primary_skill": "ems-operations"
+    },
+    "get_ems_supervision_delivery_audit": {
+      "primary_skill": "ems-operations"
+    },
+    "get_ems_supervision_options": {
+      "primary_skill": "ems-operations"
+    },
+    "get_ems_workspace_mv_report_review": {
+      "primary_skill": "ems-operations"
+    },
+    "get_ems_workspace_provenance": {
+      "primary_skill": "ems-operations"
+    },
+    "get_ems_workspace_report": {
+      "primary_skill": "ems-operations"
+    },
+    "get_facility_emissions": {
+      "primary_skill": "emissions-analysis"
+    },
+    "get_fields_spec": {
+      "primary_skill": "statutory-reports"
+    },
+    "get_fiscal_year_input_status": {
+      "primary_skill": "activity-input",
+      "extra_skills": [
+        "statutory-reports"
+      ]
+    },
+    "get_fron_data": {
+      "primary_skill": "statutory-reports"
+    },
+    "get_fron_report": {
+      "primary_skill": "statutory-reports"
+    },
+    "get_input_status": {
+      "primary_skill": "activity-input",
+      "extra_skills": [
+        "statutory-reports"
+      ]
+    },
+    "get_masterdata": {
+      "primary_skill": "activity-input"
+    },
+    "get_measure": {
+      "primary_skill": "measures-targets"
+    },
+    "get_my_organizations": {
+      "primary_skill": "setup"
+    },
+    "get_ondaiho_data": {
+      "primary_skill": "statutory-reports"
+    },
+    "get_ondaiho_report": {
+      "primary_skill": "statutory-reports"
+    },
+    "get_product_emissions": {
+      "primary_skill": "emissions-analysis",
+      "extra_skills": [
+        "cfp-input"
+      ]
+    },
+    "get_scope3_emissions": {
+      "primary_skill": "emissions-analysis"
+    },
+    "get_shoene_data": {
+      "primary_skill": "statutory-reports"
+    },
+    "get_shoene_report": {
+      "primary_skill": "statutory-reports"
+    },
+    "get_statutory_paper_draft_v1": {
+      "primary_skill": "statutory-reports"
+    },
+    "get_statutory_report_v2": {
+      "primary_skill": "statutory-reports"
+    },
+    "get_summary_dashboard": {
+      "primary_skill": "emissions-analysis"
+    },
+    "get_task": {
+      "primary_skill": "measures-targets"
+    },
+    "get_xml_overrides": {
+      "primary_skill": "statutory-reports"
+    },
+    "get_year_end_closing_status": {
+      "primary_skill": "activity-input",
+      "extra_skills": [
+        "statutory-reports"
+      ]
+    },
+    "link_ems_supervision_action": {
+      "primary_skill": "ems-operations"
+    },
+    "list_available_year_months": {
+      "primary_skill": "activity-input"
+    },
+    "list_ems_analysis_factors": {
+      "primary_skill": "ems-operations"
+    },
+    "list_ems_asset_energy_profile_history": {
+      "primary_skill": "ems-operations"
+    },
+    "list_ems_asset_operating_intervals": {
+      "primary_skill": "ems-operations"
+    },
+    "list_ems_asset_tree": {
+      "primary_skill": "ems-operations"
+    },
+    "list_ems_assets": {
+      "primary_skill": "ems-operations"
+    },
+    "list_ems_data_streams": {
+      "primary_skill": "ems-operations"
+    },
+    "list_ems_demand_alert_events": {
+      "primary_skill": "ems-operations"
+    },
+    "list_ems_demand_alert_rules": {
+      "primary_skill": "ems-operations"
+    },
+    "list_ems_demand_delivery_history": {
+      "primary_skill": "ems-operations"
+    },
+    "list_ems_device_installations": {
+      "primary_skill": "ems-operations"
+    },
+    "list_ems_devices": {
+      "primary_skill": "ems-operations"
+    },
+    "list_ems_electrical_edges": {
+      "primary_skill": "ems-operations"
+    },
+    "list_ems_electrical_nodes": {
+      "primary_skill": "ems-operations"
+    },
+    "list_ems_import_data_rows": {
+      "primary_skill": "ems-operations"
+    },
+    "list_ems_import_errors": {
+      "primary_skill": "ems-operations"
+    },
+    "list_ems_imports": {
+      "primary_skill": "ems-operations"
+    },
+    "list_ems_intake_assignment_candidates": {
+      "primary_skill": "ems-operations"
+    },
+    "list_ems_intake_connections": {
+      "primary_skill": "ems-operations"
+    },
+    "list_ems_intake_jobs": {
+      "primary_skill": "ems-operations"
+    },
+    "list_ems_intake_plans": {
+      "primary_skill": "ems-operations"
+    },
+    "list_ems_jma_temperature_stations": {
+      "primary_skill": "ems-operations"
+    },
+    "list_ems_measurement_points": {
+      "primary_skill": "ems-operations"
+    },
+    "list_ems_metric_definitions": {
+      "primary_skill": "ems-operations"
+    },
+    "list_ems_mv_adjustments": {
+      "primary_skill": "ems-operations"
+    },
+    "list_ems_mv_plans": {
+      "primary_skill": "ems-operations"
+    },
+    "list_ems_mv_reports": {
+      "primary_skill": "ems-operations"
+    },
+    "list_ems_mv_revisions": {
+      "primary_skill": "ems-operations"
+    },
+    "list_ems_point_device_mappings": {
+      "primary_skill": "ems-operations"
+    },
+    "list_ems_processing_jobs": {
+      "primary_skill": "ems-operations"
+    },
+    "list_ems_quality_issues": {
+      "primary_skill": "ems-operations"
+    },
+    "list_ems_reading_history": {
+      "primary_skill": "ems-operations"
+    },
+    "list_ems_sites": {
+      "primary_skill": "ems-operations"
+    },
+    "list_ems_source_mappings": {
+      "primary_skill": "ems-operations"
+    },
+    "list_ems_source_systems": {
+      "primary_skill": "ems-operations"
+    },
+    "list_ems_supervision_action_activities": {
+      "primary_skill": "ems-operations"
+    },
+    "list_ems_supervision_actions": {
+      "primary_skill": "ems-operations"
+    },
+    "list_ems_supervision_deliveries": {
+      "primary_skill": "ems-operations"
+    },
+    "list_ems_supervision_events": {
+      "primary_skill": "ems-operations"
+    },
+    "list_ems_supervision_rules": {
+      "primary_skill": "ems-operations"
+    },
+    "list_ems_unresolved_identities": {
+      "primary_skill": "ems-operations"
+    },
+    "list_ems_workspace_analyses": {
+      "primary_skill": "ems-operations"
+    },
+    "list_ems_workspace_events": {
+      "primary_skill": "ems-operations"
+    },
+    "list_ems_workspace_reports": {
+      "primary_skill": "ems-operations"
+    },
+    "list_ems_workspace_schedules": {
+      "primary_skill": "ems-operations"
+    },
+    "list_energy_usage": {
+      "primary_skill": "activity-input",
+      "extra_skills": [
+        "emissions-analysis"
+      ]
+    },
+    "list_input_templates": {
+      "primary_skill": "activity-input"
+    },
+    "list_measures": {
+      "primary_skill": "measures-targets"
+    },
+    "list_scope1_2_environment_targets": {
+      "primary_skill": "measures-targets"
+    },
+    "list_scope3_inputs": {
+      "primary_skill": "activity-input"
+    },
+    "list_scope3_targets": {
+      "primary_skill": "measures-targets"
+    },
+    "list_self_and_secondary_amount": {
+      "primary_skill": "activity-input"
+    },
+    "list_statutory_report_missing_fields_v2": {
+      "primary_skill": "statutory-reports"
+    },
+    "list_statutory_report_proposals_v2": {
+      "primary_skill": "statutory-reports"
+    },
+    "list_statutory_report_source_candidates_v2": {
+      "primary_skill": "statutory-reports"
+    },
+    "list_statutory_report_year_carryover_sources_v2": {
+      "primary_skill": "statutory-reports"
+    },
+    "list_statutory_reports_v2": {
+      "primary_skill": "statutory-reports"
+    },
+    "list_upload_history": {
+      "primary_skill": "activity-input",
+      "extra_skills": [
+        "cfp-input"
+      ]
+    },
+    "list_xml_missing_fields": {
+      "primary_skill": "statutory-reports"
+    },
+    "postpone_ems_intake_plan": {
+      "primary_skill": "ems-operations"
+    },
+    "preview_ems_intake_plan": {
+      "primary_skill": "ems-operations"
+    },
+    "preview_statutory_report_year_carryover_v2": {
+      "primary_skill": "statutory-reports"
+    },
+    "propose_statutory_paper_updates_v1": {
+      "primary_skill": "statutory-reports"
+    },
+    "propose_statutory_report_update_from_source_candidate_v2": {
+      "primary_skill": "statutory-reports"
+    },
+    "propose_statutory_report_updates_v2": {
+      "primary_skill": "statutory-reports"
+    },
+    "put_ems_asset_energy_profile": {
+      "primary_skill": "ems-operations"
+    },
+    "put_ems_web_readings": {
+      "primary_skill": "ems-operations"
+    },
+    "reconcile_ems_intake_many": {
+      "primary_skill": "ems-operations"
+    },
+    "reconcile_ems_unresolved_identity": {
+      "primary_skill": "ems-operations"
+    },
+    "register_ems_unresolved_identity_point": {
+      "primary_skill": "ems-operations"
+    },
+    "register_input_exclusion": {
+      "primary_skill": "activity-input"
+    },
+    "reject_ems_mv_adjustment": {
+      "primary_skill": "ems-operations"
+    },
+    "reject_ems_mv_revision": {
+      "primary_skill": "ems-operations"
+    },
+    "reject_statutory_report_proposal_v2": {
+      "primary_skill": "statutory-reports"
+    },
+    "replace_ems_device_installation": {
+      "primary_skill": "ems-operations"
+    },
+    "requeue_ems_processing_job": {
+      "primary_skill": "ems-operations"
+    },
+    "resolve_ems_quality_issue": {
+      "primary_skill": "ems-operations"
+    },
+    "resolve_ems_workspace_analysis": {
+      "primary_skill": "ems-operations"
+    },
+    "retire_ems_asset": {
+      "primary_skill": "ems-operations"
+    },
+    "retire_ems_data_stream": {
+      "primary_skill": "ems-operations"
+    },
+    "retire_ems_electrical_edge": {
+      "primary_skill": "ems-operations"
+    },
+    "retire_ems_electrical_node": {
+      "primary_skill": "ems-operations"
+    },
+    "retire_ems_measurement_point": {
+      "primary_skill": "ems-operations"
+    },
+    "retry_ems_supervision_delivery": {
+      "primary_skill": "ems-operations"
+    },
+    "save_ems_management_goal": {
+      "primary_skill": "ems-operations"
+    },
+    "save_ems_management_tariff": {
+      "primary_skill": "ems-operations"
+    },
+    "save_scope3_input_draft": {
+      "primary_skill": "activity-input"
+    },
+    "save_xml_overrides": {
+      "primary_skill": "statutory-reports"
+    },
+    "search_scope3_emission_factor": {
+      "primary_skill": "activity-input"
+    },
+    "search_xml_fields": {
+      "primary_skill": "statutory-reports"
+    },
+    "set_co2_emission_target": {
+      "primary_skill": "measures-targets"
+    },
+    "simulate_ems_option_c": {
+      "primary_skill": "ems-operations"
+    },
+    "start_ems_counter_segment": {
+      "primary_skill": "ems-operations"
+    },
+    "submit_ems_mv_revision": {
+      "primary_skill": "ems-operations"
+    },
+    "sync_ems_intake_connection": {
+      "primary_skill": "ems-operations"
+    },
+    "test_ems_supervision_notification": {
+      "primary_skill": "ems-operations"
+    },
+    "update_ems_demand_alert_rule": {
+      "primary_skill": "ems-operations"
+    },
+    "update_ems_demand_delivery_settings": {
+      "primary_skill": "ems-operations"
+    },
+    "update_ems_intake_connection": {
+      "primary_skill": "ems-operations"
+    },
+    "update_ems_site_timezone": {
+      "primary_skill": "ems-operations"
+    },
+    "update_ems_supervision_action": {
+      "primary_skill": "ems-operations"
+    },
+    "update_ems_supervision_rule": {
+      "primary_skill": "ems-operations"
+    },
+    "update_ems_workspace_analysis": {
+      "primary_skill": "ems-operations"
+    },
+    "update_ems_workspace_schedule": {
+      "primary_skill": "ems-operations"
+    },
+    "update_measure": {
+      "primary_skill": "measures-targets"
+    },
+    "upload_cfp_input_file": {
+      "primary_skill": "cfp-input"
+    },
+    "upload_ems_intake_job": {
+      "primary_skill": "ems-operations"
+    },
+    "upsert_energy_usage": {
+      "primary_skill": "activity-input"
+    },
+    "upsert_scope3_input": {
+      "primary_skill": "activity-input"
+    },
+    "upsert_self_and_secondary_amount": {
+      "primary_skill": "activity-input"
+    },
+    "validate_ems_analysis_factors": {
+      "primary_skill": "ems-operations"
+    },
+    "validate_ems_asset_data": {
+      "primary_skill": "ems-operations"
+    },
+    "validate_ems_electrical_topology": {
+      "primary_skill": "ems-operations"
+    },
+    "validate_ems_import": {
+      "primary_skill": "ems-operations"
+    },
+    "validate_ems_point_device_mappings": {
+      "primary_skill": "ems-operations"
+    },
+    "validate_xml_report": {
+      "primary_skill": "statutory-reports"
+    },
+    "void_ems_analysis_factor": {
+      "primary_skill": "ems-operations"
+    },
+    "void_ems_asset_operating_interval": {
+      "primary_skill": "ems-operations"
+    },
+    "void_ems_reading": {
+      "primary_skill": "ems-operations"
+    },
+    "void_ems_workspace_event": {
+      "primary_skill": "ems-operations"
+    }
+  },
+  "source_base_commit": "b818582b07472cddda000e759858618af501797b",
+  "source_files_sha256": {
+    "services/mcp-server/src/econipass_mcp/server.py": "1184da6d6632dc269d7394adc3b2428680343dc52816a7b7a5efa7409cb36972",
+    "services/mcp-server/src/econipass_mcp/tools/ems_catalog.py": "ad216864d5275827495cbffd8c5fa182e496eae6d6208b809abe09fd8688a01d",
+    "services/mcp-server/src/econipass_mcp/tools/cfp.py": "f8f6bb8f612f0e6e610cc3021b5eccf6d39ea9d55908299d302bbdd103215333",
+    "services/mcp-server/src/econipass_mcp/tools/statutory_reports_v2.py": "2b24aa44cbf693c8d68e345ca7597836654012bce8f539000c6dd8e3b6ca3c78",
+    "services/mcp-server/src/econipass_mcp/tools/statutory_paper.py": "c4cbcfe4a34bf00c1ab1b08dfe2080ed5a41b42ad03a4b096302b80995689bba",
+    "services/mcp-server/src/econipass_mcp/data/ems_operations.json": "c2c023c37b9d89681e60f44420d5febef469c36a85646461305acb96dcb243ed"
+  }
+}

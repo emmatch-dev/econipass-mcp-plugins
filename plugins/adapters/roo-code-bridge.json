@@ -1,0 +1,19 @@
+{
+  "mcpServers": {
+    "econipass": {
+      "type": "stdio",
+      "command": "/ABSOLUTE/PATH/TO/node",
+      "args": [
+        "/ABSOLUTE/PATH/TO/mcp-remote-0.14.3/node_modules/mcp-remote/dist/proxy.js",
+        "https://api.dev.app.econipass.com/mcp",
+        "--transport",
+        "http-only",
+        "--static-oauth-client-metadata",
+        "{\"scope\":\"mcp:read\",\"token_endpoint_auth_method\":\"none\"}"
+      ],
+      "disabled": true,
+      "alwaysAllow": [],
+      "timeout": 300
+    }
+  }
+}

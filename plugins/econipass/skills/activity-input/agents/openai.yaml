@@ -1,0 +1,4 @@
+interface:
+  display_name: "EcoNiPass 活動量入力"
+  short_description: "入力漏れと更新対象を確認し、エネルギーやScope 3の活動量を登録"
+  default_prompt: "$activity-input を使って、今月の入力状況を確認し、依頼した活動量の登録内容を準備してください。"

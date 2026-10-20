@@ -1,0 +1,4 @@
+interface:
+  display_name: "EcoNiPass CFPデータ投入"
+  short_description: "製品CFPの入力Excelを準備し、事業所・期間・置換範囲を確認して投入"
+  default_prompt: "$cfp-input を使って、対象事業所のCFP入力Excelを準備し、置換内容を確認して投入してください。"

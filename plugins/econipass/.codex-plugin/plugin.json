@@ -1,0 +1,17 @@
+{
+  "name": "econipass",
+  "version": "1.1.0",
+  "description": "EcoNiPass DEV MCP workflows for emissions, EMS, CFP input, measures and statutory reports.",
+  "author": {"name": "EcoNiPass"},
+  "skills": "./skills/",
+  "mcpServers": "./.mcp.json",
+  "interface": {
+    "displayName": "EcoNiPass DEV",
+    "shortDescription": "排出量・EMS・CFP・法定報告の業務支援",
+    "developerName": "EcoNiPass",
+    "category": "Productivity"
+  },
+  "extensions": {
+    "com.openai": {"onboardingSkill": "./skills/setup/SKILL.md"}
+  }
+}

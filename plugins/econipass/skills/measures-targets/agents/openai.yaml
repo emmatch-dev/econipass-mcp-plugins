@@ -1,0 +1,4 @@
+interface:
+  display_name: "EcoNiPass 削減施策・目標"
+  short_description: "CO2目標と予測を確認し、削減施策やタスクの登録・更新を進める"
+  default_prompt: "$measures-targets を使って、年度目標に対する進捗と既存の削減施策を整理してください。"

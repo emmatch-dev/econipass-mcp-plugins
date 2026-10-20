@@ -1,0 +1,20 @@
+{
+  "mcpServers": {
+    "econipass": {
+      "type": "http",
+      "url": "https://api.dev.app.econipass.com/mcp",
+      "headers": {
+        "Authorization": "Bearer $COPILOT_MCP_ECONIPASS_PAT"
+      },
+      "tools": [
+        "get_my_organizations",
+        "get_input_status",
+        "get_shoene_data",
+        "get_ondaiho_data",
+        "get_ems_dashboard",
+        "list_ems_sites",
+        "list_ems_measurement_points"
+      ]
+    }
+  }
+}
