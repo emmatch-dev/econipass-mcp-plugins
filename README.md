@@ -73,7 +73,14 @@ claude plugin install econipass@econipass-plugins
 外部プラグインディレクトリへの審査・掲載と、このGitHub配布は別です。
 
 2026-10-21の実機確認では、Codexからの組織一覧・EMSサイト一覧の取得に成功しました。
-Codex CLIとClaude Codeは、隔離環境で1.1.0の7スキルとMCP設定を読み込めました。
+Codex CLI、Claude Code、GitHub Copilot CLI、Gemini CLIの4クライアントは、
+通信を遮断した隔離環境で1.1.0の7スキルとMCP設定を読み込めました。
+API向け4キットは、架空の試験データでSDKオブジェクトの構築やリクエスト生成など、
+各サンプルに応じたオフライン検証を行いました。このSDK検証では、実際のモデルAPIや
+EcoNiPassへの接続は行っていません。CursorはMCP設定の
+CLI読み込みのみ確認し、プラグイン・スキルの実行時読み込みは未確認です。
+これらを認証済みの総合受入には数えず、**完了は0/29環境**です。
+
 CFP入力Excelの取得は5種類ともDEVのbackendがHTTP 500を返しており、現在調査中です。
 Web画面のマスタ取得でも同じ失敗を確認しています。CFPのファイル取得・投入の受入は未完了です。
 現在の結果と公式掲載状況は[受入・公開状況](docs/ACCEPTANCE.md)に記録します。

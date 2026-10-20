@@ -17,14 +17,30 @@
         "desktop: all five CFP workbook downloads returned upstream HTTP 500",
         "CLI: isolated native load recognized plugin 1.1.0, seven enabled skills and one MCP configuration; network disabled"
       ],
-      "full_acceptance": "incomplete"
+      "full_acceptance": "incomplete",
+      "validation_stage": "native_package_load_pass",
+      "client_version": "0.163.0-alpha.10.2",
+      "isolated_native_load": {
+        "plugin_version": "1.1.0",
+        "recognized_skills": 7,
+        "recognized_mcp_definitions": 1,
+        "network_disabled": true,
+        "authenticated_remote_connection": false
+      },
+      "new_mcp_oauth": {
+        "status": "deferred_by_user_before_consent",
+        "waiting_process_stopped": true,
+        "access_or_refresh_token_obtained": false,
+        "authenticated_mcp_read_performed": false
+      }
     },
     {
       "id": "chatgpt",
       "label": "ChatGPT / ChatGPT Work",
       "local_inventory": "hosted_account_required",
       "observations": [],
-      "full_acceptance": "incomplete"
+      "full_acceptance": "incomplete",
+      "validation_stage": "inventory_only"
     },
     {
       "id": "claude-code",
@@ -34,7 +50,22 @@
         "isolated native validate reported zero errors and warnings",
         "native plugin details recognized 1.1.0, seven skills and one MCP configuration; network disabled"
       ],
-      "full_acceptance": "incomplete"
+      "full_acceptance": "incomplete",
+      "validation_stage": "native_package_load_pass",
+      "client_version": "2.1.299",
+      "isolated_native_load": {
+        "plugin_version": "1.1.0",
+        "recognized_skills": 7,
+        "recognized_mcp_definitions": 1,
+        "network_disabled": true,
+        "authenticated_remote_connection": false
+      },
+      "new_mcp_oauth": {
+        "status": "stopped_without_consent",
+        "waiting_process_stopped": true,
+        "access_or_refresh_token_obtained": false,
+        "authenticated_mcp_read_performed": false
+      }
     },
     {
       "id": "claude-hosted",
@@ -43,186 +74,295 @@
       "observations": [
         "desktop application observed; authenticated MCP workflow not tested"
       ],
-      "full_acceptance": "incomplete"
+      "full_acceptance": "incomplete",
+      "validation_stage": "inventory_only"
     },
     {
       "id": "querypie-aip",
       "label": "QueryPie AIP",
       "local_inventory": "hosted_account_required",
       "observations": [],
-      "full_acceptance": "incomplete"
+      "full_acceptance": "incomplete",
+      "validation_stage": "inventory_only"
     },
     {
       "id": "github-copilot-cli",
       "label": "GitHub Copilot CLI",
-      "local_inventory": "not_detected_in_scanned_locations",
-      "observations": [],
-      "full_acceptance": "incomplete"
+      "local_inventory": "installed_for_isolated_validation",
+      "observations": [
+        "official npm package installed in a dedicated directory; global installation and existing settings unchanged",
+        "native marketplace/plugin installation and skill/MCP inventory recognized plugin 1.1.0, seven enabled skills and one HTTP MCP definition",
+        "provider authentication, MCP OAuth, model execution and live MCP connection not performed"
+      ],
+      "full_acceptance": "incomplete",
+      "validation_stage": "native_package_load_pass",
+      "client_version": "1.0.100",
+      "isolated_native_load": {
+        "plugin_version": "1.1.0",
+        "recognized_skills": 7,
+        "recognized_mcp_definitions": 1,
+        "network_disabled": true,
+        "authenticated_remote_connection": false
+      }
     },
     {
       "id": "vscode-copilot",
       "label": "GitHub Copilot in VS Code Desktop",
       "local_inventory": "not_detected_in_scanned_locations",
       "observations": [],
-      "full_acceptance": "incomplete"
+      "full_acceptance": "incomplete",
+      "validation_stage": "inventory_only"
     },
     {
       "id": "copilot-studio",
       "label": "Microsoft Copilot Studio",
       "local_inventory": "hosted_account_required",
       "observations": [],
-      "full_acceptance": "incomplete"
+      "full_acceptance": "incomplete",
+      "validation_stage": "inventory_only"
     },
     {
       "id": "gemini-cli",
       "label": "Gemini CLI",
-      "local_inventory": "not_detected_in_scanned_locations",
-      "observations": [],
-      "full_acceptance": "incomplete"
+      "local_inventory": "installed_for_isolated_validation",
+      "observations": [
+        "official npm package installed in a dedicated directory; original plugin bytes preserved",
+        "native extension validation/link/list and skills inventory recognized plugin 1.1.0, seven skills, GEMINI.md and one HTTP MCP definition",
+        "initial skill listing attempted MCP discovery but network denial prevented connection; final inventory excluded the MCP server in isolated settings",
+        "provider authentication, MCP OAuth, model execution and live MCP connection not performed"
+      ],
+      "full_acceptance": "incomplete",
+      "validation_stage": "native_package_load_pass",
+      "client_version": "0.64.0",
+      "isolated_native_load": {
+        "plugin_version": "1.1.0",
+        "recognized_skills": 7,
+        "recognized_mcp_definitions": 1,
+        "network_disabled": true,
+        "authenticated_remote_connection": false
+      }
     },
     {
       "id": "gemini-code-assist",
       "label": "Gemini Code Assist for VS Code (Agent mode)",
       "local_inventory": "not_detected_in_scanned_locations",
       "observations": [],
-      "full_acceptance": "incomplete"
+      "full_acceptance": "incomplete",
+      "validation_stage": "inventory_only"
     },
     {
       "id": "cursor-desktop",
       "label": "Cursor Desktop",
       "local_inventory": "installed_local_client",
       "observations": [
-        "desktop application observed; authenticated MCP workflow not tested"
+        "native --add-mcp parsed the name/URL and isolated profile readback contained the expected MCP endpoint; network disabled",
+        "Cursor UI, plugin/seven-skills runtime, and propagation of CLI settings to the Cursor agent remain unverified",
+        "provider authentication, MCP OAuth and live connection not performed"
       ],
-      "full_acceptance": "incomplete"
+      "full_acceptance": "incomplete",
+      "validation_stage": "native_cli_mcp_config_only_pass",
+      "client_version": "3.25.9"
     },
     {
       "id": "cursor-hosted",
       "label": "Cursor Web / Cloud Agents / Automations",
       "local_inventory": "hosted_account_required",
       "observations": [],
-      "full_acceptance": "incomplete"
+      "full_acceptance": "incomplete",
+      "validation_stage": "inventory_only"
     },
     {
       "id": "m365-copilot",
       "label": "Microsoft 365 Copilot declarative agent",
       "local_inventory": "hosted_account_required",
       "observations": [],
-      "full_acceptance": "incomplete"
+      "full_acceptance": "incomplete",
+      "validation_stage": "inventory_only"
     },
     {
       "id": "gemini-enterprise",
       "label": "Gemini Enterprise Custom MCP",
       "local_inventory": "hosted_account_required",
       "observations": [],
-      "full_acceptance": "incomplete"
+      "full_acceptance": "incomplete",
+      "validation_stage": "inventory_only"
     },
     {
       "id": "perplexity",
       "label": "Perplexity custom remote connector / Computer",
       "local_inventory": "hosted_account_required",
       "observations": [],
-      "full_acceptance": "incomplete"
+      "full_acceptance": "incomplete",
+      "validation_stage": "inventory_only"
     },
     {
       "id": "windsurf",
       "label": "Windsurf Cascade / successor Devin Desktop",
       "local_inventory": "not_detected_in_scanned_locations",
       "observations": [],
-      "full_acceptance": "incomplete"
+      "full_acceptance": "incomplete",
+      "validation_stage": "inventory_only"
     },
     {
       "id": "jetbrains-junie",
       "label": "JetBrains Junie",
       "local_inventory": "not_detected_in_scanned_locations",
       "observations": [],
-      "full_acceptance": "incomplete"
+      "full_acceptance": "incomplete",
+      "validation_stage": "inventory_only"
     },
     {
       "id": "zed",
       "label": "Zed Agent",
       "local_inventory": "not_detected_in_scanned_locations",
       "observations": [],
-      "full_acceptance": "incomplete"
+      "full_acceptance": "incomplete",
+      "validation_stage": "inventory_only"
     },
     {
       "id": "goose",
       "label": "goose",
       "local_inventory": "not_detected_in_scanned_locations",
       "observations": [],
-      "full_acceptance": "incomplete"
+      "full_acceptance": "incomplete",
+      "validation_stage": "inventory_only"
     },
     {
       "id": "amazon-q-cli",
       "label": "Amazon Q Developer CLI (legacy product name)",
       "local_inventory": "not_detected_in_scanned_locations",
       "observations": [],
-      "full_acceptance": "incomplete"
+      "full_acceptance": "incomplete",
+      "validation_stage": "inventory_only"
     },
     {
       "id": "cline",
       "label": "Cline",
       "local_inventory": "not_detected_in_scanned_locations",
       "observations": [],
-      "full_acceptance": "incomplete"
+      "full_acceptance": "incomplete",
+      "validation_stage": "inventory_only"
     },
     {
       "id": "roo-code",
       "label": "Roo Code",
       "local_inventory": "not_detected_in_scanned_locations",
       "observations": [],
-      "full_acceptance": "incomplete"
+      "full_acceptance": "incomplete",
+      "validation_stage": "inventory_only"
     },
     {
       "id": "openai-responses",
       "label": "OpenAI Responses API",
-      "local_inventory": "sdk_present_unvalidated",
+      "local_inventory": "sdk_installed_for_isolated_validation",
       "observations": [
-        "Python SDK found; provider API and MCP authentication not tested"
+        "native SDK request serialization used an in-memory HTTP fixture; allowed_tools was exactly get_my_organizations and store was false",
+        "published sample files unchanged on disk; synthetic noncredentials only; network disabled",
+        "no real provider/model request, remote MCP connection, customer data, OAuth grant or PAT issuance"
       ],
-      "full_acceptance": "incomplete"
+      "full_acceptance": "incomplete",
+      "validation_stage": "native_sdk_offline_compatibility_pass",
+      "sdk_versions": {
+        "openai": "3.35.1"
+      }
     },
     {
       "id": "openai-agents-sdk",
       "label": "OpenAI Agents SDK",
-      "local_inventory": "not_detected_in_scanned_locations",
-      "observations": [],
-      "full_acceptance": "incomplete"
+      "local_inventory": "sdk_installed_for_isolated_validation",
+      "observations": [
+        "native Agent and HostedMCPTool construction retained the one-read allowlist; Runner execution was replaced with a local fixture",
+        "published sample files unchanged on disk; synthetic noncredentials only; network disabled",
+        "no real provider/model request, remote MCP connection, customer data, OAuth grant or PAT issuance"
+      ],
+      "full_acceptance": "incomplete",
+      "validation_stage": "native_sdk_offline_compatibility_pass",
+      "sdk_versions": {
+        "openai-agents": "0.24.0",
+        "openai": "3.35.1"
+      }
     },
     {
       "id": "anthropic-messages",
       "label": "Anthropic Messages API MCP connector",
-      "local_inventory": "not_detected_in_scanned_locations",
-      "observations": [],
-      "full_acceptance": "incomplete"
+      "local_inventory": "sdk_installed_for_isolated_validation",
+      "observations": [
+        "native SDK request serialization used an in-memory HTTP fixture; tools were disabled by default and only get_my_organizations was enabled",
+        "published sample files unchanged on disk; synthetic noncredentials only; network disabled",
+        "no real provider/model request, remote MCP connection, customer data, OAuth grant or PAT issuance"
+      ],
+      "full_acceptance": "incomplete",
+      "validation_stage": "native_sdk_offline_compatibility_pass",
+      "sdk_versions": {
+        "anthropic": "1.15.0"
+      }
     },
     {
       "id": "langchain-langgraph",
       "label": "LangChain / LangGraph",
-      "local_inventory": "not_detected_in_scanned_locations",
-      "observations": [],
-      "full_acceptance": "incomplete"
+      "local_inventory": "sdk_installed_for_isolated_validation",
+      "observations": [
+        "native MCPAdapter discovered an in-process synthetic MCP catalog and excluded the unallowlisted fixture tool",
+        "native ChatOpenAI object and LangGraph compilation succeeded; graph execution was replaced with a local fixture",
+        "published sample files unchanged on disk; synthetic noncredentials only; network disabled",
+        "no real provider/model request, remote MCP connection, customer data, OAuth grant or PAT issuance"
+      ],
+      "full_acceptance": "incomplete",
+      "validation_stage": "native_sdk_offline_compatibility_pass",
+      "sdk_versions": {
+        "langchain": "1.4.6",
+        "langgraph": "1.2.16",
+        "fastmcp": "4.1.2",
+        "langchain-openai": "1.7.2"
+      }
     },
     {
       "id": "n8n",
       "label": "n8n",
       "local_inventory": "not_detected_in_scanned_locations",
       "observations": [],
-      "full_acceptance": "incomplete"
+      "full_acceptance": "incomplete",
+      "validation_stage": "inventory_only"
     },
     {
       "id": "dify",
       "label": "Dify",
       "local_inventory": "not_detected_in_scanned_locations",
       "observations": [],
-      "full_acceptance": "incomplete"
+      "full_acceptance": "incomplete",
+      "validation_stage": "inventory_only"
     },
     {
       "id": "github-copilot-cloud",
       "label": "GitHub Copilot cloud coding agent / code review",
       "local_inventory": "hosted_account_required",
       "observations": [],
-      "full_acceptance": "incomplete"
+      "full_acceptance": "incomplete",
+      "validation_stage": "inventory_only"
     }
-  ]
+  ],
+  "validation_counts": {
+    "native_package_load_pass": 4,
+    "native_sdk_offline_compatibility_pass": 4,
+    "native_cli_mcp_config_only_pass": 1,
+    "new_mcp_oauth_grants_completed": 0,
+    "existing_codex_desktop_reads_passed": 2,
+    "existing_codex_write_scope_refusals_observed": 1,
+    "existing_codex_cfp_download_failures": 5
+  },
+  "validation_stages": {
+    "native_package_load_pass": "Client-native plugin or extension loading recognized version 1.1.0, seven skills and one MCP definition with network disabled. This does not establish an authenticated connection.",
+    "native_sdk_offline_compatibility_pass": "Published sample files were unchanged; native SDK construction or serialization used synthetic in-memory fixtures and network denial. No real provider, model or remote MCP request.",
+    "native_cli_mcp_config_only_pass": "Cursor native CLI parsed and saved an MCP definition in an isolated profile; GUI/plugin/skills runtime and agent consumption of that setting remain unverified.",
+    "inventory_only": "Availability observations only; no client or SDK runtime validation completed."
+  },
+  "isolated_validation_boundaries": {
+    "existing_settings_or_credentials_modified": false,
+    "existing_grants_copied": false,
+    "customer_data_used_in_fixtures": false,
+    "pat_issued_or_enabled": false,
+    "real_provider_model_requests": false,
+    "authenticated_remote_mcp_calls_from_isolated_clients": false,
+    "new_codex_and_claude_mcp_oauth": "Codex CLI: user deferred before consent. Claude Code: pending flow stopped without consent. Neither obtained access or refresh tokens."
+  }
 }
