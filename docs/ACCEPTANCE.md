@@ -1,11 +1,14 @@
 # DEV 1.1.0 の実機受入・公式掲載状況
 
 確認日: 2026-10-21 JST。接続先は `https://api.dev.app.econipass.com/mcp`。
-配布版のbackendソースは `37284f6c8f17175984ded533bea471693443aada`。
+配布物1.1.0のbackendソースは `37284f6c8f17175984ded533bea471693443aada`。
+現在のDEV稼働版は診断用の `94ae94f548b0d95991b9a21aa7cb7ec057c8166c` です。
+backendとKongの配備は成功し、canaryは241ツールを報告しました。これはCFP修正の完了を意味しません。
 このページに記載したクライアント・操作以外の実機成功を意味しません。
 
 **全29環境の総合受入は0件です。** 現時点で、4クライアントのネイティブ読み込み、
-4 API SDKのオフライン互換性、CursorのCLI設定読み込みを確認しました。
+4 API SDKのオフライン互換性、CursorのCLI設定読み込み、
+gooseのスキル認識・MCP設定読み戻しを確認しました。
 これらの結果と、既存Codex接続による認証済み参照を分けて記録しています。
 
 ## 確認できたこと
@@ -19,8 +22,10 @@
 | GitHub Copilot CLI 1.0.100 | 専用設定でmarketplace登録、plugin導入、skill・MCP一覧の照会 | 1.1.0、7スキル有効、HTTPのMCP設定1件。通信を遮断した読み込み検証 |
 | Gemini CLI 0.64.0 | 専用設定でextensionの検証・link・一覧、skills・MCP一覧の照会 | 1.1.0、7スキル、`GEMINI.md`、HTTPのMCP設定1件。通信を遮断し、最終確認では対象MCPを設定で除外 |
 | Cursor Desktop 3.25.9 | 専用ユーザープロファイルで`--add-mcp`と設定の読み戻し | CLIの設定解析のみ成功。CursorのUI・プラグイン・7スキルの読み込みと実接続は未確認 |
-| Codex desktopのCFP入力Excel取得 | master / base_unit / activity_amount / pcf_certification_period / aist_idea | 5種類ともbackend HTTP 500。ファイルの受領なし |
-| DEV Web画面のCFPマスタ取得 | 既存ログインで標準ダウンロード操作 | HTTP 500 / E000003。同じ問題を再現 |
+| goose 1.55.0 | 専用設定・workspaceで`skills list`と`info --verbose` | EcoNiPassの7スキルとMCP設定1件を確認。通信を遮断した設定・スキル読込で、プラグイン識別・版確認、認証、MCP接続は未実施 |
+| Codex desktopのCFP入力Excel取得（旧稼働版`37284f6`） | master / base_unit / activity_amount / pcf_certification_period / aist_idea | 5種類ともbackend HTTP 500。ファイルの受領なし |
+| DEV Web画面のCFPマスタ取得（旧稼働版`37284f6`） | 既存ログインで標準ダウンロード操作 | HTTP 500 / E000003。同じ問題を再現 |
+| Codex desktopのCFP master再取得（診断版`94ae94f`） | 2026-10-20 19:11:50 UTCに既存接続でmasterのみ再試験 | HTTP 500を再確認。新規OAuth認可なし。他4種類は診断版で未再試験 |
 
 CLIの読み込み検証は公開配布ソースとファイルハッシュを照合して実施しました。
 既存ユーザー設定・認証情報を変更していません。MCP接続済みのCodex desktopでの
@@ -32,9 +37,38 @@ Claude Codeは同意を実施せず、待機処理を終了しました。
 GitHub Copilot CLIとGemini CLIでもprovider認証・MCP OAuth・モデルAPIを実行していません。
 Geminiの初回skills一覧はMCP検出を試みましたが、通信遮断によって接続は成立していません。
 CursorのCLI設定保存が、Cursor Agentの実行時設定にも反映されるかは未確認です。
+gooseは公式配布のハッシュと公開キットの同一性を確認し、既存ホーム設定・Keychainへの
+アクセスも遮断しました。provider認証・モデル実行・MCP OAuthは行っておらず、
+プラグインを識別した上記4クライアントとは別の「設定・スキル読込」段階に数えます。
 
 CFPのMCP応答には`INVALID_ARGUMENT`と表示されますが、上流HTTP 500であり、
-利用者の入力ミスと断定していません。原因と修正は調査中です。
+利用者の入力ミスと断定していません。診断版でもmasterのHTTP 500が続いており、
+実行時の修正は未適用です。
+
+## ツール公開数の観測
+
+| 観測元 | 件数・状態 |
+| --- | --- |
+| 1.1.0のソース登録 | 最大243ツール。うち法定レビュー2件は条件付き登録 |
+| 旧稼働版`37284f6`のDEV配備readiness記録 | 2026-10-20 11:45:07 UTCに`ready=true`、`published_tools=241` |
+| 診断版`94ae94f`のDEV配備canary | 241ツール。認証済み`tools/list`の全件照合とは別の観測 |
+| 既存Codex接続に表示されたメタデータ | 診断版の配備後、2026-10-20 19:15:50 UTCに再取得して183ツール。配備前の記録とツール名の集合は一致。EMSはソース167件のうち109件が表示され、58件（参照25・更新33）が未観測 |
+
+配備時のreadiness／canary件数、記録済みのクライアントメタデータ、現在の認証済みMCP
+`tools/list`は別の観測です。最後の`tools/list`は未確認で、法定レビューの実環境フラグ値も
+確認していません。ソースにあるツールが現在呼び出せるとは断定せず、件数差の原因を
+キャッシュ・配備・権限のいずれかに決めつけていません。
+
+既存接続で利用できる再検出経路を確認したうえで、実配備ソースに対応する
+認証済み`tools/list`の全ページと、クライアント側の表示を照合する必要があります。
+ChatGPTへ直接接続したcustom MCPには、Refresh → メタデータの変更確認 → 新しい会話で
+再検証する[OpenAI公式手順](https://developers.openai.com/plugins/deploy/connect-chatgpt#refresh-metadata)があります。
+Business/Enterprise/Eduの管理者は、有効な既存接続とアプリ管理権限があれば再作成せず更新できます。
+Enterprise/Eduのaction controlsでは新しいactionsは初期無効です。[管理手順](https://help.openai.com/en/articles/12584461-connecting-custom-mcp-servers-in-chatgpt)を確認してください。
+これはChatGPT向けの案内で、現在のCodex desktop接続への適用・成功は未確認です。
+現在のCodex desktop接続でのRefreshは未実施です。
+この観測では新規OAuth grantを取得していません。ツール名の公開確認と、
+CFPファイル取得やEMS操作の機能受入は別に記録します。
 
 ## API SDKのオフライン互換性
 
