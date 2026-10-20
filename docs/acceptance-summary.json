@@ -1,0 +1,228 @@
+{
+  "as_of": "2026-10-21 JST",
+  "environment": "DEV",
+  "backend_revision": "37284f6c8f17175984ded533bea471693443aada",
+  "plugin_version": "1.1.0",
+  "product_kits": 29,
+  "fully_accepted_product_kits": 0,
+  "inventory_scope": "One macOS workstation and its available tooling; not a global product capability assessment. Hosted accounts and platform variants require separate verification.",
+  "platforms": [
+    {
+      "id": "codex",
+      "label": "Codex (desktop / CLI / IDE)",
+      "local_inventory": "installed_local_client",
+      "observations": [
+        "desktop: authenticated organization and EMS site reads succeeded",
+        "desktop: missing write permission rejected an EMS create-site dry-run; no confirmation token or mutation",
+        "desktop: all five CFP workbook downloads returned upstream HTTP 500",
+        "CLI: isolated native load recognized plugin 1.1.0, seven enabled skills and one MCP configuration; network disabled"
+      ],
+      "full_acceptance": "incomplete"
+    },
+    {
+      "id": "chatgpt",
+      "label": "ChatGPT / ChatGPT Work",
+      "local_inventory": "hosted_account_required",
+      "observations": [],
+      "full_acceptance": "incomplete"
+    },
+    {
+      "id": "claude-code",
+      "label": "Claude Code",
+      "local_inventory": "installed_local_client",
+      "observations": [
+        "isolated native validate reported zero errors and warnings",
+        "native plugin details recognized 1.1.0, seven skills and one MCP configuration; network disabled"
+      ],
+      "full_acceptance": "incomplete"
+    },
+    {
+      "id": "claude-hosted",
+      "label": "Claude hosted (Web / Desktop / mobile / Cowork)",
+      "local_inventory": "installed_local_client",
+      "observations": [
+        "desktop application observed; authenticated MCP workflow not tested"
+      ],
+      "full_acceptance": "incomplete"
+    },
+    {
+      "id": "querypie-aip",
+      "label": "QueryPie AIP",
+      "local_inventory": "hosted_account_required",
+      "observations": [],
+      "full_acceptance": "incomplete"
+    },
+    {
+      "id": "github-copilot-cli",
+      "label": "GitHub Copilot CLI",
+      "local_inventory": "not_detected_in_scanned_locations",
+      "observations": [],
+      "full_acceptance": "incomplete"
+    },
+    {
+      "id": "vscode-copilot",
+      "label": "GitHub Copilot in VS Code Desktop",
+      "local_inventory": "not_detected_in_scanned_locations",
+      "observations": [],
+      "full_acceptance": "incomplete"
+    },
+    {
+      "id": "copilot-studio",
+      "label": "Microsoft Copilot Studio",
+      "local_inventory": "hosted_account_required",
+      "observations": [],
+      "full_acceptance": "incomplete"
+    },
+    {
+      "id": "gemini-cli",
+      "label": "Gemini CLI",
+      "local_inventory": "not_detected_in_scanned_locations",
+      "observations": [],
+      "full_acceptance": "incomplete"
+    },
+    {
+      "id": "gemini-code-assist",
+      "label": "Gemini Code Assist for VS Code (Agent mode)",
+      "local_inventory": "not_detected_in_scanned_locations",
+      "observations": [],
+      "full_acceptance": "incomplete"
+    },
+    {
+      "id": "cursor-desktop",
+      "label": "Cursor Desktop",
+      "local_inventory": "installed_local_client",
+      "observations": [
+        "desktop application observed; authenticated MCP workflow not tested"
+      ],
+      "full_acceptance": "incomplete"
+    },
+    {
+      "id": "cursor-hosted",
+      "label": "Cursor Web / Cloud Agents / Automations",
+      "local_inventory": "hosted_account_required",
+      "observations": [],
+      "full_acceptance": "incomplete"
+    },
+    {
+      "id": "m365-copilot",
+      "label": "Microsoft 365 Copilot declarative agent",
+      "local_inventory": "hosted_account_required",
+      "observations": [],
+      "full_acceptance": "incomplete"
+    },
+    {
+      "id": "gemini-enterprise",
+      "label": "Gemini Enterprise Custom MCP",
+      "local_inventory": "hosted_account_required",
+      "observations": [],
+      "full_acceptance": "incomplete"
+    },
+    {
+      "id": "perplexity",
+      "label": "Perplexity custom remote connector / Computer",
+      "local_inventory": "hosted_account_required",
+      "observations": [],
+      "full_acceptance": "incomplete"
+    },
+    {
+      "id": "windsurf",
+      "label": "Windsurf Cascade / successor Devin Desktop",
+      "local_inventory": "not_detected_in_scanned_locations",
+      "observations": [],
+      "full_acceptance": "incomplete"
+    },
+    {
+      "id": "jetbrains-junie",
+      "label": "JetBrains Junie",
+      "local_inventory": "not_detected_in_scanned_locations",
+      "observations": [],
+      "full_acceptance": "incomplete"
+    },
+    {
+      "id": "zed",
+      "label": "Zed Agent",
+      "local_inventory": "not_detected_in_scanned_locations",
+      "observations": [],
+      "full_acceptance": "incomplete"
+    },
+    {
+      "id": "goose",
+      "label": "goose",
+      "local_inventory": "not_detected_in_scanned_locations",
+      "observations": [],
+      "full_acceptance": "incomplete"
+    },
+    {
+      "id": "amazon-q-cli",
+      "label": "Amazon Q Developer CLI (legacy product name)",
+      "local_inventory": "not_detected_in_scanned_locations",
+      "observations": [],
+      "full_acceptance": "incomplete"
+    },
+    {
+      "id": "cline",
+      "label": "Cline",
+      "local_inventory": "not_detected_in_scanned_locations",
+      "observations": [],
+      "full_acceptance": "incomplete"
+    },
+    {
+      "id": "roo-code",
+      "label": "Roo Code",
+      "local_inventory": "not_detected_in_scanned_locations",
+      "observations": [],
+      "full_acceptance": "incomplete"
+    },
+    {
+      "id": "openai-responses",
+      "label": "OpenAI Responses API",
+      "local_inventory": "sdk_present_unvalidated",
+      "observations": [
+        "Python SDK found; provider API and MCP authentication not tested"
+      ],
+      "full_acceptance": "incomplete"
+    },
+    {
+      "id": "openai-agents-sdk",
+      "label": "OpenAI Agents SDK",
+      "local_inventory": "not_detected_in_scanned_locations",
+      "observations": [],
+      "full_acceptance": "incomplete"
+    },
+    {
+      "id": "anthropic-messages",
+      "label": "Anthropic Messages API MCP connector",
+      "local_inventory": "not_detected_in_scanned_locations",
+      "observations": [],
+      "full_acceptance": "incomplete"
+    },
+    {
+      "id": "langchain-langgraph",
+      "label": "LangChain / LangGraph",
+      "local_inventory": "not_detected_in_scanned_locations",
+      "observations": [],
+      "full_acceptance": "incomplete"
+    },
+    {
+      "id": "n8n",
+      "label": "n8n",
+      "local_inventory": "not_detected_in_scanned_locations",
+      "observations": [],
+      "full_acceptance": "incomplete"
+    },
+    {
+      "id": "dify",
+      "label": "Dify",
+      "local_inventory": "not_detected_in_scanned_locations",
+      "observations": [],
+      "full_acceptance": "incomplete"
+    },
+    {
+      "id": "github-copilot-cloud",
+      "label": "GitHub Copilot cloud coding agent / code review",
+      "local_inventory": "hosted_account_required",
+      "observations": [],
+      "full_acceptance": "incomplete"
+    }
+  ]
+}
