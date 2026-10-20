@@ -2,6 +2,14 @@
   "as_of": "2026-10-21 JST",
   "environment": "DEV",
   "backend_revision": "37284f6c8f17175984ded533bea471693443aada",
+  "backend_revision_scope": "Backend source associated with the unchanged 1.1.0 distribution; not the current DEV runtime.",
+  "runtime_backend_revision": "94ae94f548b0d95991b9a21aa7cb7ec057c8166c",
+  "runtime_deployment": {
+    "purpose": "Diagnostic instrumentation; the CFP runtime fix has not been applied.",
+    "backend_deployment": "success",
+    "kong_deployment": "success",
+    "attested_at_utc": "2026-10-20T19:09:28.244578+00:00"
+  },
   "plugin_version": "1.1.0",
   "product_kits": 29,
   "fully_accepted_product_kits": 0,
@@ -14,7 +22,8 @@
       "observations": [
         "desktop: authenticated organization and EMS site reads succeeded",
         "desktop: missing write permission rejected an EMS create-site dry-run; no confirmation token or mutation",
-        "desktop: all five CFP workbook downloads returned upstream HTTP 500",
+        "desktop on backend 37284f6: all five CFP workbook downloads returned upstream HTTP 500",
+        "desktop on diagnostic backend 94ae94f: only master was retested and returned HTTP 500; the other four types have not been retested on this revision",
         "CLI: isolated native load recognized plugin 1.1.0, seven enabled skills and one MCP configuration; network disabled"
       ],
       "full_acceptance": "incomplete",
@@ -222,10 +231,25 @@
     {
       "id": "goose",
       "label": "goose",
-      "local_inventory": "not_detected_in_scanned_locations",
-      "observations": [],
+      "local_inventory": "installed_for_isolated_validation",
+      "observations": [
+        "official goose CLI archive matched its published SHA-256 and was extracted in a task-only directory; original release kit bytes were unchanged",
+        "native skills list recognized all seven EcoNiPass skills; info --verbose read back the Streamable HTTP endpoint and mcp:read scope in isolated configuration",
+        "network, existing home file contents and Keychain access were denied during native checks",
+        "plugin identity/version recognition, provider authentication, MCP OAuth, transport initialization, live MCP connection and model execution were not performed"
+      ],
       "full_acceptance": "incomplete",
-      "validation_stage": "inventory_only"
+      "validation_stage": "native_config_and_skills_load_pass",
+      "client_version": "1.55.0",
+      "isolated_config_and_skills_load": {
+        "kit_version": "1.1.0",
+        "recognized_skills": 7,
+        "mcp_configurations_read_back": 1,
+        "plugin_identity_or_version_natively_recognized": false,
+        "transport_runtime_validated": false,
+        "network_disabled": true,
+        "authenticated_remote_connection": false
+      }
     },
     {
       "id": "amazon-q-cli",
@@ -348,13 +372,46 @@
     "new_mcp_oauth_grants_completed": 0,
     "existing_codex_desktop_reads_passed": 2,
     "existing_codex_write_scope_refusals_observed": 1,
-    "existing_codex_cfp_download_failures": 5
+    "existing_codex_cfp_download_failures": 5,
+    "native_config_and_skills_load_pass": 1
+  },
+  "cfp_download_observations": {
+    "status": "HTTP 500 persists; runtime fix pending",
+    "historical": {
+      "backend_revision": "37284f6c8f17175984ded533bea471693443aada",
+      "failed_workbook_types": [
+        "master",
+        "base_unit",
+        "activity_amount",
+        "pcf_certification_period",
+        "aist_idea"
+      ],
+      "http_status": 500,
+      "validation_count_key": "existing_codex_cfp_download_failures",
+      "count_scope": "Five distinct workbook types failed on the previous runtime; not five retests on the diagnostic runtime."
+    },
+    "diagnostic_runtime_retest": {
+      "backend_revision": "94ae94f548b0d95991b9a21aa7cb7ec057c8166c",
+      "observed_at_utc": "2026-10-20T19:11:50.233Z",
+      "workbook_type": "master",
+      "http_status": 500,
+      "new_oauth_grant": false,
+      "not_retested_workbook_types": [
+        "base_unit",
+        "activity_amount",
+        "pcf_certification_period",
+        "aist_idea"
+      ]
+    },
+    "runtime_fix_applied": false,
+    "file_download_and_upload_acceptance_complete": false
   },
   "validation_stages": {
     "native_package_load_pass": "Client-native plugin or extension loading recognized version 1.1.0, seven skills and one MCP definition with network disabled. This does not establish an authenticated connection.",
     "native_sdk_offline_compatibility_pass": "Published sample files were unchanged; native SDK construction or serialization used synthetic in-memory fixtures and network denial. No real provider, model or remote MCP request.",
     "native_cli_mcp_config_only_pass": "Cursor native CLI parsed and saved an MCP definition in an isolated profile; GUI/plugin/skills runtime and agent consumption of that setting remain unverified.",
-    "inventory_only": "Availability observations only; no client or SDK runtime validation completed."
+    "inventory_only": "Availability observations only; no client or SDK runtime validation completed.",
+    "native_config_and_skills_load_pass": "The native client discovered seven EcoNiPass skills and read back MCP configuration with network disabled. Plugin identity/version, transport runtime, authentication and live MCP calls were not established."
   },
   "isolated_validation_boundaries": {
     "existing_settings_or_credentials_modified": false,
@@ -364,5 +421,45 @@
     "real_provider_model_requests": false,
     "authenticated_remote_mcp_calls_from_isolated_clients": false,
     "new_codex_and_claude_mcp_oauth": "Codex CLI: user deferred before consent. Claude Code: pending flow stopped without consent. Neither obtained access or refresh tokens."
+  },
+  "catalog_observation_gate": {
+    "status": "pending_actual_authenticated_catalog_comparison",
+    "registered_source_maximum": 243,
+    "conditionally_registered_statutory_review_tools": 2,
+    "actual_live_statutory_review_flags_verified": false,
+    "deployment_time_readiness": {
+      "backend_revision": "37284f6c8f17175984ded533bea471693443aada",
+      "observed_at_utc": "2026-10-20T11:45:07.6894015Z",
+      "ready": true,
+      "published_tools": 241,
+      "scope": "Historical readiness metadata from a completed DEV deployment; not the current authenticated MCP catalog."
+    },
+    "connection_metadata": {
+      "source": "Tool metadata exposed to the existing Codex desktop connection",
+      "recorded_at_utc": "2026-10-20T19:15:50.630Z",
+      "observed_after_diagnostic_runtime_deployment": true,
+      "deployed_backend_revision": "94ae94f548b0d95991b9a21aa7cb7ec057c8166c",
+      "previous_observation_recorded_at_utc": "2026-10-20T18:09:40.950334+00:00",
+      "tool_names_match_previous_observation": true,
+      "observed_tools": 183,
+      "observed_ems_tools": 109,
+      "source_ems_tools": 167,
+      "unobserved_source_ems_tools": 58,
+      "unobserved_ems_read_tools": 25,
+      "unobserved_ems_write_tools": 33,
+      "is_live_mcp_tools_list": false
+    },
+    "diagnostic_deployment_canary": {
+      "backend_revision": "94ae94f548b0d95991b9a21aa7cb7ec057c8166c",
+      "observed_at_utc": "2026-10-20T18:58:28Z",
+      "http_status": 200,
+      "published_tools": 241,
+      "scope": "Disposable deployment canary readiness only; not a complete authenticated tools/list comparison."
+    },
+    "live_authenticated_tools_list_observed": false,
+    "cause": "Unresolved; deployment readiness, the diagnostic canary and client metadata recorded before and after that deployment are separate observations. Cache, deployment or access causes have not been established.",
+    "next_gate": "Use a supported rediscovery path for the existing connection, then compare complete authenticated tools/list pagination against exact deployed source and client-exposed metadata. Functional acceptance remains separate. ChatGPT documents Refresh, metadata review and retesting in a new conversation for directly connected custom MCP servers; applicability to the current Codex desktop connection is unverified; Refresh has not been performed.",
+    "new_oauth_grant_performed_for_this_observation": false,
+    "full_platform_acceptance_established": false
   }
 }
