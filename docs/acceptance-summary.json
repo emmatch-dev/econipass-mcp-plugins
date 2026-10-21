@@ -3,12 +3,19 @@
   "environment": "DEV",
   "backend_revision": "37284f6c8f17175984ded533bea471693443aada",
   "backend_revision_scope": "Backend source associated with the unchanged 1.1.0 distribution; not the current DEV runtime.",
-  "runtime_backend_revision": "94ae94f548b0d95991b9a21aa7cb7ec057c8166c",
+  "runtime_backend_revision": "fde1cffb48d9c4be297c622087335df5177dbd3d",
   "runtime_deployment": {
-    "purpose": "Diagnostic instrumentation; the CFP runtime fix has not been applied.",
+    "purpose": "CFP runtime temporary storage permissions and non-Japanese AIST error handling corrected; separate from the unchanged client distribution snapshot.",
     "backend_deployment": "success",
+    "backend_manual_run": 39525015891,
     "kong_deployment": "success",
-    "attested_at_utc": "2026-10-20T19:09:28.244578+00:00"
+    "kong_run": 39526711825,
+    "normal_backend_public_verification_and_finalization": "success",
+    "kong_full_and_SSE_public_verification_and_finalization": "success",
+    "attested_at_utc": "2026-10-21T01:25:14.333877+00:00",
+    "backend_image_digest": "sha256:ef130f3da466ee388191b4ea98dc2dec8344ec5dc7b1683bd11e7f57e3c0f7ac",
+    "mcp_image_digest": "sha256:d39bc4bb5c5ca0987bd92518902d128f17d4e1fc06222017d1574a810333dd9a",
+    "embedding_image_digest": "sha256:0388ca8f5dd6409510cdd9163be41805b7e84ae7e6f56ef2dbe41eaf3e27e195"
   },
   "plugin_version": "1.1.0",
   "product_kits": 29,
@@ -24,7 +31,8 @@
         "desktop: missing write permission rejected an EMS create-site dry-run; no confirmation token or mutation",
         "desktop on backend 37284f6: all five CFP workbook downloads returned upstream HTTP 500",
         "desktop on diagnostic backend 94ae94f: only master was retested and returned HTTP 500; the other four types have not been retested on this revision",
-        "CLI: isolated native load recognized plugin 1.1.0, seven enabled skills and one MCP configuration; network disabled"
+        "CLI: isolated native load recognized plugin 1.1.0, seven enabled skills and one MCP configuration; network disabled",
+        "On repaired DEV backend fde1cffb after successful normal backend39525015891 and Kong39526711825 verification/finalization, the existing desktop connector returned all five CFP workbook categories. Typed file metadata, MIME, byte length, ZIP local/central headers and required OPC parts matched; cells/CRC/XML, uploads and writes were not tested. No new OAuth grant or private file evidence was saved."
       ],
       "full_acceptance": "incomplete",
       "validation_stage": "native_package_load_pass",
@@ -81,10 +89,37 @@
       "label": "Claude hosted (Web / Desktop / mobile / Cowork)",
       "local_inventory": "installed_local_client",
       "observations": [
-        "desktop application observed; authenticated MCP workflow not tested"
+        "Existing authenticated EcoNiPass connector returned one static get_fields_spec response: freon/jp, three forms, field counts 4/1/2; actual tool card observed in Claude Web.",
+        "Claude Web existing connector displayed 241 tools (14 interactive, 119 read-only, 108 write/delete), including titles matching all 58 EMS operations absent from current Codex metadata.",
+        "Existing tool-list update completed without a new OAuth prompt or permission-control changes; the three categories returned, totaling 241 tools.",
+        "For the preceding static get_fields_spec observation, execution origin between native and Web is unestablished; it predates the subsequent seven-skill import. No separate Web re-execution of that static request was established.",
+        "A new Web prompt executed estimate_ems_management_cost once using synthetic zero UUIDs; the expanded actual tool card returned HTTP404/EEMS40460 for the absent target. No successful business data, retry, mutation or cross-tenant fixture acceptance was established.",
+        "Public v1.1.0 individual skill ZIPs were imported into Claude Web. My Skills displayed seven custom names and each detail page showed enabled. All seven release digests and nineteen public source files matched independently. Claude internal revision v1 is separate from public release1.1.0.",
+        "A new /cfp-input explanation-only prompt completed. Provider activity displayed the cfp-input skill load and workbooks.md reference read. The response covered five workbook categories, scopes, replacement preservation, preview/apply/verify and no automatic mutation retry. No MCP calls, business data, generated files, new connection or authorization were used; the other six skills were not model-executed. Web observations do not establish Desktop/mobile/Cowork acceptance."
       ],
       "full_acceptance": "incomplete",
-      "validation_stage": "inventory_only"
+      "validation_stage": "hosted_skill_import_pass",
+      "public_kit_loaded": true,
+      "seven_skills_recognized": true,
+      "hosted_skill_import": {
+        "kit_version": "1.1.0",
+        "recognized_skills": 7,
+        "enabled_skills_observed": 7,
+        "public_source_files_verified": 19,
+        "claude_internal_revision": "v1",
+        "new_mcp_definition_added": false,
+        "new_mcp_oauth_grant": false,
+        "model_activation_observed_skills": [
+          "cfp-input"
+        ],
+        "reference_read_observed": [
+          "workbooks.md"
+        ],
+        "business_mcp_calls_in_skill_activation_test": 0,
+        "business_data_used_in_skill_activation_test": false,
+        "full_workflow_accepted": false,
+        "web_only": true
+      }
     },
     {
       "id": "querypie-aip",
@@ -117,10 +152,29 @@
     {
       "id": "vscode-copilot",
       "label": "GitHub Copilot in VS Code Desktop",
-      "local_inventory": "not_detected_in_scanned_locations",
-      "observations": [],
+      "local_inventory": "official_stable_distribution_placed_in_task_directory_for_cli_validation",
+      "observations": [
+        "Official Microsoft stable macOS distribution matched its update API SHA-256 and passed code signature/notarization verification; no global installation or PATH modification.",
+        "Native --add-mcp with dedicated user-data/extensions directories exited0 and reported the econipass name. The native-written configuration file matched the published HTTP transport and DEV URL; stdout did not expose that URL/type.",
+        "Network, Keychain, existing home and browser opening were denied; extensions were empty. No plugin/seven-skill discovery, Copilot entitlement, editor UI, authenticated transport or provider/model request was established."
+      ],
       "full_acceptance": "incomplete",
-      "validation_stage": "inventory_only"
+      "validation_stage": "native_cli_mcp_config_only_pass",
+      "client_version": "1.142.0",
+      "isolated_native_cli_config": {
+        "plugin_kit_version": "1.1.0",
+        "native_parser_exit_code": 0,
+        "saved_mcp_definitions": 1,
+        "saved_transport": "http",
+        "saved_endpoint_matches_public_kit": true,
+        "native_stdout_URL_displayed": false,
+        "network_disabled": true,
+        "shared_HOME_CODEX_HOME_overridden": false,
+        "existing_settings_or_credentials_changed": false,
+        "skills_recognized": 0,
+        "authenticated_remote_connection": false,
+        "editor_or_Copilot_UI_observed": false
+      }
     },
     {
       "id": "copilot-studio",
@@ -215,10 +269,15 @@
     {
       "id": "jetbrains-junie",
       "label": "JetBrains Junie",
-      "local_inventory": "not_detected_in_scanned_locations",
-      "observations": [],
+      "local_inventory": "official_stable_cli_placed_in_task_directory_for_isolated_validation",
+      "observations": [
+        "Official stable archive matched update-info SHA and release asset digest; code signature verification succeeded. Public kit files were copied unchanged into a dedicated workspace.",
+        "Native version/help and ACP initialize succeeded with network, Keychain, existing user data and outside writes denied; default config/skills/MCP discovery was disabled.",
+        "ACP session/new returned authentication-required before skill/MCP recognition. No new authentication, terms acceptance, model prompt or business write. This bootstrap-only result adds zero partially verified kits and zero full acceptance."
+      ],
       "full_acceptance": "incomplete",
-      "validation_stage": "inventory_only"
+      "validation_stage": "native_bootstrap_auth_blocked",
+      "client_version": "3659.7"
     },
     {
       "id": "zed",
@@ -262,18 +321,50 @@
     {
       "id": "cline",
       "label": "Cline",
-      "local_inventory": "not_detected_in_scanned_locations",
-      "observations": [],
+      "local_inventory": "installed_for_isolated_validation",
+      "observations": [
+        "Official native Cline CLI config skills --json recognized all seven published skills; skill bodies matched the public kit byte for byte.",
+        "config mcp --json returned the econipass name, streamableHttp type, enabled state and isolated config path. URL and autoApprove were not exposed by that output; saved file bytes matched the public kit.",
+        "Network, Keychain and browser opening were denied; no provider/model/MCP requests or OAuth grants. VS Code extension UI and authenticated transport were not tested."
+      ],
       "full_acceptance": "incomplete",
-      "validation_stage": "inventory_only"
+      "validation_stage": "native_config_and_skills_load_pass",
+      "client_version": "3.0.73",
+      "isolated_config_and_skills_load": {
+        "kit_version": "1.1.0",
+        "recognized_skills": 7,
+        "mcp_configurations_read_back": 1,
+        "network_disabled": true,
+        "authenticated_remote_connection": false,
+        "plugin_identity_or_version_natively_recognized": false,
+        "transport_runtime_validated": false,
+        "cli_only": true
+      }
     },
     {
       "id": "roo-code",
       "label": "Roo Code",
-      "local_inventory": "not_detected_in_scanned_locations",
-      "observations": [],
+      "local_inventory": "official_legacy_prerelease_cli_installed_for_isolated_validation",
+      "observations": [
+        "Official Roo CLI pre-release0.1.17 list commands --workspace --format json recognized seven project skill names, descriptions and .roo/skills paths; the public skill files matched byte for byte.",
+        "Only metadata recognition was established. Skill-body activation/following, MCP configuration readback, transport, VS Code extension UI, authentication and model requests were not tested.",
+        "Official repository archived since2026-05-15; result is limited to this archived pre-release CLI and does not imply current vendor support.",
+        "Network, Keychain and existing home were denied. The optional disabled bridge was not installed or executed; no OAuth grant or business write."
+      ],
       "full_acceptance": "incomplete",
-      "validation_stage": "inventory_only"
+      "validation_stage": "native_skill_metadata_only_pass",
+      "client_version": "0.1.17",
+      "isolated_skill_metadata_load": {
+        "kit_version": "1.1.0",
+        "recognized_skill_metadata": 7,
+        "skill_body_activation_tested": false,
+        "native_mcp_config_readback": false,
+        "authenticated_remote_connection": false,
+        "network_disabled": true,
+        "cli_only": true,
+        "prerelease": true,
+        "repository_archived": true
+      }
     },
     {
       "id": "openai-responses",
@@ -368,15 +459,23 @@
   "validation_counts": {
     "native_package_load_pass": 4,
     "native_sdk_offline_compatibility_pass": 4,
-    "native_cli_mcp_config_only_pass": 1,
+    "native_cli_mcp_config_only_pass": 2,
     "new_mcp_oauth_grants_completed": 0,
     "existing_codex_desktop_reads_passed": 2,
     "existing_codex_write_scope_refusals_observed": 1,
     "existing_codex_cfp_download_failures": 5,
-    "native_config_and_skills_load_pass": 1
+    "native_config_and_skills_load_pass": 2,
+    "existing_connected_claude_static_reads_observed": 1,
+    "partially_verified_product_kits": 14,
+    "existing_connected_claude_missing_target_rejections_observed": 1,
+    "native_skill_metadata_only_pass": 1,
+    "hosted_skill_import_pass": 1,
+    "hosted_cfp_skill_activation_observed": 1,
+    "native_bootstrap_auth_blocked": 1,
+    "existing_codex_cfp_downloads_passed": 5
   },
   "cfp_download_observations": {
-    "status": "HTTP 500 persists; runtime fix pending",
+    "status": "All five authenticated workbook downloads succeeded after the DEV runtime repair; previous upstream500 did not recur in these requests.",
     "historical": {
       "backend_revision": "37284f6c8f17175984ded533bea471693443aada",
       "failed_workbook_types": [
@@ -403,15 +502,47 @@
         "aist_idea"
       ]
     },
-    "runtime_fix_applied": false,
-    "file_download_and_upload_acceptance_complete": false
+    "runtime_fix_applied": true,
+    "file_download_and_upload_acceptance_complete": false,
+    "repaired_runtime_acceptance": {
+      "backend_revision": "fde1cffb48d9c4be297c622087335df5177dbd3d",
+      "backend_manual_run": 39525015891,
+      "kong_run": 39526711825,
+      "started_at_utc": "2026-10-21T01:25:54.692Z",
+      "completed_at_utc": "2026-10-21T01:26:36.954Z",
+      "workbook_types": [
+        "master",
+        "base_unit",
+        "activity_amount",
+        "pcf_certification_period",
+        "aist_idea"
+      ],
+      "successful_distinct_categories": 5,
+      "authenticated_existing_organization": true,
+      "profile_language": "ja",
+      "sequential_calls": true,
+      "base_unit_and_activity_amount_month": "2026-10",
+      "UTC_offset_hours": 9,
+      "new_oauth_grants": 0,
+      "business_writes": 0,
+      "upload_previews_or_applies": 0,
+      "typed_embedded_resource_MIME_and_size_verified": true,
+      "ZIP_local_central_headers_and_required_OPC_parts_verified": true,
+      "CRC_body_XML_or_cells_verified": false,
+      "raw_HTTP_transport_status_observed": false,
+      "workbook_body_digest_customer_identifiers_or_filenames_saved": false,
+      "not_full_download_and_upload_acceptance": true
+    }
   },
   "validation_stages": {
     "native_package_load_pass": "Client-native plugin or extension loading recognized version 1.1.0, seven skills and one MCP definition with network disabled. This does not establish an authenticated connection.",
     "native_sdk_offline_compatibility_pass": "Published sample files were unchanged; native SDK construction or serialization used synthetic in-memory fixtures and network denial. No real provider, model or remote MCP request.",
-    "native_cli_mcp_config_only_pass": "Cursor native CLI parsed and saved an MCP definition in an isolated profile; GUI/plugin/skills runtime and agent consumption of that setting remain unverified.",
+    "native_cli_mcp_config_only_pass": "Cursor and VS Code native CLIs parsed and saved an MCP definition in isolated profiles; editor UI, plugin/skills runtime, Copilot policy and authenticated transport remain unverified.",
     "inventory_only": "Availability observations only; no client or SDK runtime validation completed.",
-    "native_config_and_skills_load_pass": "The native client discovered seven EcoNiPass skills and read back MCP configuration with network disabled. Plugin identity/version, transport runtime, authentication and live MCP calls were not established."
+    "native_config_and_skills_load_pass": "The native client discovered seven EcoNiPass skills and read back MCP configuration with network disabled. Plugin identity/version, transport runtime, authentication and live MCP calls were not established.",
+    "native_skill_metadata_only_pass": "An official native CLI listed the seven public skill names, descriptions and project paths in an isolated network-denied process. Skill-body activation/following, MCP configuration and authenticated transport remain unverified; CLI observations are not VS Code extension acceptance.",
+    "hosted_skill_import_pass": "The hosted Web client imported and enabled seven public v1.1.0 skills. A single cfp-input explanation-only activation and reference read were observed separately; this is not native plugin/MCP-definition loading, full workflow acceptance, or acceptance on Desktop/mobile/Cowork.",
+    "native_bootstrap_auth_blocked": "The native client starts and initializes its protocol, but authentication blocks session creation before public skill/MCP recognition. This does not count as partial kit or full platform acceptance."
   },
   "isolated_validation_boundaries": {
     "existing_settings_or_credentials_modified": false,
@@ -420,7 +551,8 @@
     "pat_issued_or_enabled": false,
     "real_provider_model_requests": false,
     "authenticated_remote_mcp_calls_from_isolated_clients": false,
-    "new_codex_and_claude_mcp_oauth": "Codex CLI: user deferred before consent. Claude Code: pending flow stopped without consent. Neither obtained access or refresh tokens."
+    "new_codex_and_claude_mcp_oauth": "Codex CLI: user deferred before consent. Claude Code: pending flow stopped without consent. Neither obtained access or refresh tokens.",
+    "scope": "Isolated CLI/SDK cases only. Claude Web imported seven skills and made one explanation-only provider-model request, as recorded separately; it used no new MCP grant."
   },
   "catalog_observation_gate": {
     "status": "pending_actual_authenticated_catalog_comparison",
@@ -458,8 +590,23 @@
     },
     "live_authenticated_tools_list_observed": false,
     "cause": "Unresolved; deployment readiness, the diagnostic canary and client metadata recorded before and after that deployment are separate observations. Cache, deployment or access causes have not been established.",
-    "next_gate": "Use a supported rediscovery path for the existing connection, then compare complete authenticated tools/list pagination against exact deployed source and client-exposed metadata. Functional acceptance remains separate. ChatGPT documents Refresh, metadata review and retesting in a new conversation for directly connected custom MCP servers; applicability to the current Codex desktop connection is unverified; Refresh has not been performed.",
+    "next_gate": "Claude Web existing tool-list refresh completed and displayed 241 titles, including all EMS58 absent from Codex metadata. Verify complete authenticated tools/list pagination and exact deployed source, then independently investigate existing Codex metadata rediscovery; functional operation acceptance is separate. ChatGPT deferred; new OAuth remains on hold.",
     "new_oauth_grant_performed_for_this_observation": false,
-    "full_platform_acceptance_established": false
+    "full_platform_acceptance_established": false,
+    "claude_web_existing_connector": {
+      "observed_tools": 241,
+      "interactive_tools": 14,
+      "readonly_tools": 119,
+      "write_delete_tools": 108,
+      "ems_titles_missing_from_codex_metadata_all_visible": 58,
+      "ems_missing_read_titles_visible": 25,
+      "ems_missing_write_titles_visible": 33,
+      "existing_tool_list_refresh_completed": true,
+      "new_oauth_grant": false,
+      "permissions_changed": false,
+      "raw_authenticated_tools_list_pagination_observed": false,
+      "exact_live_source_sha_readback_at_ui_time": false,
+      "missing_metadata_ems_operations_called_with_synthetic_absent_target": 1
+    }
   }
 }
