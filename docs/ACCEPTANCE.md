@@ -13,7 +13,9 @@
 | ソース束縛 | 対応表の14ソースhashを実ファイルと照合。欠落・追加・重複・escape・symlink・byte不一致を拒否 |
 | 既存plugins suite | 55 passed。実登録、source binding、再現可能ZIP、29kit、4API sampleのオフライン起動を確認 |
 | skills／lint | 7スキルの検証、black／isort／flake8、diff check成功 |
-| 最終生成物 | 共通1＋スキル7＋製品キット29＝37 ZIPを予定。ローカルのMITレビュー候補37件はhash／CRC照合済み。正式配布物はライセンス判断後に確定。旧1.1.0のassetは変更なし |
+| 現在の生成物 | 共通1＋スキル7＋製品キット29＝37 ZIP。LICENSEを同梱しない候補を新規生成し、hash／CRC・14ソース・公開原本とのbyte一致を確認。旧1.1.0のassetは変更なし |
+| ライセンス | 適用は利用者指示で保留。MITレビュー候補は未承認・未公開の履歴として保持し、配布対象へ採用しない |
+| DEV反映の承認 | 最終監査情報1ファイルと文書2件、通常DEV配備は利用者承認済み。最終CI・配備は未完了 |
 
 基点は`8c578bac1ac91bdd2ddf0561e200fb87b64c41c7`、実装ソースcommitは
 `9286735044fd4635e11c5022e677d7cc2b7f9691`です。監査メタデータを含む最終リリースcommit、CI、配備SHAは別に確定します。
@@ -42,11 +44,27 @@ UIで稼働SHAを読み戻しておらず、244件を特定sourceのraw `tools/l
 ## 29環境の受入範囲
 
 公開版としての1.2.0は**部分確認0／29、総合受入完了0／29**です。
-別に、未公開のレビュー候補では13製品の限定確認を行いました。6製品は最終候補で再実行し、
-7製品はZIPの全byte一致を条件に独立レビュー済みの試験を参照しています。
-[候補の記録](candidate-native-load-v1.2.0-20261025.json)にはnative package、metadata、設定、SDKの段階を区別しています。
-Codexの導入確認はLinux CLIだけで、Mac Desktop／IDEの受入へ転記していません。
-この候補のMIT案は承認前であり、認証済みremote MCP・業務書込みの受入も未実施です。
+現在のLICENSE非同梱候補では、13製品で限定的なローカル試験を新たに実行しました。
+**新規試験13、過去の成功の継承0、認証済み総合受入0**です。
+[今回の記録](candidate-native-load-v1.2.0-license-held-20261025.json)は元証跡hash、
+各ZIP、14ソースの束縛と、各製品の確認段階を区別しています。
+
+| 限定試験の段階 | 対象 |
+| --- | --- |
+| パッケージ／manifest／metadataの読み込み | Codex Linux CLI、Claude Code、GitHub Copilot CLI、Gemini CLIの4製品 |
+| CLIによるMCP設定の読み込みのみ | Cursor、VS Codeの2製品。Desktop／IDE操作・認証済み接続は未確認 |
+| 設定と7スキルの読み込み | Goose、Clineの2製品 |
+| スキルmetadataのみ | Roo Codeの1製品 |
+| 合成fixtureによるSDKのオフライン検証 | OpenAI Responses／Agents、Anthropic Messages、LangChain／LangGraphの4製品 |
+
+Codexの導入確認はLinux arm64 CLIだけで、Mac Desktop／IDEの受入へ転記していません。
+Claudeはmanifestのエラー・警告0でもdirectory検証にLICENSE_MISSINGのblocking errorが1件あります。
+認証済みremote MCP、モデル呼出し、新規OAuth、業務書込みはすべて0件です。
+
+以前の未公開MITレビュー候補にも13製品の限定確認がありましたが、これは
+[別の履歴](candidate-native-load-v1.2.0-20261025.json)です。MIT適用は利用者指示で保留しており、
+その候補や成功記録を今回の試験へ採用していません。現在候補は旧候補と比較してLICENSE
+45エントリの除去以外は全ZIPエントリがbyte一致することも確認しました。
 全29製品の生成・構造検証はパッケージ検証であり、その製品によるnative読み込みや実接続ではありません。
 各製品・surfaceの結果は[機械可読記録](acceptance-summary.json)へ個別に記録します。
 
@@ -86,7 +104,7 @@ raw HTTP transport statusは観測せず、実ファイルを受領した成功�
 | GitHub公開リポジトリ・Release | DEV 1.1.0公開済み。1.2.0は候補の更新・公開準備中 |
 | MCP公式Registry | DEV専用`io.github.emmatch-dev/econipass-dev`の`1.2.0-dev.1` manifest案を公式mcp-publisher 1.8.1で検証し、valid応答を確認。登録・公開は未実施 |
 | OpenAI公式ディレクトリ | 2026-10-25に認証済みポータルで確認。公開者の本人・法人確認が必要なため、ZIP下書きの作成前で停止。審査・掲載は未完了 |
-| Claudeディレクトリ | 2026-10-25に既存ログインのポータルで申請0件を確認。公開mainの1.1.0事前検査は7項目中6成功、LICENSE不足1件で停止。icon・privacy URLの警告は1.2.0候補へ対応し、CLI strict検証は警告0。ライセンス確定・公開後のポータル再検査・申請は未完了 |
+| Claudeディレクトリ | 2026-10-25に既存ログインのポータルで申請0件を確認。公開mainの1.1.0事前検査は7項目中6成功、LICENSE不足1件で停止。icon・privacy URLの警告は1.2.0候補へ対応し、現CLI 2.1.308の隔離manifest検証はエラー・警告0。ただしCLI内のdirectory検証はLICENSE_MISSINGでblocking error 1件。LICENSE適用は利用者指示で保留しているため、公式掲載は停止。新候補のポータル再検査・申請は未実施 |
 
 GitHub配布、MCP Registry登録、各社の審査承認は別の結果として記録します。
 DEV URLを本番URLとして申告せず、審査用秘密情報や認証情報を公開リポジトリへ保存しません。

@@ -9,6 +9,9 @@ EcoNiPassの排出量分析、EMS、CFP入力、削減対策、法定報告を�
 利用にはEcoNiPassアカウント、対象事業所の権限、必要なOAuth scopeが必要です。
 配布物は業務データや認証情報を含みません。
 
+ライセンスの適用は保留しています。1.2.0候補にはLICENSEを同梱せず、MIT等の利用許諾を
+追加していません。以前作成したMITレビュー候補は公開せず、Claude公式掲載はLICENSE条件で停止しています。
+
 ## ダウンロード
 
 [GitHub Releases](https://github.com/emmatch-dev/econipass-mcp-plugins/releases)から、
@@ -77,9 +80,16 @@ Claude Webの既存接続UIでは244ツール（interactive 15・参照119・更
 raw `tools/list`、正確な稼働SHA、各操作の機能受入とは別の観測です。
 
 **公開版としての1.2.0は部分確認0／総合完了0です。**
-未公開のレビュー候補では13製品の限定的な読み込み・metadata・設定・SDK確認を行いました。
-6製品を再実行し、7製品はZIP全byte一致を条件に検証済み試験を参照しています。
-これは認証済みremote MCPや業務操作の総合受入ではありません。
+現在のLICENSE非同梱候補では13製品で、限定的な読み込み・metadata・設定・SDK確認を新たに実行しました。
+13件すべて今回のZIPを使った試験で、以前の成功の継承は0件です。
+CodexはLinux CLI、Cursor／VS CodeはCLI設定、Rooはmetadata、4 SDKは合成オフライン試験に限ります。
+認証済みremote MCPや業務操作の総合受入は0／29です。
+以前のMITレビュー候補の13件は[別の履歴](docs/candidate-native-load-v1.2.0-20261025.json)として保持し、採用していません。
+現在候補の37 ZIPはhash・CRC・14ソースとの一致を確認済みです。
+最終監査差分と通常DEV配備は利用者承認済みで、CI・配備結果は未確定です。
+これらは認証済みremote MCPや業務操作の総合受入ではありません。
+[今回の限定試験記録](docs/candidate-native-load-v1.2.0-license-held-20261025.json)には、
+元証跡・ZIP・14ソースのhashと、各製品で実際に確認した段階を収録しています。
 10月21日の1.1.0に対する部分確認14／総合完了0は[履歴](docs/history/ACCEPTANCE-v1.1.0-20261021.md)へ保存し、
 新版の成功件数へ継承していません。新規MCP OAuthとChatGPTの受入は利用者の指示で保留中です。
 

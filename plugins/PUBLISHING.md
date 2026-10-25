@@ -9,12 +9,18 @@
 以下は非公開backendのrelease担当向け手順です。本公開リポジトリにはサーバー本体・
 builder・CIを含めません。利用者はGitHub Releasesの生成済みZIPと`release.json`を取得します。
 
+2026-10-25の利用者指示でライセンスの適用は保留しています。現在の候補はLICENSEを
+同梱せず、MIT等の利用許諾を追加しません。以前のMITレビュー候補37 ZIPは公開対象にせず、
+LICENSEを除いて新規生成・検証した配布物を使います。GitHub配布の更新と、LICENSEを
+必須とするClaude公式ディレクトリ掲載は分けて扱います。
+
 backendリポジトリは非公開である。プラグインだけを配布する公開リポジトリ
 [`emmatch-dev/econipass-mcp-plugins`](https://github.com/emmatch-dev/econipass-mcp-plugins)へ、
 プラグイン原本、marketplace定義、導入手順、生成済みZIPを公開する。
 backendリポジトリの可視性を変更したり、backend本体・履歴・設定をコピーしたりしない。
 
 1. 機能変更と監査記録を独立レビューし、対象SHAの必須CIを通す。
+   最終監査差分と通常DEV反映は承認済みですが、CI・配備成功を承認だけで代替しません。
 2. `develop`へマージ後、そのSHAのCI・image buildを確認する。
 3. 既存のDEV配備手順でbackend/MCPとKongの結果を確認する。
    一般task/activity追加とサーバー修正は、ZIPの更新だけでは接続先に反映されない。
@@ -31,6 +37,10 @@ Git marketplaceでは公開用リポジトリを登録する。公開ZIPとGit�
 含まれないことを確認する。tool対応表のソースpathとhashは追跡用メタデータとして維持する。
 
 ## 公開ディレクトリへの申請準備
+
+Claude公式ディレクトリはLICENSE不足で停止中です。ライセンス適用の保留中は
+MIT候補のアップロード、許諾の申告、掲載申請を進めません。ローカルCLIのmanifest検証はエラー・警告0でも、directory検証はLICENSE_MISSINGでblocking error 1件となる。manifest検証の成功は
+この掲載条件を満たしたことを意味しません。
 
 正式な公開者情報、公開対象環境、審査専用テナントを申請前に確定する。
 現在のDEV配布物を本番向けとして申請したり、既存利用者のアカウントを審査に流用したりしない。
