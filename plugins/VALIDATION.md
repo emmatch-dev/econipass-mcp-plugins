@@ -1,14 +1,39 @@
 # プラグイン配布物の検証記録
 
-下記のcommandとsource binding検査は、非公開backendの確定ソース上でrelease担当が実行した記録です。
-この公開リポジトリ単独でサーバー登録や内部suiteを実行する手順ではありません。
+この文書のcommand・source bindingは非公開backendで実行した検証の記録です。
+本公開リポジトリ単独の再実行手順ではありません。builder・tests・サーバー本体は含みません。
+生成済みZIPとrelease.json、公開原本とのbyte一致、実機受入はそれぞれ別に確認します。
+
+追加EMSソース275aのローカル影響2suiteは旧FastMCP3.4.7で496件成功しました。
+Linux3.4.10の影響検証は初回1,401成功／11失敗を保存し、72eの試験9行のみの厳密補正後、
+parity170件・文書42件が成功（skip0）しました。固定30監査116件・plugins55件（再現性3件）は
+初回成功群です。全1,412件の一括再成功とは扱いません。CI条件lint・actionlint・27workflow YAMLも成功しました。
+新sourceのtool-only E2E239件は237成功／想定対象不在拒否2／失敗0で、ローカル合成AS/APIと
+PostgreSQL／Redisのみです。認証58シナリオや本番imageは5eeの履歴へ分離します。
+これらは実SDKファイル保存・実接続受入・CI・DEV配備を証明しません。
+新候補の[限定native13試験](../docs/candidate-native-load-v1.2.0-cfp-ems-security-license-held-20261025.json)はsource275a／実行時HEAD72e／release6cc85へ束縛し、
+旧成功継承0・残り16環境未試験です。設定・スキル・SDK合成fixtureの確認はremote CFP／EMS取得や
+実ファイル保存・新runtime・認証済み業務受入を証明しません。
 
 ## 1.2.0 更新時の確認
 
-実施日: 2026-10-25。ブランチ基点は `8c578bac`、実装ソースcommitは `9286735044fd4635e11c5022e677d7cc2b7f9691`。最終の登録入力は
+実施日: 2026-10-25。ブランチ基点は `8c578bac`、実装ソースcommitは
+`275a21cda3b89ebadaf722b3eadff55e9e2e8775`。最終の登録入力は
 `econipass/tool-skill-map.json` の `source_files_sha256`、生成物は新規出力先の
 `release.json` の `source_binding` と `artifact_sha256` で識別する。
 この記録とオフライン試験は、DEV配備・公開や29環境での総合受入の証明ではない。
+
+既存Claude接続で実測したCFP・EMSのXLSX resource非対応に対し、CFP取得とEMS11 downloadで
+既定metadataと明示embeddedを分離した。
+同じfile metadataをJSON textとstructuredの両方へ返し、取得・本体同梱・受領保存を区別する。
+CFP/Workbook113件、関連境界207件と独立60ケースは旧3.4.7で確認した履歴であり、
+新3.4.10/slim・opentelemetry-api1.45.1でのsource5eeの全suiteは5,225 passed / 6 skipped、
+認証E2E58件・239tool（ok237 / 想定対象不在refused2 / failed0）が成功した。
+6skipはRUN_SMOKE_TESTS未指定の実接続smokeである。この結果は追加EMS修正275aの全体成功へ
+継承せず、275aのEMS・境界・schema・plugins・formal・byte SDK試験を別に確認する。
+4profileは新3.4.10のLinux実登録で239/252/254/固定30、map SHAは
+`ec2295c64c3781032cb684b367dab521d8781c4d037aae34d6b3da347c8701ad`。
+LICENSEはユーザー保留のまま適用せず、以前のMITレビュー候補を公開対象にしない。
 
 - 4profileの登録数は239 / 252 / 254 / PRD参照30。全254toolを7skillsへ割り当てる。
   4profileの実登録読取をpackagerと既存coverage suiteで共用する。
@@ -21,7 +46,8 @@
 - 7skillsへtask/activity/独自項目、最新EMS3操作、法定本人ブラウザー引継ぎと、
   CFP download成功とupload受入の区別を反映する。
 
-- `python -m pytest -q plugins/tests`: **55 passed**。
+- 旧3.4.7での `python -m pytest -q plugins/tests`: **55 passed**。
+  新3.4.10 source5eeの全suiteにも同じ55件が含まれる。追加EMS source275aの55件も上記Linux影響試験の初回成功群で再確認した。
   source byte bindingと境界拒否、実登録profile、allowlistのread-only属性、37 ZIP再現性、
   隠しmanifest、29kitと4API sampleのオフライン起動を既存suiteで確認した。
   ディレクトリ用PNGの構造・CRC・サイズ境界と、任意LICENSEの全37配布物への

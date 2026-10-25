@@ -2,6 +2,12 @@
 
 Read the section relevant to the user's task. Current exposed tool schemas determine fields, limits, and availability.
 
+## Receiving a downloaded file
+
+The eleven download/export read tools default to `delivery_mode="metadata"`. This returns the same small JSON in text and structured content: file name, MIME, byte size, SHA-256 and delivery state, without the file body or a resource URI. `delivery.server_fetched=true` means the server received the native response; `delivery.file_embedded=false` and `delivery.client_receipt_confirmed=false` mean no file is provided or confirmed received by the client. Do not prepare or claim a completed import from this metadata alone.
+
+Only a compatible host or SDK should explicitly request `delivery_mode="embedded"`, receive and save the actual embedded resource bytes, then compare size and SHA-256. Even then, `client_receipt_confirmed` remains false until client-side receipt is independently checked. Preserve the original file before editing. The opaque embedded URI is not a public link or a separately retrievable resource. Do not turn Base64 into model text, expose internal signed URLs, bypass authentication, or invent an EMS browser procedure that has not been verified. The delivery argument belongs at the top level of the MCP call; it is not a native query, body or upload parameter.
+
 ## File imports and recovery
 
 For readings, start with `download_ems_import_template`; use the schema's `profile` and `dataset` for electricity, FEMS/BEMS, or temperature input. `list_ems_jma_temperature_stations` resolves JMA station IDs for the `JMA_OBSDL` profile. File arguments are `file_name` and Base64 `content_base64`, not local paths or URLs.

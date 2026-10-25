@@ -63,6 +63,9 @@ claude plugin install econipass@econipass-plugins
 更新では現在状態を確認previewへ束縛し、競合を検出すると再取得を要求します。
 EMSではCSV取込トランザクション、保存報告の再生成、サイト有効開始日の繰上げと利用条件を補完しました。
 
+CFP取得は既定でファイル情報だけを返し、本人の入力画面で別途取得する手順を案内します。
+XLSXを受信できるhost／SDKは明示的にembeddedを選び、実ファイルを確認してから編集・投入します。
+
 ソース登録は通常239、共有法定帳票有効時252、法定レビューも有効な最大構成254、
 固定PRD参照タグ構成30ツールです。これらはソースのprofile別登録数で、実環境の公開数ではありません。
 [対応表](plugins/econipass/tool-skill-map.json)は14ソースファイルのbyte hashと4profileの登録を束縛します。
@@ -74,28 +77,19 @@ EMSではCSV取込トランザクション、保存報告の再生成、サイ�
 
 ## 配備・受入・公開の状況
 
-2026-10-25には既存ソース`8c578bac`のbackend／Kong配備が成功しました。
-これは1.2.0候補の新8ツール・不具合修正を配備した結果ではありません。
-Claude Webの既存接続UIでは244ツール（interactive 15・参照119・更新110）を確認しましたが、
-raw `tools/list`、正確な稼働SHA、各操作の機能受入とは別の観測です。
+実装ソース`275a21cda`で、CFPとEMS11操作の既定metadata／明示embeddedをそろえました。
+サーバー取得・ファイル本体同梱・クライアント受領／保存を分離し、通常返却に本体は含めません。
+新候補のCI・DEV配備・公開は未完了です。旧5eeの13限定試験やLinux結果は履歴として保持します。
+新しい37 ZIP・999エントリは、現公開原本と275a固定builder／SDK入力からの再生成で一致しました。
 
-**公開版としての1.2.0は部分確認0／総合完了0です。**
-現在のLICENSE非同梱候補では13製品で、限定的な読み込み・metadata・設定・SDK確認を新たに実行しました。
-13件すべて今回のZIPを使った試験で、以前の成功の継承は0件です。
-CodexはLinux CLI、Cursor／VS CodeはCLI設定、Rooはmetadata、4 SDKは合成オフライン試験に限ります。
-認証済みremote MCPや業務操作の総合受入は0／29です。
-以前のMITレビュー候補の13件は[別の履歴](docs/candidate-native-load-v1.2.0-20261025.json)として保持し、採用していません。
-現在候補の37 ZIPはhash・CRC・14ソースとの一致を確認済みです。
-最終監査差分と通常DEV配備は利用者承認済みで、CI・配備結果は未確定です。
-これらは認証済みremote MCPや業務操作の総合受入ではありません。
-[今回の限定試験記録](docs/candidate-native-load-v1.2.0-license-held-20261025.json)には、
-元証跡・ZIP・14ソースのhashと、各製品で実際に確認した段階を収録しています。
-10月21日の1.1.0に対する部分確認14／総合完了0は[履歴](docs/history/ACCEPTANCE-v1.1.0-20261021.md)へ保存し、
-新版の成功件数へ継承していません。新規MCP OAuthとChatGPTの受入は利用者の指示で保留中です。
+**公開版の部分確認0／29、認証済み総合受入0／29です。**
+新候補で13環境の限定native試験を新規実行し、16環境は未試験です。過去の成功の継承は0件です。
+CodexはLinux CLI、Cursor／VS Codeは設定のみ、Rooはmetadata、4 SDKは合成fixtureの範囲です。
+[今回の限定試験記録](docs/candidate-native-load-v1.2.0-cfp-ems-security-license-held-20261025.json)で、元証跡・37 ZIP・14ソースの束縛を確認できます。
+remote MCP・新OAuth・実モデル・顧客業務操作は0で、新CFP／EMSファイル取得の実接続受入は含みません。
+実接続・実ファイル保存・専用fixtureでの投入や置換は別の受入として確認します。
+新規OAuth、ChatGPT受入、LICENSE適用の保留は維持します。
 
-CFPの以前の500は一時領域の権限修正後、10月21日の認証済み再試験で再発せず、5種類のExcel取得に成功しました。
-この結果は当時の`fde1cffb`での取得と基本構造確認であり、1.2.0の再試験・投入・置換・既存データ保持の完了を意味しません。
-
-[受入・公式掲載状況](docs/ACCEPTANCE.md)、[機械可読の受入記録](docs/acceptance-summary.json)、
-[配布物の検証](plugins/VALIDATION.md)、[公開手順](plugins/PUBLISHING.md)を参照してください。
-GitHub配布とOpenAI／Claude等の公式ディレクトリ審査・掲載は別の手続きです。
+[受入・公式掲載状況](docs/ACCEPTANCE.md)、[機械可読記録](docs/acceptance-summary.json)、
+[新候補のhash](docs/candidate-package-v1.2.0-cfp-ems-security-license-held-20261025.json)、[検証記録](plugins/VALIDATION.md)、
+[公開手順](plugins/PUBLISHING.md)を参照してください。

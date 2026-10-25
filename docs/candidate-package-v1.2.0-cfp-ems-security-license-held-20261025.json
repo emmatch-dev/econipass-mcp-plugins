@@ -1,0 +1,539 @@
+{
+  "schema_version": 1,
+  "phase": "cfp_ems_security_license_held_candidate",
+  "implementation_source_revision": "275a21cda3b89ebadaf722b3eadff55e9e2e8775",
+  "metadata_revision": "0a04e8ee6d1cdee7eb2f50f490d0190769a43cdb",
+  "version": "1.2.0",
+  "release_json_sha256": "6cc85e69298ea6c983ab8036f64681ed4223312c417f197728403ebec76f5647",
+  "source_binding": {
+    "source_base_commit": "8c578bac1ac91bdd2ddf0561e200fb87b64c41c7",
+    "tool_skill_map_sha256": "ec2295c64c3781032cb684b367dab521d8781c4d037aae34d6b3da347c8701ad",
+    "source_files_sha256": {
+      "services/mcp-server/src/econipass_mcp/server.py": "79e93bcbbaf291a657133fb12c90927504caa1e9a78ce3e8e7445959981bdf7f",
+      "services/mcp-server/src/econipass_mcp/request_identity.py": "df67efc7fc50f9fb1e69823b3c34a4d108a39415271a40c13b85a8d380309dd6",
+      "services/mcp-server/src/econipass_mcp/tool_metadata.py": "1ae38691c6c31fcb73e79b69540c50e15036d603b4a166ac3e48f87cce884ca4",
+      "services/mcp-server/src/econipass_mcp/tools/ems_catalog.py": "ad216864d5275827495cbffd8c5fa182e496eae6d6208b809abe09fd8688a01d",
+      "services/mcp-server/src/econipass_mcp/tools/ems_operations.py": "3dee467cdb92da8e8374f633a0feb2325c5d245a89190d3a67905bcb5dd10a3d",
+      "services/mcp-server/src/econipass_mcp/tools/cfp.py": "a3ca3637c492b17072fef6d8794b5b838f289ac97a61bd4376069b7fc668cf39",
+      "services/mcp-server/src/econipass_mcp/tools/audit.py": "38b5703e435061a5c054601502c4c04081b90b8b8e491c02263e45fa3f9fb017",
+      "services/mcp-server/src/econipass_mcp/tools/downloads.py": "407725d6d9c277e37bc30424bd3e1f81b5fb0c0471fbbe92e1e64708a82546dc",
+      "services/mcp-server/src/econipass_mcp/tools/measures.py": "db96a1d914e922dff4dd5b9d63334b9412db839c743dd22cc674544ad8a85d5f",
+      "services/mcp-server/src/econipass_mcp/tools/tasks.py": "cdfee11b7c73547f02c598e6419979140b302dbae5c45637ef5e7c6e4c11360f",
+      "services/mcp-server/src/econipass_mcp/tools/activities.py": "7002f3bc948f95fa2614d36ca755706fcfd1b3bd95cd87f4688ae245d152dd42",
+      "services/mcp-server/src/econipass_mcp/tools/statutory_reports_v2.py": "8220f68c38d148c8d93da06db6bb14046f5296126149a8c924ffc611d5fd7d2f",
+      "services/mcp-server/src/econipass_mcp/tools/statutory_paper.py": "57f98d5e9951a7d1db37b57ba9a90f4312327d01a57d541a3f14babacde312e0",
+      "services/mcp-server/src/econipass_mcp/data/ems_operations.json": "d504ea5cbd3cba493392b02586b38f518625a5e33d16c6eafd6fb088c028a827"
+    }
+  },
+  "skills": 7,
+  "product_kits": 29,
+  "archives": 37,
+  "total_zip_entries": 999,
+  "license_decision": "HELD_BY_USER",
+  "LICENSE_entries": 0,
+  "rights_grant_inferred": false,
+  "artifacts": {
+    "activity-input.skill.zip": {
+      "sha256": "4832bb779dce8ffb2cc8599724529f24d00821de75a85296be4c721af5bdf059",
+      "crc": "pass",
+      "entries": 3
+    },
+    "cfp-input.skill.zip": {
+      "sha256": "635d628db2afa4404bd69c2493c840620e1b2113e5cfb90202a879aac303c04d",
+      "crc": "pass",
+      "entries": 3
+    },
+    "econipass-amazon-q-cli.zip": {
+      "sha256": "0a71d114fc18d76cf73cfa30a1138b33439babf753e6ffce29055f9c7b3957da",
+      "crc": "pass",
+      "entries": 30
+    },
+    "econipass-anthropic-messages.zip": {
+      "sha256": "7630375714767b873a77fe22ebf0b02ee5cd81142bbc075c778f844b8c1124c7",
+      "crc": "pass",
+      "entries": 32
+    },
+    "econipass-chatgpt.zip": {
+      "sha256": "0a787649844d2f1ed6fea106cb265a47372d95b3988552d8d0b590d4e3114876",
+      "crc": "pass",
+      "entries": 39
+    },
+    "econipass-claude-code.zip": {
+      "sha256": "8c2ecc2e6b6c14e1e2c382d1af19d627c4bfecb82dc596224e93993517c28d41",
+      "crc": "pass",
+      "entries": 39
+    },
+    "econipass-claude-hosted.zip": {
+      "sha256": "e9edf342db5586a8b55fc3152243b984c4b4212254618d57fce3861af241d32a",
+      "crc": "pass",
+      "entries": 39
+    },
+    "econipass-cline.zip": {
+      "sha256": "b73a4bec4b3a38e9b1599581ad1be4f81aa6b32121a2b0b5ce48feb234087873",
+      "crc": "pass",
+      "entries": 30
+    },
+    "econipass-codex.zip": {
+      "sha256": "6a251be781c6a6dd2f2d5350198c502adad84ebc022fa8d791efe4d168a34e67",
+      "crc": "pass",
+      "entries": 40
+    },
+    "econipass-copilot-studio.zip": {
+      "sha256": "d737378b2a3c7729cc17481b75ed9631a8dc08f07a10803abfd601412a8de6cc",
+      "crc": "pass",
+      "entries": 29
+    },
+    "econipass-cursor-desktop.zip": {
+      "sha256": "c5df8dfe2f269b77ad90ee410f39d94a2f62f096f0e1c07a82f7c0609b4084ef",
+      "crc": "pass",
+      "entries": 40
+    },
+    "econipass-cursor-hosted.zip": {
+      "sha256": "21be9e45dd31280b70fed21b478441887ee43a044b524bd6eeaee8ca34d7a8a9",
+      "crc": "pass",
+      "entries": 30
+    },
+    "econipass-dify.zip": {
+      "sha256": "ce0535960e82ce417323c5466a729b83af3f9ff4e6fb1fcfcdad5f8ce48bdf91",
+      "crc": "pass",
+      "entries": 29
+    },
+    "econipass-gemini-cli.zip": {
+      "sha256": "4ba05525665deae1eb8563c4a2bcc05d033ddf7eca0869c66d03a6994fa0c6da",
+      "crc": "pass",
+      "entries": 40
+    },
+    "econipass-gemini-code-assist.zip": {
+      "sha256": "ff2c218989e8d925245ab1bf48b4ba2e2b0d0c25e5f14b58bf127be974687719",
+      "crc": "pass",
+      "entries": 30
+    },
+    "econipass-gemini-enterprise.zip": {
+      "sha256": "400927b9684e69b744aed44820afc97204b6a845874114f40530d25570f96713",
+      "crc": "pass",
+      "entries": 29
+    },
+    "econipass-github-copilot-cli.zip": {
+      "sha256": "6c98a5753abb63ec856fb9ba59c023afa8ed8b495801aa0f68190d873d45ddec",
+      "crc": "pass",
+      "entries": 40
+    },
+    "econipass-github-copilot-cloud.zip": {
+      "sha256": "ea8e7e109f1454df889ab464f1ad70b0fd0868c6604bfb6447d2ed04fb6a65e7",
+      "crc": "pass",
+      "entries": 30
+    },
+    "econipass-goose.zip": {
+      "sha256": "4fcc46ca8cf41154f44d10cd33c400ccda615f0feea8ba2d0f0127706083702f",
+      "crc": "pass",
+      "entries": 30
+    },
+    "econipass-jetbrains-junie.zip": {
+      "sha256": "9fad1151027b7c2ec700cebd2338f5fdd7de0e9df7be4b77c94e487bb7cf5248",
+      "crc": "pass",
+      "entries": 30
+    },
+    "econipass-langchain-langgraph.zip": {
+      "sha256": "e13efc84721f1f523d59999098b52aedf0ae35663e4f8ba7a558a92c2ff31702",
+      "crc": "pass",
+      "entries": 32
+    },
+    "econipass-m365-copilot.zip": {
+      "sha256": "66aa082a327c37302b332cab5cea6c57df6edbb814ef78dddb3715d6bfe41f84",
+      "crc": "pass",
+      "entries": 29
+    },
+    "econipass-n8n.zip": {
+      "sha256": "893170a018af3c11ecb8f89fff69550648c450b19d0814261429fc3ee3c56f19",
+      "crc": "pass",
+      "entries": 29
+    },
+    "econipass-openai-agents-sdk.zip": {
+      "sha256": "59150cbec3a60e45ad98cff98ff6e6356d5ee0b8cd6a7fe4c59b4f1fb9c5d409",
+      "crc": "pass",
+      "entries": 32
+    },
+    "econipass-openai-responses.zip": {
+      "sha256": "5e05ccf00455d4edeb0324eeb03165e7c54013ddb460ecef61f54519d1047a4e",
+      "crc": "pass",
+      "entries": 32
+    },
+    "econipass-perplexity.zip": {
+      "sha256": "75c3eab8b523028e0cf4b1d8175975d4823c6dd892ebe9de13352fe5c208986c",
+      "crc": "pass",
+      "entries": 29
+    },
+    "econipass-plugin.zip": {
+      "sha256": "0c5a114e93f553b518171ebb363e19b63ce114fee27d07300eea8fe9629261b4",
+      "crc": "pass",
+      "entries": 30
+    },
+    "econipass-querypie-aip.zip": {
+      "sha256": "45e3a7f8a3904fdd643da61db93a743755996cfa4f024f01056edf271298dcff",
+      "crc": "pass",
+      "entries": 29
+    },
+    "econipass-roo-code.zip": {
+      "sha256": "d3cb543634371f3e8f7af7926b385c18bc7e568bff3ab04a03b3fe0162c81d80",
+      "crc": "pass",
+      "entries": 31
+    },
+    "econipass-vscode-copilot.zip": {
+      "sha256": "fb4878872ecf9eeb5a34dd8327513d06ba6d9e1c6351942fb02d237e9e0c84ad",
+      "crc": "pass",
+      "entries": 40
+    },
+    "econipass-windsurf.zip": {
+      "sha256": "be55fc07acc1d4d6cf2e2fc2edc9f7cd438228168c534bc1da846d15b16fbaea",
+      "crc": "pass",
+      "entries": 30
+    },
+    "econipass-zed.zip": {
+      "sha256": "0f0cca95ba3b921fc138972fdb7aa282a964071f28e3a044505471552fa4f4ed",
+      "crc": "pass",
+      "entries": 30
+    },
+    "emissions-analysis.skill.zip": {
+      "sha256": "42853c3b6d7e4b8bc24f95a5e811db79e1a93afd964baf16c9690ad778a273fe",
+      "crc": "pass",
+      "entries": 2
+    },
+    "ems-operations.skill.zip": {
+      "sha256": "b7f7f7ec48fe9ed828a8aa160afb0f2f9fe7c010478dbec22d33defecd78d26c",
+      "crc": "pass",
+      "entries": 3
+    },
+    "measures-targets.skill.zip": {
+      "sha256": "30389a5620b853d6395691dbb5995034670540bcfce3bafad62dfdfe632590bd",
+      "crc": "pass",
+      "entries": 3
+    },
+    "setup.skill.zip": {
+      "sha256": "56527d1d834f20081ab6cc9205bcbe8db37333db60568876fe84a4e4685861dd",
+      "crc": "pass",
+      "entries": 2
+    },
+    "statutory-reports.skill.zip": {
+      "sha256": "1aed1c4c158b9ee35b79723786767d2d917cfaaccbbc4394f4a04b0260f9640d",
+      "crc": "pass",
+      "entries": 4
+    }
+  },
+  "packaging_source_hashes": {
+    "plugins/econipass/README.md": "d83161b7ab53edb40d11d1d39d56cd5837af94d7fe9e4a5648b8bb825a5e23ea",
+    "plugins/econipass/skills/ems-operations/SKILL.md": "fa811e27257a28988d3bad19d47703a902b631ea3fba6abe3d24f0b57f7ee7a3",
+    "plugins/econipass/skills/ems-operations/references/workflows.md": "5ce4ed314230239bae474ccc1c41a3900936e5d1a79589eb8d97f6606b856f2a",
+    "plugins/econipass/tool-skill-map.json": "ec2295c64c3781032cb684b367dab521d8781c4d037aae34d6b3da347c8701ad"
+  },
+  "native_candidate_trials": "fresh13_limited_stages_passed_old_results_inherited0",
+  "final_or_public_acceptance": 0,
+  "full_authenticated_platform_acceptance": 0,
+  "published": false,
+  "deployed": false,
+  "current_public_source_byte_gate": {
+    "status": "PASS_FRESH_CURRENT_PUBLIC_INPUTS_ALL37_ZIP_AND999_ENTRY_BYTE_GATE",
+    "evidence_sha256": "64305492beb225c850b4a7eaa0ef87407d3f84358a5c8d9e2275e172f0ccc629",
+    "current_uncommitted_public_packaging_inputs_compared": true,
+    "committed_public_834_matches_new_candidate_claimed": false,
+    "public_common_plugin_files_exact": 30,
+    "all_archive_hashes_and_entries_exact": true,
+    "archives": 37,
+    "entries": 999,
+    "LICENSE_entries": 0,
+    "source_binding": {
+      "source_base_commit": "8c578bac1ac91bdd2ddf0561e200fb87b64c41c7",
+      "tool_skill_map_sha256": "ec2295c64c3781032cb684b367dab521d8781c4d037aae34d6b3da347c8701ad",
+      "source_files_sha256": {
+        "services/mcp-server/src/econipass_mcp/server.py": "79e93bcbbaf291a657133fb12c90927504caa1e9a78ce3e8e7445959981bdf7f",
+        "services/mcp-server/src/econipass_mcp/request_identity.py": "df67efc7fc50f9fb1e69823b3c34a4d108a39415271a40c13b85a8d380309dd6",
+        "services/mcp-server/src/econipass_mcp/tool_metadata.py": "1ae38691c6c31fcb73e79b69540c50e15036d603b4a166ac3e48f87cce884ca4",
+        "services/mcp-server/src/econipass_mcp/tools/ems_catalog.py": "ad216864d5275827495cbffd8c5fa182e496eae6d6208b809abe09fd8688a01d",
+        "services/mcp-server/src/econipass_mcp/tools/ems_operations.py": "3dee467cdb92da8e8374f633a0feb2325c5d245a89190d3a67905bcb5dd10a3d",
+        "services/mcp-server/src/econipass_mcp/tools/cfp.py": "a3ca3637c492b17072fef6d8794b5b838f289ac97a61bd4376069b7fc668cf39",
+        "services/mcp-server/src/econipass_mcp/tools/audit.py": "38b5703e435061a5c054601502c4c04081b90b8b8e491c02263e45fa3f9fb017",
+        "services/mcp-server/src/econipass_mcp/tools/downloads.py": "407725d6d9c277e37bc30424bd3e1f81b5fb0c0471fbbe92e1e64708a82546dc",
+        "services/mcp-server/src/econipass_mcp/tools/measures.py": "db96a1d914e922dff4dd5b9d63334b9412db839c743dd22cc674544ad8a85d5f",
+        "services/mcp-server/src/econipass_mcp/tools/tasks.py": "cdfee11b7c73547f02c598e6419979140b302dbae5c45637ef5e7c6e4c11360f",
+        "services/mcp-server/src/econipass_mcp/tools/activities.py": "7002f3bc948f95fa2614d36ca755706fcfd1b3bd95cd87f4688ae245d152dd42",
+        "services/mcp-server/src/econipass_mcp/tools/statutory_reports_v2.py": "8220f68c38d148c8d93da06db6bb14046f5296126149a8c924ffc611d5fd7d2f",
+        "services/mcp-server/src/econipass_mcp/tools/statutory_paper.py": "57f98d5e9951a7d1db37b57ba9a90f4312327d01a57d541a3f14babacde312e0",
+        "services/mcp-server/src/econipass_mcp/data/ems_operations.json": "d504ea5cbd3cba493392b02586b38f518625a5e33d16c6eafd6fb088c028a827"
+      }
+    },
+    "pinned_generator_and_API_sample_revision": "275a21cda3b89ebadaf722b3eadff55e9e2e8775",
+    "public_common_metadata_revision": "0a04e8ee6d1cdee7eb2f50f490d0190769a43cdb",
+    "input_provenance": {
+      "public": {
+        "plugins/econipass/.mcp.json": "1043c85c0da00028db8c016b7011fbdade28a403305b5e0ae4e291ad2aa74d2d",
+        "plugins/econipass/gemini-extension.json": "c649bf71c5d33951b5dbda55b345d3cf6c2bb1b14beda7aa78e696615e0a604a",
+        "plugins/econipass/plugin.json": "a05b3333ee918b8ffddb808fb3b842cdf40fa78ddb237d191dfecc44aad848ba",
+        "plugins/econipass/README.md": "d83161b7ab53edb40d11d1d39d56cd5837af94d7fe9e4a5648b8bb825a5e23ea",
+        "plugins/econipass/tool-skill-map.json": "ec2295c64c3781032cb684b367dab521d8781c4d037aae34d6b3da347c8701ad",
+        "plugins/econipass/GEMINI.md": "bd720241608895f55364e9b8585466222ef9a667a2d8c1e0bd5f7ab7fb478721",
+        "plugins/econipass/mcp.json": "8400cc7e1116027ca474544bc918fd494035a4f459f5f7eabe550600a0adb9ac",
+        "plugins/econipass/.claude-plugin/plugin.json": "bb7207592a40efdfc473fd00e372be9655d755106aeb6edce18a9d288f90cd9c",
+        "plugins/econipass/skills/measures-targets/SKILL.md": "f2c5e4690871c8feb1a6855676c64323518b481abdb66523f8fd32581bc04387",
+        "plugins/econipass/skills/measures-targets/references/task-activity-rules.md": "d5f7591442ed6afb51f47a56a705bac91bd553f8008d89f159b7db06edcb5bfd",
+        "plugins/econipass/skills/measures-targets/agents/openai.yaml": "a6714d09c9bcd8d6ec933b7822cace9ed9d596ed38728fa40499096998afb0b2",
+        "plugins/econipass/skills/setup/SKILL.md": "67e2bbc6fbc1ca107529998718d2bb371fce7511fd869026f16d6e4ecfaebc2c",
+        "plugins/econipass/skills/setup/agents/openai.yaml": "b198095f0a5cadd891f3bf54c0cdb453303fbab6adf7c90beff08c34cec62be6",
+        "plugins/econipass/skills/cfp-input/SKILL.md": "28899e861bc64fd1c9faa8c637005771b75901ae3d709384c270b55073732251",
+        "plugins/econipass/skills/cfp-input/references/workbooks.md": "27c215d8cf0e1025fcd0655d067b752f80a9e7e53eeaca8fab1c46b6983cc62b",
+        "plugins/econipass/skills/cfp-input/agents/openai.yaml": "eafcd989b252d7699e39e860b92726ed7fdd90da6b385a37ff4b7f9becab77d2",
+        "plugins/econipass/skills/emissions-analysis/SKILL.md": "7600f72cf00670da96531db0bc1d2ab73d70f39510b2e4fcb528137ffcd0325d",
+        "plugins/econipass/skills/emissions-analysis/agents/openai.yaml": "a4300f9f5546448f87330c916560f366b3ab903256947826ae90fc101c26e27e",
+        "plugins/econipass/skills/activity-input/SKILL.md": "27a83e0230b3fdb6b2eef20b782469e268223a49ef5ac9e5bd6fc338b79ebfc9",
+        "plugins/econipass/skills/activity-input/references/record-rules.md": "20f9f554813076592e537968b52cba300c2118b51852421f4ceda760339173d3",
+        "plugins/econipass/skills/activity-input/agents/openai.yaml": "ae076d52b00ed951dca432ca99ef11c30ca48221afc8320348e26170354f0ee7",
+        "plugins/econipass/skills/ems-operations/SKILL.md": "fa811e27257a28988d3bad19d47703a902b631ea3fba6abe3d24f0b57f7ee7a3",
+        "plugins/econipass/skills/ems-operations/references/workflows.md": "5ce4ed314230239bae474ccc1c41a3900936e5d1a79589eb8d97f6606b856f2a",
+        "plugins/econipass/skills/ems-operations/agents/openai.yaml": "1a215860957e7ec72e02166b67c4cea6d4f507848459151b3bc92662c79c9877",
+        "plugins/econipass/skills/statutory-reports/SKILL.md": "e981804a69f4607d3db58daf359c86e86dcfa9df07c5d923c52239df70982b17",
+        "plugins/econipass/skills/statutory-reports/references/shared-reports.md": "e38e84390ef9df4c70d2eeb3b633c5d1d3c5af70067ed2fb7f06a40a4d123f02",
+        "plugins/econipass/skills/statutory-reports/references/legacy-xml.md": "98b4d0784713815193026fd9d0c5efc353e13d6c12f5793001e4986f7b34e60c",
+        "plugins/econipass/skills/statutory-reports/agents/openai.yaml": "76e93d413abceced19b2803e1fb8b2d4a15f21efb6901326a20d96a0395d16f3",
+        "plugins/econipass/assets/icon.png": "49f0cb6b564f28e1703f30ba6a217c18077de2e673c719d4c93849b9a92e377e",
+        "plugins/econipass/.codex-plugin/plugin.json": "b15f95ed7fa1f9d96fe36b31f9ab24fc3bf05998956275d52213696f1bc1a7ad",
+        "plugins/platform-support.json": "687f0292b29505f70eaa3c25f4568691a901c94417170bd42572ebdb207251c4",
+        "plugins/adapters/github-copilot-cloud.json": "1d40308ca4907a8a63863148eb8f33df5b1e288459660617ba1a18b07b34ee55",
+        "plugins/adapters/roo-code-bridge.json": "0616c9e9eba0e9cde96db40022a0179c550913db5325b4319c85f3cccee63b6c"
+      },
+      "pinned_private_generator_and_API_samples": {
+        "plugins/scripts/build_packages.py": "1bb3df302ade7f8248973a227c8dafecf64fbae0d5818ffd6aa607831fa02e55",
+        "plugins/api-examples/README.md": "0ad0f6b1ce35994839df523f15ea17bf195d1ac7e2bb8f7826a21beb66b83207",
+        "plugins/api-examples/_common.py": "faa72de7142a43a6cc8414427d17594359da5009711dfd3eda30eb3decf0f22c",
+        "plugins/api-examples/anthropic-messages.py": "5053bb61d17b1eb69d6d97f28b308cbae18abb3e47f7dc6420f27a778ddd508a",
+        "plugins/api-examples/langchain-langgraph.py": "9d2a4c40a25e88e2a916f98f5deff204d9fbeaf1cff76d307343d71f323420f5",
+        "plugins/api-examples/openai-agents-sdk.py": "0b59d84ddeb7dd962b1a9bafd338cf2faefe7d5fc88cb618574df273b46cc1ac",
+        "plugins/api-examples/openai-responses.py": "a1dd84f43e322c4f87200fd1f5fcfe513ecc7b67766ae7761c195d6fac532419"
+      },
+      "private_source_hash_binding_only": {
+        "services/mcp-server/src/econipass_mcp/server.py": "79e93bcbbaf291a657133fb12c90927504caa1e9a78ce3e8e7445959981bdf7f",
+        "services/mcp-server/src/econipass_mcp/request_identity.py": "df67efc7fc50f9fb1e69823b3c34a4d108a39415271a40c13b85a8d380309dd6",
+        "services/mcp-server/src/econipass_mcp/tool_metadata.py": "1ae38691c6c31fcb73e79b69540c50e15036d603b4a166ac3e48f87cce884ca4",
+        "services/mcp-server/src/econipass_mcp/tools/ems_catalog.py": "ad216864d5275827495cbffd8c5fa182e496eae6d6208b809abe09fd8688a01d",
+        "services/mcp-server/src/econipass_mcp/tools/ems_operations.py": "3dee467cdb92da8e8374f633a0feb2325c5d245a89190d3a67905bcb5dd10a3d",
+        "services/mcp-server/src/econipass_mcp/tools/cfp.py": "a3ca3637c492b17072fef6d8794b5b838f289ac97a61bd4376069b7fc668cf39",
+        "services/mcp-server/src/econipass_mcp/tools/audit.py": "38b5703e435061a5c054601502c4c04081b90b8b8e491c02263e45fa3f9fb017",
+        "services/mcp-server/src/econipass_mcp/tools/downloads.py": "407725d6d9c277e37bc30424bd3e1f81b5fb0c0471fbbe92e1e64708a82546dc",
+        "services/mcp-server/src/econipass_mcp/tools/measures.py": "db96a1d914e922dff4dd5b9d63334b9412db839c743dd22cc674544ad8a85d5f",
+        "services/mcp-server/src/econipass_mcp/tools/tasks.py": "cdfee11b7c73547f02c598e6419979140b302dbae5c45637ef5e7c6e4c11360f",
+        "services/mcp-server/src/econipass_mcp/tools/activities.py": "7002f3bc948f95fa2614d36ca755706fcfd1b3bd95cd87f4688ae245d152dd42",
+        "services/mcp-server/src/econipass_mcp/tools/statutory_reports_v2.py": "8220f68c38d148c8d93da06db6bb14046f5296126149a8c924ffc611d5fd7d2f",
+        "services/mcp-server/src/econipass_mcp/tools/statutory_paper.py": "57f98d5e9951a7d1db37b57ba9a90f4312327d01a57d541a3f14babacde312e0",
+        "services/mcp-server/src/econipass_mcp/data/ems_operations.json": "d504ea5cbd3cba493392b02586b38f518625a5e33d16c6eafd6fb088c028a827"
+      }
+    },
+    "scope": "All37 archives rebuilt from the current public maintained plugin/matrix/adapter bytes plus explicitly pinned private builder and distributed SDK sample inputs; all999 entries compared. This does not assert every generated ZIP entry exists directly in public Git.",
+    "runtime_or_deployment_acceptance_inferred": false,
+    "unchanged_input_revalidation": {
+      "evidence_sha256": "2bd13d60e261a87c392b5a4d18fdacca8773a5cf138e7c5ea04fa32b8e1787b5",
+      "status": "PASS_CURRENT33_PUBLIC_INPUTS_PINNED275A_GENERATOR_SDK_AND14SOURCES_ALL37_ZIP999ENTRY_UNCHANGED",
+      "fresh_rebuild_repeated": false,
+      "original_full_rebuild_evidence_sha256": "64305492beb225c850b4a7eaa0ef87407d3f84358a5c8d9e2275e172f0ccc629",
+      "native_source_commit": "72e469ef8a013a60dcbc62ca9d58d4d3b282b5d4"
+    }
+  },
+  "history_relocation_provenance": [
+    {
+      "source": "docs/ACCEPTANCE.md",
+      "source_bytes_sha256": "f71622820b8f6d41047c3e86a29f82a47bb00ab61b37531cf7194ed30e45d2f3",
+      "destination": "docs/history/ACCEPTANCE-v1.2.0-candidate-5ee-5c4-20261025.md",
+      "destination_sha256": "7297d63222eef3df498be38b5956f268430f74c8bbbf41460be3c4230f86a380",
+      "only_relative_references_rebased": [
+        {
+          "location": "markdown_link",
+          "original": "candidate-package-v1.2.0-cfp-security-license-held-20261025.json",
+          "relocated": "../candidate-package-v1.2.0-cfp-security-license-held-20261025.json",
+          "resolved_repository_path": "docs/candidate-package-v1.2.0-cfp-security-license-held-20261025.json"
+        },
+        {
+          "location": "markdown_link",
+          "original": "acceptance-summary.json",
+          "relocated": "acceptance-summary-v1.2.0-candidate-5ee-5c4-20261025.json",
+          "resolved_repository_path": "docs/history/acceptance-summary-v1.2.0-candidate-5ee-5c4-20261025.json"
+        },
+        {
+          "location": "markdown_link",
+          "original": "candidate-native-load-v1.2.0-cfp-security-license-held-20261025.json",
+          "relocated": "../candidate-native-load-v1.2.0-cfp-security-license-held-20261025.json",
+          "resolved_repository_path": "docs/candidate-native-load-v1.2.0-cfp-security-license-held-20261025.json"
+        },
+        {
+          "location": "markdown_link",
+          "original": "history/ACCEPTANCE-v1.2.0-candidate-5909-20261025.md",
+          "relocated": "ACCEPTANCE-v1.2.0-candidate-5909-20261025.md",
+          "resolved_repository_path": "docs/history/ACCEPTANCE-v1.2.0-candidate-5909-20261025.md"
+        },
+        {
+          "location": "markdown_link",
+          "original": "candidate-native-load-v1.2.0-license-held-20261025.json",
+          "relocated": "../candidate-native-load-v1.2.0-license-held-20261025.json",
+          "resolved_repository_path": "docs/candidate-native-load-v1.2.0-license-held-20261025.json"
+        },
+        {
+          "location": "markdown_link",
+          "original": "candidate-native-load-v1.2.0-20261025.json",
+          "relocated": "../candidate-native-load-v1.2.0-20261025.json",
+          "resolved_repository_path": "docs/candidate-native-load-v1.2.0-20261025.json"
+        },
+        {
+          "location": "markdown_link",
+          "original": "history/ACCEPTANCE-v1.1.0-20261021.md",
+          "relocated": "ACCEPTANCE-v1.1.0-20261021.md",
+          "resolved_repository_path": "docs/history/ACCEPTANCE-v1.1.0-20261021.md"
+        }
+      ],
+      "historical_snapshot_companion_correction": {
+        "reason": "Historical acceptance text refers to its preserved historical machine-readable snapshot, not the new current candidate.",
+        "before_destination_sha256": "fa2f501b5c8eb4a4ab80efa6c91e29e260aa83aa61776ff098cde2028ac87328",
+        "after_destination_sha256": "7297d63222eef3df498be38b5956f268430f74c8bbbf41460be3c4230f86a380",
+        "original_pending_phase_archive_retained": true
+      }
+    },
+    {
+      "source": "docs/acceptance-summary.json",
+      "source_bytes_sha256": "8d107774ad6886df9813e1cac70d68e1e351429dc4f45f477359a99d3cee68d9",
+      "destination": "docs/history/acceptance-summary-v1.2.0-candidate-5ee-5c4-20261025.json",
+      "destination_sha256": "0e08e599d2c2bd0ae6580e07aec76c05534cc1a906aff2652df5c3df2225bc00",
+      "only_relative_references_rebased": [
+        {
+          "location": "/candidate/package_details",
+          "original": "candidate-package-v1.2.0-cfp-security-license-held-20261025.json",
+          "relocated": "../candidate-package-v1.2.0-cfp-security-license-held-20261025.json",
+          "resolved_repository_path": "docs/candidate-package-v1.2.0-cfp-security-license-held-20261025.json"
+        },
+        {
+          "location": "/current_candidate_native_load/details",
+          "original": "candidate-native-load-v1.2.0-cfp-security-license-held-20261025.json",
+          "relocated": "../candidate-native-load-v1.2.0-cfp-security-license-held-20261025.json",
+          "resolved_repository_path": "docs/candidate-native-load-v1.2.0-cfp-security-license-held-20261025.json"
+        },
+        {
+          "location": "/platforms/0/limited_candidate_observation/details",
+          "original": "candidate-native-load-v1.2.0-cfp-security-license-held-20261025.json",
+          "relocated": "../candidate-native-load-v1.2.0-cfp-security-license-held-20261025.json",
+          "resolved_repository_path": "docs/candidate-native-load-v1.2.0-cfp-security-license-held-20261025.json"
+        },
+        {
+          "location": "/platforms/2/limited_candidate_observation/details",
+          "original": "candidate-native-load-v1.2.0-cfp-security-license-held-20261025.json",
+          "relocated": "../candidate-native-load-v1.2.0-cfp-security-license-held-20261025.json",
+          "resolved_repository_path": "docs/candidate-native-load-v1.2.0-cfp-security-license-held-20261025.json"
+        },
+        {
+          "location": "/platforms/5/limited_candidate_observation/details",
+          "original": "candidate-native-load-v1.2.0-cfp-security-license-held-20261025.json",
+          "relocated": "../candidate-native-load-v1.2.0-cfp-security-license-held-20261025.json",
+          "resolved_repository_path": "docs/candidate-native-load-v1.2.0-cfp-security-license-held-20261025.json"
+        },
+        {
+          "location": "/platforms/6/limited_candidate_observation/details",
+          "original": "candidate-native-load-v1.2.0-cfp-security-license-held-20261025.json",
+          "relocated": "../candidate-native-load-v1.2.0-cfp-security-license-held-20261025.json",
+          "resolved_repository_path": "docs/candidate-native-load-v1.2.0-cfp-security-license-held-20261025.json"
+        },
+        {
+          "location": "/platforms/8/limited_candidate_observation/details",
+          "original": "candidate-native-load-v1.2.0-cfp-security-license-held-20261025.json",
+          "relocated": "../candidate-native-load-v1.2.0-cfp-security-license-held-20261025.json",
+          "resolved_repository_path": "docs/candidate-native-load-v1.2.0-cfp-security-license-held-20261025.json"
+        },
+        {
+          "location": "/platforms/10/limited_candidate_observation/details",
+          "original": "candidate-native-load-v1.2.0-cfp-security-license-held-20261025.json",
+          "relocated": "../candidate-native-load-v1.2.0-cfp-security-license-held-20261025.json",
+          "resolved_repository_path": "docs/candidate-native-load-v1.2.0-cfp-security-license-held-20261025.json"
+        },
+        {
+          "location": "/platforms/18/limited_candidate_observation/details",
+          "original": "candidate-native-load-v1.2.0-cfp-security-license-held-20261025.json",
+          "relocated": "../candidate-native-load-v1.2.0-cfp-security-license-held-20261025.json",
+          "resolved_repository_path": "docs/candidate-native-load-v1.2.0-cfp-security-license-held-20261025.json"
+        },
+        {
+          "location": "/platforms/20/limited_candidate_observation/details",
+          "original": "candidate-native-load-v1.2.0-cfp-security-license-held-20261025.json",
+          "relocated": "../candidate-native-load-v1.2.0-cfp-security-license-held-20261025.json",
+          "resolved_repository_path": "docs/candidate-native-load-v1.2.0-cfp-security-license-held-20261025.json"
+        },
+        {
+          "location": "/platforms/21/limited_candidate_observation/details",
+          "original": "candidate-native-load-v1.2.0-cfp-security-license-held-20261025.json",
+          "relocated": "../candidate-native-load-v1.2.0-cfp-security-license-held-20261025.json",
+          "resolved_repository_path": "docs/candidate-native-load-v1.2.0-cfp-security-license-held-20261025.json"
+        },
+        {
+          "location": "/platforms/22/limited_candidate_observation/details",
+          "original": "candidate-native-load-v1.2.0-cfp-security-license-held-20261025.json",
+          "relocated": "../candidate-native-load-v1.2.0-cfp-security-license-held-20261025.json",
+          "resolved_repository_path": "docs/candidate-native-load-v1.2.0-cfp-security-license-held-20261025.json"
+        },
+        {
+          "location": "/platforms/23/limited_candidate_observation/details",
+          "original": "candidate-native-load-v1.2.0-cfp-security-license-held-20261025.json",
+          "relocated": "../candidate-native-load-v1.2.0-cfp-security-license-held-20261025.json",
+          "resolved_repository_path": "docs/candidate-native-load-v1.2.0-cfp-security-license-held-20261025.json"
+        },
+        {
+          "location": "/platforms/24/limited_candidate_observation/details",
+          "original": "candidate-native-load-v1.2.0-cfp-security-license-held-20261025.json",
+          "relocated": "../candidate-native-load-v1.2.0-cfp-security-license-held-20261025.json",
+          "resolved_repository_path": "docs/candidate-native-load-v1.2.0-cfp-security-license-held-20261025.json"
+        },
+        {
+          "location": "/platforms/25/limited_candidate_observation/details",
+          "original": "candidate-native-load-v1.2.0-cfp-security-license-held-20261025.json",
+          "relocated": "../candidate-native-load-v1.2.0-cfp-security-license-held-20261025.json",
+          "resolved_repository_path": "docs/candidate-native-load-v1.2.0-cfp-security-license-held-20261025.json"
+        },
+        {
+          "location": "/historical_evidence_not_inherited/v1_1_0",
+          "original": "history/acceptance-summary-v1.1.0-20261021.json",
+          "relocated": "acceptance-summary-v1.1.0-20261021.json",
+          "resolved_repository_path": "docs/history/acceptance-summary-v1.1.0-20261021.json"
+        },
+        {
+          "location": "/historical_evidence_not_inherited/MIT_candidate_native13",
+          "original": "candidate-native-load-v1.2.0-20261025.json",
+          "relocated": "../candidate-native-load-v1.2.0-20261025.json",
+          "resolved_repository_path": "docs/candidate-native-load-v1.2.0-20261025.json"
+        },
+        {
+          "location": "/historical_evidence_not_inherited/previous_no_LICENSE_native13",
+          "original": "candidate-native-load-v1.2.0-license-held-20261025.json",
+          "relocated": "../candidate-native-load-v1.2.0-license-held-20261025.json",
+          "resolved_repository_path": "docs/candidate-native-load-v1.2.0-license-held-20261025.json"
+        },
+        {
+          "location": "/historical_evidence_not_inherited/previous_5909_status",
+          "original": "history/acceptance-summary-v1.2.0-candidate-5909-20261025.json",
+          "relocated": "acceptance-summary-v1.2.0-candidate-5909-20261025.json",
+          "resolved_repository_path": "docs/history/acceptance-summary-v1.2.0-candidate-5909-20261025.json"
+        }
+      ]
+    }
+  ],
+  "native_candidate_evidence": {
+    "details": "candidate-native-load-v1.2.0-cfp-ems-security-license-held-20261025.json",
+    "public_export_sha256": "48328bf16f2f40b032a892b5a79dd2ccbac27dc46a77f5fcbb2506c9b4742a4b",
+    "source_summary_sha256": "ab6107e383268d7d526b70f9292f793273bf63cf1312277d252cb173b7909045",
+    "execution_index_sha256": "5daec3df2915fa5288cc6f9bbc0c082febe1bc717979840cadfeaa6e6a825bca",
+    "source_commit_at_native_validation": "72e469ef8a013a60dcbc62ca9d58d4d3b282b5d4",
+    "fresh_trials": 13,
+    "prior_native_success_inherited": 0,
+    "full_authenticated_acceptance": 0,
+    "public_acceptance": 0,
+    "remote_MCP_calls": 0,
+    "customer_operations": 0
+  },
+  "source_validation": {
+    "evidence_sha256": "5aec97941179d1e14525a519b15fbfcbbc383db0dd0a309b28e24390580de0b8",
+    "scope": "initial1401passed/11failed retained; corrected parity170 and docs42 pass; formal116/plugin55/repro3 are included successful groups; tool-only fake-AS/API239 (237ok/2expected refusal/0failed)",
+    "all1412_rerun_pass_claimed": false,
+    "fresh_full_suite_for275a": false,
+    "production_image_for275a_built": false,
+    "audit_proposal_applied": false,
+    "CI_or_deploy_completed": false
+  }
+}

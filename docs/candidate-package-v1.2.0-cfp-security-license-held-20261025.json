@@ -1,0 +1,735 @@
+{
+  "schema_version": 1,
+  "phase": "cfp_security_license_held_candidate",
+  "implementation_source_revision": "5ee1435c84bbc6761c7a7041d4b62b8568e87576",
+  "metadata_revision": "e54eb669130a349d6c24ef894d55ba4eb7cb92be",
+  "version": "1.2.0",
+  "release_json_sha256": "5c4c9c591aacfce254b36139748f62033e1a0345ad9fc319f7b15d53d68fc033",
+  "source_binding": {
+    "source_base_commit": "8c578bac1ac91bdd2ddf0561e200fb87b64c41c7",
+    "tool_skill_map_sha256": "bf7ad8d50fdff1910797f9896cbfc173451acdea9aef6d761a4e48455bd7837e",
+    "source_files_sha256": {
+      "services/mcp-server/src/econipass_mcp/server.py": "b237e729f10a97e7a5e169b7c3bdeb54140af2c1967ca657f8413e4da9656502",
+      "services/mcp-server/src/econipass_mcp/request_identity.py": "df67efc7fc50f9fb1e69823b3c34a4d108a39415271a40c13b85a8d380309dd6",
+      "services/mcp-server/src/econipass_mcp/tool_metadata.py": "1ae38691c6c31fcb73e79b69540c50e15036d603b4a166ac3e48f87cce884ca4",
+      "services/mcp-server/src/econipass_mcp/tools/ems_catalog.py": "ad216864d5275827495cbffd8c5fa182e496eae6d6208b809abe09fd8688a01d",
+      "services/mcp-server/src/econipass_mcp/tools/ems_operations.py": "f5f98c9e351642c5660c89c472737c11a071ea7436d1b738b1f81caa77ddd852",
+      "services/mcp-server/src/econipass_mcp/tools/cfp.py": "a3ca3637c492b17072fef6d8794b5b838f289ac97a61bd4376069b7fc668cf39",
+      "services/mcp-server/src/econipass_mcp/tools/audit.py": "38b5703e435061a5c054601502c4c04081b90b8b8e491c02263e45fa3f9fb017",
+      "services/mcp-server/src/econipass_mcp/tools/downloads.py": "407725d6d9c277e37bc30424bd3e1f81b5fb0c0471fbbe92e1e64708a82546dc",
+      "services/mcp-server/src/econipass_mcp/tools/measures.py": "db96a1d914e922dff4dd5b9d63334b9412db839c743dd22cc674544ad8a85d5f",
+      "services/mcp-server/src/econipass_mcp/tools/tasks.py": "cdfee11b7c73547f02c598e6419979140b302dbae5c45637ef5e7c6e4c11360f",
+      "services/mcp-server/src/econipass_mcp/tools/activities.py": "7002f3bc948f95fa2614d36ca755706fcfd1b3bd95cd87f4688ae245d152dd42",
+      "services/mcp-server/src/econipass_mcp/tools/statutory_reports_v2.py": "8220f68c38d148c8d93da06db6bb14046f5296126149a8c924ffc611d5fd7d2f",
+      "services/mcp-server/src/econipass_mcp/tools/statutory_paper.py": "57f98d5e9951a7d1db37b57ba9a90f4312327d01a57d541a3f14babacde312e0",
+      "services/mcp-server/src/econipass_mcp/data/ems_operations.json": "d504ea5cbd3cba493392b02586b38f518625a5e33d16c6eafd6fb088c028a827"
+    }
+  },
+  "skills": 7,
+  "product_kits": 29,
+  "archives": 37,
+  "total_zip_entries": 999,
+  "license_decision": "HELD_BY_USER",
+  "LICENSE_entries": 0,
+  "rights_grant_inferred": false,
+  "artifacts": {
+    "activity-input.skill.zip": {
+      "sha256": "4832bb779dce8ffb2cc8599724529f24d00821de75a85296be4c721af5bdf059",
+      "crc": "pass",
+      "entries": 3
+    },
+    "cfp-input.skill.zip": {
+      "sha256": "635d628db2afa4404bd69c2493c840620e1b2113e5cfb90202a879aac303c04d",
+      "crc": "pass",
+      "entries": 3
+    },
+    "econipass-amazon-q-cli.zip": {
+      "sha256": "dbe5b98500d8849e538738e6b7f18387242e1863864934576e73d475579cdf96",
+      "crc": "pass",
+      "entries": 30
+    },
+    "econipass-anthropic-messages.zip": {
+      "sha256": "b7459881743803fbfedd28f0c00c0cd359522cf34a6775fea6ae6f2861e100fa",
+      "crc": "pass",
+      "entries": 32
+    },
+    "econipass-chatgpt.zip": {
+      "sha256": "d89ced2e0e8bbec6cc7c6426f945ed33407825ec148f986c88c082bba7ceb30a",
+      "crc": "pass",
+      "entries": 39
+    },
+    "econipass-claude-code.zip": {
+      "sha256": "26b01858cf2630960c83d744853cded21a244e53c91c9f1cd05a0c0d96fbda31",
+      "crc": "pass",
+      "entries": 39
+    },
+    "econipass-claude-hosted.zip": {
+      "sha256": "6b48e7b43454daa577696b570cf1d0941926af5165cb39dbe8b41d9279357bd9",
+      "crc": "pass",
+      "entries": 39
+    },
+    "econipass-cline.zip": {
+      "sha256": "bd6ae1fbae9ee022234926cb48d3dbb92b93aa2914be7166a0e86a92a9e7f9ba",
+      "crc": "pass",
+      "entries": 30
+    },
+    "econipass-codex.zip": {
+      "sha256": "4f65b577f3212151a55068318ca580abf7ea941ddcd260337af54472bf114eca",
+      "crc": "pass",
+      "entries": 40
+    },
+    "econipass-copilot-studio.zip": {
+      "sha256": "9a26a282abb7b27ce31361a14360dab1ab111f3425d9591ae8413b8b62dfe859",
+      "crc": "pass",
+      "entries": 29
+    },
+    "econipass-cursor-desktop.zip": {
+      "sha256": "f5847d7e1dcabb7b628b42d0603e694fc58f6b0c6caa2f66f52b4c76bc7265ac",
+      "crc": "pass",
+      "entries": 40
+    },
+    "econipass-cursor-hosted.zip": {
+      "sha256": "e1f7ffe1cb4699ca689bfdc67de5713fcd1b6dd4016a575a448f6ed84a4ffd22",
+      "crc": "pass",
+      "entries": 30
+    },
+    "econipass-dify.zip": {
+      "sha256": "38f45b7b37be7904153337b56191bbd08009580998937c9646cdc7eace341dc6",
+      "crc": "pass",
+      "entries": 29
+    },
+    "econipass-gemini-cli.zip": {
+      "sha256": "06d28c17fc863760ae018576464a0d223ffb8b43497974161899acc2cb9a19eb",
+      "crc": "pass",
+      "entries": 40
+    },
+    "econipass-gemini-code-assist.zip": {
+      "sha256": "595986defb187c11c016215304726c492ca6aa63c1e04c44ae559cb6e4ae9b94",
+      "crc": "pass",
+      "entries": 30
+    },
+    "econipass-gemini-enterprise.zip": {
+      "sha256": "ef2b2a83948cb1095bc92fa233b031d4a4015037db7e932531a2a3d4dda097fb",
+      "crc": "pass",
+      "entries": 29
+    },
+    "econipass-github-copilot-cli.zip": {
+      "sha256": "0f8cd8401b4bf495b5876126307730882b65ec9542386cbbf5e698c3bacb4015",
+      "crc": "pass",
+      "entries": 40
+    },
+    "econipass-github-copilot-cloud.zip": {
+      "sha256": "a58cb11fe56345aab9b743b3d3d86dfee2e91441eaf5b7c43a2089b5f584ebab",
+      "crc": "pass",
+      "entries": 30
+    },
+    "econipass-goose.zip": {
+      "sha256": "74772ee8de784c1bdf19d634b574bfb221f85c2ee242455497b5aa7f4ac51cf6",
+      "crc": "pass",
+      "entries": 30
+    },
+    "econipass-jetbrains-junie.zip": {
+      "sha256": "38bdc0f6698bb6608bd1cdec8d85b3ce156502c10f2e133170859f0312418b11",
+      "crc": "pass",
+      "entries": 30
+    },
+    "econipass-langchain-langgraph.zip": {
+      "sha256": "dc8ec370b4b0a23a49c26c0d41b83ee3c112853cf6e04d07559f5744e0a08e1a",
+      "crc": "pass",
+      "entries": 32
+    },
+    "econipass-m365-copilot.zip": {
+      "sha256": "aae17e220401be3908bc6707ce1c30df67e2bc87713512a465cea5c25828ce8c",
+      "crc": "pass",
+      "entries": 29
+    },
+    "econipass-n8n.zip": {
+      "sha256": "c3bf726d1cd0e9d79dce408bc34ac48a985cd0043b0891cc3c3d1d1603162d9a",
+      "crc": "pass",
+      "entries": 29
+    },
+    "econipass-openai-agents-sdk.zip": {
+      "sha256": "4b2bdea82052a8b9c684c4bc18cd10466ec2372f7a5400cad41015fcf3f05e94",
+      "crc": "pass",
+      "entries": 32
+    },
+    "econipass-openai-responses.zip": {
+      "sha256": "3547bb2d7ec8d7bd6655dda1a84bf8940a541134479f6e79bbd70916bf60dc0c",
+      "crc": "pass",
+      "entries": 32
+    },
+    "econipass-perplexity.zip": {
+      "sha256": "5c14bcbc1d27a20354691085813fe6405c9a6bd9201f019b7c0530c748ac92cd",
+      "crc": "pass",
+      "entries": 29
+    },
+    "econipass-plugin.zip": {
+      "sha256": "fb9d367e289dd46accc3057e2762ee9ae6e8845c2dc532c4118bf4032e100b80",
+      "crc": "pass",
+      "entries": 30
+    },
+    "econipass-querypie-aip.zip": {
+      "sha256": "b6301d586c1cfa59bdb3335b7f147010c2a22f2293f275750e5776cf9e8ed7da",
+      "crc": "pass",
+      "entries": 29
+    },
+    "econipass-roo-code.zip": {
+      "sha256": "fa6971c09a66ceded0a341e41251d90fde497a8871a9cd14e847c3d777d21180",
+      "crc": "pass",
+      "entries": 31
+    },
+    "econipass-vscode-copilot.zip": {
+      "sha256": "a0132518ca07e089abe46a7cbf8a966dc474865a00a6790b0dfb9bd165156b24",
+      "crc": "pass",
+      "entries": 40
+    },
+    "econipass-windsurf.zip": {
+      "sha256": "58f60100b3976287983f335c49d3e1651ab26eed4235df32133361b0a365177f",
+      "crc": "pass",
+      "entries": 30
+    },
+    "econipass-zed.zip": {
+      "sha256": "89499f17d6fdf12f350d3363dbc4a42107627200635b65f5136fb976cfdad27b",
+      "crc": "pass",
+      "entries": 30
+    },
+    "emissions-analysis.skill.zip": {
+      "sha256": "42853c3b6d7e4b8bc24f95a5e811db79e1a93afd964baf16c9690ad778a273fe",
+      "crc": "pass",
+      "entries": 2
+    },
+    "ems-operations.skill.zip": {
+      "sha256": "bfdb52ce6064db8a5b9c083b461ad1081d4c7bd10e239c2838a5d3f029c1f01c",
+      "crc": "pass",
+      "entries": 3
+    },
+    "measures-targets.skill.zip": {
+      "sha256": "30389a5620b853d6395691dbb5995034670540bcfce3bafad62dfdfe632590bd",
+      "crc": "pass",
+      "entries": 3
+    },
+    "setup.skill.zip": {
+      "sha256": "56527d1d834f20081ab6cc9205bcbe8db37333db60568876fe84a4e4685861dd",
+      "crc": "pass",
+      "entries": 2
+    },
+    "statutory-reports.skill.zip": {
+      "sha256": "1aed1c4c158b9ee35b79723786767d2d917cfaaccbbc4394f4a04b0260f9640d",
+      "crc": "pass",
+      "entries": 4
+    }
+  },
+  "packaging_source_hashes": {
+    "plugins/econipass/skills/cfp-input/SKILL.md": "28899e861bc64fd1c9faa8c637005771b75901ae3d709384c270b55073732251",
+    "plugins/econipass/skills/cfp-input/references/workbooks.md": "27c215d8cf0e1025fcd0655d067b752f80a9e7e53eeaca8fab1c46b6983cc62b",
+    "plugins/econipass/README.md": "7f1f7a19d3350264197eacb69efaa3e116eb4ff187d51e4d64ef213db59a6b26",
+    "plugins/econipass/tool-skill-map.json": "bf7ad8d50fdff1910797f9896cbfc173451acdea9aef6d761a4e48455bd7837e",
+    "plugins/VALIDATION.md": "12dd4b62eb0eed16ea827e4700e3301c805b95ad28cf6dffc22fb00257065557"
+  },
+  "native_candidate_trials": {
+    "status": "fresh13_limited_local_trials_complete",
+    "details": "candidate-native-load-v1.2.0-cfp-security-license-held-20261025.json",
+    "fresh_trials": 13,
+    "limited_products": 13,
+    "prior_native_success_inherited": 0,
+    "source_summary_sha256": "13a6030a8aacea232ad2c1d19274fa5b59393b47ed21bf045e0bbd07d8a2475f",
+    "public_export_sha256": "cec1c1d79874d2176d483160495fa8a53b9e5e6d7a54f07067d77a4e6c115f52",
+    "full_authenticated_acceptance": 0,
+    "public_or_final_acceptance": 0,
+    "CFP_delivery_and_security_runtime_acceptance_inferred": false,
+    "phase": "cfp_security_license_held_no_license_local_candidate"
+  },
+  "final_or_public_acceptance": 0,
+  "full_authenticated_platform_acceptance": 0,
+  "published": false,
+  "deployed": false,
+  "current_public_source_byte_gate": {
+    "status": "PASS_FRESH_CURRENT_PUBLIC_INPUTS_ALL37_ZIP_AND999_ENTRY_BYTE_GATE",
+    "evidence_sha256": "7e21d67f368fa33c38631d00a65a8720500de07cfc91f265328bd4503f0450aa",
+    "current_uncommitted_public_packaging_inputs_compared": true,
+    "committed_public_834_matches_new_candidate_claimed": false,
+    "public_common_plugin_files_exact": 30,
+    "all_archive_hashes_and_entries_exact": true,
+    "archives": 37,
+    "entries": 999,
+    "LICENSE_entries": 0,
+    "source_binding": {
+      "source_base_commit": "8c578bac1ac91bdd2ddf0561e200fb87b64c41c7",
+      "tool_skill_map_sha256": "bf7ad8d50fdff1910797f9896cbfc173451acdea9aef6d761a4e48455bd7837e",
+      "source_files_sha256": {
+        "services/mcp-server/src/econipass_mcp/server.py": "b237e729f10a97e7a5e169b7c3bdeb54140af2c1967ca657f8413e4da9656502",
+        "services/mcp-server/src/econipass_mcp/request_identity.py": "df67efc7fc50f9fb1e69823b3c34a4d108a39415271a40c13b85a8d380309dd6",
+        "services/mcp-server/src/econipass_mcp/tool_metadata.py": "1ae38691c6c31fcb73e79b69540c50e15036d603b4a166ac3e48f87cce884ca4",
+        "services/mcp-server/src/econipass_mcp/tools/ems_catalog.py": "ad216864d5275827495cbffd8c5fa182e496eae6d6208b809abe09fd8688a01d",
+        "services/mcp-server/src/econipass_mcp/tools/ems_operations.py": "f5f98c9e351642c5660c89c472737c11a071ea7436d1b738b1f81caa77ddd852",
+        "services/mcp-server/src/econipass_mcp/tools/cfp.py": "a3ca3637c492b17072fef6d8794b5b838f289ac97a61bd4376069b7fc668cf39",
+        "services/mcp-server/src/econipass_mcp/tools/audit.py": "38b5703e435061a5c054601502c4c04081b90b8b8e491c02263e45fa3f9fb017",
+        "services/mcp-server/src/econipass_mcp/tools/downloads.py": "407725d6d9c277e37bc30424bd3e1f81b5fb0c0471fbbe92e1e64708a82546dc",
+        "services/mcp-server/src/econipass_mcp/tools/measures.py": "db96a1d914e922dff4dd5b9d63334b9412db839c743dd22cc674544ad8a85d5f",
+        "services/mcp-server/src/econipass_mcp/tools/tasks.py": "cdfee11b7c73547f02c598e6419979140b302dbae5c45637ef5e7c6e4c11360f",
+        "services/mcp-server/src/econipass_mcp/tools/activities.py": "7002f3bc948f95fa2614d36ca755706fcfd1b3bd95cd87f4688ae245d152dd42",
+        "services/mcp-server/src/econipass_mcp/tools/statutory_reports_v2.py": "8220f68c38d148c8d93da06db6bb14046f5296126149a8c924ffc611d5fd7d2f",
+        "services/mcp-server/src/econipass_mcp/tools/statutory_paper.py": "57f98d5e9951a7d1db37b57ba9a90f4312327d01a57d541a3f14babacde312e0",
+        "services/mcp-server/src/econipass_mcp/data/ems_operations.json": "d504ea5cbd3cba493392b02586b38f518625a5e33d16c6eafd6fb088c028a827"
+      }
+    },
+    "pinned_generator_and_API_sample_revision": "e54eb669130a349d6c24ef894d55ba4eb7cb92be",
+    "input_provenance": {
+      "public": {
+        "plugins/econipass/.mcp.json": "1043c85c0da00028db8c016b7011fbdade28a403305b5e0ae4e291ad2aa74d2d",
+        "plugins/econipass/gemini-extension.json": "c649bf71c5d33951b5dbda55b345d3cf6c2bb1b14beda7aa78e696615e0a604a",
+        "plugins/econipass/plugin.json": "a05b3333ee918b8ffddb808fb3b842cdf40fa78ddb237d191dfecc44aad848ba",
+        "plugins/econipass/README.md": "7f1f7a19d3350264197eacb69efaa3e116eb4ff187d51e4d64ef213db59a6b26",
+        "plugins/econipass/tool-skill-map.json": "bf7ad8d50fdff1910797f9896cbfc173451acdea9aef6d761a4e48455bd7837e",
+        "plugins/econipass/GEMINI.md": "bd720241608895f55364e9b8585466222ef9a667a2d8c1e0bd5f7ab7fb478721",
+        "plugins/econipass/mcp.json": "8400cc7e1116027ca474544bc918fd494035a4f459f5f7eabe550600a0adb9ac",
+        "plugins/econipass/.claude-plugin/plugin.json": "bb7207592a40efdfc473fd00e372be9655d755106aeb6edce18a9d288f90cd9c",
+        "plugins/econipass/skills/measures-targets/SKILL.md": "f2c5e4690871c8feb1a6855676c64323518b481abdb66523f8fd32581bc04387",
+        "plugins/econipass/skills/measures-targets/references/task-activity-rules.md": "d5f7591442ed6afb51f47a56a705bac91bd553f8008d89f159b7db06edcb5bfd",
+        "plugins/econipass/skills/measures-targets/agents/openai.yaml": "a6714d09c9bcd8d6ec933b7822cace9ed9d596ed38728fa40499096998afb0b2",
+        "plugins/econipass/skills/setup/SKILL.md": "67e2bbc6fbc1ca107529998718d2bb371fce7511fd869026f16d6e4ecfaebc2c",
+        "plugins/econipass/skills/setup/agents/openai.yaml": "b198095f0a5cadd891f3bf54c0cdb453303fbab6adf7c90beff08c34cec62be6",
+        "plugins/econipass/skills/cfp-input/SKILL.md": "28899e861bc64fd1c9faa8c637005771b75901ae3d709384c270b55073732251",
+        "plugins/econipass/skills/cfp-input/references/workbooks.md": "27c215d8cf0e1025fcd0655d067b752f80a9e7e53eeaca8fab1c46b6983cc62b",
+        "plugins/econipass/skills/cfp-input/agents/openai.yaml": "eafcd989b252d7699e39e860b92726ed7fdd90da6b385a37ff4b7f9becab77d2",
+        "plugins/econipass/skills/emissions-analysis/SKILL.md": "7600f72cf00670da96531db0bc1d2ab73d70f39510b2e4fcb528137ffcd0325d",
+        "plugins/econipass/skills/emissions-analysis/agents/openai.yaml": "a4300f9f5546448f87330c916560f366b3ab903256947826ae90fc101c26e27e",
+        "plugins/econipass/skills/activity-input/SKILL.md": "27a83e0230b3fdb6b2eef20b782469e268223a49ef5ac9e5bd6fc338b79ebfc9",
+        "plugins/econipass/skills/activity-input/references/record-rules.md": "20f9f554813076592e537968b52cba300c2118b51852421f4ceda760339173d3",
+        "plugins/econipass/skills/activity-input/agents/openai.yaml": "ae076d52b00ed951dca432ca99ef11c30ca48221afc8320348e26170354f0ee7",
+        "plugins/econipass/skills/ems-operations/SKILL.md": "f251669441b908cf05d5003c82b544bdbb323ec14a8e453e4bad740858b221b2",
+        "plugins/econipass/skills/ems-operations/references/workflows.md": "dee26fbd7dff501ad6147863b5b145b9699f975fb4622709166cce0e9c7960ff",
+        "plugins/econipass/skills/ems-operations/agents/openai.yaml": "1a215860957e7ec72e02166b67c4cea6d4f507848459151b3bc92662c79c9877",
+        "plugins/econipass/skills/statutory-reports/SKILL.md": "e981804a69f4607d3db58daf359c86e86dcfa9df07c5d923c52239df70982b17",
+        "plugins/econipass/skills/statutory-reports/references/shared-reports.md": "e38e84390ef9df4c70d2eeb3b633c5d1d3c5af70067ed2fb7f06a40a4d123f02",
+        "plugins/econipass/skills/statutory-reports/references/legacy-xml.md": "98b4d0784713815193026fd9d0c5efc353e13d6c12f5793001e4986f7b34e60c",
+        "plugins/econipass/skills/statutory-reports/agents/openai.yaml": "76e93d413abceced19b2803e1fb8b2d4a15f21efb6901326a20d96a0395d16f3",
+        "plugins/econipass/assets/icon.png": "49f0cb6b564f28e1703f30ba6a217c18077de2e673c719d4c93849b9a92e377e",
+        "plugins/econipass/.codex-plugin/plugin.json": "b15f95ed7fa1f9d96fe36b31f9ab24fc3bf05998956275d52213696f1bc1a7ad",
+        "plugins/platform-support.json": "687f0292b29505f70eaa3c25f4568691a901c94417170bd42572ebdb207251c4",
+        "plugins/adapters/github-copilot-cloud.json": "1d40308ca4907a8a63863148eb8f33df5b1e288459660617ba1a18b07b34ee55",
+        "plugins/adapters/roo-code-bridge.json": "0616c9e9eba0e9cde96db40022a0179c550913db5325b4319c85f3cccee63b6c"
+      },
+      "pinned_private_generator_and_API_samples": {
+        "plugins/scripts/build_packages.py": "1bb3df302ade7f8248973a227c8dafecf64fbae0d5818ffd6aa607831fa02e55",
+        "plugins/api-examples/README.md": "0ad0f6b1ce35994839df523f15ea17bf195d1ac7e2bb8f7826a21beb66b83207",
+        "plugins/api-examples/_common.py": "faa72de7142a43a6cc8414427d17594359da5009711dfd3eda30eb3decf0f22c",
+        "plugins/api-examples/anthropic-messages.py": "5053bb61d17b1eb69d6d97f28b308cbae18abb3e47f7dc6420f27a778ddd508a",
+        "plugins/api-examples/langchain-langgraph.py": "9d2a4c40a25e88e2a916f98f5deff204d9fbeaf1cff76d307343d71f323420f5",
+        "plugins/api-examples/openai-agents-sdk.py": "0b59d84ddeb7dd962b1a9bafd338cf2faefe7d5fc88cb618574df273b46cc1ac",
+        "plugins/api-examples/openai-responses.py": "a1dd84f43e322c4f87200fd1f5fcfe513ecc7b67766ae7761c195d6fac532419"
+      },
+      "private_source_hash_binding_only": {
+        "services/mcp-server/src/econipass_mcp/server.py": "b237e729f10a97e7a5e169b7c3bdeb54140af2c1967ca657f8413e4da9656502",
+        "services/mcp-server/src/econipass_mcp/request_identity.py": "df67efc7fc50f9fb1e69823b3c34a4d108a39415271a40c13b85a8d380309dd6",
+        "services/mcp-server/src/econipass_mcp/tool_metadata.py": "1ae38691c6c31fcb73e79b69540c50e15036d603b4a166ac3e48f87cce884ca4",
+        "services/mcp-server/src/econipass_mcp/tools/ems_catalog.py": "ad216864d5275827495cbffd8c5fa182e496eae6d6208b809abe09fd8688a01d",
+        "services/mcp-server/src/econipass_mcp/tools/ems_operations.py": "f5f98c9e351642c5660c89c472737c11a071ea7436d1b738b1f81caa77ddd852",
+        "services/mcp-server/src/econipass_mcp/tools/cfp.py": "a3ca3637c492b17072fef6d8794b5b838f289ac97a61bd4376069b7fc668cf39",
+        "services/mcp-server/src/econipass_mcp/tools/audit.py": "38b5703e435061a5c054601502c4c04081b90b8b8e491c02263e45fa3f9fb017",
+        "services/mcp-server/src/econipass_mcp/tools/downloads.py": "407725d6d9c277e37bc30424bd3e1f81b5fb0c0471fbbe92e1e64708a82546dc",
+        "services/mcp-server/src/econipass_mcp/tools/measures.py": "db96a1d914e922dff4dd5b9d63334b9412db839c743dd22cc674544ad8a85d5f",
+        "services/mcp-server/src/econipass_mcp/tools/tasks.py": "cdfee11b7c73547f02c598e6419979140b302dbae5c45637ef5e7c6e4c11360f",
+        "services/mcp-server/src/econipass_mcp/tools/activities.py": "7002f3bc948f95fa2614d36ca755706fcfd1b3bd95cd87f4688ae245d152dd42",
+        "services/mcp-server/src/econipass_mcp/tools/statutory_reports_v2.py": "8220f68c38d148c8d93da06db6bb14046f5296126149a8c924ffc611d5fd7d2f",
+        "services/mcp-server/src/econipass_mcp/tools/statutory_paper.py": "57f98d5e9951a7d1db37b57ba9a90f4312327d01a57d541a3f14babacde312e0",
+        "services/mcp-server/src/econipass_mcp/data/ems_operations.json": "d504ea5cbd3cba493392b02586b38f518625a5e33d16c6eafd6fb088c028a827"
+      }
+    },
+    "scope": "All37 archives rebuilt from the current public maintained plugin/matrix/adapter bytes plus explicitly pinned private builder and distributed SDK sample inputs; all999 entries compared. This does not assert every generated ZIP entry exists directly in public Git.",
+    "runtime_or_deployment_acceptance_inferred": false
+  },
+  "historical_relocation_provenance": [
+    {
+      "origin_git_revision": "834edba",
+      "origin_path": "docs/ACCEPTANCE.md",
+      "origin_sha256": "1d4dc04cfbdca02a9704e865e9686a1e5dbc20b014fd199b2d2e7c19070b2344",
+      "relocated_path": "docs/history/ACCEPTANCE-v1.2.0-candidate-5909-20261025.md",
+      "relocated_sha256": "761a1a6c0f3dfa7a638d2d8094f59e4fd3f5431323774c5efbdb650e2633c7ff",
+      "only_relative_reference_spelling_changed": true,
+      "reference_relocations": [
+        {
+          "location": "markdown-link",
+          "original": "candidate-native-load-v1.2.0-license-held-20261025.json",
+          "relocated": "../candidate-native-load-v1.2.0-license-held-20261025.json",
+          "original_resolved_repository_path": "docs/candidate-native-load-v1.2.0-license-held-20261025.json",
+          "resolved_repository_path": "docs/candidate-native-load-v1.2.0-license-held-20261025.json"
+        },
+        {
+          "location": "markdown-link",
+          "original": "candidate-native-load-v1.2.0-20261025.json",
+          "relocated": "../candidate-native-load-v1.2.0-20261025.json",
+          "original_resolved_repository_path": "docs/candidate-native-load-v1.2.0-20261025.json",
+          "resolved_repository_path": "docs/candidate-native-load-v1.2.0-20261025.json"
+        },
+        {
+          "location": "markdown-link",
+          "original": "acceptance-summary.json",
+          "relocated": "acceptance-summary-v1.2.0-candidate-5909-20261025.json",
+          "original_resolved_repository_path": "docs/acceptance-summary.json",
+          "resolved_repository_path": "docs/history/acceptance-summary-v1.2.0-candidate-5909-20261025.json"
+        },
+        {
+          "location": "markdown-link",
+          "original": "history/ACCEPTANCE-v1.1.0-20261021.md",
+          "relocated": "ACCEPTANCE-v1.1.0-20261021.md",
+          "original_resolved_repository_path": "docs/history/ACCEPTANCE-v1.1.0-20261021.md",
+          "resolved_repository_path": "docs/history/ACCEPTANCE-v1.1.0-20261021.md"
+        },
+        {
+          "location": "markdown-link",
+          "original": "history/acceptance-summary-v1.1.0-20261021.json",
+          "relocated": "acceptance-summary-v1.1.0-20261021.json",
+          "original_resolved_repository_path": "docs/history/acceptance-summary-v1.1.0-20261021.json",
+          "resolved_repository_path": "docs/history/acceptance-summary-v1.1.0-20261021.json"
+        },
+        {
+          "location": "markdown-link",
+          "original": "../plugins/PUBLISHING.md",
+          "relocated": "../../plugins/PUBLISHING.md",
+          "original_resolved_repository_path": "plugins/PUBLISHING.md",
+          "resolved_repository_path": "plugins/PUBLISHING.md"
+        }
+      ]
+    },
+    {
+      "origin_git_revision": "834edba",
+      "origin_path": "docs/acceptance-summary.json",
+      "origin_sha256": "f219483eb635a56d4e2269245b5af142613c8db03c3305883353fd3fc88aa5d1",
+      "relocated_path": "docs/history/acceptance-summary-v1.2.0-candidate-5909-20261025.json",
+      "relocated_sha256": "0a2dbbc3321e3a768791291e63e37140dd466a70dfea31f196994f8b6dedb643",
+      "only_relative_reference_spelling_changed": true,
+      "reference_relocations": [
+        {
+          "location": "/platforms/0/historical_observation_reference",
+          "original": "history/acceptance-summary-v1.1.0-20261021.json",
+          "relocated": "acceptance-summary-v1.1.0-20261021.json",
+          "original_resolved_repository_path": "docs/history/acceptance-summary-v1.1.0-20261021.json",
+          "resolved_repository_path": "docs/history/acceptance-summary-v1.1.0-20261021.json"
+        },
+        {
+          "location": "/platforms/0/limited_candidate_observation/details",
+          "original": "candidate-native-load-v1.2.0-license-held-20261025.json",
+          "relocated": "../candidate-native-load-v1.2.0-license-held-20261025.json",
+          "original_resolved_repository_path": "docs/candidate-native-load-v1.2.0-license-held-20261025.json",
+          "resolved_repository_path": "docs/candidate-native-load-v1.2.0-license-held-20261025.json"
+        },
+        {
+          "location": "/platforms/1/historical_observation_reference",
+          "original": "history/acceptance-summary-v1.1.0-20261021.json",
+          "relocated": "acceptance-summary-v1.1.0-20261021.json",
+          "original_resolved_repository_path": "docs/history/acceptance-summary-v1.1.0-20261021.json",
+          "resolved_repository_path": "docs/history/acceptance-summary-v1.1.0-20261021.json"
+        },
+        {
+          "location": "/platforms/2/historical_observation_reference",
+          "original": "history/acceptance-summary-v1.1.0-20261021.json",
+          "relocated": "acceptance-summary-v1.1.0-20261021.json",
+          "original_resolved_repository_path": "docs/history/acceptance-summary-v1.1.0-20261021.json",
+          "resolved_repository_path": "docs/history/acceptance-summary-v1.1.0-20261021.json"
+        },
+        {
+          "location": "/platforms/2/limited_candidate_observation/details",
+          "original": "candidate-native-load-v1.2.0-license-held-20261025.json",
+          "relocated": "../candidate-native-load-v1.2.0-license-held-20261025.json",
+          "original_resolved_repository_path": "docs/candidate-native-load-v1.2.0-license-held-20261025.json",
+          "resolved_repository_path": "docs/candidate-native-load-v1.2.0-license-held-20261025.json"
+        },
+        {
+          "location": "/platforms/3/historical_observation_reference",
+          "original": "history/acceptance-summary-v1.1.0-20261021.json",
+          "relocated": "acceptance-summary-v1.1.0-20261021.json",
+          "original_resolved_repository_path": "docs/history/acceptance-summary-v1.1.0-20261021.json",
+          "resolved_repository_path": "docs/history/acceptance-summary-v1.1.0-20261021.json"
+        },
+        {
+          "location": "/platforms/4/historical_observation_reference",
+          "original": "history/acceptance-summary-v1.1.0-20261021.json",
+          "relocated": "acceptance-summary-v1.1.0-20261021.json",
+          "original_resolved_repository_path": "docs/history/acceptance-summary-v1.1.0-20261021.json",
+          "resolved_repository_path": "docs/history/acceptance-summary-v1.1.0-20261021.json"
+        },
+        {
+          "location": "/platforms/5/historical_observation_reference",
+          "original": "history/acceptance-summary-v1.1.0-20261021.json",
+          "relocated": "acceptance-summary-v1.1.0-20261021.json",
+          "original_resolved_repository_path": "docs/history/acceptance-summary-v1.1.0-20261021.json",
+          "resolved_repository_path": "docs/history/acceptance-summary-v1.1.0-20261021.json"
+        },
+        {
+          "location": "/platforms/5/limited_candidate_observation/details",
+          "original": "candidate-native-load-v1.2.0-license-held-20261025.json",
+          "relocated": "../candidate-native-load-v1.2.0-license-held-20261025.json",
+          "original_resolved_repository_path": "docs/candidate-native-load-v1.2.0-license-held-20261025.json",
+          "resolved_repository_path": "docs/candidate-native-load-v1.2.0-license-held-20261025.json"
+        },
+        {
+          "location": "/platforms/6/historical_observation_reference",
+          "original": "history/acceptance-summary-v1.1.0-20261021.json",
+          "relocated": "acceptance-summary-v1.1.0-20261021.json",
+          "original_resolved_repository_path": "docs/history/acceptance-summary-v1.1.0-20261021.json",
+          "resolved_repository_path": "docs/history/acceptance-summary-v1.1.0-20261021.json"
+        },
+        {
+          "location": "/platforms/6/limited_candidate_observation/details",
+          "original": "candidate-native-load-v1.2.0-license-held-20261025.json",
+          "relocated": "../candidate-native-load-v1.2.0-license-held-20261025.json",
+          "original_resolved_repository_path": "docs/candidate-native-load-v1.2.0-license-held-20261025.json",
+          "resolved_repository_path": "docs/candidate-native-load-v1.2.0-license-held-20261025.json"
+        },
+        {
+          "location": "/platforms/7/historical_observation_reference",
+          "original": "history/acceptance-summary-v1.1.0-20261021.json",
+          "relocated": "acceptance-summary-v1.1.0-20261021.json",
+          "original_resolved_repository_path": "docs/history/acceptance-summary-v1.1.0-20261021.json",
+          "resolved_repository_path": "docs/history/acceptance-summary-v1.1.0-20261021.json"
+        },
+        {
+          "location": "/platforms/8/historical_observation_reference",
+          "original": "history/acceptance-summary-v1.1.0-20261021.json",
+          "relocated": "acceptance-summary-v1.1.0-20261021.json",
+          "original_resolved_repository_path": "docs/history/acceptance-summary-v1.1.0-20261021.json",
+          "resolved_repository_path": "docs/history/acceptance-summary-v1.1.0-20261021.json"
+        },
+        {
+          "location": "/platforms/8/limited_candidate_observation/details",
+          "original": "candidate-native-load-v1.2.0-license-held-20261025.json",
+          "relocated": "../candidate-native-load-v1.2.0-license-held-20261025.json",
+          "original_resolved_repository_path": "docs/candidate-native-load-v1.2.0-license-held-20261025.json",
+          "resolved_repository_path": "docs/candidate-native-load-v1.2.0-license-held-20261025.json"
+        },
+        {
+          "location": "/platforms/9/historical_observation_reference",
+          "original": "history/acceptance-summary-v1.1.0-20261021.json",
+          "relocated": "acceptance-summary-v1.1.0-20261021.json",
+          "original_resolved_repository_path": "docs/history/acceptance-summary-v1.1.0-20261021.json",
+          "resolved_repository_path": "docs/history/acceptance-summary-v1.1.0-20261021.json"
+        },
+        {
+          "location": "/platforms/10/historical_observation_reference",
+          "original": "history/acceptance-summary-v1.1.0-20261021.json",
+          "relocated": "acceptance-summary-v1.1.0-20261021.json",
+          "original_resolved_repository_path": "docs/history/acceptance-summary-v1.1.0-20261021.json",
+          "resolved_repository_path": "docs/history/acceptance-summary-v1.1.0-20261021.json"
+        },
+        {
+          "location": "/platforms/10/limited_candidate_observation/details",
+          "original": "candidate-native-load-v1.2.0-license-held-20261025.json",
+          "relocated": "../candidate-native-load-v1.2.0-license-held-20261025.json",
+          "original_resolved_repository_path": "docs/candidate-native-load-v1.2.0-license-held-20261025.json",
+          "resolved_repository_path": "docs/candidate-native-load-v1.2.0-license-held-20261025.json"
+        },
+        {
+          "location": "/platforms/11/historical_observation_reference",
+          "original": "history/acceptance-summary-v1.1.0-20261021.json",
+          "relocated": "acceptance-summary-v1.1.0-20261021.json",
+          "original_resolved_repository_path": "docs/history/acceptance-summary-v1.1.0-20261021.json",
+          "resolved_repository_path": "docs/history/acceptance-summary-v1.1.0-20261021.json"
+        },
+        {
+          "location": "/platforms/12/historical_observation_reference",
+          "original": "history/acceptance-summary-v1.1.0-20261021.json",
+          "relocated": "acceptance-summary-v1.1.0-20261021.json",
+          "original_resolved_repository_path": "docs/history/acceptance-summary-v1.1.0-20261021.json",
+          "resolved_repository_path": "docs/history/acceptance-summary-v1.1.0-20261021.json"
+        },
+        {
+          "location": "/platforms/13/historical_observation_reference",
+          "original": "history/acceptance-summary-v1.1.0-20261021.json",
+          "relocated": "acceptance-summary-v1.1.0-20261021.json",
+          "original_resolved_repository_path": "docs/history/acceptance-summary-v1.1.0-20261021.json",
+          "resolved_repository_path": "docs/history/acceptance-summary-v1.1.0-20261021.json"
+        },
+        {
+          "location": "/platforms/14/historical_observation_reference",
+          "original": "history/acceptance-summary-v1.1.0-20261021.json",
+          "relocated": "acceptance-summary-v1.1.0-20261021.json",
+          "original_resolved_repository_path": "docs/history/acceptance-summary-v1.1.0-20261021.json",
+          "resolved_repository_path": "docs/history/acceptance-summary-v1.1.0-20261021.json"
+        },
+        {
+          "location": "/platforms/15/historical_observation_reference",
+          "original": "history/acceptance-summary-v1.1.0-20261021.json",
+          "relocated": "acceptance-summary-v1.1.0-20261021.json",
+          "original_resolved_repository_path": "docs/history/acceptance-summary-v1.1.0-20261021.json",
+          "resolved_repository_path": "docs/history/acceptance-summary-v1.1.0-20261021.json"
+        },
+        {
+          "location": "/platforms/16/historical_observation_reference",
+          "original": "history/acceptance-summary-v1.1.0-20261021.json",
+          "relocated": "acceptance-summary-v1.1.0-20261021.json",
+          "original_resolved_repository_path": "docs/history/acceptance-summary-v1.1.0-20261021.json",
+          "resolved_repository_path": "docs/history/acceptance-summary-v1.1.0-20261021.json"
+        },
+        {
+          "location": "/platforms/17/historical_observation_reference",
+          "original": "history/acceptance-summary-v1.1.0-20261021.json",
+          "relocated": "acceptance-summary-v1.1.0-20261021.json",
+          "original_resolved_repository_path": "docs/history/acceptance-summary-v1.1.0-20261021.json",
+          "resolved_repository_path": "docs/history/acceptance-summary-v1.1.0-20261021.json"
+        },
+        {
+          "location": "/platforms/18/historical_observation_reference",
+          "original": "history/acceptance-summary-v1.1.0-20261021.json",
+          "relocated": "acceptance-summary-v1.1.0-20261021.json",
+          "original_resolved_repository_path": "docs/history/acceptance-summary-v1.1.0-20261021.json",
+          "resolved_repository_path": "docs/history/acceptance-summary-v1.1.0-20261021.json"
+        },
+        {
+          "location": "/platforms/18/limited_candidate_observation/details",
+          "original": "candidate-native-load-v1.2.0-license-held-20261025.json",
+          "relocated": "../candidate-native-load-v1.2.0-license-held-20261025.json",
+          "original_resolved_repository_path": "docs/candidate-native-load-v1.2.0-license-held-20261025.json",
+          "resolved_repository_path": "docs/candidate-native-load-v1.2.0-license-held-20261025.json"
+        },
+        {
+          "location": "/platforms/19/historical_observation_reference",
+          "original": "history/acceptance-summary-v1.1.0-20261021.json",
+          "relocated": "acceptance-summary-v1.1.0-20261021.json",
+          "original_resolved_repository_path": "docs/history/acceptance-summary-v1.1.0-20261021.json",
+          "resolved_repository_path": "docs/history/acceptance-summary-v1.1.0-20261021.json"
+        },
+        {
+          "location": "/platforms/20/historical_observation_reference",
+          "original": "history/acceptance-summary-v1.1.0-20261021.json",
+          "relocated": "acceptance-summary-v1.1.0-20261021.json",
+          "original_resolved_repository_path": "docs/history/acceptance-summary-v1.1.0-20261021.json",
+          "resolved_repository_path": "docs/history/acceptance-summary-v1.1.0-20261021.json"
+        },
+        {
+          "location": "/platforms/20/limited_candidate_observation/details",
+          "original": "candidate-native-load-v1.2.0-license-held-20261025.json",
+          "relocated": "../candidate-native-load-v1.2.0-license-held-20261025.json",
+          "original_resolved_repository_path": "docs/candidate-native-load-v1.2.0-license-held-20261025.json",
+          "resolved_repository_path": "docs/candidate-native-load-v1.2.0-license-held-20261025.json"
+        },
+        {
+          "location": "/platforms/21/historical_observation_reference",
+          "original": "history/acceptance-summary-v1.1.0-20261021.json",
+          "relocated": "acceptance-summary-v1.1.0-20261021.json",
+          "original_resolved_repository_path": "docs/history/acceptance-summary-v1.1.0-20261021.json",
+          "resolved_repository_path": "docs/history/acceptance-summary-v1.1.0-20261021.json"
+        },
+        {
+          "location": "/platforms/21/limited_candidate_observation/details",
+          "original": "candidate-native-load-v1.2.0-license-held-20261025.json",
+          "relocated": "../candidate-native-load-v1.2.0-license-held-20261025.json",
+          "original_resolved_repository_path": "docs/candidate-native-load-v1.2.0-license-held-20261025.json",
+          "resolved_repository_path": "docs/candidate-native-load-v1.2.0-license-held-20261025.json"
+        },
+        {
+          "location": "/platforms/22/historical_observation_reference",
+          "original": "history/acceptance-summary-v1.1.0-20261021.json",
+          "relocated": "acceptance-summary-v1.1.0-20261021.json",
+          "original_resolved_repository_path": "docs/history/acceptance-summary-v1.1.0-20261021.json",
+          "resolved_repository_path": "docs/history/acceptance-summary-v1.1.0-20261021.json"
+        },
+        {
+          "location": "/platforms/22/limited_candidate_observation/details",
+          "original": "candidate-native-load-v1.2.0-license-held-20261025.json",
+          "relocated": "../candidate-native-load-v1.2.0-license-held-20261025.json",
+          "original_resolved_repository_path": "docs/candidate-native-load-v1.2.0-license-held-20261025.json",
+          "resolved_repository_path": "docs/candidate-native-load-v1.2.0-license-held-20261025.json"
+        },
+        {
+          "location": "/platforms/23/historical_observation_reference",
+          "original": "history/acceptance-summary-v1.1.0-20261021.json",
+          "relocated": "acceptance-summary-v1.1.0-20261021.json",
+          "original_resolved_repository_path": "docs/history/acceptance-summary-v1.1.0-20261021.json",
+          "resolved_repository_path": "docs/history/acceptance-summary-v1.1.0-20261021.json"
+        },
+        {
+          "location": "/platforms/23/limited_candidate_observation/details",
+          "original": "candidate-native-load-v1.2.0-license-held-20261025.json",
+          "relocated": "../candidate-native-load-v1.2.0-license-held-20261025.json",
+          "original_resolved_repository_path": "docs/candidate-native-load-v1.2.0-license-held-20261025.json",
+          "resolved_repository_path": "docs/candidate-native-load-v1.2.0-license-held-20261025.json"
+        },
+        {
+          "location": "/platforms/24/historical_observation_reference",
+          "original": "history/acceptance-summary-v1.1.0-20261021.json",
+          "relocated": "acceptance-summary-v1.1.0-20261021.json",
+          "original_resolved_repository_path": "docs/history/acceptance-summary-v1.1.0-20261021.json",
+          "resolved_repository_path": "docs/history/acceptance-summary-v1.1.0-20261021.json"
+        },
+        {
+          "location": "/platforms/24/limited_candidate_observation/details",
+          "original": "candidate-native-load-v1.2.0-license-held-20261025.json",
+          "relocated": "../candidate-native-load-v1.2.0-license-held-20261025.json",
+          "original_resolved_repository_path": "docs/candidate-native-load-v1.2.0-license-held-20261025.json",
+          "resolved_repository_path": "docs/candidate-native-load-v1.2.0-license-held-20261025.json"
+        },
+        {
+          "location": "/platforms/25/historical_observation_reference",
+          "original": "history/acceptance-summary-v1.1.0-20261021.json",
+          "relocated": "acceptance-summary-v1.1.0-20261021.json",
+          "original_resolved_repository_path": "docs/history/acceptance-summary-v1.1.0-20261021.json",
+          "resolved_repository_path": "docs/history/acceptance-summary-v1.1.0-20261021.json"
+        },
+        {
+          "location": "/platforms/25/limited_candidate_observation/details",
+          "original": "candidate-native-load-v1.2.0-license-held-20261025.json",
+          "relocated": "../candidate-native-load-v1.2.0-license-held-20261025.json",
+          "original_resolved_repository_path": "docs/candidate-native-load-v1.2.0-license-held-20261025.json",
+          "resolved_repository_path": "docs/candidate-native-load-v1.2.0-license-held-20261025.json"
+        },
+        {
+          "location": "/platforms/26/historical_observation_reference",
+          "original": "history/acceptance-summary-v1.1.0-20261021.json",
+          "relocated": "acceptance-summary-v1.1.0-20261021.json",
+          "original_resolved_repository_path": "docs/history/acceptance-summary-v1.1.0-20261021.json",
+          "resolved_repository_path": "docs/history/acceptance-summary-v1.1.0-20261021.json"
+        },
+        {
+          "location": "/platforms/27/historical_observation_reference",
+          "original": "history/acceptance-summary-v1.1.0-20261021.json",
+          "relocated": "acceptance-summary-v1.1.0-20261021.json",
+          "original_resolved_repository_path": "docs/history/acceptance-summary-v1.1.0-20261021.json",
+          "resolved_repository_path": "docs/history/acceptance-summary-v1.1.0-20261021.json"
+        },
+        {
+          "location": "/platforms/28/historical_observation_reference",
+          "original": "history/acceptance-summary-v1.1.0-20261021.json",
+          "relocated": "acceptance-summary-v1.1.0-20261021.json",
+          "original_resolved_repository_path": "docs/history/acceptance-summary-v1.1.0-20261021.json",
+          "resolved_repository_path": "docs/history/acceptance-summary-v1.1.0-20261021.json"
+        },
+        {
+          "location": "/historical/summary",
+          "original": "history/acceptance-summary-v1.1.0-20261021.json",
+          "relocated": "acceptance-summary-v1.1.0-20261021.json",
+          "original_resolved_repository_path": "docs/history/acceptance-summary-v1.1.0-20261021.json",
+          "resolved_repository_path": "docs/history/acceptance-summary-v1.1.0-20261021.json"
+        },
+        {
+          "location": "/historical/details",
+          "original": "history/ACCEPTANCE-v1.1.0-20261021.md",
+          "relocated": "ACCEPTANCE-v1.1.0-20261021.md",
+          "original_resolved_repository_path": "docs/history/ACCEPTANCE-v1.1.0-20261021.md",
+          "resolved_repository_path": "docs/history/ACCEPTANCE-v1.1.0-20261021.md"
+        },
+        {
+          "location": "/review_only_candidate_native_load/details",
+          "original": "candidate-native-load-v1.2.0-20261025.json",
+          "relocated": "../candidate-native-load-v1.2.0-20261025.json",
+          "original_resolved_repository_path": "docs/candidate-native-load-v1.2.0-20261025.json",
+          "resolved_repository_path": "docs/candidate-native-load-v1.2.0-20261025.json"
+        },
+        {
+          "location": "/license_held_candidate_native_load/details",
+          "original": "candidate-native-load-v1.2.0-license-held-20261025.json",
+          "relocated": "../candidate-native-load-v1.2.0-license-held-20261025.json",
+          "original_resolved_repository_path": "docs/candidate-native-load-v1.2.0-license-held-20261025.json",
+          "resolved_repository_path": "docs/candidate-native-load-v1.2.0-license-held-20261025.json"
+        },
+        {
+          "location": "/license_held_candidate_native_load/package_details",
+          "original": "candidate-package-v1.2.0-license-held-20261025.json",
+          "relocated": "../candidate-package-v1.2.0-license-held-20261025.json",
+          "original_resolved_repository_path": "docs/candidate-package-v1.2.0-license-held-20261025.json",
+          "resolved_repository_path": "docs/candidate-package-v1.2.0-license-held-20261025.json"
+        }
+      ]
+    }
+  ]
+}

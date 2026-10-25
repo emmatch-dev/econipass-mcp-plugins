@@ -1,111 +1,97 @@
 # DEV 1.2.0候補の受入・公式掲載状況
 
-確認日: 2026-10-25 JST。接続先は `https://api.dev.app.econipass.com/mcp`。
-**1.2.0はソース・オフライン配布物の検証を終えた候補で、未配備・未公開です。**
-最終source commitのCI、通常DEV配備、公開後の照合、認証済み実機受入をそれぞれ確認してから状態を更新します。
+確認日: 2026-10-25 JST。CFP・EMSファイル受信互換性と依存修正後の候補です。
+実装ソースは`275a21cda3b89ebadaf722b3eadff55e9e2e8775`、metadata commitは`0a04e8ee6d1cdee7eb2f50f490d0190769a43cdb`。
+**未配備・未公開で、認証済み総合受入は0／29です。**
 
-## 1.2.0のソースと配布物
+通常239／共有法定帳票252／最大254／固定PRD参照30を7スキルへ対応付けます。
+対応表SHA-256は`ec2295c64c3781032cb684b367dab521d8781c4d037aae34d6b3da347c8701ad`、release.jsonは
+`6cc85e69298ea6c983ab8036f64681ed4223312c417f197728403ebec76f5647`です。新規候補は37 ZIP・999エントリ・14ソース束縛です。
+更新中の公開原本common30ファイルと候補が一致し、公開matrix／adapter＋275a固定builder／SDK入力から
+全37 ZIP・999エントリを再生成してbyte一致を確認しました。公開Gitの旧834commitとの一致や
+公開済みを主張するものではありません。新候補のnative13限定試験は完了し、旧成功継承は0です。
 
-| 対象 | 確認結果 |
+[配布候補のhash](candidate-package-v1.2.0-cfp-ems-security-license-held-20261025.json)と[機械可読記録](acceptance-summary.json)を正本とします。
+旧928673監査は承認後7f631へ反映済みですが、今回の監査案は別の未承認・未反映の差分です。
+新sourceのCI・DEV配備・公開も未完了で、旧sourceの成功は継承しません。
+
+## CFP・EMSで実機から判明した問題と修正
+
+既存DEVのClaude接続で、CFPは2,150,326bytes、EMSテンプレートは76,117bytesの
+XLSX情報がUIに表示されても、モデルはXLSX resource非対応の1行だけを受け取りました。
+HTTP 500は観測せず、ファイル本体の受領・保存・投入の成功には数えていません。
+
+CFP取得とEMSの11ファイルdownload/export照会は`delivery_mode="metadata"`を既定とし、
+同じ小さなJSONをTextContentとstructured contentへ返します。本体は同梱せずURIはnullです。
+対応host／SDKのみ明示的に`delivery_mode="embedded"`を選び、元のbytes・サイズ・SHA-256と
+保存結果を確認します。サーバー取得・本体同梱・クライアント受領を分け、応答の受領確認はfalseです。
+EMSのnative認可・監査・書込・HTTP契約・32MiB上限を維持し、内部署名URLや新endpointは公開しません。
+
+CFPの本人画面はCFP算定→データ入力→Excel入力画面の製品別入力フォーマットです。
+確認済みはマスタ・原単位・活動量・CFP認証期間の4種で、AIST-IDEAの経路は未確認です。
+EMSの画面経路は未確認のため案内を作らず、対応クライアントで実ファイルを受け取ります。
+metadataだけで保存・投入・置換・保持・業務受入を完了扱いにしません。
+
+## 検証と29環境の範囲
+
+新sourceのローカルEMS影響2suiteは旧FastMCP3.4.7で496件成功しました。
+合成2,315,740bytes／最大200文字の非ASCII名でも通常textは最大1,350 UTF8bytesでした。
+これはLinux3.4.10・実SDKファイル保存・認証済み業務受入とは別です。
+旧5ee候補のLinux全suite5,225件成功／6skip（plugins55件を含む）とE2E58シナリオ／239toolは
+[旧候補の履歴](history/acceptance-summary-v1.2.0-candidate-5ee-5c4-20261025.json)へ分離し、新sourceへ継承しません。
+
+新候補で13環境の限定native試験を新規実行し、16環境は未試験です。旧成功継承は0です。
+公開版の部分確認と認証済み総合受入は0／29のままです。
+[今回の限定試験記録](candidate-native-load-v1.2.0-cfp-ems-security-license-held-20261025.json)は、source275a・実行時HEAD72e・release6cc85・14ソースへ束縛しています。
+Macの8 CLI＋4 SDKで31操作と拒否probe1件、Linux Codexのinstall2操作・metadata RPC3件を確認しました。
+
+| 限定試験の範囲 | 環境数 |
 | --- | --- |
-| 4profileのソース登録 | 通常239、共有法定帳票有効252、レビュー有効を含む最大254、PRD参照タグ30 |
-| tool→skill対応 | 全254ツールを7スキルへ明示割当。新ツール・廃止ツールを検出すると再生成を停止 |
-| ソース束縛 | 対応表の14ソースhashを実ファイルと照合。欠落・追加・重複・escape・symlink・byte不一致を拒否 |
-| 既存plugins suite | 55 passed。実登録、source binding、再現可能ZIP、29kit、4API sampleのオフライン起動を確認 |
-| skills／lint | 7スキルの検証、black／isort／flake8、diff check成功 |
-| 現在の生成物 | 共通1＋スキル7＋製品キット29＝37 ZIP。LICENSEを同梱しない候補を新規生成し、hash／CRC・14ソース・公開原本とのbyte一致を確認。旧1.1.0のassetは変更なし |
-| ライセンス | 適用は利用者指示で保留。MITレビュー候補は未承認・未公開の履歴として保持し、配布対象へ採用しない |
-| DEV反映の承認 | 最終監査情報1ファイルと文書2件、通常DEV配備は利用者承認済み。最終CI・配備は未完了 |
+| CLIでのmanifest・プラグイン・metadata読込（CodexはLinux CLIのみ） | 4 |
+| CLIでのMCP設定のみ（Cursor／VS Code） | 2 |
+| 設定とスキル読込（Goose／Cline） | 2 |
+| スキルmetadataのみ（Roo） | 1 |
+| SDKの合成オフラインfixture | 4 |
 
-基点は`8c578bac1ac91bdd2ddf0561e200fb87b64c41c7`、実装ソースcommitは
-`9286735044fd4635e11c5022e677d7cc2b7f9691`です。監査メタデータを含む最終リリースcommit、CI、配備SHAは別に確定します。
-対応表と`release.json`の`source_binding`は確定したソースbyteを識別しますが、配備やtenant受入は証明しません。
-29の製品設定形式、OAuth設定、SDKサンプルのread-only制限を一括変更していません。
+新OAuth・remote MCP・実モデル呼出・顧客業務操作はすべて0です。
+この13試験はremote CFP／EMS取得、実ファイル保存、認証済みcatalogや新security runtimeの受入を含みません。
+275aのLinux影響試験は初回1,401成功／11失敗でした。11操作の新しい引数delivery_modeが
+既存parity期待値に含まれていなかったため、72eで試験9行のみを厳密に補正しました。
+そのmoduleはMac・Linux各170件、Linuxの文書検査42件が成功（skip0）しました。
+固定30監査116件・plugins55件（再現性3件を含む）は初回成功群に含まれます。
+全1,412件を再実行して成功したとは記録せず、失敗した初回と補正後の再検証を分離しています。
+CI条件lint・actionlint・27workflowのYAML・diff検査も成功しました。
+275aのtool-only E2Eは239tool（237成功・対象不在の想定拒否2・失敗0）で、ローカルの
+PostgreSQL／Redisと合成AS/APIのみです。実grant・remote MCPは使わず、認証58シナリオは再実行していません。
+旧5eeの全suite・E2E58・本番image smokeを275aへ継承せず、275aの全suite／本番image成功は主張しません。
+新規MCP OAuth、ChatGPT受入、LICENSE適用は利用者指示で保留しています。
+ライセンスはHELDでLICENSE0件、旧MIT候補の配布・許諾申告は行いません。
 
-追加した8ツールは`update_task`、`get_activity`、`create_activity`、`update_activity`、
-`create_activity_comment`、`get_measure_custom_fields`、`get_task_custom_fields`、`get_activity_custom_fields`です。
-独自項目の値更新と、定義そのものの作成・変更・削除を区別し、後者は本人ブラウザーに残します。
-活動のnullable項目clear、現在状態／ETagと確認tokenの束縛、競合時の再取得をスキルにも記載しました。
+## 既存DEVと過去の証跡
 
-## 現在のDEV配備とツール公開数の観測
+既存`8c578bac`の[backend配備](https://github.com/emmatch-dev/econipass-backend/actions/runs/40171982330)と
+[Kong配備](https://github.com/emmatch-dev/econipass-backend/actions/runs/40174506917)は成功しましたが、今回の候補は含みません。
+既存Claude UIの244ツール（interactive15・参照119・更新110）はraw全ページの`tools/list`や稼働SHAの証明ではありません。
 
-| 観測 | 結果と限界 |
-| --- | --- |
-| 既存`8c578bac`のbackend配備 | [run 40171982330](https://github.com/emmatch-dev/econipass-backend/actions/runs/40171982330)成功。2026-10-25 07:53:41 UTCに完了 |
-| 同じソースに対応するKong配備 | [run 40174506917](https://github.com/emmatch-dev/econipass-backend/actions/runs/40174506917)成功。07:57:42 UTCに完了。上流manual runの対応、公開検証・finalizeを確認 |
-| Claude Webの既存接続UI | 07:53:26 UTCに244ツール＝interactive 15＋参照119＋更新110。CSV transaction・報告再生成・site validityの3表示名を確認 |
-| 1.2.0候補の新操作・修正 | 上記の既存配備には含まれない。候補の配備と認証済み操作試験は未実施 |
+以前のCFP共通500は一時領域の権限修正後の`fde1cffb`で、2026-10-21に5種類の取得を確認しました。
+[backend](https://github.com/emmatch-dev/econipass-backend/actions/runs/39525015891)／
+[Kong](https://github.com/emmatch-dev/econipass-backend/actions/runs/39526711825)の配備結果も過去のものです。
+当時はMIME・サイズ・基本OPC構造を確認し、CRC実体・セル内容、投入・置換は未検証でした。
 
-backend／Kongは既存の通常DEV暫定repository-runner経路です。protected brokerへの切替やPRD／STG配備は主張しません。
-Claude UIの観測は既存ログインの画面確認だけで、新規OAuth認可・権限変更・業務呼出しはありません。
-UIで稼働SHAを読み戻しておらず、244件を特定sourceのraw `tools/list`結果とみなしません。
-認証済みcatalogの全ページと、各clientの表示・実行結果を配備ソースへ照合する作業が残っています。
+[旧5909候補の状況](history/ACCEPTANCE-v1.2.0-candidate-5909-20261025.md)、
+[旧LICENSE非同梱13試験](candidate-native-load-v1.2.0-license-held-20261025.json)、
+[旧MIT候補13試験](candidate-native-load-v1.2.0-20261025.json)、
+[1.1.0の履歴](history/ACCEPTANCE-v1.1.0-20261021.md)はそれぞれ保存し、今回へ継承していません。
 
-## 29環境の受入範囲
-
-公開版としての1.2.0は**部分確認0／29、総合受入完了0／29**です。
-現在のLICENSE非同梱候補では、13製品で限定的なローカル試験を新たに実行しました。
-**新規試験13、過去の成功の継承0、認証済み総合受入0**です。
-[今回の記録](candidate-native-load-v1.2.0-license-held-20261025.json)は元証跡hash、
-各ZIP、14ソースの束縛と、各製品の確認段階を区別しています。
-
-| 限定試験の段階 | 対象 |
-| --- | --- |
-| パッケージ／manifest／metadataの読み込み | Codex Linux CLI、Claude Code、GitHub Copilot CLI、Gemini CLIの4製品 |
-| CLIによるMCP設定の読み込みのみ | Cursor、VS Codeの2製品。Desktop／IDE操作・認証済み接続は未確認 |
-| 設定と7スキルの読み込み | Goose、Clineの2製品 |
-| スキルmetadataのみ | Roo Codeの1製品 |
-| 合成fixtureによるSDKのオフライン検証 | OpenAI Responses／Agents、Anthropic Messages、LangChain／LangGraphの4製品 |
-
-Codexの導入確認はLinux arm64 CLIだけで、Mac Desktop／IDEの受入へ転記していません。
-Claudeはmanifestのエラー・警告0でもdirectory検証にLICENSE_MISSINGのblocking errorが1件あります。
-認証済みremote MCP、モデル呼出し、新規OAuth、業務書込みはすべて0件です。
-
-以前の未公開MITレビュー候補にも13製品の限定確認がありましたが、これは
-[別の履歴](candidate-native-load-v1.2.0-20261025.json)です。MIT適用は利用者指示で保留しており、
-その候補や成功記録を今回の試験へ採用していません。現在候補は旧候補と比較してLICENSE
-45エントリの除去以外は全ZIPエントリがbyte一致することも確認しました。
-全29製品の生成・構造検証はパッケージ検証であり、その製品によるnative読み込みや実接続ではありません。
-各製品・surfaceの結果は[機械可読記録](acceptance-summary.json)へ個別に記録します。
-
-10月21日の1.1.0には部分確認14／29、総合完了0／29の記録があります。
-[詳細履歴](history/ACCEPTANCE-v1.1.0-20261021.md)と[旧JSON](history/acceptance-summary-v1.1.0-20261021.json)を保存し、
-新版に読み込み済み・接続済みとして転記していません。Desktop／CLI／IDE／Web／mobile／cloudの結果も相互に流用しません。
-
-総合受入では、各製品の配布・認証profileに従い、7スキル、指示カード、またはSDK contextと設定の実際の取り込みを確認します。
-認証済みcatalogと参照、scope／事業所拒否、OAuth更新またはPAT rotation・専用grantの失効も対象です。
-更新を公開する構成ではpreview／確認／1回実行／readback／token再利用拒否、CFPを公開する構成では
-5ファイルの受領、投入・置換、サイズ制限、既存データ保持を専用fixtureで確認します。
-参照専用profileでは更新を実行せず、非公開操作の除外と更新要求の拒否を確認します。
-既存利用者のgrantを失効させたり、顧客データを置換したりして試験を成立させません。
-
-新規MCP OAuth接続とChatGPTの受入は利用者の指示で保留中です。
-既存接続の確認と、新しい継続アクセスの認可を区別して進めます。
-
-## CFPの500修正と取得・投入の境界
-
-旧稼働版`37284f6`と診断版`94ae94f`で発生した500は、一時領域の権限修正後の
-`fde1cffb`で2026-10-21 01:25–01:26 UTCに再試験し、5種類のExcel取得に成功しました。
-修正版の[backend配備](https://github.com/emmatch-dev/econipass-backend/actions/runs/39525015891)と
-[Kong配備](https://github.com/emmatch-dev/econipass-backend/actions/runs/39526711825)も成功しています。
-
-受領したのはmaster／base_unit／activity_amount／pcf_certification_period／aist_ideaです。
-MIME、サイズ一致、ZIPヘッダーと必須OPCパーツを確認しました。CRC実体・XML・セル内容は当時のlive試験では未検証です。
-raw HTTP transport statusは観測せず、実ファイルを受領した成功応答を根拠にしています。
-顧客ID・名前・ファイル本文・内容hashは公開記録に保存していません。
-
-この過去結果は1.2.0の再試験でも、投入・置換・既存データ保持の受入でもありません。
-同じユーザーの業務データを再投入して成功扱いにせず、専用fixtureで残る操作を確認します。
-
-## 公式ディレクトリ
+## 公式掲載
 
 | 公開先 | 状況 |
 | --- | --- |
-| GitHub公開リポジトリ・Release | DEV 1.1.0公開済み。1.2.0は候補の更新・公開準備中 |
-| MCP公式Registry | DEV専用`io.github.emmatch-dev/econipass-dev`の`1.2.0-dev.1` manifest案を公式mcp-publisher 1.8.1で検証し、valid応答を確認。登録・公開は未実施 |
-| OpenAI公式ディレクトリ | 2026-10-25に認証済みポータルで確認。公開者の本人・法人確認が必要なため、ZIP下書きの作成前で停止。審査・掲載は未完了 |
-| Claudeディレクトリ | 2026-10-25に既存ログインのポータルで申請0件を確認。公開mainの1.1.0事前検査は7項目中6成功、LICENSE不足1件で停止。icon・privacy URLの警告は1.2.0候補へ対応し、現CLI 2.1.308の隔離manifest検証はエラー・警告0。ただしCLI内のdirectory検証はLICENSE_MISSINGでblocking error 1件。LICENSE適用は利用者指示で保留しているため、公式掲載は停止。新候補のポータル再検査・申請は未実施 |
+| GitHub | DEV 1.1.0公開済み、1.2.0は未公開 |
+| MCP Registry | namespace未登録。remote-only案はsoftware LICENSE不要だが、metadataのCC0許諾を含むTermsへの同意は未実施。組織namespace用の認証も未設定 |
+| OpenAI | 公開者の本人・法人確認がZIPアップロード前に必要。未申請 |
+| Claude | LICENSE適用保留により掲載条件を満たさず未申請。旧5ee候補はmanifestエラー・警告0、directoryはLICENSE_MISSINGのblocking1。今回のEMS修正候補でもmanifestエラー・警告0、directoryはLICENSE_MISSINGのblocking1。限定読込成功を掲載準備完了とは扱わない |
 
-GitHub配布、MCP Registry登録、各社の審査承認は別の結果として記録します。
-DEV URLを本番URLとして申告せず、審査用秘密情報や認証情報を公開リポジトリへ保存しません。
-申請手順は[公開手順](../plugins/PUBLISHING.md)に記録しています。
+Registryの[認証仕様](https://github.com/modelcontextprotocol/registry/blob/main/docs/modelcontextprotocol-io/authentication.mdx)と
+[Terms](https://github.com/modelcontextprotocol/registry/blob/main/docs/modelcontextprotocol-io/terms-of-service.mdx)を確認します。
+GitHub配布、Registry登録、各社の掲載承認は別の結果です。DEV URLを本番URLとして申告せず、審査用認証情報は公開しません。
