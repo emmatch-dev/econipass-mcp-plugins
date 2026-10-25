@@ -18,7 +18,7 @@
   ],
   "verification": {
     "method": "Local runtime registration only; no tool calls or authenticated tenant tests.",
-    "observed_date": "2026-10-25",
+    "observed_date": "2026-10-26",
     "profile_hash_format": "SHA-256 of sorted logical tool names, joined by newline with one final newline.",
     "availability_note": "Profiles describe source registration and tag filters, not a live environment or a grant. Actual tools, authorization, contracts and client rendering must be checked separately. The PRD read-only tag profile is a source allowlist check, not proof of PRD deployment.",
     "source_note": "source_base_commit is the release branch base; source_files_sha256 binds the exact maintained registration, contract and business-operation inputs. It is not an attestation of deployment or tenant acceptance."
@@ -30,13 +30,13 @@
         "STATUTORY_REPORTS_ENABLED": false,
         "STATUTORY_REPORT_MCP_REVIEW_ENABLED": false
       },
-      "tool_count": 239,
-      "tool_names_sha256": "3fcfdfa5efcf1f0c6c8f22ccf6e66a6fb5f00e6ef61936646003983a5e1269b3",
+      "tool_count": 241,
+      "tool_names_sha256": "89bd4a6459d1d87381003c103434beb237ebe46322d57bfb99ac875fa3c90902",
       "primary_skill_counts": {
         "activity-input": 19,
         "cfp-input": 2,
         "emissions-analysis": 8,
-        "ems-operations": 170,
+        "ems-operations": 172,
         "measures-targets": 20,
         "setup": 1,
         "statutory-reports": 19
@@ -48,13 +48,13 @@
         "STATUTORY_REPORTS_ENABLED": true,
         "STATUTORY_REPORT_MCP_REVIEW_ENABLED": false
       },
-      "tool_count": 252,
-      "tool_names_sha256": "77670d26e0f0d93bc8b1b3579333fd363ce4eef541d3677ef1b5aa2ff5a9d8aa",
+      "tool_count": 254,
+      "tool_names_sha256": "1827838017ed338118c5b68ab43deff21f46b175d7c8888b99b77ae60f15ef42",
       "primary_skill_counts": {
         "activity-input": 19,
         "cfp-input": 2,
         "emissions-analysis": 8,
-        "ems-operations": 170,
+        "ems-operations": 172,
         "measures-targets": 20,
         "setup": 1,
         "statutory-reports": 32
@@ -66,13 +66,13 @@
         "STATUTORY_REPORTS_ENABLED": true,
         "STATUTORY_REPORT_MCP_REVIEW_ENABLED": true
       },
-      "tool_count": 254,
-      "tool_names_sha256": "ce5e0f3f7888b8bb26d054082524567fcaab4928912d03445c76cc3a829be826",
+      "tool_count": 256,
+      "tool_names_sha256": "136ab228a69ad1f4a25ba6e10ff317d4af1129e74b6b6b5f092545db05b86727",
       "primary_skill_counts": {
         "activity-input": 19,
         "cfp-input": 2,
         "emissions-analysis": 8,
-        "ems-operations": 170,
+        "ems-operations": 172,
         "measures-targets": 20,
         "setup": 1,
         "statutory-reports": 34
@@ -295,6 +295,9 @@
       "primary_skill": "ems-operations"
     },
     "export_ems_electrical_topology": {
+      "primary_skill": "ems-operations"
+    },
+    "export_ems_import_transactions": {
       "primary_skill": "ems-operations"
     },
     "export_ems_point_device_mappings": {
@@ -548,6 +551,9 @@
       "primary_skill": "ems-operations"
     },
     "list_ems_import_errors": {
+      "primary_skill": "ems-operations"
+    },
+    "list_ems_import_summaries": {
       "primary_skill": "ems-operations"
     },
     "list_ems_import_transactions": {
@@ -884,7 +890,7 @@
       "primary_skill": "ems-operations"
     }
   },
-  "source_base_commit": "8c578bac1ac91bdd2ddf0561e200fb87b64c41c7",
+  "source_base_commit": "06ee31fbe3c2a5a5700c08d72054240242c476e3",
   "source_files_sha256": {
     "services/mcp-server/src/econipass_mcp/server.py": "79e93bcbbaf291a657133fb12c90927504caa1e9a78ce3e8e7445959981bdf7f",
     "services/mcp-server/src/econipass_mcp/request_identity.py": "df67efc7fc50f9fb1e69823b3c34a4d108a39415271a40c13b85a8d380309dd6",
@@ -899,6 +905,6 @@
     "services/mcp-server/src/econipass_mcp/tools/activities.py": "7002f3bc948f95fa2614d36ca755706fcfd1b3bd95cd87f4688ae245d152dd42",
     "services/mcp-server/src/econipass_mcp/tools/statutory_reports_v2.py": "8220f68c38d148c8d93da06db6bb14046f5296126149a8c924ffc611d5fd7d2f",
     "services/mcp-server/src/econipass_mcp/tools/statutory_paper.py": "57f98d5e9951a7d1db37b57ba9a90f4312327d01a57d541a3f14babacde312e0",
-    "services/mcp-server/src/econipass_mcp/data/ems_operations.json": "d504ea5cbd3cba493392b02586b38f518625a5e33d16c6eafd6fb088c028a827"
+    "services/mcp-server/src/econipass_mcp/data/ems_operations.json": "778ae7ee1e905ede3d45a98ed892395a4becdae18e09bb89b0bd8e8dd24c1de6"
   }
 }

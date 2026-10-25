@@ -2,20 +2,46 @@
 
 この文書のcommand・source bindingは非公開backendで実行した検証の記録です。
 本公開リポジトリ単独の再実行手順ではありません。builder・tests・サーバー本体は含みません。
-生成済みZIPとrelease.json、公開原本とのbyte一致、実機受入はそれぞれ別に確認します。
+生成済みZIP、公開原本とのbyte一致、CI・配備、実機受入は別々に確認します。
 
-追加EMSソース275aのローカル影響2suiteは旧FastMCP3.4.7で496件成功しました。
-Linux3.4.10の影響検証は初回1,401成功／11失敗を保存し、72eの試験9行のみの厳密補正後、
-parity170件・文書42件が成功（skip0）しました。固定30監査116件・plugins55件（再現性3件）は
-初回成功群です。全1,412件の一括再成功とは扱いません。CI条件lint・actionlint・27workflow YAMLも成功しました。
-新sourceのtool-only E2E239件は237成功／想定対象不在拒否2／失敗0で、ローカル合成AS/APIと
-PostgreSQL／Redisのみです。認証58シナリオや本番imageは5eeの履歴へ分離します。
-これらは実SDKファイル保存・実接続受入・CI・DEV配備を証明しません。
-新候補の[限定native13試験](../docs/candidate-native-load-v1.2.0-cfp-ems-security-license-held-20261025.json)はsource275a／実行時HEAD72e／release6cc85へ束縛し、
-旧成功継承0・残り16環境未試験です。設定・スキル・SDK合成fixtureの確認はremote CFP／EMS取得や
-実ファイル保存・新runtime・認証済み業務受入を証明しません。
+2026-10-26の現候補はMac12試行中11限定成功・Roo metadata列挙1未合格です。
+Linux Codexの導入／metadata確認1件も成功し、ローカル13試行は12限定成功・1未合格です。
+新規native資源のcleanupを確認しました。認証済み受入・全13成功は主張しません。
+Claude WebのEMS v3新規import／3ソースroundtripと他6同一ZIPの有効状態再確認は別の限定観測です。
+[今回の限定記録](../docs/candidate-native-load-v1.2.0-merged-ems-license-held-20261026.json)を参照してください。総合受入は0／29です。
+以下の統合Mac検証節はmetadata377作成時点の記録で、当時の「新native13未実施」は候補生成時の状態です。
+後続の275a／5ee／各旧版はソース別履歴であり、新sourceのLinux全suite・image・CI・DEV成功へ継承しません。
 
-## 1.2.0 更新時の確認
+## 2026-10-26 develop追加2操作の統合ソースとMac検証
+
+基点develop `06ee31fbe3c2a5a5700c08d72054240242c476e3`へ、旧候補の一般task/activity・
+CFP受信互換・EMS metadata既定/明示embeddedを統合した。実装source commitは
+`6d3fc5d6ac4719618621302a51a81d75e157c5c8`。
+上流の`list_ems_import_summaries`と`export_ems_import_transactions`を維持し、
+固定EMS契約は167操作（参照76・更新91、そのうちdownload12）、EMS担当は172toolとなる。
+12download照会へ同じ返却方式を適用し、source decimal・原本ledgerと現在の登録状態を区別する。
+
+- Mac専用hash lockのPython 3.11.16 / FastMCP3.4.10 / mcp1.30.0 / pytest9.1.1で、
+  既存refresh helperから4profileの実登録241 / 254 / 256 / 固定PRD参照30を観測した。
+  socket/DB接続を拒否し、lifespan・業務toolは呼んでいない。Linux実測は未実施。
+- tool→skill割当は両側を統合し、256toolの明示割当と14source inventoryを保持した。
+  source6d3の14ファイルへbyte hashを正式同期し、release branch基点は06eeと記録した。
+  新map SHAは`64e885efed0ed8df878efe53721fcd302e5754fdff0768aeb4ab84d9aacce345`。
+- 既存plugins suite55件が成功（skip0、37 ZIP再現性・任意LICENSEの保持を検査する3件を含む）。
+  7skill validator、builder check、JSON・source binding・相対参照・diff検査も成功した。
+  LICENSEを一時fixtureで検査することと、実配布物へ適用することは別である。
+- 新しいMac検証候補は37 ZIP・999entry・common30ファイル・14source bindingで、
+  全ZIPのSHA/CRCとcommon30のbyte一致を確認した。LICENSE/PDFは0件。
+  release.json SHAは`9640f2d6c3dbeb683d3031596ee3a62101686096e8c9bf80d43f5bc48854a27d`。
+  Linux/本番image/CI/DEV・認証済み業務受入は未完了で、新native13の再試験もまだ実施していない。
+- develop側のダッシュボード・CSV受付集計/原本出力と、一般task/activity・CFPの追加を両方保持する。
+- 以下の275a/5ee・develop単独の試験、旧6cc候補/native13/Claude Web観測は各ソースの履歴であり、
+  新しい統合sourceのCI・配備・実機受入へ継承しない。Mac検証候補は新規生成したが、公開は行っていない。
+- 旧0a691b監査承認・10f599適用と旧CI成功は統合後ソースの監査承認ではない。
+  protectedファイルは06eeのまま保持し、新監査案の検証・独立レビュー・必要な承認を別に確認する。
+- LICENSE適用、新OAuth、ChatGPT受入の保留は維持し、旧MIT候補を配布対象にしない。
+
+## 1.2.0 旧275a候補の検証履歴
 
 実施日: 2026-10-25。ブランチ基点は `8c578bac`、実装ソースcommitは
 `275a21cda3b89ebadaf722b3eadff55e9e2e8775`。最終の登録入力は
@@ -47,7 +73,7 @@ LICENSEはユーザー保留のまま適用せず、以前のMITレビュー候�
   CFP download成功とupload受入の区別を反映する。
 
 - 旧3.4.7での `python -m pytest -q plugins/tests`: **55 passed**。
-  新3.4.10 source5eeの全suiteにも同じ55件が含まれる。追加EMS source275aの55件も上記Linux影響試験の初回成功群で再確認した。
+  新3.4.10 source5eeの全suiteにも同じ55件が含まれる。追加EMS source275aでは別途再検証する。
   source byte bindingと境界拒否、実登録profile、allowlistのread-only属性、37 ZIP再現性、
   隠しmanifest、29kitと4API sampleのオフライン起動を既存suiteで確認した。
   ディレクトリ用PNGの構造・CRC・サイズ境界と、任意LICENSEの全37配布物への
@@ -57,6 +83,56 @@ LICENSEはユーザー保留のまま適用せず、以前のMITレビュー候�
 
 最終のbuild hashは確定ソースのrelease証跡へ記録する。
 以下の各版の結果を1.2.0の再試験結果として扱わない。
+
+## 2026-10-25 develop側EMS契約の検証履歴
+
+CSVの受付集計・原本出力と、ダッシュボード監査Wave 1の事業所有効開始変更・
+保存報告再生成を両方保持した。native router/DTOから再生成した固定契約は
+167操作（参照76・更新91・出力12）で、管理用・業務用の公開範囲を省略していない。
+
+- fastmcp/slim 3.4.10・OpenTelemetry API 1.45.1・Python 3.11.17のLinux環境で、
+  既存`test_tool_coverage.py`のruntime catalog readerを再利用して実登録を観測した。
+  Python socketとpsycopg2接続を拒否し、lifespan・業務toolは実行していない。
+- 4profileの実登録数は233 / 246 / 248 / PRD参照30。
+  全248ツールを既存7スキルへ割り当て、EMSは172ツールを担当する。
+  tool名hash・skill件数・6登録ソースのhashを実測へ同期した。
+- 追加された2更新は`ems-write` / `write`タグと`mcp:write`の確認付き操作であり、
+  PRD参照profileの固定30件・8タグ・tool名hashを変更していない。
+  version 1.1.0、cloud adapter、接続先ごとの許可範囲も変更していない。
+- native contractの再生成一致、hard schema blockerなし、既存soft schema snapshotとの
+  一致を確認した。全MCP suite・HTTP・配備・認証済み受入の完了は、最終統合ソースの
+  証跡で別途確認する。この対応表同期は外部公開やtenant受入を表さない。
+
+### 同日のダッシュボード監査Wave 2統合
+
+既存のダッシュボード照会へ`site_ids`、品質課題照会へ5つの任意filterを追加した
+上流変更と、CSV受付集計・原本出力を保持した。固定カタログの167操作、公開tool名と
+固定PRD参照30件・8タグ、version・adapterは変更していない。対応表の登録ソースhashは
+Wave 2のserver・固定契約へ同期した。
+
+共有metadataの入力制約と出力schemaも更新されるため、上記の旧登録観測だけで新しい
+ソース全体の検証完了とは扱わない。確定コミットでnative生成一致・実登録profile・
+既存metadata/EMS/権限境界の影響suite・HTTPを確認し、監査・CI・配備・認証済み受入は
+それぞれの最終ソース証跡で記録する。
+
+## 2026-10-24 CSV照会の対応表同期
+
+`list_ems_import_summaries`と`export_ems_import_transactions`を既存の
+`ems-operations`スキルへ割り当てた。登録ソースは対応表の
+`source_files_sha256`で識別する。EMS生成カタログのhashと、基点のdevelopで既に
+変更済みだったserver・法定帳票2ファイルの古い記録を現sourceへ合わせた。
+後者3ファイルのコードは今回変更していない。
+
+- fastmcp/slim 3.4.10・OpenTelemetry API 1.45.1のLinux環境で、既存
+  `test_tool_coverage.py`のruntime catalog readerを再利用して観測した。
+  Python socketとpsycopg2接続を拒否し、lifespan・業務toolを実行していない。
+- 4profileの実登録数は231 / 244 / 246 / PRD参照30。
+  全246ツールを既存7スキルへ割り当て、EMSは170ツールを担当する。
+  profileのtool名hash・skill件数は実測名から計算した。
+- 新規2操作はreadOnlyHint=true、`ems-operations`タグ、`mcp:read`のみ。
+  PRD参照profileの30件・tool名hash・条件、cloud adapterとversionは変更していない。
+- 全MCP・配布物検査と実HTTP E2Eの最終結果は、最終ソース固定後の証跡で確認する。
+  この対応表の同期は、プラグインの外部公開・インストール・認証済みtenant受入を表さない。
 
 ## 1.1.0 更新時の確認
 

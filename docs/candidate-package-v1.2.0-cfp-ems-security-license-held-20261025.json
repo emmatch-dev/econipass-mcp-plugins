@@ -534,6 +534,20 @@
     "fresh_full_suite_for275a": false,
     "production_image_for275a_built": false,
     "audit_proposal_applied": false,
-    "CI_or_deploy_completed": false
+    "CI_or_deploy_completed": false,
+    "audit_proposal_application_scope": "The false audit_proposal_applied value records the earlier off-target local validation; current approved application is recorded separately in current_audit_application."
+  },
+  "current_audit_application": {
+    "approved_patch_sha256": "0a691b47ce8533956c2f0bff56e8249dd544535d789c20970e7d4fe18951a3c9",
+    "approved_by_user": true,
+    "approval_date_jst": "2026-10-26",
+    "applied_commit": "10f599241e4c791d6a9b58a2295957d1c53c82f0",
+    "application_evidence_sha256": "cb6b6f87e258eef356a20d4100bb221d52e3e0b74cc70da6fcba281a53e0dbab",
+    "applied": true,
+    "CI_started": true,
+    "DEV_deployed": false,
+    "software_license_application": "HELD_BY_USER",
+    "CI_status": "in_progress",
+    "CI_head_sha": "10f599241e4c791d6a9b58a2295957d1c53c82f0"
   }
 }

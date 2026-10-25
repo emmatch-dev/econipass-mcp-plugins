@@ -1,97 +1,84 @@
-# DEV 1.2.0候補の受入・公式掲載状況
+# DEV 1.2.0統合候補の受入・公式掲載状況
 
-確認日: 2026-10-25 JST。CFP・EMSファイル受信互換性と依存修正後の候補です。
-実装ソースは`275a21cda3b89ebadaf722b3eadff55e9e2e8775`、metadata commitは`0a04e8ee6d1cdee7eb2f50f490d0190769a43cdb`。
-**未配備・未公開で、認証済み総合受入は0／29です。**
+確認日: 2026-10-26 JST。実装ソース`6d3fc5d6ac4719618621302a51a81d75e157c5c8`、metadata`3775093d517eac5ef183afc148d56016058fea63`、
+基点develop`06ee31fbe3c2a5a5700c08d72054240242c476e3`の新しい統合候補です。
+**未配備・未公開、認証済み総合受入0／29、公開版の部分確認0／29です。**
 
-通常239／共有法定帳票252／最大254／固定PRD参照30を7スキルへ対応付けます。
-対応表SHA-256は`ec2295c64c3781032cb684b367dab521d8781c4d037aae34d6b3da347c8701ad`、release.jsonは
-`6cc85e69298ea6c983ab8036f64681ed4223312c417f197728403ebec76f5647`です。新規候補は37 ZIP・999エントリ・14ソース束縛です。
-更新中の公開原本common30ファイルと候補が一致し、公開matrix／adapter＋275a固定builder／SDK入力から
-全37 ZIP・999エントリを再生成してbyte一致を確認しました。公開Gitの旧834commitとの一致や
-公開済みを主張するものではありません。新候補のnative13限定試験は完了し、旧成功継承は0です。
+Mac3.4.10の実登録は通常241／共有法定帳票254／最大256／固定PRD参照30です。
+これはオフラインのprofile登録数であり、実環境catalogの公開数ではありません。
+対応表SHAは`64e885efed0ed8df878efe53721fcd302e5754fdff0768aeb4ab84d9aacce345`、release.json SHAは`9640f2d6c3dbeb683d3031596ee3a62101686096e8c9bf80d43f5bc48854a27d`。
+37 ZIP・999エントリ・common30ファイル・14ソース束縛・LICENSE0件を確認します。
+[配布候補のhash](candidate-package-v1.2.0-merged-ems-license-held-20261026.json)、[機械可読記録](acceptance-summary.json)、
+[今回の限定試験](candidate-native-load-v1.2.0-merged-ems-license-held-20261026.json)を正本とします。
 
-[配布候補のhash](candidate-package-v1.2.0-cfp-ems-security-license-held-20261025.json)と[機械可読記録](acceptance-summary.json)を正本とします。
-旧928673監査は承認後7f631へ反映済みですが、今回の監査案は別の未承認・未反映の差分です。
-新sourceのCI・DEV配備・公開も未完了で、旧sourceの成功は継承しません。
+## 実装と未完了の配備
 
-## CFP・EMSで実機から判明した問題と修正
+上流のCSV受付集計`list_ems_import_summaries`、原本出力`export_ems_import_transactions`を保持しました。
+EMS固定契約167操作（参照76・更新91、download12）、EMS担当172toolです。
+CFP取得とEMS12download照会は既定metadata／明示embeddedを使い分け、同じbounded JSONを
+text／structuredの両方へ返します。サーバー取得・本体同梱・クライアント受領を分離し、
+metadataには本体や取得可能URLを含めず、受領確認はfalseです。対応クライアントで実保存を別に確認します。
 
-既存DEVのClaude接続で、CFPは2,150,326bytes、EMSテンプレートは76,117bytesの
-XLSX情報がUIに表示されても、モデルはXLSX resource非対応の1行だけを受け取りました。
-HTTP 500は観測せず、ファイル本体の受領・保存・投入の成功には数えていません。
+旧監査0a691の承認・10f599適用と旧CI成功は旧source275aの履歴です。
+新統合sourceの監査案は未承認・未反映で、protected3ファイルは06ee基点のbyteを維持しています。
+新候補は未pushのためCI未実施、DEV未配備、未公開です。新しいLinux全体結果・image・CI・DEV結果は
+最終ソースへ束縛して別途追記します。旧sourceの成功を新候補へ継承しません。
+別の既存DEV predecessorとして06eeのbackend／Kong workflow成功を観測しましたが、
+統合候補377の配備成功ではありません。frontend側の更新は別の進行中の作業です。
 
-CFP取得とEMSの11ファイルdownload/export照会は`delivery_mode="metadata"`を既定とし、
-同じ小さなJSONをTextContentとstructured contentへ返します。本体は同梱せずURIはnullです。
-対応host／SDKのみ明示的に`delivery_mode="embedded"`を選び、元のbytes・サイズ・SHA-256と
-保存結果を確認します。サーバー取得・本体同梱・クライアント受領を分け、応答の受領確認はfalseです。
-EMSのnative認可・監査・書込・HTTP契約・32MiB上限を維持し、内部署名URLや新endpointは公開しません。
+## 現在の29環境
 
-CFPの本人画面はCFP算定→データ入力→Excel入力画面の製品別入力フォーマットです。
-確認済みはマスタ・原単位・活動量・CFP認証期間の4種で、AIST-IDEAの経路は未確認です。
-EMSの画面経路は未確認のため案内を作らず、対応クライアントで実ファイルを受け取ります。
-metadataだけで保存・投入・置換・保持・業務受入を完了扱いにしません。
+Macの8 CLI＋4 SDKを逐次実行し、**12試行＝11限定成功＋Roo 1未合格**でした。
+31クライアント操作、拒否境界probe1件、Node version probe1件の全33プロセスはexit0で、
+OOM・timeoutは観測しませんでした。Rooはexit0でも候補7スキルを列挙できず、成功に数えていません。
+初期化raceが疑われますが因果は未確定です。初回結果を保存し、再試行していません。
+network denyによる接続試行の拒否を観測しましたが、remote MCP接続の成功は0です。
+Linux Codexでは新候補をローカル導入2操作・metadata RPC3件で確認し、6項目のcheckが成功しました。
+UID21125・network none・host mount0で、7スキルの有効状態を確認しました。
+ローカル13試行は12限定成功・Roo1未合格で、全13成功ではありません。
+native試験専用containerと新task image8件の不在、公式base保持を確認しました。別の全体試験用環境とは分離します。
 
-## 検証と29環境の範囲
+Claude WebではEMS v3を新規importし、候補3ソースとダウンロード後の内容が一致しました。
+他6スキルは今回ZIPが旧版とbyte同一であることと、現在のv2有効状態を再確認しました。
+他6スキルの再importではありません。この1環境はスキル導入限定の追加観測です。
 
-新sourceのローカルEMS影響2suiteは旧FastMCP3.4.7で496件成功しました。
-合成2,315,740bytes／最大200文字の非ASCII名でも通常textは最大1,350 UTF8bytesでした。
-これはLinux3.4.10・実SDKファイル保存・認証済み業務受入とは別です。
-旧5ee候補のLinux全suite5,225件成功／6skip（plugins55件を含む）とE2E58シナリオ／239toolは
-[旧候補の履歴](history/acceptance-summary-v1.2.0-candidate-5ee-5c4-20261025.json)へ分離し、新sourceへ継承しません。
-
-新候補で13環境の限定native試験を新規実行し、16環境は未試験です。旧成功継承は0です。
-公開版の部分確認と認証済み総合受入は0／29のままです。
-[今回の限定試験記録](candidate-native-load-v1.2.0-cfp-ems-security-license-held-20261025.json)は、source275a・実行時HEAD72e・release6cc85・14ソースへ束縛しています。
-Macの8 CLI＋4 SDKで31操作と拒否probe1件、Linux Codexのinstall2操作・metadata RPC3件を確認しました。
-
-| 限定試験の範囲 | 環境数 |
+| 現候補の状態 | 環境数 |
 | --- | --- |
-| CLIでのmanifest・プラグイン・metadata読込（CodexはLinux CLIのみ） | 4 |
-| CLIでのMCP設定のみ（Cursor／VS Code） | 2 |
-| 設定とスキル読込（Goose／Cline） | 2 |
-| スキルmetadataのみ（Roo） | 1 |
-| SDKの合成オフラインfixture | 4 |
+| Macローカル試験の限定成功 | 11 |
+| Linux Codex CLIのローカル導入・metadata確認の限定成功 | 1 |
+| Claude Webスキル導入・有効状態確認の限定成功 | 1 |
+| Rooスキルmetadata列挙の未合格 | 1 |
+| 現候補では未実施（保留中ChatGPTを含む） | 15 |
+| 認証済み総合受入 | 0 |
 
-新OAuth・remote MCP・実モデル呼出・顧客業務操作はすべて0です。
-この13試験はremote CFP／EMS取得、実ファイル保存、認証済みcatalogや新security runtimeの受入を含みません。
-275aのLinux影響試験は初回1,401成功／11失敗でした。11操作の新しい引数delivery_modeが
-既存parity期待値に含まれていなかったため、72eで試験9行のみを厳密に補正しました。
-そのmoduleはMac・Linux各170件、Linuxの文書検査42件が成功（skip0）しました。
-固定30監査116件・plugins55件（再現性3件を含む）は初回成功群に含まれます。
-全1,412件を再実行して成功したとは記録せず、失敗した初回と補正後の再検証を分離しています。
-CI条件lint・actionlint・27workflowのYAML・diff検査も成功しました。
-275aのtool-only E2Eは239tool（237成功・対象不在の想定拒否2・失敗0）で、ローカルの
-PostgreSQL／Redisと合成AS/APIのみです。実grant・remote MCPは使わず、認証58シナリオは再実行していません。
-旧5eeの全suite・E2E58・本番image smokeを275aへ継承せず、275aの全suite／本番image成功は主張しません。
-新規MCP OAuth、ChatGPT受入、LICENSE適用は利用者指示で保留しています。
-ライセンスはHELDでLICENSE0件、旧MIT候補の配布・許諾申告は行いません。
+合計は限定成功13・未合格1・未実施15です。公開版の部分確認と認証済み総合受入は0／29です。
+旧native13の成功継承は0です。
+Cursor／VS Codeは設定のみ、SDKはローカル合成fixture、Claude hostedはWebのみです。
+CLI／SDKのpackage entrypointは旧版と一致し、Nodeだけ22.23.2→22.23.4のHomebrew bottle更新を記録しました。
+19のharness／policyと11の公開entrypointを前後照合しましたが、全依存ファイルの封印ではありません。
+新OAuth、実モデル呼出、顧客業務操作は0で、認証済みcatalog・CFP／EMS取得・実保存・投入／置換の成功は含みません。
 
-## 既存DEVと過去の証跡
+## 検証と履歴
 
-既存`8c578bac`の[backend配備](https://github.com/emmatch-dev/econipass-backend/actions/runs/40171982330)と
-[Kong配備](https://github.com/emmatch-dev/econipass-backend/actions/runs/40174506917)は成功しましたが、今回の候補は含みません。
-既存Claude UIの244ツール（interactive15・参照119・更新110）はraw全ページの`tools/list`や稼働SHAの証明ではありません。
+新candidateのMac3.4.10 plugins55件が成功し、再現性3ケースを含みます。
+7skill validator、builder check、14source／37ZIPのhash・CRC・JSON・参照検査を確認しました。
+公開原本と候補の全37 ZIP再ビルドbyte照合は候補JSONで別に記録します。
+Linux全suite・E2E・production imageの旧5ee／275a結果は新sourceへ継承しません。
+[旧275a・6cc85候補の履歴](history/ACCEPTANCE-v1.2.0-candidate-275a-6cc85-20261026.md)と、その
+[機械可読記録](history/acceptance-summary-v1.2.0-candidate-275a-6cc85-20261026.json)に旧監査承認・適用、CI時点、native13、試験結果を保存しました。
+以前のCFP HTTP500修正、既存DEVのCFP／EMS XLSX非対応観測、本人UIのファイル保存は
+それぞれ観測時点の証跡であり、新候補の配備・MCP本体受領の成功ではありません。
 
-以前のCFP共通500は一時領域の権限修正後の`fde1cffb`で、2026-10-21に5種類の取得を確認しました。
-[backend](https://github.com/emmatch-dev/econipass-backend/actions/runs/39525015891)／
-[Kong](https://github.com/emmatch-dev/econipass-backend/actions/runs/39526711825)の配備結果も過去のものです。
-当時はMIME・サイズ・基本OPC構造を確認し、CRC実体・セル内容、投入・置換は未検証でした。
-
-[旧5909候補の状況](history/ACCEPTANCE-v1.2.0-candidate-5909-20261025.md)、
-[旧LICENSE非同梱13試験](candidate-native-load-v1.2.0-license-held-20261025.json)、
-[旧MIT候補13試験](candidate-native-load-v1.2.0-20261025.json)、
-[1.1.0の履歴](history/ACCEPTANCE-v1.1.0-20261021.md)はそれぞれ保存し、今回へ継承していません。
-
-## 公式掲載
+## 公式掲載と保留
 
 | 公開先 | 状況 |
 | --- | --- |
-| GitHub | DEV 1.1.0公開済み、1.2.0は未公開 |
-| MCP Registry | namespace未登録。remote-only案はsoftware LICENSE不要だが、metadataのCC0許諾を含むTermsへの同意は未実施。組織namespace用の認証も未設定 |
-| OpenAI | 公開者の本人・法人確認がZIPアップロード前に必要。未申請 |
-| Claude | LICENSE適用保留により掲載条件を満たさず未申請。旧5ee候補はmanifestエラー・警告0、directoryはLICENSE_MISSINGのblocking1。今回のEMS修正候補でもmanifestエラー・警告0、directoryはLICENSE_MISSINGのblocking1。限定読込成功を掲載準備完了とは扱わない |
+| GitHub | DEV1.1.0公開済み。1.2.0は未公開。新候補38assetのローカル照合・公開前draft境界検査を準備済み、uploadなし |
+| MCP Registry | namespace未登録。remote-onlyでsoftware LICENSE不要でも、metadata CC0を含む規約同意・組織認証は未実施 |
+| OpenAI | 公開者本人・法人確認が必要。未アップロード・未申請 |
+| Claude | LICENSE適用保留。今回CLIもmanifestエラー／警告0、directoryはLICENSE_MISSINGのblocking1で未申請 |
 
+新OAuth、ChatGPT受入、LICENSE適用は利用者指示で保留しています。MIT候補は配布せず、権利付与を推定しません。
 Registryの[認証仕様](https://github.com/modelcontextprotocol/registry/blob/main/docs/modelcontextprotocol-io/authentication.mdx)と
-[Terms](https://github.com/modelcontextprotocol/registry/blob/main/docs/modelcontextprotocol-io/terms-of-service.mdx)を確認します。
-GitHub配布、Registry登録、各社の掲載承認は別の結果です。DEV URLを本番URLとして申告せず、審査用認証情報は公開しません。
+[Terms](https://github.com/modelcontextprotocol/registry/blob/main/docs/modelcontextprotocol-io/terms-of-service.mdx)への同意は別の手続です。
+DEV URLを本番として申告せず、審査用認証情報やローカル・利用者情報を公開しません。

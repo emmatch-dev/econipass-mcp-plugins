@@ -62,11 +62,12 @@ claude plugin install econipass@econipass-plugins
 参照という8ツールを追加しました。定義そのものの作成・変更・削除はブラウザーで行います。
 更新では現在状態を確認previewへ束縛し、競合を検出すると再取得を要求します。
 EMSではCSV取込トランザクション、保存報告の再生成、サイト有効開始日の繰上げと利用条件を補完しました。
+上流のCSV受付集計 `list_ems_import_summaries` と原本出力 `export_ems_import_transactions` も保持します。
 
 CFP取得は既定でファイル情報だけを返し、本人の入力画面で別途取得する手順を案内します。
 XLSXを受信できるhost／SDKは明示的にembeddedを選び、実ファイルを確認してから編集・投入します。
 
-ソース登録は通常239、共有法定帳票有効時252、法定レビューも有効な最大構成254、
+ソース登録は通常241、共有法定帳票有効時254、法定レビューも有効な最大構成256、
 固定PRD参照タグ構成30ツールです。これらはソースのprofile別登録数で、実環境の公開数ではありません。
 [対応表](plugins/econipass/tool-skill-map.json)は14ソースファイルのbyte hashと4profileの登録を束縛します。
 接続先の実catalog・権限・scope・機能フラグが、利用できる操作を決めます。
@@ -77,19 +78,26 @@ XLSXを受信できるhost／SDKは明示的にembeddedを選び、実ファイ�
 
 ## 配備・受入・公開の状況
 
-実装ソース`275a21cda`で、CFPとEMS11操作の既定metadata／明示embeddedをそろえました。
+実装ソース`6d3fc5d6`、metadata`3775093d`、基点develop`06ee31fb`の統合候補です。
+CFPとEMS12操作で、既定metadata／明示embeddedを使い分けます。
 サーバー取得・ファイル本体同梱・クライアント受領／保存を分離し、通常返却に本体は含めません。
-新候補のCI・DEV配備・公開は未完了です。旧5eeの13限定試験やLinux結果は履歴として保持します。
-新しい37 ZIP・999エントリは、現公開原本と275a固定builder／SDK入力からの再生成で一致しました。
+旧監査0a691の承認・10f反映と旧CIは履歴です。新統合ソースの監査は未承認・未反映、
+CIは未push・未実施で、DEV候補も未配備・未公開です。
 
-**公開版の部分確認0／29、認証済み総合受入0／29です。**
-新候補で13環境の限定native試験を新規実行し、16環境は未試験です。過去の成功の継承は0件です。
-CodexはLinux CLI、Cursor／VS Codeは設定のみ、Rooはmetadata、4 SDKは合成fixtureの範囲です。
-[今回の限定試験記録](docs/candidate-native-load-v1.2.0-cfp-ems-security-license-held-20261025.json)で、元証跡・37 ZIP・14ソースの束縛を確認できます。
-remote MCP・新OAuth・実モデル・顧客業務操作は0で、新CFP／EMSファイル取得の実接続受入は含みません。
-実接続・実ファイル保存・専用fixtureでの投入や置換は別の受入として確認します。
-新規OAuth、ChatGPT受入、LICENSE適用の保留は維持します。
+新候補のMac12環境を一つずつ試験し、11環境で限定成功、Rooでスキルmetadata列挙が未合格でした。
+Rooの初期化raceを疑っていますが、原因は確定していません。初回失敗を保存し、再試行していません。
+Linux Codexではローカル導入2操作・metadata RPC3件が成功しました。Mac Desktop／IDEは未確認です。
+Claude WebではEMSスキルv3を新規導入・3ソースのroundtripを確認し、
+他6スキルはZIPのbyte同一性と現在の有効状態を再確認しました。6スキルの再importは行っていません。
+ローカル13試行は12限定成功・Roo1未合格です。Claude Webを加えた合計は
+**限定成功13／未合格1／未実施15、認証済み総合受入0／29** です。
+公開版の部分確認は0／29で、過去のnative13成功は継承しません。
+
+[今回の限定試験記録](docs/candidate-native-load-v1.2.0-merged-ems-license-held-20261026.json)と[候補hash](docs/candidate-package-v1.2.0-merged-ems-license-held-20261026.json)は、
+ソース14ファイル・37 ZIP・999エントリへ束縛しています。
+Cursor／VS Codeは設定のみ、4 SDKは合成fixture、Claude hostedはWebのスキル導入だけです。
+remote MCPの接続成功、新OAuth、実モデル、顧客業務操作は0で、認証済みCFP／EMS取得・保存・投入／置換の受入は含みません。
+新OAuth、ChatGPT受入、LICENSE適用の保留は維持します。
 
 [受入・公式掲載状況](docs/ACCEPTANCE.md)、[機械可読記録](docs/acceptance-summary.json)、
-[新候補のhash](docs/candidate-package-v1.2.0-cfp-ems-security-license-held-20261025.json)、[検証記録](plugins/VALIDATION.md)、
-[公開手順](plugins/PUBLISHING.md)を参照してください。
+[検証記録](plugins/VALIDATION.md)、[公開手順](plugins/PUBLISHING.md)を参照してください。
