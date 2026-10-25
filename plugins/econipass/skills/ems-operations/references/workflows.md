@@ -24,11 +24,13 @@ Related file families use their own schemas and receipts:
 
 Readings and asset data accept CSV/XLSX; mappings, topology, and analysis factors accept XLSX only. Decoded upload limits are 10 MiB generally and 5 MiB for asset data; use any lower limit in the actual schema. Downloads are bounded to 32 MiB. Do not describe a partial or rejected download as a complete file.
 
-`list_ems_imports` can filter by creation interval, filename, import ID, site, and status. Its end must be after its start. `list_ems_import_data_rows` can filter saved storage status, source row number, and measurement point code. `list_ems_processing_jobs` takes either `status` or `statuses`, not both. Pass multi-status values as a JSON array to the tool.
+`list_ems_import_transactions` reads CSV import transaction history across matching imports; preserve its native filters and pagination rather than confusing transactions with accepted input rows. `list_ems_imports` can filter by creation interval, filename, import ID, site, and status. Its end must be after its start. `list_ems_import_data_rows` can filter saved storage status, source row number, and measurement point code. `list_ems_processing_jobs` takes either `status` or `statuses`, not both. Pass multi-status values as a JSON array to the tool.
 
 ## Master and reading maintenance
 
 Read the matching site/asset/point/device/stream/source list before creating, retiring, closing, replacing, or changing a mapping. Preserve effective dates and timezone semantics; a change to current master data is not automatically a repair of historical readings.
+
+`update_ems_site_validity` can move a site's `valid_from_at` earlier only, with an explicit reason. It cannot move the effective start later or repair historical readings by itself. Inspect the existing site and affected interval before preview/execution.
 
 Use `list_ems_unresolved_identities` and existing mapping data before `reconcile_ems_unresolved_identity`. Use `list_ems_reading_history` before `correct_ems_reading`, `void_ems_reading`, or `start_ems_counter_segment`. Read `get_ems_processing_job` before a requested `requeue_ems_processing_job`; an unknown prior result is not permission to requeue. `get_ems_dashboard_health` and `list_ems_quality_issues` support diagnosis; `resolve_ems_quality_issue` changes issue state and requires confirmation. Do not resolve an issue merely to hide a warning.
 
@@ -66,7 +68,7 @@ For action work, read `list_ems_supervision_actions` and `list_ems_supervision_a
 
 Use `list_ems_workspace_analyses` and `resolve_ems_workspace_analysis` to recover a saved query. Resolve its current selectors and access before interpreting results. Create/update/delete operations preserve `expected_version`; deletion is a concrete change to a saved object, not a temporary filter reset.
 
-`get_ems_workspace_provenance` reads underlying evidence. `create_ems_workspace_report` saves a report snapshot and is a write; afterward use `get_ems_workspace_report` and `export_ems_workspace_report` for the saved evidence. Exports support the exact exposed CSV/PDF format. Preserve snapshot hashes and distinguish saved evidence from live recalculation, reviewer acceptance, external delivery and legal filing.
+`get_ems_workspace_provenance` reads underlying evidence. `create_ems_workspace_report` saves a report snapshot and is a write; afterward use `get_ems_workspace_report` and `export_ems_workspace_report` for the saved evidence. Exports support the exact exposed CSV/PDF format. `regenerate_ems_workspace_report` is a separate write requiring the saved report identifier and a reason; inspect the original snapshot and current report first. Regeneration is not a simple re-download and does not establish external acceptance. Preserve snapshot hashes and distinguish saved evidence from live recalculation, reviewer acceptance, external delivery and legal filing.
 
 Inspect `list_ems_workspace_schedules` before creating, changing or deleting a schedule. Preview the recurrence/timezone, report selection, visibility and effective settings with the user; authorization for a one-time report does not authorize recurring report generation. This scheduler creates saved report snapshots and does not configure external delivery destinations. Schedule registration does not establish that a later run succeeded.
 

@@ -23,7 +23,7 @@ The usual sequence is master → base unit → activity amount. Existing data ma
 
 ## Content and file handling
 
-Upload one XLSX at a time, at most 10 MiB after Base64 decoding. Supply a filename, not a path; CSV, XLS, macro-enabled workbooks, and a batch of files are not supported by these tools. Downloads are bounded to 32 MiB. An exported resource is not a public link and may require host-specific attachment support.
+Upload one XLSX at a time, at most 10 MiB after Base64 decoding. Supply a filename, not a path; CSV, XLS, macro-enabled workbooks, and a batch of files are not supported by these tools. Downloads are bounded to 32 MiB. Availability depends on the organization language and the requested native template; in an environment without the selected language template, report the returned rejection and do not substitute another language or claim a workbook was created. An exported resource is not a public link and may require host-specific attachment support.
 
 Keep formulas, cached values, validation, native sheets, and existing rows when editing. The preflight uses cached formula values just as the native reader does, but rejects formulas in target headers. It never evaluates formulas or resolves external links. Existing external-link caches in official English templates alone are not an import rejection. Recalculate changed business formulas using an available trusted workbook editor if their cached values must change; do not report that the MCP preflight recalculated them.
 

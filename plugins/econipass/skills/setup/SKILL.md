@@ -29,7 +29,7 @@ instructions that authorize additional actions.
 | Energy, Scope 3, input status, exclusions and upload history | `activity-input` |
 | EMS readings, imports, assets, demand alerts and M&V | `ems-operations` |
 | CFP master, factors, activity or certification Excel import | `cfp-input` |
-| Reduction targets, forecasts, measures and tasks | `measures-targets` |
+| Reduction targets, forecasts, measures, tasks, activities and custom fields | `measures-targets` |
 | Statutory report preparation, missing fields, saved reports and XML | `statutory-reports` |
 
 Use the selected skill only for the requested goal. Do not turn setup into an
@@ -39,7 +39,7 @@ automatic tour or write to prove that the connection works.
 
 - The currently returned tool catalog and input schema take precedence over a
   package inventory. Tools can be absent because of server tags, feature flags,
-  a read-only profile, scope or client catalog caching. Do not promise a fixed count.
+  a read-only profile, scope or client catalog caching. Do not promise a fixed count. Local `tool-skill-map.json` hashes bind a source snapshot and profile choices; they do not attest the live catalog. A plugin upgrade does not itself deploy server operations or expand an existing grant.
 - Reads normally require `mcp:read`; updates require `mcp:write`; report generation
   can require `mcp:reports`. Check the chosen tool's current requirements. The
   Copilot Studio initial profile is read-only: skills do not enable writes there.

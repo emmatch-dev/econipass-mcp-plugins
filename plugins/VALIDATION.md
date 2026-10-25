@@ -1,31 +1,121 @@
-# EcoNiPass MCP プラグイン 1.1.0 の検証
+# プラグイン配布物の検証記録
 
-検証日: 2026-10-20。
-配布ソース識別子: `7656625171d0cb983be999479dfc06f551699f2b`。
-配布物の確定値は各GitHub Releaseに添付する`release.json`のSHA-256を参照してください。
+下記のcommandとsource binding検査は、非公開backendの確定ソース上でrelease担当が実行した記録です。
+この公開リポジトリ単独でサーバー登録や内部suiteを実行する手順ではありません。
 
-## 確認した内容
+## 1.2.0 更新時の確認
 
-- 共通プラグイン1、個別スキル7、環境別キット29の計37 ZIP。
-- 7スキルの形式検証、共通manifestとMCP設定の公式JSON Schema検証。
-- 4公開profileで登録されたツール名・件数・ハッシュとスキル対応表の一致。
-  ソース上の最大243ツールを割当済みで、EMSは167ツール。
-- パッケージ検証24件と、CI対象選択を含む契約検証142件が成功。
-- 全ZIPのSHA-256・CRC、隠しmanifestの同梱、安全なアーカイブパスを確認。
-- 29環境分の203業務指示書は参照文書を展開済み。
-- API接続サンプルのオフライン起動、既存出力保護、symlink拒否、
-  カスタム接続先の反映、再現可能なZIP生成を確認。
-- lint、workflow構文検証、独立レビューを実施。
+実施日: 2026-10-25。ブランチ基点は `8c578bac`、実装ソースcommitは `9286735044fd4635e11c5022e677d7cc2b7f9691`。最終の登録入力は
+`econipass/tool-skill-map.json` の `source_files_sha256`、生成物は新規出力先の
+`release.json` の `source_binding` と `artifact_sha256` で識別する。
+この記録とオフライン試験は、DEV配備・公開や29環境での総合受入の証明ではない。
 
-登録の検証ではネットワーク・DB接続を拒否し、業務ツールは実行していません。
-ソース登録数は接続先での公開数や利用許可を保証するものではありません。
+- 4profileの登録数は239 / 252 / 254 / PRD参照30。全254toolを7skillsへ割り当てる。
+  4profileの実登録読取をpackagerと既存coverage suiteで共用する。
+  `scripts/refresh_tool_skill_map.py`は明示的なtool→skill割当を保持して件数とhashを再生成し、
+  未割当toolや廃止toolを検出したら停止する。業務tool・lifespan・ネットワーク/DBは起動しない。
+- ソースbyteの1文字改変、source inventoryの欠落・追加・重複、path escape、
+  symlink、存在しないfile、不正hash、重複JSON keyを既存plugins suiteで検証する。
+- versionは共通/Codex互換/Claude/Geminiの4manifestで1.2.0に同期する。
+  対応29環境のnative config形式、OAuth設定、確認/自動承認方針を一括変更しない。
+- 7skillsへtask/activity/独自項目、最新EMS3操作、法定本人ブラウザー引継ぎと、
+  CFP download成功とupload受入の区別を反映する。
 
-## 別途必要な受入
+- `python -m pytest -q plugins/tests`: **55 passed**。
+  source byte bindingと境界拒否、実登録profile、allowlistのread-only属性、37 ZIP再現性、
+  隠しmanifest、29kitと4API sampleのオフライン起動を既存suiteで確認した。
+  ディレクトリ用PNGの構造・CRC・サイズ境界と、任意LICENSEの全37配布物への
+  byte保持・再現性も検証した。LICENSEの選択・適用は別途確認する。
+- 7skillsの`quick_validate.py`、black 26.3.1 / isort 5.13.2 / flake8 7.3.0、
+  `git diff --check`が成功。生成物は新規directoryへ作成し、既存ZIPを上書きしない。
 
-プラットフォームごとの導入、認証、実際のツール一覧、事業所境界、scope拒否、
-更新前確認と結果の読み戻し、OAuth更新・失効、添付ファイル保存を確認します。
-これらの全29環境での認証済み受入は未完了です。
+最終のbuild hashは確定ソースのrelease証跡へ記録する。
+以下の各版の結果を1.2.0の再試験結果として扱わない。
 
-58件のEMS操作追加を使うには、接続先のMCPサーバーと関連backendの更新が必要です。
-クライアントZIPを更新するだけで、サーバーの機能や公開設定は変わりません。
-DEV配備と公開確認の最終結果はReleaseノートに記録します。
+## 1.1.0 更新時の確認
+
+実施日: 2026-10-20。ブランチの基点は
+`b818582b07472cddda000e759858618af501797b`。更新後の登録ソースは
+`econipass/tool-skill-map.json` の `source_files_sha256` で識別する。
+これはソース登録・配布形式の検証であり、各接続先の公開・認証済み受入を表さない。
+
+- 58件のEMS操作追加後、4公開profileの登録数は228 / 241 / 243 / PRD参照30。
+  全243ツールを7スキルへ割り当て、EMSは167ツールを担当。
+  profile名・条件・tool名ハッシュは対応表を正本とする。
+- 既存MCP suiteへ`../../plugins/tests`を追加。サービス内の既存`pytest -q`で
+  パッケージテストも収集されることを`--collect-only`で確認した。
+  追加CI job・追加pytest起動はない。
+- `python -m pytest -q ../../plugins/tests`（MCPサービス起点）: **24 passed**。
+  引き続き登録確認はDB・ネットワーク接続を拒否し、業務ツールを呼ばない。
+- 既存Backend lintの対象を`plugins/**/*.py`へ拡張。
+  実Git checkoutの変更一覧に対し、CIのcollectorを実行して対象/除外を確認する
+  契約テストを含む`test_backend_dev_privileged_governance.py`: **142 passed**。
+- black 26.3.1 / isort 5.13.2 / flake8 7.3.0でpluginsと変更した契約テストが成功。
+  全27 workflowのYAML parse、ローカルactionlint 1.7.12 `-oneline`、
+  `git diff --check`が成功。
+- 7スキルの`quick_validate.py`が成功。独立レビューで、料金試算が保存済みの
+  有効設定を使うこと、定期実行は報告snapshotの作成であること、M&V判断が
+  `expected_sequence`と証跡hashに従うことを確認し、説明を修正した。
+- ネイティブ計画previewはsavepoint内で書込とrollbackを行うため、MCPではwrite扱い。
+  MCP dry-run → 確認付きnative preview → 別途create/applyという区別を手順に明記。
+- Codex / Claude / GeminiのmanifestとClaude marketplaceはversion 1.1.0に同期。
+  共通`plugin.json`と`mcp.json`は保存済みのAgent Plugins 1.0.0公式Schema検証が成功。
+  platform matrixの2026-10-08時点の製品仕様確認日は、再調査なしに更新しない。
+
+CIのdigest固定actionlintコンテナは、Docker daemon不在のためローカルでは起動できず、
+上記ローカルbinaryで検査した。最終リリース担当がexact SHAのCI・配備・公開・
+認証済み受入の結果を別途記録する。
+以下は1.0.0時点の証跡であり、1.1.0の外部公開や実機受入を示すものではない。
+
+## 1.0.0 の確認記録
+
+実施日: 2026-10-08。MCP参照ソース: `7ca723a1e877500f4df7f49a3c76a46a48dbb9bd`。
+対象はプラグイン、業務スキル、各クライアント用の設定・指示書・APIサンプル。
+サーバー処理、権限、公開タグ、認証設定、CI workflowは変更していない。
+
+## 確認結果
+
+- 7スキルのSkill Creator `quick_validate.py`が成功。
+- `python -m pytest -q plugins/tests`: **24 passed**。
+  4つの公開profileで実MCP登録を読み、最大185ツールの割当・件数・ハッシュを照合。
+  この登録確認ではネットワーク・DB接続を拒否し、lifespanや業務toolは実行しない。
+  Copilot cloudの全allowlist対象も、実登録のreadOnlyHint・タグ・scopeから参照専用と確認。
+- ZIPの再現性、隠しmanifestの同梱、スキル参照の境界、既存出力保護、symlink拒否、
+  カスタム接続先の反映、QueryPieに未確認のSSE接続先を作らないことを確認。
+- 4つのAPIキットをSDK非読込のPythonで実行し、同梱手順の`--check-config`が成功。
+  認証情報はテスト用文字列で、モデルAPI・MCPへの接続は行っていない。
+- black 26.3.1、isort 5.13.2、flake8 7.3.0で全追加Pythonファイルが成功。
+  flake8は最大行長88・複雑度10・既存CIのignore指定を使用。
+- `plugin.json`と`mcp.json`をAgent Plugins 1.0.0の公式JSON Schemaで検証し成功。
+- Codex CLIでローカルmarketplaceを登録し、`econipass@econipass-plugins`の
+  version 1.0.0がavailableと表示された。インストール・有効化・OAuth認証は未実施。
+- 独立レビューとEMS・CFP・参照専用接続のシナリオ確認を実施。
+  API導入手順の相対パス不一致は修正し、生成キットの起動テストで確認。
+- 最終ビルドは共通プラグイン1・個別スキル7・プラットフォームキット29の計37 ZIP。
+  各配布物のSHA-256は生成先の`release.json`に収録。
+
+## 再実行
+
+MCPサービスの開発依存を入れたvenvをactivateして、リポジトリrootから実行する。
+
+```bash
+python -m black --check plugins
+python -m isort --profile black --check-only plugins
+python -m flake8 plugins --max-line-length=88 \
+  --ignore=A003,E800,E203,W503,W504,B008,B006 --max-complexity=10
+python -m pytest -q plugins/tests
+python plugins/scripts/build_packages.py --check
+python plugins/scripts/build_packages.py --output /absolute/path/new-release
+```
+
+## 未実施の項目
+
+29環境でのインストール、認証済みの参照・更新、OAuth refresh/revoke、添付リソースの受入は
+実施していない。Claude/Gemini等の実CLIでのロードも未実施。APIサンプルは実SDK・モデルAPI
+との疎通試験前であり、Roo bridgeも未起動。公開ディレクトリ申請・組織への配布は未実施。
+この記録はGAや全環境での動作保証を表さない。
+
+1.0.0の配布形式だけの変更にはバックエンドのデプロイは不要だった。
+1.1.0で追加した58操作にはbackend/MCPの配備と公開catalogの確認が必要。
+機能が実際に使えるかは、接続先のcatalog・scope・機能フラグ・利用者の権限と、
+各プラットフォームでの受入結果によって判断する。

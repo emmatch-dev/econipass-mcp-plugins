@@ -24,6 +24,6 @@ For a tool exposing `dry_run`, preview first and show exact changes and affected
 
 Differentiate data completeness, saved proposal, reviewed field, XSD validation, generated preview, and official acceptance. None implies the next. Missing months and unknown factors remain missing or unknown, never zero.
 
-`generate_statutory_report_package_v2` currently reads capability information only: it returns unavailable and does not create a package or submit anything. Its name is not evidence of generation support. Trusted generation requires the EcoNiPass browser flow with its human authentication boundary. No MCP tool submits to EEGS or e-Gov.
+`generate_statutory_report_package_v2` currently reads capability information only: it returns the exact-report `browser_handoff`, keeps `available=false` and `generated=false`, and does not create a package or submit anything. Use only the returned trusted browser origin/report/revision; re-read if that revision changes. Its name is not evidence of generation support. Trusted generation requires the EcoNiPass browser flow with its human authentication boundary. No MCP tool submits to EEGS or e-Gov.
 
 Legacy 省エネ法 XML is always a preview, even when fields and XSD checks pass. Other legacy XML must be described according to the actual readiness/warnings result, without asserting official acceptance. Summarize blockers and the next supported action instead of calling a draft “提出用” or “完成”.

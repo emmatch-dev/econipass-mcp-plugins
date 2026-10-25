@@ -1,7 +1,7 @@
 # EcoNiPass MCP のプラットフォーム別配布
 
 プラットフォーム仕様の確認日: 2026-10-08。機械可読の正本は
-[platform-support.json](platform-support.json)です。配布版1.1.0の検証は
+[platform-support.json](platform-support.json)です。配布版1.2.0の検証は
 [VALIDATION.md](VALIDATION.md)を参照してください。
 
 ここでいう対象は、既存の EcoNiPass 接続ガイドに設定経路があるクライアントです。

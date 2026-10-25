@@ -1,30 +1,75 @@
-# 配布経路と公開範囲
+# EcoNiPass DEV 1.2.0 の配布・公開
 
-このリポジトリはEcoNiPass MCPクライアント用の配布リポジトリです。
-接続先はDEVの`https://api.dev.app.econipass.com/mcp`で、利用にはEcoNiPassの
-アカウントと必要な業務権限が必要です。公開配布によって業務データが公開されることはありません。
+接続先は `https://api.dev.app.econipass.com/mcp`。配布形式は共通プラグイン、
+7個のスキル、29環境の導入キット（合計37 ZIP）。環境ごとのネイティブプラグイン、
+設定ファイル、指示書、SDKサンプルの違いは [対応一覧](PLATFORMS.md) に従う。
 
-## GitHub配布
+## GitHubでの配布
 
-- 共通プラグインとCodex／Claude Codeのマーケットプレイス定義を収録します。
-- GitHub Releaseに37 ZIPと`release.json`を添付します。
-- Releaseノートにバージョン、配布ソース、DEV配備と公開確認の結果、
-  未実施の実機受入を記録します。
-- 設定・スキル・指示書は利用者が選んだ環境へ導入し、認証はその環境の接続画面、
-  PATは専用credential storeで扱います。tokenやclient secretをGitへ保存しません。
+以下は非公開backendのrelease担当向け手順です。本公開リポジトリにはサーバー本体・
+builder・CIを含めません。利用者はGitHub Releasesの生成済みZIPと`release.json`を取得します。
 
-このリポジトリにはサーバー実装、データベース、顧客データ、配備権限を含めません。
-共通プラグイン内のソース識別子とhashは配布物の追跡用メタデータです。
+backendリポジトリは非公開である。プラグインだけを配布する公開リポジトリ
+[`emmatch-dev/econipass-mcp-plugins`](https://github.com/emmatch-dev/econipass-mcp-plugins)へ、
+プラグイン原本、marketplace定義、導入手順、生成済みZIPを公開する。
+backendリポジトリの可視性を変更したり、backend本体・履歴・設定をコピーしたりしない。
 
-## 外部ディレクトリへの掲載
+1. 機能変更と監査記録を独立レビューし、対象SHAの必須CIを通す。
+2. `develop`へマージ後、そのSHAのCI・image buildを確認する。
+3. 既存のDEV配備手順でbackend/MCPとKongの結果を確認する。
+   一般task/activity追加とサーバー修正は、ZIPの更新だけでは接続先に反映されない。
+4. そのソースから `python plugins/scripts/build_packages.py --output <新規の絶対パス>` を実行する。
+5. 公開用リポジトリのGitHub Release `econipass-mcp-plugin-v1.2.0` に37 ZIPと`release.json`を添付する。
+   リリースノートに対象SHA、DEV配備結果、未実施の実機受入を記載する。
+   v1.1.0のtag・assetは変更せず、新しいreleaseへ公開する。`release.json`の
+   `source_binding`・対応表hash・37 ZIPのhashを公開後の匿名取得で照合する。
+6. 利用者は自分の環境のZIPを取得して同梱READMEに従い、OAuth認証する。
+   認証情報はZIP・リリースノート・リポジトリに含めない。
 
-GitHub上での配布と、各製品の公式プラグインディレクトリ掲載は別です。
-2026-10-20時点で、OpenAI等への審査申請・承認・ディレクトリ公開は未実施です。
+Git marketplaceでは公開用リポジトリを登録する。公開ZIPとGit内のプラグインを
+同じ原本から生成し、公開するファイルに秘密情報・利用者データ・ローカル絶対pathが
+含まれないことを確認する。tool対応表のソースpathとhashは追跡用メタデータとして維持する。
 
-正式な公開者と申請権限、会社・プライバシー・サポート等の正式URL、
-公開対象環境、審査専用アカウントとサンプルテナントを確定してから、
-各製品の申請手順に従います。既存利用者のアカウントを審査へ流用しません。
-表示名の`EcoNiPass`は、ディレクトリ側の公開者確認が完了したことを意味しません。
+## 公開ディレクトリへの申請準備
 
-[OpenAIの申請手順](https://developers.openai.com/plugins/deploy/submission)と
-[プラットフォーム一覧](PLATFORMS.md)の公式資料を参照してください。
+正式な公開者情報、公開対象環境、審査専用テナントを申請前に確定する。
+現在のDEV配布物を本番向けとして申請したり、既存利用者のアカウントを審査に流用したりしない。
+manifestの`EcoNiPass`という表示名は、公開者の本人確認・組織確認が済んだことを意味しない。
+
+OpenAIの申請では、確認済みの公開者と申請権限、公開情報、審査用接続手段、
+操作説明を提出し、審査承認後に公開操作を行う。
+[公式の申請手順](https://developers.openai.com/plugins/deploy/submission)を正本とする。
+Claude Code / CodexのGitマーケットプレイス経由の配布や、
+Geminiのローカル拡張登録とは別の手続きである。
+
+| 申請項目 | 準備状況 |
+| --- | --- |
+| 名前・説明・カテゴリ・開始プロンプト | `econipass/plugin.json`に収録 |
+| MCP接続・7スキル | 共通ZIPに収録。DEV接続 |
+| 正式な公開者・確認済み開発者の選択 | 未提供 |
+| 会社・プライバシー・サポート等の公開URL | 申請に使う正式URLを要確定 |
+| 公開対象環境と公開範囲 | DEV配布のみ準備。本番公開は未確定 |
+| 審査専用アカウントとサンプルテナント | 未提供。秘密情報は申請先の専用欄へ |
+| 操作動画・審査用実行結果 | 専用テナント準備後に作成 |
+| 適合性の申告・審査承認・公開操作 | 未実施 |
+
+## 審査・利用環境で確認する操作
+
+審査用データで、次の順序と拒否条件を確認する。通常利用者のデータを変更しない。
+
+1. `setup`を開始し、認証、所属事業所、実際の`tools/list`とscopeを確認する。
+2. EMSの計測値・管理設定・監視イベント・共有報告を参照する。
+   許可外事業所と不足scopeでは拒否されることを確認する。
+3. EMS更新は`dry_run=true`で内容を確認し、利用者の明示確認後、
+   同一payloadと確認tokenで1回実行して結果を読み戻す。
+   topology planのnative preview自体にも更新権限と確認が必要。
+4. task/activityは実在する対象の現在状態と独自項目定義を取得し、previewからの
+   競合拒否・更新・コメント・readbackを専用サンプルで確認する。
+5. CFPは5種のうち対象のExcelを取得し、対象事業所・期間・置換範囲を確認する。
+   専用サンプルの投入をプレビュー、確認、実行、履歴照会の順に検証する。
+6. tokenなし・期限切れ・payload変更・他事業所で更新が拒否されることを確認する。
+   結果不明の更新を自動再試行しない。
+7. OAuth更新・失効・再認証と、生成した添付ファイルの保存を検証する。
+
+各環境の実機結果は `platform-support.json` の受入状態と分けて記録する。
+オフラインのZIP検証、CI成功、公開HTTP応答だけで上記の完了を判断しない。

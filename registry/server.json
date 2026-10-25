@@ -3,7 +3,7 @@
   "name": "io.github.emmatch-dev/econipass-dev",
   "title": "EcoNiPass DEV",
   "description": "DEV emissions and EMS workflows. OAuth and an authorized EcoNiPass tenant account required.",
-  "version": "1.1.0-dev.1",
+  "version": "1.2.0-dev.1",
   "websiteUrl": "https://github.com/emmatch-dev/econipass-mcp-plugins",
   "remotes": [
     {
@@ -14,14 +14,17 @@
   "_meta": {
     "io.modelcontextprotocol.registry/publisher-provided": {
       "environment": "DEV",
-      "releaseUrl": "https://github.com/emmatch-dev/econipass-mcp-plugins/releases/tag/econipass-mcp-plugin-v1.1.0",
+      "releaseUrl": "https://github.com/emmatch-dev/econipass-mcp-plugins/releases/tag/econipass-mcp-plugin-v1.2.0",
       "authentication": "OAuth; the caller's existing tenant access and scopes apply",
-      "acceptance": "Authenticated organization and EMS site reads verified in Codex desktop. Full 29-platform acceptance is incomplete.",
+      "acceptance": "1.2.0 source registration and offline packages verified; current-version native and full 29-platform acceptance pending. Historical 1.1.0 observations are recorded separately.",
       "knownLimitations": [
         "Not a production endpoint.",
-        "CFP workbook downloads returned backend HTTP 500 during DEV acceptance on 2026-10-21 JST; investigation is ongoing.",
-        "Write, file, refresh and revocation acceptance remains incomplete."
-      ]
+        "All five CFP workbook downloads succeeded on the repaired DEV runtime on 2026-10-21; upload, replacement and current 1.2.0 runtime acceptance remain unverified.",
+        "1.2.0 candidate server changes are not yet deployed or published.",
+        "Write, file retention, refresh and revocation acceptance remains incomplete.",
+        "Shared statutory package generation requires the authenticated human browser flow; MCP returns a browser handoff and does not submit to authorities."
+      ],
+      "releaseStatus": "candidate-not-yet-published"
     }
   }
 }
