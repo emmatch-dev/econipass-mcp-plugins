@@ -1,9 +1,9 @@
 {
-  "schema_version": 4,
+  "schema_version": 5,
   "as_of": "2026-10-26 JST",
   "environment": "DEV",
   "plugin_version": "1.2.0",
-  "release_status": "merged_EMS_candidate_prepared_uncommitted_not_published",
+  "release_status": "current_clients_candidate_prepared_uncommitted_not_published",
   "source_base_commit": "06ee31fbe3c2a5a5700c08d72054240242c476e3",
   "implementation_source_revision": "6d3fc5d6ac4719618621302a51a81d75e157c5c8",
   "metadata_revision": "3775093d517eac5ef183afc148d56016058fea63",
@@ -117,8 +117,8 @@
       }
     },
     "profile_observation": "Mac3.4.10 offline registration; not a deployed remote catalog",
-    "package_details": "candidate-package-v1.2.0-merged-ems-license-held-20261026.json",
-    "release_json_sha256": "9640f2d6c3dbeb683d3031596ee3a62101686096e8c9bf80d43f5bc48854a27d",
+    "package_details": "candidate-package-v1.2.0-current-clients-license-held-20261026.json",
+    "release_json_sha256": "f8317e75b008d3a09cb058d32236b6c882bde245e536fb5ba3840346f5efc287",
     "license": "HELD_BY_USER",
     "LICENSE_applied": false,
     "new_source_audit_proposal": {
@@ -127,16 +127,18 @@
       "protected_files": 1,
       "supporting_documents": 2,
       "applied": false,
-      "human_approval": "not_approved_for_new_merged_source",
+      "human_approval": "PENDING_FOR_NEW_MERGED_SOURCE",
       "actual_protected_files": "unchanged_from_06ee_base",
       "scope": "Prior0a691 approval/application10f and old CI do not authorize or validate the new merged source. Final review/approval remains separate."
     },
     "current_public_source_byte_gate": {
-      "status": "PASS_FRESH_CURRENT_PUBLIC_INPUTS_ALL37_ZIP_AND999_ENTRY_BYTE_GATE",
-      "implementation_source_revision": "6d3fc5d6ac4719618621302a51a81d75e157c5c8",
-      "pinned_private_generator_revision": "6d3fc5d6ac4719618621302a51a81d75e157c5c8",
+      "status": "PASS_FRESH_CURRENT_PUBLIC_INPUTS_ALL37_ZIP_AND1016_ENTRY_BYTE_GATE",
+      "pinned_private_generator_revision": "355e24babeac05182d97001e3004177ff666bb9a",
       "public_common_metadata_revision": "3775093d517eac5ef183afc148d56016058fea63",
-      "release_json_sha256": "9640f2d6c3dbeb683d3031596ee3a62101686096e8c9bf80d43f5bc48854a27d",
+      "public_packaging_inputs_revision": "355e24babeac05182d97001e3004177ff666bb9a",
+      "implementation_source_revision": "6d3fc5d6ac4719618621302a51a81d75e157c5c8",
+      "packaging_source_revision": "355e24babeac05182d97001e3004177ff666bb9a",
+      "release_json_sha256": "f8317e75b008d3a09cb058d32236b6c882bde245e536fb5ba3840346f5efc287",
       "source_binding": {
         "source_base_commit": "06ee31fbe3c2a5a5700c08d72054240242c476e3",
         "tool_skill_map_sha256": "64e885efed0ed8df878efe53721fcd302e5754fdff0768aeb4ab84d9aacce345",
@@ -160,7 +162,7 @@
       "public_common_plugin_file_count": 30,
       "public_common_plugin_files_exact": true,
       "archives": 37,
-      "entries": 999,
+      "entries": 1016,
       "all_ZIP_hashes_CRC_and_entry_bytes_match": true,
       "LICENSE_entries": 0,
       "inputs": {
@@ -195,12 +197,12 @@
           "plugins/econipass/skills/statutory-reports/agents/openai.yaml": "76e93d413abceced19b2803e1fb8b2d4a15f21efb6901326a20d96a0395d16f3",
           "plugins/econipass/assets/icon.png": "49f0cb6b564f28e1703f30ba6a217c18077de2e673c719d4c93849b9a92e377e",
           "plugins/econipass/.codex-plugin/plugin.json": "b15f95ed7fa1f9d96fe36b31f9ab24fc3bf05998956275d52213696f1bc1a7ad",
-          "plugins/platform-support.json": "687f0292b29505f70eaa3c25f4568691a901c94417170bd42572ebdb207251c4",
+          "plugins/platform-support.json": "c5c7ea0dd5effa1b2a91fc9245408bcacb39ff87afe844c81723dd5f20c9485c",
           "plugins/adapters/github-copilot-cloud.json": "1d40308ca4907a8a63863148eb8f33df5b1e288459660617ba1a18b07b34ee55",
           "plugins/adapters/roo-code-bridge.json": "0616c9e9eba0e9cde96db40022a0179c550913db5325b4319c85f3cccee63b6c"
         },
         "pinned_private_generator_and_API_samples": {
-          "plugins/scripts/build_packages.py": "1bb3df302ade7f8248973a227c8dafecf64fbae0d5818ffd6aa607831fa02e55",
+          "plugins/scripts/build_packages.py": "40024cc49dbed9d183ab7b9b6af67e1f5bbc33c661bfc0fbcbaba8452849c8aa",
           "plugins/api-examples/README.md": "0ad0f6b1ce35994839df523f15ea17bf195d1ac7e2bb8f7826a21beb66b83207",
           "plugins/api-examples/_common.py": "faa72de7142a43a6cc8414427d17594359da5009711dfd3eda30eb3decf0f22c",
           "plugins/api-examples/anthropic-messages.py": "5053bb61d17b1eb69d6d97f28b308cbae18abb3e47f7dc6420f27a778ddd508a",
@@ -244,8 +246,8 @@
         },
         {
           "name": "econipass-amazon-q-cli.zip",
-          "sha256": "ed7ee835097a7853cb311e00386a8b015ff6bf145410011f094ac83d5429da7c",
-          "entries": 30,
+          "sha256": "3dc25e39f7e28c1be62a6d494ff3b39721897e1d1e8c44a3bc8b32ea86d42328",
+          "entries": 31,
           "all_entry_bytes_match_rebuilt_current_public_inputs": true,
           "CRC": "pass",
           "LICENSE_entries": 0
@@ -348,7 +350,7 @@
         },
         {
           "name": "econipass-gemini-enterprise.zip",
-          "sha256": "9babe66ab4a0f80c7e27ac0fba2c0ba2e840aa988ad67e8814221acc37b13f7b",
+          "sha256": "904b0dea968e114a4bb2bc4857a5840911d5fe7b26d17ca3fa300525717a36a5",
           "entries": 29,
           "all_entry_bytes_match_rebuilt_current_public_inputs": true,
           "CRC": "pass",
@@ -380,8 +382,8 @@
         },
         {
           "name": "econipass-jetbrains-junie.zip",
-          "sha256": "4bc6fc210cc62f84984b0d991d72589a86fd3ef17e14310d682e312d4573e91f",
-          "entries": 30,
+          "sha256": "fc46a7751b401964c7d1f1bee961e2d34f1c6e589349216776f60219866165f0",
+          "entries": 31,
           "all_entry_bytes_match_rebuilt_current_public_inputs": true,
           "CRC": "pass",
           "LICENSE_entries": 0
@@ -404,7 +406,7 @@
         },
         {
           "name": "econipass-n8n.zip",
-          "sha256": "37e221b77f34d267b87a530be17c92f02ec210efc358d8c4f72cbee4a35f9a0e",
+          "sha256": "ec87879208369a49b944f64e1070d373a61d0ed44142b19c4644d3128fc5d201",
           "entries": 29,
           "all_entry_bytes_match_rebuilt_current_public_inputs": true,
           "CRC": "pass",
@@ -468,8 +470,8 @@
         },
         {
           "name": "econipass-windsurf.zip",
-          "sha256": "e9843306402a4e539f89a07b8280446d0ddf05596dd51b04f292893dfcc0baf4",
-          "entries": 30,
+          "sha256": "1a60524423d35046f34c3789dc8ca213cb23ccb48b1edb78ca9440b28e0bc422",
+          "entries": 45,
           "all_entry_bytes_match_rebuilt_current_public_inputs": true,
           "CRC": "pass",
           "LICENSE_entries": 0
@@ -523,40 +525,94 @@
           "LICENSE_entries": 0
         }
       ],
-      "scope": "All37 archives rebuilt from the current public maintained plugin/matrix/adapter bytes plus explicitly pinned private builder and distributed SDK sample inputs; all999 entries compared. This does not assert every generated ZIP entry exists directly in public Git.",
-      "evidence_sha256": "4517d9ae5c2b4812876effb4ba820c70b5270ac0d72743d427bc6913f82ea1eb",
+      "scope": "All37 archives rebuilt from the current public maintained plugin/matrix/adapter bytes plus explicitly pinned private builder and distributed SDK sample inputs; all1016 entries compared. This does not assert every generated ZIP entry exists directly in public Git.",
+      "no_runtime_acceptance_inferred": true,
+      "evidence_sha256": "d7b7aceaaf1cb0a8a063ee5732702c053f6f449565ded77d33feafaf586b4112",
       "current_uncommitted_public_inputs_compared": true,
       "committed_public_HEAD_match_claimed": false,
       "no_runtime_or_deployment_acceptance_inferred": true
     },
-    "native_validation_source_commit": "3775093d517eac5ef183afc148d56016058fea63"
+    "native_validation_source_commit": "3775093d517eac5ef183afc148d56016058fea63",
+    "packaging_source_revision": "355e24babeac05182d97001e3004177ff666bb9a"
   },
   "validation": {
-    "runtime_versions": {
-      "fastmcp": "3.4.10",
-      "fastmcp-slim": "3.4.10",
-      "mcp": "1.30.0"
-    },
-    "current_Mac_plugins": {
-      "passed": 55,
+    "current_Mac_client_configuration": {
+      "runtime": "Mac Python3.11.16 / FastMCP3.4.10 / mcp1.30.0 / pytest9.1.1",
+      "passed": 65,
       "skipped": 0,
-      "reproducibility_cases_included": 3,
-      "candidate_validation_receipt_sha256": "2a576e37a03d4930f65d40880b5055a50da0242ae62cd06ade3f4bd2bd3fb5a5"
+      "code_and_test_freeze_sha256": "c55eb9250449eb9bf2ba17dc06fc0072d055addfc938a8b794125dd93c2cf7d7",
+      "code_and_tests_exact_in_source355": true,
+      "validation_receipt_sha256": "0911e320ed5bcd833766bdde4d896e981c851f4670f1a1d25f1c57a0bd9e53ef",
+      "independent_code_review_sha256": "8a02399944b8258a777619805c8773a86331d36cccbc7e18bafc5ceb6502afa8",
+      "final_docs_only_patch_sha256": "58ee1a9f272ae65ab9f1b0f6a51b20f765ce0bc74adee66707cf102851fe2de8",
+      "final_docs_independent_review_sha256": "7ab49076b118f9937400b0ebbcbdd9551d380b06a57b47c529f41d2e0f856fc2",
+      "final_source_freeze_sha256": "3a344358eaed68ca92f22f1841cbdeb3b25fada842461c45be83bda8676f4dba",
+      "final_source_validator": "passed_7_skills_29_kits",
+      "CI_version_lint": "passed",
+      "scope": "65 tests bind identical builder/test bytes; final Gemini/n8n changes are docs-only with separate final source validation/review, not a fresh Linux65 run."
     },
-    "current_Mac_registration_counts": [
+    "source_bound_Linux_validation": {
+      "source_revision": "3775093d517eac5ef183afc148d56016058fea63",
+      "implementation_source_revision": "6d3fc5d6ac4719618621302a51a81d75e157c5c8",
+      "source14_and_map_exactly_equal_current_packaging_source": true,
+      "scope": "Separate Linux validation checkout including audit95c proposal overlay; actual protected files remain unapproved/unapplied.",
+      "MCP_suite": {
+        "passed": 5308,
+        "skipped": 6,
+        "failed": 0,
+        "skip_scope": "real-connection remote smoke not enabled"
+      },
+      "plugins_included_in_that_Linux_suite": 55,
+      "current_client_configuration_65_tests_executed_on_Linux": false,
+      "synthetic_E2E": {
+        "tools": 241,
+        "ok": 239,
+        "expected_refused": 2,
+        "failed": 0
+      },
+      "isolated_root_owner_suite": {
+        "passed": 210,
+        "same_existing_skip": 1,
+        "failed": 0,
+        "network": "none",
+        "added_capability": "DAC_READ_SEARCH"
+      },
+      "real_synthetic_PostgreSQL_backend_impact": {
+        "passed": 35,
+        "skipped": 0
+      },
+      "actionlint_workflows": 27,
+      "YAML_workflows": 27,
+      "CI_version_lint": "passed_for_source377_validation_inputs",
+      "prior_root_overlay_failed_cases_preserved": true,
+      "prior_11_child_exception_causes_not_directly_observed": true,
+      "tests_receipt_sha256": "b3ede183ab2dc7247bac1237bcb2e7972cd36169a2a4df5e60818164bba4a8b5",
+      "backend_impact_receipt_sha256": "8f5a1ad3e17a33a39a1ed00a638f2e0e0deb4259dac43c58fcab8aa362b508c3",
+      "cleanup_receipt_sha256": "b0ebf6ec4d712001f88a59ba9a98f6f055bcca5809468798b9a8032c624861e8",
+      "independent_closure_receipt_sha256": "86a6741a5b584a71af6ca4ab4c073a61bb10d408bd029370b3e44400fc9bd9cc",
+      "independent_closure": "passed_376_checks_no_findings",
+      "cleanup": {
+        "owned_task_VM_stopped": true,
+        "two_task_configs_original_hashes_restored": true,
+        "owned_resources_absence_verified": true,
+        "default_context_verified": true,
+        "other_VM_states_unchanged_claimed": false,
+        "other_profile_snapshot_differences_observed_cause_not_asserted": true
+      },
+      "candidate_CI_image_DEV_or_authenticated_business_acceptance_inferred": false
+    },
+    "current_registration_counts": [
       241,
       254,
       256,
       30
     ],
-    "current_Linux_validation": "pending_final_source_bound_results",
-    "current_full_suite_E2E_production_image": "not_claimed; prior sources are historical",
     "current_source_37_ZIP_hashes_CRC_and14source_binding": true,
-    "current_public_source_all37_entry_byte_gate": "PASS_FRESH_CURRENT_PUBLIC_INPUTS_37ZIP999ENTRY",
-    "exact_final_CI": "not_pushed_not_started_for_new_merged_candidate",
-    "DEV_deployment": "not_deployed_for_new_merged_candidate",
-    "historical275a_validation": "history/acceptance-summary-v1.2.0-candidate-275a-6cc85-20261026.json",
-    "historical5ee_validation": "history/acceptance-summary-v1.2.0-candidate-5ee-5c4-20261025.json"
+    "current_public_source_all37_entry_byte_gate": "PASS_FRESH_CURRENT_PUBLIC_INPUTS_ALL37_ZIP_AND1016_ENTRY_BYTE_GATE",
+    "exact_final_CI": "not_pushed_not_started_for_current_candidate",
+    "DEV_deployment": "not_deployed_for_current_candidate",
+    "production_image": "not_built_for_current_candidate",
+    "historical377_status": "history/acceptance-summary-v1.2.0-candidate-377-9640-20261026.json"
   },
   "product_kits": 29,
   "partially_verified_product_kits": 0,
@@ -565,18 +621,17 @@
   "current_failed_limited_candidate_platforms": 1,
   "current_unexecuted_candidate_platforms": 15,
   "current_candidate_native_load": {
-    "phase": "merged_ems_06ee_license_held_candidate",
-    "fresh_trials": 13,
-    "fresh_trials_passed": 12,
-    "fresh_trials_not_passed": 1,
-    "limited_products": 12,
-    "hosted_limited_products_separately": 1,
+    "phase": "current_client_configuration_input_equivalence",
+    "fresh_trials": 0,
+    "fresh_hosted_imports": 0,
+    "historical_native_trials_rebound": 13,
+    "historical_native_passed": 12,
+    "historical_native_failed_preserved": 1,
     "combined_limited_products": 13,
-    "prior_native_success_inherited": 0,
+    "unchecked_prior_success_inherited": 0,
     "full_acceptance": 0,
     "public_or_final_acceptance": 0,
-    "Linux_Codex": "passed_Linux_CLI_install_and_metadata_only",
-    "release_json_sha256": "9640f2d6c3dbeb683d3031596ee3a62101686096e8c9bf80d43f5bc48854a27d",
+    "release_json_sha256": "f8317e75b008d3a09cb058d32236b6c882bde245e536fb5ba3840346f5efc287",
     "source_binding": {
       "source_base_commit": "06ee31fbe3c2a5a5700c08d72054240242c476e3",
       "tool_skill_map_sha256": "64e885efed0ed8df878efe53721fcd302e5754fdff0768aeb4ab84d9aacce345",
@@ -597,77 +652,23 @@
         "services/mcp-server/src/econipass_mcp/data/ems_operations.json": "778ae7ee1e905ede3d45a98ed892395a4becdae18e09bb89b0bd8e8dd24c1de6"
       }
     },
-    "evidence": "candidate-native-load-v1.2.0-merged-ems-license-held-20261026.json",
-    "evidence_sha256": "777b3bf1bffa050b1d1843bd90727ce70d3e509db309f7b2f308ab8bcab9e135",
-    "license_decision": "HELD_BY_USER",
-    "license_applied": false,
-    "new_oauth_grants": 0,
-    "real_model_calls": 0,
-    "remote_MCP_calls_succeeded": 0,
-    "customer_operations": 0,
-    "fresh_trials_status": "12_passed_1_Roo_metadata_failed",
-    "all13_passed": false,
-    "partial13_summary_sha256": "1e4635cab32d20712990fe5d70565e7972afe61df4ceb1207f0e988aa6641be9",
-    "partial13_after_seal_sha256": "78139baa92709f8d99225ab4e61e99311405f73dd657dc1f19eb02b37ed2d9cb"
+    "evidence": "candidate-native-equivalence-v1.2.0-current-clients-license-held-20261026.json",
+    "evidence_sha256": "c083fb198123b9863a716b29b8c9ecc628c8f6fb3ba0fd1b389d077582af811a",
+    "Roo_retry_performed": false,
+    "all13_passed": false
   },
   "current_hosted_skill_observation": {
-    "candidate_release_json_sha256": "9640f2d6c3dbeb683d3031596ee3a62101686096e8c9bf80d43f5bc48854a27d",
-    "source_comparison_receipt_sha256": "19de40ab4175daf1211d4d4377d33a147d3af6847ebb9db693f3d36ad933abf9",
-    "fresh_EMS_v3_roundtrip_receipt_sha256": "61411a04806efa9b461b1ff3ad13e21351ebcc3e0af54932e79594e3e1e0e295",
-    "all7_current_UI_states_receipt_sha256": "193e0bc3a13dac215d7ccc4bab67c8a0168a7493f54f0cffe52b99dea09f0c11",
-    "fresh_EMS_import": true,
-    "EMS_source_entries_roundtripped_exact": 3,
-    "six_other_candidate_skill_ZIPs_identical_to_previous": true,
-    "six_other_current_enabled_UI_states_revalidated": true,
-    "six_other_skills_reimported": false,
-    "skills": [
-      {
-        "id": "ems-operations",
-        "version": "v3",
-        "enabled": true,
-        "verification": "fresh_import_and_roundtrip"
-      },
-      {
-        "id": "activity-input",
-        "version": "v2",
-        "enabled": true,
-        "verification": "fresh_UI_state_and_identical_candidate_source_revalidation_no_reimport"
-      },
-      {
-        "id": "cfp-input",
-        "version": "v2",
-        "enabled": true,
-        "verification": "fresh_UI_state_and_identical_candidate_source_revalidation_no_reimport"
-      },
-      {
-        "id": "emissions-analysis",
-        "version": "v2",
-        "enabled": true,
-        "verification": "fresh_UI_state_and_identical_candidate_source_revalidation_no_reimport"
-      },
-      {
-        "id": "measures-targets",
-        "version": "v2",
-        "enabled": true,
-        "verification": "fresh_UI_state_and_identical_candidate_source_revalidation_no_reimport"
-      },
-      {
-        "id": "setup",
-        "version": "v2",
-        "enabled": true,
-        "verification": "fresh_UI_state_and_identical_candidate_source_revalidation_no_reimport"
-      },
-      {
-        "id": "statutory-reports",
-        "version": "v2",
-        "enabled": true,
-        "verification": "fresh_UI_state_and_identical_candidate_source_revalidation_no_reimport"
-      }
-    ],
-    "new_grants": 0,
+    "candidate_release_json_sha256": "f8317e75b008d3a09cb058d32236b6c882bde245e536fb5ba3840346f5efc287",
+    "new_imports": 0,
+    "new_UI_observations": 0,
+    "proof_mode": "historical7_skill_input_equivalence_and_preserved_roundtrip_check",
+    "original_observation_at_utc": "2026-10-25T16:36:04.039Z",
+    "source_entries": 20,
+    "skills": 7,
+    "provider_wrappers": 7,
+    "evidence_sha256": "2820de41dd37794f1d5c2dc3434967358438cd1f9a5039d8f56c8cd6a27c2751",
     "MCP_business_calls": 0,
-    "full_platform_acceptance": false,
-    "scope": "Claude Web hosted skill import/current state only; not Desktop/mobile/Cowork or authenticated MCP business acceptance."
+    "full_platform_acceptance": false
   },
   "platforms": [
     {
@@ -680,17 +681,21 @@
       "license_decision": "HELD_BY_USER",
       "prior_native_success_inherited": false,
       "native_candidate_status": "passed",
-      "validation_stage": "native_package_metadata_read_pass",
-      "remaining_gate": "Linux CLI local install/metadata only. Mac Desktop/IDE and authenticated remote catalog/business workflow remain unaccepted.",
+      "validation_stage": "historical_native_trial_input_equivalence",
+      "remaining_gate": "Linux CLI local install/metadata only. Mac Desktop/IDE and authenticated remote catalog/business workflow remain unaccepted. No fresh execution or UI observation for the current configuration candidate.",
       "receipt_sha256": "c6337d7a4f7fd44855ddddf042fb19cf3cdeeae99fa23a3a81e00cdcf5e286db",
       "candidate_artifact": "econipass-codex.zip",
       "candidate_artifact_sha256": "3bf130c7fc82ff0ee09537b45d8dfc75f793976535884e3bfafc52f8178e248c",
-      "proof_mode": "fresh_native_execution",
+      "proof_mode": "historical_native_input_byte_equivalence_not_fresh_execution",
       "surface": "Linux arm64 CLI only",
       "native_version": "0.163.0-alpha.11.2",
       "local_plugin_installed_enabled": true,
       "all7_skills_enabled": true,
-      "Mac_Desktop_IDE_unverified": true
+      "Mac_Desktop_IDE_unverified": true,
+      "historical_input_equivalence_rebound": true,
+      "original_execution_at_utc": "2026-10-25T16:56:19.469896+00:00",
+      "historical_validation_stage": "native_package_metadata_read_pass",
+      "fresh_native_or_hosted_trial_for_current_candidate": false
     },
     {
       "id": "chatgpt",
@@ -703,7 +708,12 @@
       "prior_native_success_inherited": false,
       "native_candidate_status": "user_held",
       "validation_stage": "not_executed_for_merged_candidate",
-      "remaining_gate": "Authenticated remote catalog/read, tenant/scope rejection, refresh/revoke and intended business workflow remain unaccepted. No new OAuth while the user hold remains."
+      "remaining_gate": "Authenticated remote catalog/read, tenant/scope rejection, refresh/revoke and intended business workflow remain unaccepted. No new OAuth while the user hold remains. No fresh execution or UI observation for the current configuration candidate.",
+      "candidate_artifact": "econipass-chatgpt.zip",
+      "candidate_artifact_sha256": "98a99a167277a4c9eaec03adaed3368b711bbbc835c3c51973e3f1980edec98c",
+      "proof_mode": "not_executed_for_current_configuration_candidate",
+      "historical_input_equivalence_rebound": false,
+      "fresh_native_or_hosted_trial_for_current_candidate": false
     },
     {
       "id": "claude-code",
@@ -715,12 +725,16 @@
       "license_decision": "HELD_BY_USER",
       "prior_native_success_inherited": false,
       "native_candidate_status": "passed",
-      "validation_stage": "native_package_load_pass",
+      "validation_stage": "historical_native_trial_input_equivalence",
       "receipt_sha256": "fcde998dccb09666f23ffc977b9afe7c7e20e9f05c8fa31d68d7b915eba784c5",
       "candidate_artifact": "econipass-claude-code.zip",
       "candidate_artifact_sha256": "5a440b94c8a4ee67f7064bd7b67f9a7d5c9462a97d890dd832cb10586d3b0195",
-      "proof_mode": "fresh_native_execution",
-      "remaining_gate": "Authenticated remote catalog/read, tenant/scope rejection, refresh/revoke and intended business workflow remain unaccepted. No new OAuth while the user hold remains."
+      "proof_mode": "historical_native_input_byte_equivalence_not_fresh_execution",
+      "remaining_gate": "Authenticated remote catalog/read, tenant/scope rejection, refresh/revoke and intended business workflow remain unaccepted. No new OAuth while the user hold remains. No fresh execution or UI observation for the current configuration candidate.",
+      "historical_input_equivalence_rebound": true,
+      "original_execution_at_utc": "2026-10-25T16:56:19.469896+00:00",
+      "historical_validation_stage": "native_package_load_pass",
+      "fresh_native_or_hosted_trial_for_current_candidate": false
     },
     {
       "id": "claude-hosted",
@@ -732,14 +746,22 @@
       "license_decision": "HELD_BY_USER",
       "prior_native_success_inherited": false,
       "native_candidate_status": "passed_limited_hosted_skill_import",
-      "validation_stage": "fresh_EMS_v3_import_roundtrip_and6_identical_ZIP_UI_revalidation",
-      "proof_mode": "fresh_one_skill_import_plus_current_UI_and_unchanged_source_revalidation",
-      "seven_skills_enabled": true,
-      "fresh_imported_skills": 1,
-      "unchanged_ZIPs_revalidated_without_reimport": 6,
+      "validation_stage": "historical_hosted_skills_input_equivalence",
+      "proof_mode": "historical_hosted_skill_input_byte_equivalence_no_new_import_or_UI_observation",
+      "fresh_imported_skills": 0,
       "MCP_business_calls": 0,
       "new_oauth_grants": 0,
-      "remaining_gate": "Authenticated remote catalog/read, tenant/scope rejection, refresh/revoke and intended business workflow remain unaccepted. No new OAuth while the user hold remains."
+      "remaining_gate": "Historical Web7-skill input/roundtrip equivalence only; no new import/UI observation. Desktop/mobile/Cowork and authenticated MCP catalog/business/file delivery remain unaccepted.",
+      "candidate_artifact": "econipass-claude-hosted.zip",
+      "candidate_artifact_sha256": "3add03c6016f76698d01b1d8def5f2baf4eea644bae0e0f0596ec36619173ad9",
+      "historical_input_equivalence_rebound": true,
+      "original_observation_at_utc": "2026-10-25T16:36:04.039Z",
+      "fresh_EMS_import": false,
+      "historical_validation_stage": "fresh_EMS_v3_import_roundtrip_and6_identical_ZIP_UI_revalidation",
+      "historical_imported_skills": 1,
+      "historical_seven_skills_enabled": true,
+      "historical_unchanged_ZIPs_revalidated_without_reimport": 6,
+      "fresh_native_or_hosted_trial_for_current_candidate": false
     },
     {
       "id": "querypie-aip",
@@ -752,7 +774,12 @@
       "prior_native_success_inherited": false,
       "native_candidate_status": "pending",
       "validation_stage": "not_executed_for_merged_candidate",
-      "remaining_gate": "Authenticated remote catalog/read, tenant/scope rejection, refresh/revoke and intended business workflow remain unaccepted. No new OAuth while the user hold remains."
+      "remaining_gate": "Authenticated remote catalog/read, tenant/scope rejection, refresh/revoke and intended business workflow remain unaccepted. No new OAuth while the user hold remains. No fresh execution or UI observation for the current configuration candidate.",
+      "candidate_artifact": "econipass-querypie-aip.zip",
+      "candidate_artifact_sha256": "52bf062d4797eabb02000dbef2aca19c75b5572d975ea82d5a9f493d6571060c",
+      "proof_mode": "not_executed_for_current_configuration_candidate",
+      "historical_input_equivalence_rebound": false,
+      "fresh_native_or_hosted_trial_for_current_candidate": false
     },
     {
       "id": "github-copilot-cli",
@@ -764,12 +791,16 @@
       "license_decision": "HELD_BY_USER",
       "prior_native_success_inherited": false,
       "native_candidate_status": "passed",
-      "validation_stage": "native_package_load_pass",
+      "validation_stage": "historical_native_trial_input_equivalence",
       "receipt_sha256": "6d425ced8ba0d8f8a6ba2b907100e60c0693926d782cfa31aaa0c6a27ba83264",
       "candidate_artifact": "econipass-github-copilot-cli.zip",
       "candidate_artifact_sha256": "0dcab8d2eabdb164829573138dbd688cd0b2607a4a28f3319aa35624d82e65c2",
-      "proof_mode": "fresh_native_execution",
-      "remaining_gate": "Authenticated remote catalog/read, tenant/scope rejection, refresh/revoke and intended business workflow remain unaccepted. No new OAuth while the user hold remains."
+      "proof_mode": "historical_native_input_byte_equivalence_not_fresh_execution",
+      "remaining_gate": "Authenticated remote catalog/read, tenant/scope rejection, refresh/revoke and intended business workflow remain unaccepted. No new OAuth while the user hold remains. No fresh execution or UI observation for the current configuration candidate.",
+      "historical_input_equivalence_rebound": true,
+      "original_execution_at_utc": "2026-10-25T16:56:19.469896+00:00",
+      "historical_validation_stage": "native_package_load_pass",
+      "fresh_native_or_hosted_trial_for_current_candidate": false
     },
     {
       "id": "vscode-copilot",
@@ -781,12 +812,16 @@
       "license_decision": "HELD_BY_USER",
       "prior_native_success_inherited": false,
       "native_candidate_status": "passed",
-      "validation_stage": "native_cli_mcp_config_only_pass",
+      "validation_stage": "historical_native_trial_input_equivalence",
       "receipt_sha256": "57be3a8db272bbc6e97b8294e4e1a59f2c4f7ffc91d11d312911e7314e224d14",
       "candidate_artifact": "econipass-vscode-copilot.zip",
       "candidate_artifact_sha256": "9f2e223d2b0ff5dad1ac2bb0c6b85a90f8fd7ff3b5d9cc8a8eadd07caa19d1c4",
-      "proof_mode": "fresh_native_execution",
-      "remaining_gate": "Authenticated remote catalog/read, tenant/scope rejection, refresh/revoke and intended business workflow remain unaccepted. No new OAuth while the user hold remains."
+      "proof_mode": "historical_native_input_byte_equivalence_not_fresh_execution",
+      "remaining_gate": "Authenticated remote catalog/read, tenant/scope rejection, refresh/revoke and intended business workflow remain unaccepted. No new OAuth while the user hold remains. No fresh execution or UI observation for the current configuration candidate.",
+      "historical_input_equivalence_rebound": true,
+      "original_execution_at_utc": "2026-10-25T16:56:19.469896+00:00",
+      "historical_validation_stage": "native_cli_mcp_config_only_pass",
+      "fresh_native_or_hosted_trial_for_current_candidate": false
     },
     {
       "id": "copilot-studio",
@@ -799,7 +834,12 @@
       "prior_native_success_inherited": false,
       "native_candidate_status": "pending",
       "validation_stage": "not_executed_for_merged_candidate",
-      "remaining_gate": "Authenticated remote catalog/read, tenant/scope rejection, refresh/revoke and intended business workflow remain unaccepted. No new OAuth while the user hold remains."
+      "remaining_gate": "Authenticated remote catalog/read, tenant/scope rejection, refresh/revoke and intended business workflow remain unaccepted. No new OAuth while the user hold remains. No fresh execution or UI observation for the current configuration candidate.",
+      "candidate_artifact": "econipass-copilot-studio.zip",
+      "candidate_artifact_sha256": "cf67bd70cdced85a647dda74a10e4e9ca90833d4e11d0e982f59b68a9aef93ea",
+      "proof_mode": "not_executed_for_current_configuration_candidate",
+      "historical_input_equivalence_rebound": false,
+      "fresh_native_or_hosted_trial_for_current_candidate": false
     },
     {
       "id": "gemini-cli",
@@ -811,12 +851,16 @@
       "license_decision": "HELD_BY_USER",
       "prior_native_success_inherited": false,
       "native_candidate_status": "passed",
-      "validation_stage": "native_package_load_pass",
+      "validation_stage": "historical_native_trial_input_equivalence",
       "receipt_sha256": "cfd22e2904316fed1ecfe6f19337469daaef13dcc4882061b6b75a2d925f3fb9",
       "candidate_artifact": "econipass-gemini-cli.zip",
       "candidate_artifact_sha256": "db82d833986365f8b93060e3a7e0df317284ce4c2d3523c6a121f66236b5ad98",
-      "proof_mode": "fresh_native_execution",
-      "remaining_gate": "Authenticated remote catalog/read, tenant/scope rejection, refresh/revoke and intended business workflow remain unaccepted. No new OAuth while the user hold remains."
+      "proof_mode": "historical_native_input_byte_equivalence_not_fresh_execution",
+      "remaining_gate": "Authenticated remote catalog/read, tenant/scope rejection, refresh/revoke and intended business workflow remain unaccepted. No new OAuth while the user hold remains. No fresh execution or UI observation for the current configuration candidate.",
+      "historical_input_equivalence_rebound": true,
+      "original_execution_at_utc": "2026-10-25T16:56:19.469896+00:00",
+      "historical_validation_stage": "native_package_load_pass",
+      "fresh_native_or_hosted_trial_for_current_candidate": false
     },
     {
       "id": "gemini-code-assist",
@@ -829,7 +873,12 @@
       "prior_native_success_inherited": false,
       "native_candidate_status": "pending",
       "validation_stage": "not_executed_for_merged_candidate",
-      "remaining_gate": "Authenticated remote catalog/read, tenant/scope rejection, refresh/revoke and intended business workflow remain unaccepted. No new OAuth while the user hold remains."
+      "remaining_gate": "Authenticated remote catalog/read, tenant/scope rejection, refresh/revoke and intended business workflow remain unaccepted. No new OAuth while the user hold remains. No fresh execution or UI observation for the current configuration candidate.",
+      "candidate_artifact": "econipass-gemini-code-assist.zip",
+      "candidate_artifact_sha256": "3704110017a54ad8664ff2d6b37869fead94366ce2de940609d8d5a4473b563c",
+      "proof_mode": "not_executed_for_current_configuration_candidate",
+      "historical_input_equivalence_rebound": false,
+      "fresh_native_or_hosted_trial_for_current_candidate": false
     },
     {
       "id": "cursor-desktop",
@@ -841,12 +890,16 @@
       "license_decision": "HELD_BY_USER",
       "prior_native_success_inherited": false,
       "native_candidate_status": "passed",
-      "validation_stage": "native_cli_mcp_config_only_pass",
+      "validation_stage": "historical_native_trial_input_equivalence",
       "receipt_sha256": "a950f2c6b1d1ca0ad137a33352be4238ec5d107bc2b0bde04c4fd9733acb9a89",
       "candidate_artifact": "econipass-cursor-desktop.zip",
       "candidate_artifact_sha256": "3b362fe206328b597ddd39258718aa8bafbb7d28295c7a24c4d228f6c0f58b45",
-      "proof_mode": "fresh_native_execution",
-      "remaining_gate": "Authenticated remote catalog/read, tenant/scope rejection, refresh/revoke and intended business workflow remain unaccepted. No new OAuth while the user hold remains."
+      "proof_mode": "historical_native_input_byte_equivalence_not_fresh_execution",
+      "remaining_gate": "Authenticated remote catalog/read, tenant/scope rejection, refresh/revoke and intended business workflow remain unaccepted. No new OAuth while the user hold remains. No fresh execution or UI observation for the current configuration candidate.",
+      "historical_input_equivalence_rebound": true,
+      "original_execution_at_utc": "2026-10-25T16:56:19.469896+00:00",
+      "historical_validation_stage": "native_cli_mcp_config_only_pass",
+      "fresh_native_or_hosted_trial_for_current_candidate": false
     },
     {
       "id": "cursor-hosted",
@@ -859,7 +912,12 @@
       "prior_native_success_inherited": false,
       "native_candidate_status": "pending",
       "validation_stage": "not_executed_for_merged_candidate",
-      "remaining_gate": "Authenticated remote catalog/read, tenant/scope rejection, refresh/revoke and intended business workflow remain unaccepted. No new OAuth while the user hold remains."
+      "remaining_gate": "Authenticated remote catalog/read, tenant/scope rejection, refresh/revoke and intended business workflow remain unaccepted. No new OAuth while the user hold remains. No fresh execution or UI observation for the current configuration candidate.",
+      "candidate_artifact": "econipass-cursor-hosted.zip",
+      "candidate_artifact_sha256": "3f20e7bd56491411198fb3688e1b0506c48557c10676e1255af13cacbabb36cc",
+      "proof_mode": "not_executed_for_current_configuration_candidate",
+      "historical_input_equivalence_rebound": false,
+      "fresh_native_or_hosted_trial_for_current_candidate": false
     },
     {
       "id": "m365-copilot",
@@ -872,7 +930,12 @@
       "prior_native_success_inherited": false,
       "native_candidate_status": "pending",
       "validation_stage": "not_executed_for_merged_candidate",
-      "remaining_gate": "Authenticated remote catalog/read, tenant/scope rejection, refresh/revoke and intended business workflow remain unaccepted. No new OAuth while the user hold remains."
+      "remaining_gate": "Authenticated remote catalog/read, tenant/scope rejection, refresh/revoke and intended business workflow remain unaccepted. No new OAuth while the user hold remains. No fresh execution or UI observation for the current configuration candidate.",
+      "candidate_artifact": "econipass-m365-copilot.zip",
+      "candidate_artifact_sha256": "1d30d2af3ab13603092039cfc02f58f0a6bcd23e730a42e71537925356253716",
+      "proof_mode": "not_executed_for_current_configuration_candidate",
+      "historical_input_equivalence_rebound": false,
+      "fresh_native_or_hosted_trial_for_current_candidate": false
     },
     {
       "id": "gemini-enterprise",
@@ -885,7 +948,12 @@
       "prior_native_success_inherited": false,
       "native_candidate_status": "pending",
       "validation_stage": "not_executed_for_merged_candidate",
-      "remaining_gate": "Authenticated remote catalog/read, tenant/scope rejection, refresh/revoke and intended business workflow remain unaccepted. No new OAuth while the user hold remains."
+      "remaining_gate": "Actions start disabled. Reload the Actions list, select only needed operations and enable at most100. Exact callback/confidential-client organization setup, credentials and native workflow acceptance remain pending.",
+      "candidate_artifact": "econipass-gemini-enterprise.zip",
+      "candidate_artifact_sha256": "904b0dea968e114a4bb2bc4857a5840911d5fe7b26d17ca3fa300525717a36a5",
+      "proof_mode": "not_executed_for_current_configuration_candidate",
+      "historical_input_equivalence_rebound": false,
+      "fresh_native_or_hosted_trial_for_current_candidate": false
     },
     {
       "id": "perplexity",
@@ -898,7 +966,12 @@
       "prior_native_success_inherited": false,
       "native_candidate_status": "pending",
       "validation_stage": "not_executed_for_merged_candidate",
-      "remaining_gate": "Authenticated remote catalog/read, tenant/scope rejection, refresh/revoke and intended business workflow remain unaccepted. No new OAuth while the user hold remains."
+      "remaining_gate": "Authenticated remote catalog/read, tenant/scope rejection, refresh/revoke and intended business workflow remain unaccepted. No new OAuth while the user hold remains. No fresh execution or UI observation for the current configuration candidate.",
+      "candidate_artifact": "econipass-perplexity.zip",
+      "candidate_artifact_sha256": "dee5473d17021cf5b7abbcbc7a6c9c90b92ca26d2ebd64d0e84e73d9ff385731",
+      "proof_mode": "not_executed_for_current_configuration_candidate",
+      "historical_input_equivalence_rebound": false,
+      "fresh_native_or_hosted_trial_for_current_candidate": false
     },
     {
       "id": "windsurf",
@@ -911,7 +984,12 @@
       "prior_native_success_inherited": false,
       "native_candidate_status": "pending",
       "validation_stage": "not_executed_for_merged_candidate",
-      "remaining_gate": "Authenticated remote catalog/read, tenant/scope rejection, refresh/revoke and intended business workflow remain unaccepted. No new OAuth while the user hold remains."
+      "remaining_gate": "Legacy Cascade requires exactly one preset (1–64 known tools), <=100 active tools across all servers and full paginated catalog count/name-hash match; stop and regenerate on drift. disabledTools cannot hide future unknown tools. New Devin Local uses separate v3000.3+ .devin/mcp_config.json. Neither surface has native/authenticated acceptance.",
+      "candidate_artifact": "econipass-windsurf.zip",
+      "candidate_artifact_sha256": "1a60524423d35046f34c3789dc8ca213cb23ccb48b1edb78ca9440b28e0bc422",
+      "proof_mode": "not_executed_for_current_configuration_candidate",
+      "historical_input_equivalence_rebound": false,
+      "fresh_native_or_hosted_trial_for_current_candidate": false
     },
     {
       "id": "jetbrains-junie",
@@ -924,7 +1002,12 @@
       "prior_native_success_inherited": false,
       "native_candidate_status": "pending",
       "validation_stage": "not_executed_for_merged_candidate",
-      "remaining_gate": "Authenticated remote catalog/read, tenant/scope rejection, refresh/revoke and intended business workflow remain unaccepted. No new OAuth while the user hold remains."
+      "remaining_gate": "Use Junie Tools | Junie | MCP Settings or .junie/mcp/mcp.json; AI Assistant settings are separate. No current Junie execution or authenticated acceptance; historical auth-required bootstrap is not success.",
+      "candidate_artifact": "econipass-jetbrains-junie.zip",
+      "candidate_artifact_sha256": "fc46a7751b401964c7d1f1bee961e2d34f1c6e589349216776f60219866165f0",
+      "proof_mode": "not_executed_for_current_configuration_candidate",
+      "historical_input_equivalence_rebound": false,
+      "fresh_native_or_hosted_trial_for_current_candidate": false
     },
     {
       "id": "zed",
@@ -937,7 +1020,12 @@
       "prior_native_success_inherited": false,
       "native_candidate_status": "pending",
       "validation_stage": "not_executed_for_merged_candidate",
-      "remaining_gate": "Authenticated remote catalog/read, tenant/scope rejection, refresh/revoke and intended business workflow remain unaccepted. No new OAuth while the user hold remains."
+      "remaining_gate": "Authenticated remote catalog/read, tenant/scope rejection, refresh/revoke and intended business workflow remain unaccepted. No new OAuth while the user hold remains. No fresh execution or UI observation for the current configuration candidate.",
+      "candidate_artifact": "econipass-zed.zip",
+      "candidate_artifact_sha256": "5e5819e7a1e12432cb13c64b29e8adac332e75e3357120285a358493fc8f67af",
+      "proof_mode": "not_executed_for_current_configuration_candidate",
+      "historical_input_equivalence_rebound": false,
+      "fresh_native_or_hosted_trial_for_current_candidate": false
     },
     {
       "id": "goose",
@@ -949,12 +1037,16 @@
       "license_decision": "HELD_BY_USER",
       "prior_native_success_inherited": false,
       "native_candidate_status": "passed",
-      "validation_stage": "native_config_and_skills_load_pass",
+      "validation_stage": "historical_native_trial_input_equivalence",
       "receipt_sha256": "3a47bdb7eca002960193f2a5e74d4150b9b95280197396880228a92f19832e5c",
       "candidate_artifact": "econipass-goose.zip",
       "candidate_artifact_sha256": "4b90bf95ee1a8bde2301edefeeb2d916af04cb589c546f191f25cf61bc7157f5",
-      "proof_mode": "fresh_native_execution",
-      "remaining_gate": "Authenticated remote catalog/read, tenant/scope rejection, refresh/revoke and intended business workflow remain unaccepted. No new OAuth while the user hold remains."
+      "proof_mode": "historical_native_input_byte_equivalence_not_fresh_execution",
+      "remaining_gate": "Authenticated remote catalog/read, tenant/scope rejection, refresh/revoke and intended business workflow remain unaccepted. No new OAuth while the user hold remains. No fresh execution or UI observation for the current configuration candidate.",
+      "historical_input_equivalence_rebound": true,
+      "original_execution_at_utc": "2026-10-25T16:56:19.469896+00:00",
+      "historical_validation_stage": "native_config_and_skills_load_pass",
+      "fresh_native_or_hosted_trial_for_current_candidate": false
     },
     {
       "id": "amazon-q-cli",
@@ -967,7 +1059,12 @@
       "prior_native_success_inherited": false,
       "native_candidate_status": "pending",
       "validation_stage": "not_executed_for_merged_candidate",
-      "remaining_gate": "Authenticated remote catalog/read, tenant/scope rejection, refresh/revoke and intended business workflow remain unaccepted. No new OAuth while the user hold remains."
+      "remaining_gate": "Legacy Q configuration retained. Kiro successor alias ep has explicit oauthScopes mcp:read in .kiro/settings/mcp.json; real catalog/schema/model namespace and authentication remain unverified. Successor and legacy acceptance are separate; no new OAuth while held.",
+      "candidate_artifact": "econipass-amazon-q-cli.zip",
+      "candidate_artifact_sha256": "3dc25e39f7e28c1be62a6d494ff3b39721897e1d1e8c44a3bc8b32ea86d42328",
+      "proof_mode": "not_executed_for_current_configuration_candidate",
+      "historical_input_equivalence_rebound": false,
+      "fresh_native_or_hosted_trial_for_current_candidate": false
     },
     {
       "id": "cline",
@@ -979,12 +1076,16 @@
       "license_decision": "HELD_BY_USER",
       "prior_native_success_inherited": false,
       "native_candidate_status": "passed",
-      "validation_stage": "native_config_and_skills_load_pass",
+      "validation_stage": "historical_native_trial_input_equivalence",
       "receipt_sha256": "3ac8a2f0e48522041a4b85b0422c95e816d7428d673c634e7f58a4fcaed6cd01",
       "candidate_artifact": "econipass-cline.zip",
       "candidate_artifact_sha256": "0910ed390e299bb8cad8a430edc5f6d5bc27077ab56bbea6906b53d986e76182",
-      "proof_mode": "fresh_native_execution",
-      "remaining_gate": "Authenticated remote catalog/read, tenant/scope rejection, refresh/revoke and intended business workflow remain unaccepted. No new OAuth while the user hold remains."
+      "proof_mode": "historical_native_input_byte_equivalence_not_fresh_execution",
+      "remaining_gate": "Authenticated remote catalog/read, tenant/scope rejection, refresh/revoke and intended business workflow remain unaccepted. No new OAuth while the user hold remains. No fresh execution or UI observation for the current configuration candidate.",
+      "historical_input_equivalence_rebound": true,
+      "original_execution_at_utc": "2026-10-25T16:56:19.469896+00:00",
+      "historical_validation_stage": "native_config_and_skills_load_pass",
+      "fresh_native_or_hosted_trial_for_current_candidate": false
     },
     {
       "id": "roo-code",
@@ -996,17 +1097,21 @@
       "license_decision": "HELD_BY_USER",
       "prior_native_success_inherited": false,
       "native_candidate_status": "not_passed",
-      "validation_stage": "native_skill_metadata_check_failed",
+      "validation_stage": "historical_native_trial_input_equivalence",
       "receipt_sha256": "498057c062860cc1a2e3cae2afa1611d0447c2dc03c83afbd803ae135e568c6b",
       "candidate_artifact": "econipass-roo-code.zip",
       "candidate_artifact_sha256": "beac2fc8a81dda7c9175e0ac313c6290248f14f9715d500ce3e28b6e25e11772",
-      "proof_mode": "fresh_native_execution",
+      "proof_mode": "historical_native_input_byte_equivalence_not_fresh_execution",
       "raw_receipt_stage_label": "native_skill_metadata_only_pass",
       "observed_project_skill_count": 0,
       "expected_project_skill_count": 7,
       "cause": "Initialization race suspected, not established.",
       "automatic_retry": false,
-      "remaining_gate": "Authenticated remote catalog/read, tenant/scope rejection, refresh/revoke and intended business workflow remain unaccepted. No new OAuth while the user hold remains."
+      "remaining_gate": "Authenticated remote catalog/read, tenant/scope rejection, refresh/revoke and intended business workflow remain unaccepted. No new OAuth while the user hold remains. No fresh execution or UI observation for the current configuration candidate.",
+      "historical_input_equivalence_rebound": true,
+      "original_execution_at_utc": "2026-10-25T16:56:19.469896+00:00",
+      "historical_validation_stage": "native_skill_metadata_check_failed",
+      "fresh_native_or_hosted_trial_for_current_candidate": false
     },
     {
       "id": "openai-responses",
@@ -1018,12 +1123,16 @@
       "license_decision": "HELD_BY_USER",
       "prior_native_success_inherited": false,
       "native_candidate_status": "passed",
-      "validation_stage": "native_sdk_offline_fixture_validation",
+      "validation_stage": "historical_native_trial_input_equivalence",
       "receipt_sha256": "64a4a1969002a3887590c1ff28d74fb05175917096abe9f9a2ba22e56ab4585b",
       "candidate_artifact": "econipass-openai-responses.zip",
       "candidate_artifact_sha256": "b7c7cc7663d242530b47c4814c416f5021fd12a85b9b6a2a92a41258de70de95",
-      "proof_mode": "fresh_native_execution",
-      "remaining_gate": "Authenticated remote catalog/read, tenant/scope rejection, refresh/revoke and intended business workflow remain unaccepted. No new OAuth while the user hold remains."
+      "proof_mode": "historical_native_input_byte_equivalence_not_fresh_execution",
+      "remaining_gate": "Authenticated remote catalog/read, tenant/scope rejection, refresh/revoke and intended business workflow remain unaccepted. No new OAuth while the user hold remains. No fresh execution or UI observation for the current configuration candidate.",
+      "historical_input_equivalence_rebound": true,
+      "original_execution_at_utc": "2026-10-25T16:56:19.469896+00:00",
+      "historical_validation_stage": "native_sdk_offline_fixture_validation",
+      "fresh_native_or_hosted_trial_for_current_candidate": false
     },
     {
       "id": "openai-agents-sdk",
@@ -1035,12 +1144,16 @@
       "license_decision": "HELD_BY_USER",
       "prior_native_success_inherited": false,
       "native_candidate_status": "passed",
-      "validation_stage": "native_sdk_offline_fixture_validation",
+      "validation_stage": "historical_native_trial_input_equivalence",
       "receipt_sha256": "ad22543fb42fe279b4e897b68f8880ad57875d39a6a76ec9d176c94b9ffe6a58",
       "candidate_artifact": "econipass-openai-agents-sdk.zip",
       "candidate_artifact_sha256": "bb19e2e83ff416f2d029427f76481e3baf859db7d9681fd662e2fa81b2f0eac8",
-      "proof_mode": "fresh_native_execution",
-      "remaining_gate": "Authenticated remote catalog/read, tenant/scope rejection, refresh/revoke and intended business workflow remain unaccepted. No new OAuth while the user hold remains."
+      "proof_mode": "historical_native_input_byte_equivalence_not_fresh_execution",
+      "remaining_gate": "Authenticated remote catalog/read, tenant/scope rejection, refresh/revoke and intended business workflow remain unaccepted. No new OAuth while the user hold remains. No fresh execution or UI observation for the current configuration candidate.",
+      "historical_input_equivalence_rebound": true,
+      "original_execution_at_utc": "2026-10-25T16:56:19.469896+00:00",
+      "historical_validation_stage": "native_sdk_offline_fixture_validation",
+      "fresh_native_or_hosted_trial_for_current_candidate": false
     },
     {
       "id": "anthropic-messages",
@@ -1052,12 +1165,16 @@
       "license_decision": "HELD_BY_USER",
       "prior_native_success_inherited": false,
       "native_candidate_status": "passed",
-      "validation_stage": "native_sdk_offline_fixture_validation",
+      "validation_stage": "historical_native_trial_input_equivalence",
       "receipt_sha256": "eea232ad72f9526b05725abfdc8912373392eeeae04ec3b7ec3c6307276a27ad",
       "candidate_artifact": "econipass-anthropic-messages.zip",
       "candidate_artifact_sha256": "195f8f48937e0f83e761b672778897c046bffd8b05f563e0c9af97a5e8d9f0a0",
-      "proof_mode": "fresh_native_execution",
-      "remaining_gate": "Authenticated remote catalog/read, tenant/scope rejection, refresh/revoke and intended business workflow remain unaccepted. No new OAuth while the user hold remains."
+      "proof_mode": "historical_native_input_byte_equivalence_not_fresh_execution",
+      "remaining_gate": "Authenticated remote catalog/read, tenant/scope rejection, refresh/revoke and intended business workflow remain unaccepted. No new OAuth while the user hold remains. No fresh execution or UI observation for the current configuration candidate.",
+      "historical_input_equivalence_rebound": true,
+      "original_execution_at_utc": "2026-10-25T16:56:19.469896+00:00",
+      "historical_validation_stage": "native_sdk_offline_fixture_validation",
+      "fresh_native_or_hosted_trial_for_current_candidate": false
     },
     {
       "id": "langchain-langgraph",
@@ -1069,12 +1186,16 @@
       "license_decision": "HELD_BY_USER",
       "prior_native_success_inherited": false,
       "native_candidate_status": "passed",
-      "validation_stage": "native_sdk_offline_fixture_validation",
+      "validation_stage": "historical_native_trial_input_equivalence",
       "receipt_sha256": "11197853ed0f237a97e6ee1579db4476e3bf5d11743cf948fd60bff25cb49cb0",
       "candidate_artifact": "econipass-langchain-langgraph.zip",
       "candidate_artifact_sha256": "15ba5b75a6332ef47092df3017a475bbaa7cc110d16b352ed90655baf13cd131",
-      "proof_mode": "fresh_native_execution",
-      "remaining_gate": "Authenticated remote catalog/read, tenant/scope rejection, refresh/revoke and intended business workflow remain unaccepted. No new OAuth while the user hold remains."
+      "proof_mode": "historical_native_input_byte_equivalence_not_fresh_execution",
+      "remaining_gate": "Authenticated remote catalog/read, tenant/scope rejection, refresh/revoke and intended business workflow remain unaccepted. No new OAuth while the user hold remains. No fresh execution or UI observation for the current configuration candidate.",
+      "historical_input_equivalence_rebound": true,
+      "original_execution_at_utc": "2026-10-25T16:56:19.469896+00:00",
+      "historical_validation_stage": "native_sdk_offline_fixture_validation",
+      "fresh_native_or_hosted_trial_for_current_candidate": false
     },
     {
       "id": "n8n",
@@ -1087,7 +1208,12 @@
       "prior_native_success_inherited": false,
       "native_candidate_status": "pending",
       "validation_stage": "not_executed_for_merged_candidate",
-      "remaining_gate": "Authenticated remote catalog/read, tenant/scope rejection, refresh/revoke and intended business workflow remain unaccepted. No new OAuth while the user hold remains."
+      "remaining_gate": "MCP Client Tool v1.2+ must select HTTP Streamable (serverTransport=httpStreamable, endpointUrl ending /mcp); credential scope, catalog and workflow acceptance remain pending.",
+      "candidate_artifact": "econipass-n8n.zip",
+      "candidate_artifact_sha256": "ec87879208369a49b944f64e1070d373a61d0ed44142b19c4644d3128fc5d201",
+      "proof_mode": "not_executed_for_current_configuration_candidate",
+      "historical_input_equivalence_rebound": false,
+      "fresh_native_or_hosted_trial_for_current_candidate": false
     },
     {
       "id": "dify",
@@ -1100,7 +1226,12 @@
       "prior_native_success_inherited": false,
       "native_candidate_status": "pending",
       "validation_stage": "not_executed_for_merged_candidate",
-      "remaining_gate": "Authenticated remote catalog/read, tenant/scope rejection, refresh/revoke and intended business workflow remain unaccepted. No new OAuth while the user hold remains."
+      "remaining_gate": "Authenticated remote catalog/read, tenant/scope rejection, refresh/revoke and intended business workflow remain unaccepted. No new OAuth while the user hold remains. No fresh execution or UI observation for the current configuration candidate.",
+      "candidate_artifact": "econipass-dify.zip",
+      "candidate_artifact_sha256": "203aab761f8ea9a4cb8799e8bc2ac4caf6a8b0051098ba0ecebd3c625973fee8",
+      "proof_mode": "not_executed_for_current_configuration_candidate",
+      "historical_input_equivalence_rebound": false,
+      "fresh_native_or_hosted_trial_for_current_candidate": false
     },
     {
       "id": "github-copilot-cloud",
@@ -1113,7 +1244,12 @@
       "prior_native_success_inherited": false,
       "native_candidate_status": "pending",
       "validation_stage": "not_executed_for_merged_candidate",
-      "remaining_gate": "Authenticated remote catalog/read, tenant/scope rejection, refresh/revoke and intended business workflow remain unaccepted. No new OAuth while the user hold remains."
+      "remaining_gate": "Authenticated remote catalog/read, tenant/scope rejection, refresh/revoke and intended business workflow remain unaccepted. No new OAuth while the user hold remains. No fresh execution or UI observation for the current configuration candidate.",
+      "candidate_artifact": "econipass-github-copilot-cloud.zip",
+      "candidate_artifact_sha256": "5784af85a4b8cb8bfd52cdaea1d85e97affb6e4ebfc10c82c3d3ba427e641d99",
+      "proof_mode": "not_executed_for_current_configuration_candidate",
+      "historical_input_equivalence_rebound": false,
+      "fresh_native_or_hosted_trial_for_current_candidate": false
     }
   ],
   "publication": {
@@ -1147,7 +1283,7 @@
       "historical_5ee_directory_blocking_codes": [
         "LICENSE_MISSING"
       ],
-      "new_candidate_CLI_check": "fresh_manifest_and_components_pass_directory_LICENSE_MISSING_blocking1",
+      "new_candidate_CLI_check": "historical_manifest_pass_and_LICENSE_MISSING_blocking1_rebound_by_exact_common_bytes_no_fresh_execution",
       "license_application": "HELD_BY_USER",
       "submitted": false,
       "new_candidate_manifest_errors": 0,
@@ -1175,6 +1311,21 @@
     "previous275a_status": "history/acceptance-summary-v1.2.0-candidate-275a-6cc85-20261026.json",
     "previous275a_native13": "candidate-native-load-v1.2.0-cfp-ems-security-license-held-20261025.json",
     "previous275a_package": "candidate-package-v1.2.0-cfp-ems-security-license-held-20261025.json",
-    "prior_audit_application": "Old0a691 approved/applied10f; not inherited for merged6d3/377 source."
+    "prior_audit_application": "Old0a691 approved/applied10f; not inherited for merged6d3/377 source.",
+    "previous377_status": "history/acceptance-summary-v1.2.0-candidate-377-9640-20261026.json",
+    "previous377_native": "candidate-native-load-v1.2.0-merged-ems-license-held-20261026.json",
+    "previous377_package": "candidate-package-v1.2.0-merged-ems-license-held-20261026.json"
+  },
+  "packaging_source_revision": "355e24babeac05182d97001e3004177ff666bb9a",
+  "state_observation": {
+    "kind": "observed_pre_draft_preparation_snapshot",
+    "observed_at_utc": "2026-10-25T18:32:22.688302+00:00",
+    "live_external_state": false,
+    "scope": "All not-created/uploaded/deployed/published/accepted state fields describe the preparation observation only. Source, payload and test evidence remains source-bound; subsequent external actions are not inferred from this snapshot.",
+    "later_current_state_locations": {
+      "public_PR": "https://github.com/emmatch-dev/econipass-mcp-plugins/pull/5",
+      "GitHub_release": "https://github.com/emmatch-dev/econipass-mcp-plugins/releases/tag/econipass-mcp-plugin-v1.2.0"
+    },
+    "later_Draft_creation_or_publication_inferred": false
   }
 }

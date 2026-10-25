@@ -1,8 +1,36 @@
 # プラグイン配布物の検証記録
 
+この文書は **Draft作成前の準備時点（2026-10-25T18:32:22.688302+00:00）の記録** です。未作成・未upload・未配備・未公開・未受入の記載は、その時点の状態を示します。後続の現行状況は[PR #5](https://github.com/emmatch-dev/econipass-mcp-plugins/pull/5)と[GitHub Release](https://github.com/emmatch-dev/econipass-mcp-plugins/releases/tag/econipass-mcp-plugin-v1.2.0)で確認し、この準備記録を後続の実施結果として扱わないでください。
+
 この文書のcommand・source bindingは非公開backendで実行した検証の記録です。
 本公開リポジトリ単独の再実行手順ではありません。builder・tests・サーバー本体は含みません。
 生成済みZIP、公開原本とのbyte一致、CI・配備、実機受入は別々に確認します。
+
+## 2026-10-26 現行クライアント設定候補の検証
+
+配布設定source `355e24babeac05182d97001e3004177ff666bb9a` の候補release SHAは
+`f8317e75b008d3a09cb058d32236b6c882bde245e536fb5ba3840346f5efc287`。
+37 ZIP・1,016entry・LICENSE/PDF0。旧9640から5 ZIP変更、他32はbyte同一で、共通30・map・source14も不変です。
+公開原本と固定source355のbuilder/API7から全37 ZIP・各entryを再生成し一致しました。
+Macの統合設定65テスト／skip0とCI同版lintは同一builder/test bytesへ束縛しています。
+最後のGemini/n8n差分58eeは文書のみで、7skill/29kit validatorと独立レビューを別に確認しました。
+
+Linux source377（MCP実装6d3、source14/map同一）の別checkoutでは、MCP5,308成功・実接続smoke6skip、
+synthetic E2E241操作（239成功・想定対象不在2拒否）、root限定210成功・既存skip1、
+実PG backend影響35成功・skip0、CI同版lint・actionlint27・YAML27が成功しました。
+95c監査案の試験overlayを含む検証で、実保護ファイルへは未承認・未適用です。
+内包pluginsは旧55件で、新設定65件のLinux実行ではありません。
+root suiteは専用tmpfsと限定capabilityの隔離container・network noneで確認し、旧失敗証跡も保存しています。
+最終独立closureは376項目・指摘0。専用VM停止・2設定hash復元・所有資源不在を確認し、他VM不変は主張しません。
+
+既存native13とClaude7スキルは入力・保存済みroundtripのbyte一致による再紐付けで、新実行／import／UI観測は0です。
+Roo1失敗は維持します。29環境は限定成功13／失敗1／未実施15／総合受入0です。
+[現在の入力一致記録](../docs/candidate-native-equivalence-v1.2.0-current-clients-license-held-20261026.json)と[候補hash](../docs/candidate-package-v1.2.0-current-clients-license-held-20261026.json)を参照してください。
+CI・image build・DEV配備・公開・認証済み業務受入は未実施で、LICENSE／新OAuth／ChatGPT保留を維持します。
+
+## 以下は旧9640候補およびそれ以前の時点記録
+
+以下の「現候補」「新規」「未実施」は各節の観測時点を指し、現在のfresh実行や未完了gateを上書きしません。
 
 2026-10-26の現候補はMac12試行中11限定成功・Roo metadata列挙1未合格です。
 Linux Codexの導入／metadata確認1件も成功し、ローカル13試行は12限定成功・1未合格です。

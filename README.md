@@ -1,5 +1,7 @@
 # EcoNiPass MCP プラグイン
 
+この文書は **Draft作成前の準備時点（2026-10-25T18:32:22.688302+00:00）の記録** です。未作成・未upload・未配備・未公開・未受入の記載は、その時点の状態を示します。後続の現行状況は[PR #5](https://github.com/emmatch-dev/econipass-mcp-plugins/pull/5)と[GitHub Release](https://github.com/emmatch-dev/econipass-mcp-plugins/releases/tag/econipass-mcp-plugin-v1.2.0)で確認し、この準備記録を後続の実施結果として扱わないでください。
+
 EcoNiPassの排出量分析、EMS、CFP入力、削減対策、法定報告を支援する7スキルと、
 29の利用環境向け導入キットを配布します。接続先は **DEV** の
 `https://api.dev.app.econipass.com/mcp` です。
@@ -76,28 +78,39 @@ XLSXを受信できるhost／SDKは明示的にembeddedを選び、実ファイ�
 一回限りの確認tokenで実行します。結果が不明な更新は自動再試行せず、現在状態を読み戻します。
 スキルの導入によって権限や新しいOAuth grantが付与されることはありません。
 
+## クライアント別の設定補完
+
+旧Cascadeでは他MCPを含む100ツール上限に合わせ、既定を組織確認1ツールとし、
+業務別13設定から一つ選びます。各設定は1〜64ツールで、全256ツールを横断してカバーします。
+`disabledTools` は未知の追加ツールを隠せないため、実catalogの全ページ・名前・件数・hashを照合し、
+差分があれば利用を止めて再生成します。Devin Localの専用設定は旧Cascadeと分けます。
+Junie専用MCP配置、旧Qを維持したKiro設定と明示scope、Gemini Enterpriseの初期全Actions無効・
+最大100の選択、n8n v1.2以降のHTTP Streamable選択も補完しました。
+設定補完はそのクライアントでの実機受入を意味しません。[詳細](plugins/PLATFORMS.md)を参照してください。
+
 ## 配備・受入・公開の状況
 
-実装ソース`6d3fc5d6`、metadata`3775093d`、基点develop`06ee31fb`の統合候補です。
-CFPとEMS12操作で、既定metadata／明示embeddedを使い分けます。
-サーバー取得・ファイル本体同梱・クライアント受領／保存を分離し、通常返却に本体は含めません。
-旧監査0a691の承認・10f反映と旧CIは履歴です。新統合ソースの監査は未承認・未反映、
-CIは未push・未実施で、DEV候補も未配備・未公開です。
+配布設定ソース`355e24ba`、MCP実装`6d3fc5d6`、対応表metadata`3775093d`、基点`06ee31fb`です。
+CFPとEMS12取得操作では既定metadata／明示embeddedを使い分け、取得・本体同梱・受領保存を分離します。
+新監査95c案は未承認・未適用、最終CI・image build・DEV配備・1.2.0公開は未実施です。
+既存DEV06eeや旧0a監査承認・旧CIの結果を、この候補の配備成功へ流用しません。
 
-新候補のMac12環境を一つずつ試験し、11環境で限定成功、Rooでスキルmetadata列挙が未合格でした。
-Rooの初期化raceを疑っていますが、原因は確定していません。初回失敗を保存し、再試行していません。
-Linux Codexではローカル導入2操作・metadata RPC3件が成功しました。Mac Desktop／IDEは未確認です。
-Claude WebではEMSスキルv3を新規導入・3ソースのroundtripを確認し、
-他6スキルはZIPのbyte同一性と現在の有効状態を再確認しました。6スキルの再importは行っていません。
-ローカル13試行は12限定成功・Roo1未合格です。Claude Webを加えた合計は
-**限定成功13／未合格1／未実施15、認証済み総合受入0／29** です。
-公開版の部分確認は0／29で、過去のnative13成功は継承しません。
+Linuxではsource377のMCP5,308成功・実接続smoke6skip、synthetic E2E241操作（239成功・
+想定対象不在2拒否）、root限定210成功・既存skip1、実PG影響35成功・skip0を確認しました。
+これは95c監査案の試験overlayを含む別checkoutの検証で、実保護ファイルへの反映やCIではありません。
+新クライアント設定の65テストはMacで同じcode/test bytesを検証し、最後の文書変更は別に確認しました。
 
-[今回の限定試験記録](docs/candidate-native-load-v1.2.0-merged-ems-license-held-20261026.json)と[候補hash](docs/candidate-package-v1.2.0-merged-ems-license-held-20261026.json)は、
-ソース14ファイル・37 ZIP・999エントリへ束縛しています。
-Cursor／VS Codeは設定のみ、4 SDKは合成fixture、Claude hostedはWebのスキル導入だけです。
-remote MCPの接続成功、新OAuth、実モデル、顧客業務操作は0で、認証済みCFP／EMS取得・保存・投入／置換の受入は含みません。
+新候補の37 ZIP・1,016エントリを公開原本と固定生成処理から再生成し、全byteを照合しました。
+旧9640候補から5 ZIPが変わり、他32 ZIP・共通30ファイル・ソース14件は同一です。
+既存native13試験とClaude7スキルも該当ZIP・ソース・保存済みroundtripの一致で再紐付けしました。
+**今回の新規実機実行・importは0**です。元のローカル12限定成功・Roo1失敗、Claude Webの
+スキル導入限定1件を保持し、全29環境は **限定成功13／未合格1／未実施15、総合受入0／29** です。
+Rooの初期化raceは疑いで、原因未確定・再試行なしです。
+Cursor／VS Codeは設定のみ、SDKは合成fixture、Claude hostedはWebのスキルのみです。
+公開版の部分確認、認証済みCFP／EMSの実取得・保存・投入／置換受入は0です。
+
+[入力一致の記録](docs/candidate-native-equivalence-v1.2.0-current-clients-license-held-20261026.json)と[候補hash](docs/candidate-package-v1.2.0-current-clients-license-held-20261026.json)を参照してください。
+38資産のローカル準備と公開前metadata14対照を確認しましたが、upload・Release作成は行っていません。
 新OAuth、ChatGPT受入、LICENSE適用の保留は維持します。
-
 [受入・公式掲載状況](docs/ACCEPTANCE.md)、[機械可読記録](docs/acceptance-summary.json)、
 [検証記録](plugins/VALIDATION.md)、[公開手順](plugins/PUBLISHING.md)を参照してください。
