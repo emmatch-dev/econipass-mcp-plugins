@@ -9,7 +9,7 @@ Discover available tools and their current schemas; hosts may prefix tool names.
 
 ## Inspect before preparing input
 
-Use `get_input_status` for one month or `get_fiscal_year_input_status` for an annual gap check. Check `get_year_end_closing_status` when a period may be closed. `list_available_year_months` identifies existing periods, not all periods the user may enter. `list_upload_history` provides upload status, not proof that every requested row was accepted.
+Use `get_input_status` for one month or `get_fiscal_year_input_status` for an annual gap check. Check `get_year_end_closing_status` when a period may be closed. `list_available_year_months` identifies existing periods, not all periods the user may enter. `list_upload_history` provides upload status, not proof that every requested row was accepted. For EMS CSV transaction history use ems-operations and `list_ems_import_transactions`; a transaction or held row is not an accepted activity record.
 
 Resolve codes, units, category details, and configured templates through `get_masterdata`, `list_input_templates`, and the applicable factor tool (`get_emission_factors` or `search_scope3_emission_factor`). A factor search result is a candidate: verify its category, year, unit, and basis before using it. Do not invent IDs or infer that a missing factor is zero.
 

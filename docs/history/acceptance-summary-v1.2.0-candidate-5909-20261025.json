@@ -1,0 +1,674 @@
+{
+  "schema_version": 2,
+  "as_of": "2026-10-25 JST",
+  "environment": "DEV",
+  "plugin_version": "1.2.0",
+  "release_status": "candidate_not_yet_published",
+  "source_base_commit": "8c578bac1ac91bdd2ddf0561e200fb87b64c41c7",
+  "backend_revision": null,
+  "backend_revision_scope": "Implementation source is fixed at implementation_source_revision; the final release metadata commit, CI and deployment are pending. Exact maintained source bytes are bound below.",
+  "runtime_backend_revision": "8c578bac1ac91bdd2ddf0561e200fb87b64c41c7",
+  "runtime_deployment": {
+    "scope": "Pre-existing DEV deployment from before the 1.2.0 changes; these successful runs do not deploy the candidate.",
+    "backend_manual_run": 40171982330,
+    "backend_conclusion": "success",
+    "kong_run": 40174506917,
+    "kong_conclusion": "success",
+    "attested_at_utc": "2026-10-25T08:00:05.878454+00:00",
+    "image_digests": {
+      "backend": "sha256:5a5f147735d7e72c50fe0473cdad13099d13ddb635e3ed1e5aaa58ae9660e599",
+      "mcp": "sha256:225e76c4443643d8ea4c3087e3a8e34256fc777d3b722a7ae88630b92ec8f245",
+      "embedding": "sha256:3802648994b59eb3f10a9ab15661eef10ef19d15ed25daef1f1e876a45edf003"
+    },
+    "candidate_changes_deployed": false
+  },
+  "candidate": {
+    "deployed": false,
+    "published": false,
+    "source_binding": {
+      "source_base_commit": "8c578bac1ac91bdd2ddf0561e200fb87b64c41c7",
+      "tool_skill_map_sha256": "197f88a8c263c859331f210d4868dd1b72f90ec85dc7f40fcf0c9eab42b44446",
+      "source_files_sha256": {
+        "services/mcp-server/src/econipass_mcp/server.py": "7729215eee5e6f2241ed603914ba97bbdfdf695d1a80db290c1c7fe0f2a7a471",
+        "services/mcp-server/src/econipass_mcp/request_identity.py": "df67efc7fc50f9fb1e69823b3c34a4d108a39415271a40c13b85a8d380309dd6",
+        "services/mcp-server/src/econipass_mcp/tool_metadata.py": "1ae38691c6c31fcb73e79b69540c50e15036d603b4a166ac3e48f87cce884ca4",
+        "services/mcp-server/src/econipass_mcp/tools/ems_catalog.py": "ad216864d5275827495cbffd8c5fa182e496eae6d6208b809abe09fd8688a01d",
+        "services/mcp-server/src/econipass_mcp/tools/ems_operations.py": "f5f98c9e351642c5660c89c472737c11a071ea7436d1b738b1f81caa77ddd852",
+        "services/mcp-server/src/econipass_mcp/tools/cfp.py": "f8f6bb8f612f0e6e610cc3021b5eccf6d39ea9d55908299d302bbdd103215333",
+        "services/mcp-server/src/econipass_mcp/tools/audit.py": "38b5703e435061a5c054601502c4c04081b90b8b8e491c02263e45fa3f9fb017",
+        "services/mcp-server/src/econipass_mcp/tools/downloads.py": "407725d6d9c277e37bc30424bd3e1f81b5fb0c0471fbbe92e1e64708a82546dc",
+        "services/mcp-server/src/econipass_mcp/tools/measures.py": "db96a1d914e922dff4dd5b9d63334b9412db839c743dd22cc674544ad8a85d5f",
+        "services/mcp-server/src/econipass_mcp/tools/tasks.py": "cdfee11b7c73547f02c598e6419979140b302dbae5c45637ef5e7c6e4c11360f",
+        "services/mcp-server/src/econipass_mcp/tools/activities.py": "7002f3bc948f95fa2614d36ca755706fcfd1b3bd95cd87f4688ae245d152dd42",
+        "services/mcp-server/src/econipass_mcp/tools/statutory_reports_v2.py": "8220f68c38d148c8d93da06db6bb14046f5296126149a8c924ffc611d5fd7d2f",
+        "services/mcp-server/src/econipass_mcp/tools/statutory_paper.py": "57f98d5e9951a7d1db37b57ba9a90f4312327d01a57d541a3f14babacde312e0",
+        "services/mcp-server/src/econipass_mcp/data/ems_operations.json": "d504ea5cbd3cba493392b02586b38f518625a5e33d16c6eafd6fb088c028a827"
+      }
+    },
+    "profile_registration": {
+      "default_all_tags": {
+        "tool_count": 239,
+        "tool_names_sha256": "3fcfdfa5efcf1f0c6c8f22ccf6e66a6fb5f00e6ef61936646003983a5e1269b3",
+        "settings": {
+          "ENABLED_TAGS": "",
+          "STATUTORY_REPORTS_ENABLED": false,
+          "STATUTORY_REPORT_MCP_REVIEW_ENABLED": false
+        }
+      },
+      "shared_reports_without_review": {
+        "tool_count": 252,
+        "tool_names_sha256": "77670d26e0f0d93bc8b1b3579333fd363ce4eef541d3677ef1b5aa2ff5a9d8aa",
+        "settings": {
+          "ENABLED_TAGS": "",
+          "STATUTORY_REPORTS_ENABLED": true,
+          "STATUTORY_REPORT_MCP_REVIEW_ENABLED": false
+        }
+      },
+      "all_registered_tools": {
+        "tool_count": 254,
+        "tool_names_sha256": "ce5e0f3f7888b8bb26d054082524567fcaab4928912d03445c76cc3a829be826",
+        "settings": {
+          "ENABLED_TAGS": "",
+          "STATUTORY_REPORTS_ENABLED": true,
+          "STATUTORY_REPORT_MCP_REVIEW_ENABLED": true
+        }
+      },
+      "prd_readonly_tag_profile": {
+        "tool_count": 30,
+        "tool_names_sha256": "d08d192cc410996ab0145374836014fb101b791ebd17e78ebb9b9bbc807449a7",
+        "settings": {
+          "ENABLED_TAGS": "analytics,core,data,ems,fields,master,org,report",
+          "STATUTORY_REPORTS_ENABLED": false,
+          "STATUTORY_REPORT_MCP_REVIEW_ENABLED": false
+        }
+      }
+    },
+    "offline_validation": {
+      "plugins_tests_passed": 55,
+      "skills_validated": 7,
+      "platform_kits_generated": 29,
+      "archives_generated": 37,
+      "archive_hashes_and_CRC_verified": true,
+      "release_json_sha256": "5909a0514364ae949e7c512d767979f71e479a2eca4cfe79a718b97c573e9945",
+      "planned_archives": 37,
+      "artifact_build_status": "license_held_no_LICENSE_candidate_built_verified_not_published",
+      "scope": "Current source registration, all55 existing plugin tests, all37 ZIP hashes/CRC and14source bytes pass. No LICENSE is applied. CI, DEV deployment and authenticated acceptance remain separate gates.",
+      "review_only_artifacts": {
+        "archives": 37,
+        "hashes_and_CRC_verified": true,
+        "release_json_sha256": "2191c7f2e5f7f45d31343344dbb077a9a6c85df26b1e09fc14d63f6e9c65f77f",
+        "license": "MIT review proposal only; application held by later user instruction; not applied or published",
+        "license_approved": false,
+        "published": false,
+        "status": "historical_unapproved_MIT_candidate_not_for_release",
+        "license_application": "HELD_BY_USER"
+      }
+    },
+    "scope": "Offline source registration and packaging plus13 fresh limited local client/configuration/SDK trials. No authenticated tenant, business write, public or full platform acceptance inferred.",
+    "implementation_source_revision": "9286735044fd4635e11c5022e677d7cc2b7f9691",
+    "license": {
+      "decision": "HELD_BY_USER",
+      "LICENSE_applied": false,
+      "archives_contain_LICENSE": false,
+      "MIT_candidate_selected_for_publication": false,
+      "rights_grant_inferred": false
+    },
+    "ordinary_DEV_reflection_approval": {
+      "approved_by_user": true,
+      "scope": [
+        ".github/security/verify_mcp_readonly_catalog.py",
+        "docs/mcp-prd-readonly-tool-audit.md",
+        "docs/mcp-prd-readonly-release-runbook.md",
+        "ordinary_DEV_deployment"
+      ],
+      "approved_proposal_sha256": "da0cc187346e2715cf9ce916f3fe0c471e5c0020641b83ee510eca20e029b29e",
+      "implementation_source_revision": "9286735044fd4635e11c5022e677d7cc2b7f9691",
+      "CI_complete": false,
+      "DEV_deployed": false
+    }
+  },
+  "product_kits": 29,
+  "partially_verified_product_kits": 0,
+  "fully_accepted_product_kits": 0,
+  "inventory_scope": "Current LICENSE-held candidate has13 separately recorded limited local trials; public/final partial and full acceptance remain0. OldMIT and1.1.0 observations are historical and not inherited.",
+  "platforms": [
+    {
+      "id": "codex",
+      "label": "Codex (desktop / CLI / IDE)",
+      "kit_version": "1.2.0",
+      "validation_stage": "not_yet_run",
+      "full_acceptance": "incomplete",
+      "historical_observation_reference": "acceptance-summary-v1.1.0-20261021.json",
+      "limited_candidate_observation": {
+        "details": "../candidate-native-load-v1.2.0-license-held-20261025.json",
+        "phase": "license_held_no_license_local_candidate",
+        "stage": "native_package_metadata_read_pass",
+        "fresh_native_execution": true,
+        "prior_native_success_inherited": false,
+        "artifact_sha256": "4ce92402d57f50dbd566f5e56bf8664eee7837eda16b022e75cd4feba458de99",
+        "public_or_full_acceptance": false
+      }
+    },
+    {
+      "id": "chatgpt",
+      "label": "ChatGPT / ChatGPT Work",
+      "kit_version": "1.2.0",
+      "validation_stage": "not_yet_run",
+      "full_acceptance": "incomplete",
+      "historical_observation_reference": "acceptance-summary-v1.1.0-20261021.json"
+    },
+    {
+      "id": "claude-code",
+      "label": "Claude Code",
+      "kit_version": "1.2.0",
+      "validation_stage": "not_yet_run",
+      "full_acceptance": "incomplete",
+      "historical_observation_reference": "acceptance-summary-v1.1.0-20261021.json",
+      "limited_candidate_observation": {
+        "details": "../candidate-native-load-v1.2.0-license-held-20261025.json",
+        "phase": "license_held_no_license_local_candidate",
+        "stage": "native_manifest_and_component_load_pass_directory_license_blocked",
+        "fresh_native_execution": true,
+        "prior_native_success_inherited": false,
+        "artifact_sha256": "8754c5c648cd4ec819ed7d4f038e6572559c31e69b98b3f4d509f92b2d11ef04",
+        "public_or_full_acceptance": false
+      }
+    },
+    {
+      "id": "claude-hosted",
+      "label": "Claude hosted (Web / Desktop / mobile / Cowork)",
+      "kit_version": "1.2.0",
+      "validation_stage": "not_yet_run",
+      "full_acceptance": "incomplete",
+      "historical_observation_reference": "acceptance-summary-v1.1.0-20261021.json"
+    },
+    {
+      "id": "querypie-aip",
+      "label": "QueryPie AIP",
+      "kit_version": "1.2.0",
+      "validation_stage": "not_yet_run",
+      "full_acceptance": "incomplete",
+      "historical_observation_reference": "acceptance-summary-v1.1.0-20261021.json"
+    },
+    {
+      "id": "github-copilot-cli",
+      "label": "GitHub Copilot CLI",
+      "kit_version": "1.2.0",
+      "validation_stage": "not_yet_run",
+      "full_acceptance": "incomplete",
+      "historical_observation_reference": "acceptance-summary-v1.1.0-20261021.json",
+      "limited_candidate_observation": {
+        "details": "../candidate-native-load-v1.2.0-license-held-20261025.json",
+        "phase": "license_held_no_license_local_candidate",
+        "stage": "native_package_load_pass",
+        "fresh_native_execution": true,
+        "prior_native_success_inherited": false,
+        "artifact_sha256": "abb49bde6d4791ee20a29dbc16d089293563fd88f2a511714500e2132c845a28",
+        "public_or_full_acceptance": false
+      }
+    },
+    {
+      "id": "vscode-copilot",
+      "label": "GitHub Copilot in VS Code Desktop",
+      "kit_version": "1.2.0",
+      "validation_stage": "not_yet_run",
+      "full_acceptance": "incomplete",
+      "historical_observation_reference": "acceptance-summary-v1.1.0-20261021.json",
+      "limited_candidate_observation": {
+        "details": "../candidate-native-load-v1.2.0-license-held-20261025.json",
+        "phase": "license_held_no_license_local_candidate",
+        "stage": "native_cli_mcp_config_only_pass",
+        "fresh_native_execution": true,
+        "prior_native_success_inherited": false,
+        "artifact_sha256": "7ab28a539f90e30f77ede44709fec128d808955fbeb582c842162ed099e422b7",
+        "public_or_full_acceptance": false
+      }
+    },
+    {
+      "id": "copilot-studio",
+      "label": "Microsoft Copilot Studio",
+      "kit_version": "1.2.0",
+      "validation_stage": "not_yet_run",
+      "full_acceptance": "incomplete",
+      "historical_observation_reference": "acceptance-summary-v1.1.0-20261021.json"
+    },
+    {
+      "id": "gemini-cli",
+      "label": "Gemini CLI",
+      "kit_version": "1.2.0",
+      "validation_stage": "not_yet_run",
+      "full_acceptance": "incomplete",
+      "historical_observation_reference": "acceptance-summary-v1.1.0-20261021.json",
+      "limited_candidate_observation": {
+        "details": "../candidate-native-load-v1.2.0-license-held-20261025.json",
+        "phase": "license_held_no_license_local_candidate",
+        "stage": "native_package_load_pass",
+        "fresh_native_execution": true,
+        "prior_native_success_inherited": false,
+        "artifact_sha256": "523162b6ba7ed2b1bc94c1c264ab72a37f67fd398fcf488f11bcfbc801cb2002",
+        "public_or_full_acceptance": false
+      }
+    },
+    {
+      "id": "gemini-code-assist",
+      "label": "Gemini Code Assist for VS Code (Agent mode)",
+      "kit_version": "1.2.0",
+      "validation_stage": "not_yet_run",
+      "full_acceptance": "incomplete",
+      "historical_observation_reference": "acceptance-summary-v1.1.0-20261021.json"
+    },
+    {
+      "id": "cursor-desktop",
+      "label": "Cursor Desktop",
+      "kit_version": "1.2.0",
+      "validation_stage": "not_yet_run",
+      "full_acceptance": "incomplete",
+      "historical_observation_reference": "acceptance-summary-v1.1.0-20261021.json",
+      "limited_candidate_observation": {
+        "details": "../candidate-native-load-v1.2.0-license-held-20261025.json",
+        "phase": "license_held_no_license_local_candidate",
+        "stage": "native_cli_mcp_config_only_pass",
+        "fresh_native_execution": true,
+        "prior_native_success_inherited": false,
+        "artifact_sha256": "4897f0c502d8eeff79d8cdbea555ea845eedd14326b32ca93f5beb9cbb3ea55d",
+        "public_or_full_acceptance": false
+      }
+    },
+    {
+      "id": "cursor-hosted",
+      "label": "Cursor Web / Cloud Agents / Automations",
+      "kit_version": "1.2.0",
+      "validation_stage": "not_yet_run",
+      "full_acceptance": "incomplete",
+      "historical_observation_reference": "acceptance-summary-v1.1.0-20261021.json"
+    },
+    {
+      "id": "m365-copilot",
+      "label": "Microsoft 365 Copilot declarative agent",
+      "kit_version": "1.2.0",
+      "validation_stage": "not_yet_run",
+      "full_acceptance": "incomplete",
+      "historical_observation_reference": "acceptance-summary-v1.1.0-20261021.json"
+    },
+    {
+      "id": "gemini-enterprise",
+      "label": "Gemini Enterprise Custom MCP",
+      "kit_version": "1.2.0",
+      "validation_stage": "not_yet_run",
+      "full_acceptance": "incomplete",
+      "historical_observation_reference": "acceptance-summary-v1.1.0-20261021.json"
+    },
+    {
+      "id": "perplexity",
+      "label": "Perplexity custom remote connector / Computer",
+      "kit_version": "1.2.0",
+      "validation_stage": "not_yet_run",
+      "full_acceptance": "incomplete",
+      "historical_observation_reference": "acceptance-summary-v1.1.0-20261021.json"
+    },
+    {
+      "id": "windsurf",
+      "label": "Windsurf Cascade / successor Devin Desktop",
+      "kit_version": "1.2.0",
+      "validation_stage": "not_yet_run",
+      "full_acceptance": "incomplete",
+      "historical_observation_reference": "acceptance-summary-v1.1.0-20261021.json"
+    },
+    {
+      "id": "jetbrains-junie",
+      "label": "JetBrains Junie",
+      "kit_version": "1.2.0",
+      "validation_stage": "not_yet_run",
+      "full_acceptance": "incomplete",
+      "historical_observation_reference": "acceptance-summary-v1.1.0-20261021.json"
+    },
+    {
+      "id": "zed",
+      "label": "Zed Agent",
+      "kit_version": "1.2.0",
+      "validation_stage": "not_yet_run",
+      "full_acceptance": "incomplete",
+      "historical_observation_reference": "acceptance-summary-v1.1.0-20261021.json"
+    },
+    {
+      "id": "goose",
+      "label": "goose",
+      "kit_version": "1.2.0",
+      "validation_stage": "not_yet_run",
+      "full_acceptance": "incomplete",
+      "historical_observation_reference": "acceptance-summary-v1.1.0-20261021.json",
+      "limited_candidate_observation": {
+        "details": "../candidate-native-load-v1.2.0-license-held-20261025.json",
+        "phase": "license_held_no_license_local_candidate",
+        "stage": "native_config_and_skills_load_pass",
+        "fresh_native_execution": true,
+        "prior_native_success_inherited": false,
+        "artifact_sha256": "9e8461f21f7d039d07d779688e0410ed321f30ee2cd9f94f5ccb7d22bec1232c",
+        "public_or_full_acceptance": false
+      }
+    },
+    {
+      "id": "amazon-q-cli",
+      "label": "Amazon Q Developer CLI (legacy product name)",
+      "kit_version": "1.2.0",
+      "validation_stage": "not_yet_run",
+      "full_acceptance": "incomplete",
+      "historical_observation_reference": "acceptance-summary-v1.1.0-20261021.json"
+    },
+    {
+      "id": "cline",
+      "label": "Cline",
+      "kit_version": "1.2.0",
+      "validation_stage": "not_yet_run",
+      "full_acceptance": "incomplete",
+      "historical_observation_reference": "acceptance-summary-v1.1.0-20261021.json",
+      "limited_candidate_observation": {
+        "details": "../candidate-native-load-v1.2.0-license-held-20261025.json",
+        "phase": "license_held_no_license_local_candidate",
+        "stage": "native_config_and_skills_load_pass",
+        "fresh_native_execution": true,
+        "prior_native_success_inherited": false,
+        "artifact_sha256": "55a64aca1a2b1536dee54d91b66a4eb1fe6ebb8e6c6206608e371a3cf6a63b16",
+        "public_or_full_acceptance": false
+      }
+    },
+    {
+      "id": "roo-code",
+      "label": "Roo Code",
+      "kit_version": "1.2.0",
+      "validation_stage": "not_yet_run",
+      "full_acceptance": "incomplete",
+      "historical_observation_reference": "acceptance-summary-v1.1.0-20261021.json",
+      "limited_candidate_observation": {
+        "details": "../candidate-native-load-v1.2.0-license-held-20261025.json",
+        "phase": "license_held_no_license_local_candidate",
+        "stage": "native_skill_metadata_only_pass",
+        "fresh_native_execution": true,
+        "prior_native_success_inherited": false,
+        "artifact_sha256": "5151814fd5bbd611a9bfc8dfebc47a19242fb3c908cf4a405c2b4d9da92463b0",
+        "public_or_full_acceptance": false
+      }
+    },
+    {
+      "id": "openai-responses",
+      "label": "OpenAI Responses API",
+      "kit_version": "1.2.0",
+      "validation_stage": "not_yet_run",
+      "full_acceptance": "incomplete",
+      "historical_observation_reference": "acceptance-summary-v1.1.0-20261021.json",
+      "limited_candidate_observation": {
+        "details": "../candidate-native-load-v1.2.0-license-held-20261025.json",
+        "phase": "license_held_no_license_local_candidate",
+        "stage": "native_sdk_offline_fixture_validation",
+        "fresh_native_execution": true,
+        "prior_native_success_inherited": false,
+        "artifact_sha256": "23c1dc26e5aade8fa900c1889002f564f8ee5f076fd4b12b7db3d030f5caed96",
+        "public_or_full_acceptance": false
+      }
+    },
+    {
+      "id": "openai-agents-sdk",
+      "label": "OpenAI Agents SDK",
+      "kit_version": "1.2.0",
+      "validation_stage": "not_yet_run",
+      "full_acceptance": "incomplete",
+      "historical_observation_reference": "acceptance-summary-v1.1.0-20261021.json",
+      "limited_candidate_observation": {
+        "details": "../candidate-native-load-v1.2.0-license-held-20261025.json",
+        "phase": "license_held_no_license_local_candidate",
+        "stage": "native_sdk_offline_fixture_validation",
+        "fresh_native_execution": true,
+        "prior_native_success_inherited": false,
+        "artifact_sha256": "c8aac3b4ae872b47e706416b936806e295aa3565d189996aec41235cda420e6b",
+        "public_or_full_acceptance": false
+      }
+    },
+    {
+      "id": "anthropic-messages",
+      "label": "Anthropic Messages API MCP connector",
+      "kit_version": "1.2.0",
+      "validation_stage": "not_yet_run",
+      "full_acceptance": "incomplete",
+      "historical_observation_reference": "acceptance-summary-v1.1.0-20261021.json",
+      "limited_candidate_observation": {
+        "details": "../candidate-native-load-v1.2.0-license-held-20261025.json",
+        "phase": "license_held_no_license_local_candidate",
+        "stage": "native_sdk_offline_fixture_validation",
+        "fresh_native_execution": true,
+        "prior_native_success_inherited": false,
+        "artifact_sha256": "84daa16bbc122dff301a9dee9e82ee014f6bb90945e6bccada0fb0a28c4ca48b",
+        "public_or_full_acceptance": false
+      }
+    },
+    {
+      "id": "langchain-langgraph",
+      "label": "LangChain / LangGraph",
+      "kit_version": "1.2.0",
+      "validation_stage": "not_yet_run",
+      "full_acceptance": "incomplete",
+      "historical_observation_reference": "acceptance-summary-v1.1.0-20261021.json",
+      "limited_candidate_observation": {
+        "details": "../candidate-native-load-v1.2.0-license-held-20261025.json",
+        "phase": "license_held_no_license_local_candidate",
+        "stage": "native_sdk_offline_fixture_validation",
+        "fresh_native_execution": true,
+        "prior_native_success_inherited": false,
+        "artifact_sha256": "6d6c960e696c94e7ef8b3818f0900f828caf84e13be914dd3f22fb18165d1065",
+        "public_or_full_acceptance": false
+      }
+    },
+    {
+      "id": "n8n",
+      "label": "n8n",
+      "kit_version": "1.2.0",
+      "validation_stage": "not_yet_run",
+      "full_acceptance": "incomplete",
+      "historical_observation_reference": "acceptance-summary-v1.1.0-20261021.json"
+    },
+    {
+      "id": "dify",
+      "label": "Dify",
+      "kit_version": "1.2.0",
+      "validation_stage": "not_yet_run",
+      "full_acceptance": "incomplete",
+      "historical_observation_reference": "acceptance-summary-v1.1.0-20261021.json"
+    },
+    {
+      "id": "github-copilot-cloud",
+      "label": "GitHub Copilot cloud coding agent / code review",
+      "kit_version": "1.2.0",
+      "validation_stage": "not_yet_run",
+      "full_acceptance": "incomplete",
+      "historical_observation_reference": "acceptance-summary-v1.1.0-20261021.json"
+    }
+  ],
+  "validation_counts": {
+    "current_version_partially_verified_product_kits": 0,
+    "current_version_fully_accepted_product_kits": 0,
+    "current_version_native_acceptance_runs": 0,
+    "new_mcp_oauth_grants_completed": 0,
+    "current_version_business_writes": 0,
+    "current_version_upload_previews_or_applies": 0
+  },
+  "catalog_observation_gate": {
+    "status": "UI_metadata_observed_before_candidate_deployment_raw_catalog_pending",
+    "observed_at_utc": "2026-10-25T07:53:26.033215+00:00",
+    "source": "Claude Web existing EcoNiPass connector UI",
+    "observed_tools": 244,
+    "interactive_tools": 15,
+    "readonly_tools": 119,
+    "write_delete_tools": 110,
+    "new_operation_titles_observed": [
+      "List Ems Import Transactions",
+      "Regenerate Ems Workspace Report",
+      "Update Ems Site Validity"
+    ],
+    "raw_authenticated_tools_list_pagination_observed": false,
+    "exact_live_source_sha_readback_at_ui_time": false,
+    "new_oauth_grant": false,
+    "permissions_changed": false,
+    "business_calls": 0,
+    "candidate_tool_registration_maximum": 254,
+    "scope": "UI titles and counts only; the observation neither attests an exact runtime SHA nor accepts the new eight business operations."
+  },
+  "cfp_download_observations": {
+    "status": "Historical repaired-runtime five-category download success on 2026-10-21; 1.2.0 retest and upload/replacement acceptance remain pending.",
+    "historical_repaired_runtime_acceptance": {
+      "backend_revision": "fde1cffb48d9c4be297c622087335df5177dbd3d",
+      "backend_manual_run": 39525015891,
+      "kong_run": 39526711825,
+      "started_at_utc": "2026-10-21T01:25:54.692Z",
+      "completed_at_utc": "2026-10-21T01:26:36.954Z",
+      "workbook_types": [
+        "master",
+        "base_unit",
+        "activity_amount",
+        "pcf_certification_period",
+        "aist_idea"
+      ],
+      "successful_distinct_categories": 5,
+      "authenticated_existing_organization": true,
+      "profile_language": "ja",
+      "sequential_calls": true,
+      "base_unit_and_activity_amount_month": "2026-10",
+      "UTC_offset_hours": 9,
+      "new_oauth_grants": 0,
+      "business_writes": 0,
+      "upload_previews_or_applies": 0,
+      "typed_embedded_resource_MIME_and_size_verified": true,
+      "ZIP_local_central_headers_and_required_OPC_parts_verified": true,
+      "CRC_body_XML_or_cells_verified": false,
+      "raw_HTTP_transport_status_observed": false,
+      "workbook_body_digest_customer_identifiers_or_filenames_saved": false,
+      "not_full_download_and_upload_acceptance": true
+    },
+    "current_version_file_download_and_upload_acceptance_complete": false,
+    "current_version_downloads_retested": false,
+    "upload_or_replacement_accepted": false
+  },
+  "user_holds": {
+    "new_mcp_oauth_connections": "deferred_by_user",
+    "chatgpt_acceptance": "deferred_by_user"
+  },
+  "publication": {
+    "github_v1_1_0_release": "published",
+    "github_v1_2_0_release": "not_yet_published",
+    "mcp_registry_v1_2_0": "manifest_prepared_not_published",
+    "openai_directory": "publisher_verification_and_review_requirements_not_completed",
+    "claude_directory": "not_submitted"
+  },
+  "historical": {
+    "plugin_version": "1.1.0",
+    "as_of": "2026-10-21 JST",
+    "partially_verified_product_kits": 14,
+    "fully_accepted_product_kits": 0,
+    "summary": "acceptance-summary-v1.1.0-20261021.json",
+    "details": "ACCEPTANCE-v1.1.0-20261021.md",
+    "scope": "Historical results only; none increments current-version acceptance."
+  },
+  "implementation_source_revision": "9286735044fd4635e11c5022e677d7cc2b7f9691",
+  "official_preflight_20261025": {
+    "mcp_registry": {
+      "version": "1.2.0-dev.1",
+      "validator": "mcp-publisher 1.8.1",
+      "positive_valid_response": true,
+      "published": false
+    },
+    "openai": {
+      "current_login": "authenticated",
+      "verified_publisher": "required_before_upload",
+      "zip_uploaded": false,
+      "submitted": false
+    },
+    "claude": {
+      "current_login": "authenticated",
+      "previous_submissions_displayed": 0,
+      "validated_public_source": "main 1f2ad970 / 1.1.0",
+      "passed": 6,
+      "checks": 7,
+      "blocking": [
+        "LICENSE missing"
+      ],
+      "warnings": [
+        "icon missing",
+        "privacyPolicyUrl missing"
+      ],
+      "warnings_addressed_in_v120_source_candidate": true,
+      "license_decision_pending": false,
+      "candidate_portal_rescan": false,
+      "submitted": false,
+      "license_application": "HELD_BY_USER",
+      "official_listing_status": "blocked_LICENSE_requirement_while_license_application_held",
+      "candidate_CLI_validation": {
+        "version": "2.1.308",
+        "exit_code": 0,
+        "manifest_errors": 0,
+        "manifest_warnings": 0,
+        "CLI_advice": 0,
+        "directory_blocking_errors": 1,
+        "directory_codes": [
+          "LICENSE_MISSING"
+        ],
+        "scope": "Manifest/component recognition only; directory submission blocked, license held."
+      }
+    }
+  },
+  "review_only_candidate_native_load": {
+    "details": "../candidate-native-load-v1.2.0-20261025.json",
+    "limited_products": 13,
+    "fresh_trials": 6,
+    "exact_archive_byte_prior_reviewed_references": 7,
+    "full_acceptance": 0,
+    "final_or_public_acceptance": 0,
+    "license_approval": "HELD_BY_USER_AFTER_REVIEW",
+    "deployed": false,
+    "published": false,
+    "release_json_sha256": "2191c7f2e5f7f45d31343344dbb077a9a6c85df26b1e09fc14d63f6e9c65f77f",
+    "phase": "historical_unapproved_MIT_candidate_not_selected",
+    "not_current_no_LICENSE_candidate_acceptance": true
+  },
+  "license_held_candidate_native_load": {
+    "details": "../candidate-native-load-v1.2.0-license-held-20261025.json",
+    "phase": "no_LICENSE_candidate",
+    "limited_products": 13,
+    "native_reacceptance": "fresh13_limited_local_trials_completed",
+    "prior_MIT_13_results_not_promoted": true,
+    "full_acceptance": 0,
+    "final_or_public_acceptance": 0,
+    "deployed": false,
+    "published": false,
+    "release_json_sha256": "5909a0514364ae949e7c512d767979f71e479a2eca4cfe79a718b97c573e9945",
+    "package_details": "../candidate-package-v1.2.0-license-held-20261025.json",
+    "fresh_native_platform_trials": 13,
+    "prior_native_success_inherited": 0,
+    "source_summary_sha256": "df625720a2ac7d3830bae1a0b92ee4f6cf2f6dbdb961b3d3940191fe99372e31",
+    "public_export_sha256": "2866f8f74e74ea5ad9c65d85f0238048f46e58101c499e452013206259c1b884",
+    "source_binding": {
+      "source_base_commit": "8c578bac1ac91bdd2ddf0561e200fb87b64c41c7",
+      "tool_skill_map_sha256": "197f88a8c263c859331f210d4868dd1b72f90ec85dc7f40fcf0c9eab42b44446",
+      "source_files_sha256": {
+        "services/mcp-server/src/econipass_mcp/server.py": "7729215eee5e6f2241ed603914ba97bbdfdf695d1a80db290c1c7fe0f2a7a471",
+        "services/mcp-server/src/econipass_mcp/request_identity.py": "df67efc7fc50f9fb1e69823b3c34a4d108a39415271a40c13b85a8d380309dd6",
+        "services/mcp-server/src/econipass_mcp/tool_metadata.py": "1ae38691c6c31fcb73e79b69540c50e15036d603b4a166ac3e48f87cce884ca4",
+        "services/mcp-server/src/econipass_mcp/tools/ems_catalog.py": "ad216864d5275827495cbffd8c5fa182e496eae6d6208b809abe09fd8688a01d",
+        "services/mcp-server/src/econipass_mcp/tools/ems_operations.py": "f5f98c9e351642c5660c89c472737c11a071ea7436d1b738b1f81caa77ddd852",
+        "services/mcp-server/src/econipass_mcp/tools/cfp.py": "f8f6bb8f612f0e6e610cc3021b5eccf6d39ea9d55908299d302bbdd103215333",
+        "services/mcp-server/src/econipass_mcp/tools/audit.py": "38b5703e435061a5c054601502c4c04081b90b8b8e491c02263e45fa3f9fb017",
+        "services/mcp-server/src/econipass_mcp/tools/downloads.py": "407725d6d9c277e37bc30424bd3e1f81b5fb0c0471fbbe92e1e64708a82546dc",
+        "services/mcp-server/src/econipass_mcp/tools/measures.py": "db96a1d914e922dff4dd5b9d63334b9412db839c743dd22cc674544ad8a85d5f",
+        "services/mcp-server/src/econipass_mcp/tools/tasks.py": "cdfee11b7c73547f02c598e6419979140b302dbae5c45637ef5e7c6e4c11360f",
+        "services/mcp-server/src/econipass_mcp/tools/activities.py": "7002f3bc948f95fa2614d36ca755706fcfd1b3bd95cd87f4688ae245d152dd42",
+        "services/mcp-server/src/econipass_mcp/tools/statutory_reports_v2.py": "8220f68c38d148c8d93da06db6bb14046f5296126149a8c924ffc611d5fd7d2f",
+        "services/mcp-server/src/econipass_mcp/tools/statutory_paper.py": "57f98d5e9951a7d1db37b57ba9a90f4312327d01a57d541a3f14babacde312e0",
+        "services/mcp-server/src/econipass_mcp/data/ems_operations.json": "d504ea5cbd3cba493392b02586b38f518625a5e33d16c6eafd6fb088c028a827"
+      }
+    },
+    "license_decision": "HELD_BY_USER",
+    "license_applied": false,
+    "authenticated_end_to_end_acceptance": 0,
+    "new_oauth_grants": 0,
+    "real_model_calls": 0,
+    "remote_MCP_calls": 0,
+    "customer_operations": 0
+  }
+}

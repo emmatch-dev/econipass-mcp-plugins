@@ -1,0 +1,789 @@
+{
+  "schema_version": 3,
+  "phase": "canonical_date_license_held_candidate",
+  "source_revision": "6f09904ba5eedc0805b3895341b032f0770f807b",
+  "client_configuration_basis_revision": "355e24babeac05182d97001e3004177ff666bb9a",
+  "approved_prior_audit_application_revision": "1169e186719931b535a0d7076f53373bae0c281c",
+  "source_base_commit": "06ee31fbe3c2a5a5700c08d72054240242c476e3",
+  "version": "1.2.0",
+  "release_json_sha256": "83f900b69c53acea93f5dbdee7ddc1d7611acd324f23bae77790b40576e952bc",
+  "source_binding": {
+    "source_base_commit": "06ee31fbe3c2a5a5700c08d72054240242c476e3",
+    "tool_skill_map_sha256": "224f3ae9b21e1f3ea594b85d2d0e7cc161d593d36dd75ed6679e5aa6f7381065",
+    "source_files_sha256": {
+      "services/mcp-server/src/econipass_mcp/server.py": "79e93bcbbaf291a657133fb12c90927504caa1e9a78ce3e8e7445959981bdf7f",
+      "services/mcp-server/src/econipass_mcp/request_identity.py": "df67efc7fc50f9fb1e69823b3c34a4d108a39415271a40c13b85a8d380309dd6",
+      "services/mcp-server/src/econipass_mcp/tool_metadata.py": "1ae38691c6c31fcb73e79b69540c50e15036d603b4a166ac3e48f87cce884ca4",
+      "services/mcp-server/src/econipass_mcp/tools/ems_catalog.py": "ad216864d5275827495cbffd8c5fa182e496eae6d6208b809abe09fd8688a01d",
+      "services/mcp-server/src/econipass_mcp/tools/ems_operations.py": "3dee467cdb92da8e8374f633a0feb2325c5d245a89190d3a67905bcb5dd10a3d",
+      "services/mcp-server/src/econipass_mcp/tools/cfp.py": "a3ca3637c492b17072fef6d8794b5b838f289ac97a61bd4376069b7fc668cf39",
+      "services/mcp-server/src/econipass_mcp/tools/audit.py": "38b5703e435061a5c054601502c4c04081b90b8b8e491c02263e45fa3f9fb017",
+      "services/mcp-server/src/econipass_mcp/tools/downloads.py": "407725d6d9c277e37bc30424bd3e1f81b5fb0c0471fbbe92e1e64708a82546dc",
+      "services/mcp-server/src/econipass_mcp/tools/measures.py": "e0994ce630bcb308a20858af382286b586888184d098a33eea3aa4d6a13cbd1d",
+      "services/mcp-server/src/econipass_mcp/tools/tasks.py": "cdfee11b7c73547f02c598e6419979140b302dbae5c45637ef5e7c6e4c11360f",
+      "services/mcp-server/src/econipass_mcp/tools/activities.py": "7002f3bc948f95fa2614d36ca755706fcfd1b3bd95cd87f4688ae245d152dd42",
+      "services/mcp-server/src/econipass_mcp/tools/statutory_reports_v2.py": "8220f68c38d148c8d93da06db6bb14046f5296126149a8c924ffc611d5fd7d2f",
+      "services/mcp-server/src/econipass_mcp/tools/statutory_paper.py": "57f98d5e9951a7d1db37b57ba9a90f4312327d01a57d541a3f14babacde312e0",
+      "services/mcp-server/src/econipass_mcp/data/ems_operations.json": "778ae7ee1e905ede3d45a98ed892395a4becdae18e09bb89b0bd8e8dd24c1de6"
+    }
+  },
+  "skills": 7,
+  "product_kits": 29,
+  "archives": 37,
+  "total_zip_entries": 1016,
+  "LICENSE_entries": 0,
+  "PDF_entries": 0,
+  "license_decision": "HELD_BY_USER",
+  "rights_grant_inferred": false,
+  "artifacts": {
+    "activity-input.skill.zip": {
+      "sha256": "4832bb779dce8ffb2cc8599724529f24d00821de75a85296be4c721af5bdf059",
+      "size_bytes": 4140,
+      "entries": 3,
+      "CRC": "PASS"
+    },
+    "cfp-input.skill.zip": {
+      "sha256": "635d628db2afa4404bd69c2493c840620e1b2113e5cfb90202a879aac303c04d",
+      "size_bytes": 6055,
+      "entries": 3,
+      "CRC": "PASS"
+    },
+    "econipass-amazon-q-cli.zip": {
+      "sha256": "3dc25e39f7e28c1be62a6d494ff3b39721897e1d1e8c44a3bc8b32ea86d42328",
+      "size_bytes": 63914,
+      "entries": 31,
+      "CRC": "PASS"
+    },
+    "econipass-anthropic-messages.zip": {
+      "sha256": "195f8f48937e0f83e761b672778897c046bffd8b05f563e0c9af97a5e8d9f0a0",
+      "size_bytes": 69750,
+      "entries": 32,
+      "CRC": "PASS"
+    },
+    "econipass-chatgpt.zip": {
+      "sha256": "e4f3528c8fede259b352dc0cafc42396c901ffff18a3fe5aa0b791dff5cd1fa8",
+      "size_bytes": 120608,
+      "entries": 39,
+      "CRC": "PASS"
+    },
+    "econipass-claude-code.zip": {
+      "sha256": "39598c7c04738bf9595a20c4fb9fbf5c3558afb26e2779e56e487df3c1b65552",
+      "size_bytes": 120355,
+      "entries": 39,
+      "CRC": "PASS"
+    },
+    "econipass-claude-hosted.zip": {
+      "sha256": "934c667802186707ca849944b2f4cb27797f4bb6d5607a534941b9ded4c4dc9a",
+      "size_bytes": 120624,
+      "entries": 39,
+      "CRC": "PASS"
+    },
+    "econipass-cline.zip": {
+      "sha256": "0910ed390e299bb8cad8a430edc5f6d5bc27077ab56bbea6906b53d986e76182",
+      "size_bytes": 63038,
+      "entries": 30,
+      "CRC": "PASS"
+    },
+    "econipass-codex.zip": {
+      "sha256": "6b8924c7ebba2143c8f30cc2a5396554567bbf706ddf9d4caf566779a3e41c8c",
+      "size_bytes": 120764,
+      "entries": 40,
+      "CRC": "PASS"
+    },
+    "econipass-copilot-studio.zip": {
+      "sha256": "cf67bd70cdced85a647dda74a10e4e9ca90833d4e11d0e982f59b68a9aef93ea",
+      "size_bytes": 62868,
+      "entries": 29,
+      "CRC": "PASS"
+    },
+    "econipass-cursor-desktop.zip": {
+      "sha256": "71508f248c2b8d37885c1215826070c99efec29972aca42f60b940b7c1df4c07",
+      "size_bytes": 120768,
+      "entries": 40,
+      "CRC": "PASS"
+    },
+    "econipass-cursor-hosted.zip": {
+      "sha256": "3f20e7bd56491411198fb3688e1b0506c48557c10676e1255af13cacbabb36cc",
+      "size_bytes": 62970,
+      "entries": 30,
+      "CRC": "PASS"
+    },
+    "econipass-dify.zip": {
+      "sha256": "203aab761f8ea9a4cb8799e8bc2ac4caf6a8b0051098ba0ecebd3c625973fee8",
+      "size_bytes": 62943,
+      "entries": 29,
+      "CRC": "PASS"
+    },
+    "econipass-gemini-cli.zip": {
+      "sha256": "6455eb6ac4f7587efa7772e056425ef4a7797d2b176688d17d9e6ac96e8025cd",
+      "size_bytes": 121015,
+      "entries": 40,
+      "CRC": "PASS"
+    },
+    "econipass-gemini-code-assist.zip": {
+      "sha256": "3704110017a54ad8664ff2d6b37869fead94366ce2de940609d8d5a4473b563c",
+      "size_bytes": 63209,
+      "entries": 30,
+      "CRC": "PASS"
+    },
+    "econipass-gemini-enterprise.zip": {
+      "sha256": "904b0dea968e114a4bb2bc4857a5840911d5fe7b26d17ca3fa300525717a36a5",
+      "size_bytes": 63167,
+      "entries": 29,
+      "CRC": "PASS"
+    },
+    "econipass-github-copilot-cli.zip": {
+      "sha256": "d8fbd640269df05e17c883557efdad49bff8fb5d6eaf417b99f17dcc6728faa4",
+      "size_bytes": 120764,
+      "entries": 40,
+      "CRC": "PASS"
+    },
+    "econipass-github-copilot-cloud.zip": {
+      "sha256": "5784af85a4b8cb8bfd52cdaea1d85e97affb6e4ebfc10c82c3d3ba427e641d99",
+      "size_bytes": 63701,
+      "entries": 30,
+      "CRC": "PASS"
+    },
+    "econipass-goose.zip": {
+      "sha256": "4b90bf95ee1a8bde2301edefeeb2d916af04cb589c546f191f25cf61bc7157f5",
+      "size_bytes": 63090,
+      "entries": 30,
+      "CRC": "PASS"
+    },
+    "econipass-jetbrains-junie.zip": {
+      "sha256": "fc46a7751b401964c7d1f1bee961e2d34f1c6e589349216776f60219866165f0",
+      "size_bytes": 63530,
+      "entries": 31,
+      "CRC": "PASS"
+    },
+    "econipass-langchain-langgraph.zip": {
+      "sha256": "15ba5b75a6332ef47092df3017a475bbaa7cc110d16b352ed90655baf13cd131",
+      "size_bytes": 69931,
+      "entries": 32,
+      "CRC": "PASS"
+    },
+    "econipass-m365-copilot.zip": {
+      "sha256": "1d30d2af3ab13603092039cfc02f58f0a6bcd23e730a42e71537925356253716",
+      "size_bytes": 62802,
+      "entries": 29,
+      "CRC": "PASS"
+    },
+    "econipass-n8n.zip": {
+      "sha256": "ec87879208369a49b944f64e1070d373a61d0ed44142b19c4644d3128fc5d201",
+      "size_bytes": 63266,
+      "entries": 29,
+      "CRC": "PASS"
+    },
+    "econipass-openai-agents-sdk.zip": {
+      "sha256": "bb19e2e83ff416f2d029427f76481e3baf859db7d9681fd662e2fa81b2f0eac8",
+      "size_bytes": 69627,
+      "entries": 32,
+      "CRC": "PASS"
+    },
+    "econipass-openai-responses.zip": {
+      "sha256": "b7c7cc7663d242530b47c4814c416f5021fd12a85b9b6a2a92a41258de70de95",
+      "size_bytes": 69499,
+      "entries": 32,
+      "CRC": "PASS"
+    },
+    "econipass-perplexity.zip": {
+      "sha256": "dee5473d17021cf5b7abbcbc7a6c9c90b92ca26d2ebd64d0e84e73d9ff385731",
+      "size_bytes": 62846,
+      "entries": 29,
+      "CRC": "PASS"
+    },
+    "econipass-plugin.zip": {
+      "sha256": "9541f8d6121e7493666c35f29932e26ec501681050c8bae3cc08a3394da66b2a",
+      "size_bytes": 91577,
+      "entries": 30,
+      "CRC": "PASS"
+    },
+    "econipass-querypie-aip.zip": {
+      "sha256": "52bf062d4797eabb02000dbef2aca19c75b5572d975ea82d5a9f493d6571060c",
+      "size_bytes": 62845,
+      "entries": 29,
+      "CRC": "PASS"
+    },
+    "econipass-roo-code.zip": {
+      "sha256": "beac2fc8a81dda7c9175e0ac313c6290248f14f9715d500ce3e28b6e25e11772",
+      "size_bytes": 64081,
+      "entries": 31,
+      "CRC": "PASS"
+    },
+    "econipass-vscode-copilot.zip": {
+      "sha256": "1c5fc676f915806cd8f4e09265cfd0b8e983c450d3842ebb72a2b057c79fe998",
+      "size_bytes": 120742,
+      "entries": 40,
+      "CRC": "PASS"
+    },
+    "econipass-windsurf.zip": {
+      "sha256": "87c2833ccaf721e5e8b5803473a4a8cfa914aed71f8eab715dfc6dba2084764f",
+      "size_bytes": 95577,
+      "entries": 45,
+      "CRC": "PASS"
+    },
+    "econipass-zed.zip": {
+      "sha256": "5e5819e7a1e12432cb13c64b29e8adac332e75e3357120285a358493fc8f67af",
+      "size_bytes": 62889,
+      "entries": 30,
+      "CRC": "PASS"
+    },
+    "emissions-analysis.skill.zip": {
+      "sha256": "42853c3b6d7e4b8bc24f95a5e811db79e1a93afd964baf16c9690ad778a273fe",
+      "size_bytes": 2245,
+      "entries": 2,
+      "CRC": "PASS"
+    },
+    "ems-operations.skill.zip": {
+      "sha256": "f73f2f0c1da4acb9445b11bc1d700df61b399affca57afed546a56f5a0a6929e",
+      "size_bytes": 9184,
+      "entries": 3,
+      "CRC": "PASS"
+    },
+    "measures-targets.skill.zip": {
+      "sha256": "30389a5620b853d6395691dbb5995034670540bcfce3bafad62dfdfe632590bd",
+      "size_bytes": 3980,
+      "entries": 3,
+      "CRC": "PASS"
+    },
+    "setup.skill.zip": {
+      "sha256": "56527d1d834f20081ab6cc9205bcbe8db37333db60568876fe84a4e4685861dd",
+      "size_bytes": 2367,
+      "entries": 2,
+      "CRC": "PASS"
+    },
+    "statutory-reports.skill.zip": {
+      "sha256": "1aed1c4c158b9ee35b79723786767d2d917cfaaccbbc4394f4a04b0260f9640d",
+      "size_bytes": 6148,
+      "entries": 4,
+      "CRC": "PASS"
+    }
+  },
+  "packaging_source_hashes": {
+    ".mcp.json": "1043c85c0da00028db8c016b7011fbdade28a403305b5e0ae4e291ad2aa74d2d",
+    "gemini-extension.json": "c649bf71c5d33951b5dbda55b345d3cf6c2bb1b14beda7aa78e696615e0a604a",
+    "plugin.json": "a05b3333ee918b8ffddb808fb3b842cdf40fa78ddb237d191dfecc44aad848ba",
+    "README.md": "2b0d3db31b31935b1412428789a91cc5f3cd9c188c141fcce9fb1754ac10206d",
+    "tool-skill-map.json": "224f3ae9b21e1f3ea594b85d2d0e7cc161d593d36dd75ed6679e5aa6f7381065",
+    "GEMINI.md": "bd720241608895f55364e9b8585466222ef9a667a2d8c1e0bd5f7ab7fb478721",
+    "mcp.json": "8400cc7e1116027ca474544bc918fd494035a4f459f5f7eabe550600a0adb9ac",
+    ".claude-plugin/plugin.json": "bb7207592a40efdfc473fd00e372be9655d755106aeb6edce18a9d288f90cd9c",
+    "skills/measures-targets/SKILL.md": "f2c5e4690871c8feb1a6855676c64323518b481abdb66523f8fd32581bc04387",
+    "skills/measures-targets/references/task-activity-rules.md": "d5f7591442ed6afb51f47a56a705bac91bd553f8008d89f159b7db06edcb5bfd",
+    "skills/measures-targets/agents/openai.yaml": "a6714d09c9bcd8d6ec933b7822cace9ed9d596ed38728fa40499096998afb0b2",
+    "skills/setup/SKILL.md": "67e2bbc6fbc1ca107529998718d2bb371fce7511fd869026f16d6e4ecfaebc2c",
+    "skills/setup/agents/openai.yaml": "b198095f0a5cadd891f3bf54c0cdb453303fbab6adf7c90beff08c34cec62be6",
+    "skills/cfp-input/SKILL.md": "28899e861bc64fd1c9faa8c637005771b75901ae3d709384c270b55073732251",
+    "skills/cfp-input/references/workbooks.md": "27c215d8cf0e1025fcd0655d067b752f80a9e7e53eeaca8fab1c46b6983cc62b",
+    "skills/cfp-input/agents/openai.yaml": "eafcd989b252d7699e39e860b92726ed7fdd90da6b385a37ff4b7f9becab77d2",
+    "skills/emissions-analysis/SKILL.md": "7600f72cf00670da96531db0bc1d2ab73d70f39510b2e4fcb528137ffcd0325d",
+    "skills/emissions-analysis/agents/openai.yaml": "a4300f9f5546448f87330c916560f366b3ab903256947826ae90fc101c26e27e",
+    "skills/activity-input/SKILL.md": "27a83e0230b3fdb6b2eef20b782469e268223a49ef5ac9e5bd6fc338b79ebfc9",
+    "skills/activity-input/references/record-rules.md": "20f9f554813076592e537968b52cba300c2118b51852421f4ceda760339173d3",
+    "skills/activity-input/agents/openai.yaml": "ae076d52b00ed951dca432ca99ef11c30ca48221afc8320348e26170354f0ee7",
+    "skills/ems-operations/SKILL.md": "d238c774e58e90e0363753c5c6942e17ac0d77ea346304a02dbf62bd5cebbc89",
+    "skills/ems-operations/references/workflows.md": "07b11ce605e8d1672e83634997b6e9bb8c722d0110a623ef65e066601ee4e217",
+    "skills/ems-operations/agents/openai.yaml": "1a215860957e7ec72e02166b67c4cea6d4f507848459151b3bc92662c79c9877",
+    "skills/statutory-reports/SKILL.md": "e981804a69f4607d3db58daf359c86e86dcfa9df07c5d923c52239df70982b17",
+    "skills/statutory-reports/references/shared-reports.md": "e38e84390ef9df4c70d2eeb3b633c5d1d3c5af70067ed2fb7f06a40a4d123f02",
+    "skills/statutory-reports/references/legacy-xml.md": "98b4d0784713815193026fd9d0c5efc353e13d6c12f5793001e4986f7b34e60c",
+    "skills/statutory-reports/agents/openai.yaml": "76e93d413abceced19b2803e1fb8b2d4a15f21efb6901326a20d96a0395d16f3",
+    "assets/icon.png": "49f0cb6b564f28e1703f30ba6a217c18077de2e673c719d4c93849b9a92e377e",
+    ".codex-plugin/plugin.json": "b15f95ed7fa1f9d96fe36b31f9ab24fc3bf05998956275d52213696f1bc1a7ad"
+  },
+  "difference_from_f831": {
+    "old_release_json_sha256": "f8317e75b008d3a09cb058d32236b6c882bde245e536fb5ba3840346f5efc287",
+    "new_release_json_sha256": "83f900b69c53acea93f5dbdee7ddc1d7611acd324f23bae77790b40576e952bc",
+    "source14_changed": {
+      "services/mcp-server/src/econipass_mcp/tools/measures.py": {
+        "old": "db96a1d914e922dff4dd5b9d63334b9412db839c743dd22cc674544ad8a85d5f",
+        "new": "e0994ce630bcb308a20858af382286b586888184d098a33eea3aa4d6a13cbd1d"
+      }
+    },
+    "old_map_sha256": "64e885efed0ed8df878efe53721fcd302e5754fdff0768aeb4ab84d9aacce345",
+    "new_map_sha256": "224f3ae9b21e1f3ea594b85d2d0e7cc161d593d36dd75ed6679e5aa6f7381065",
+    "map_semantic_difference_only_one_source_hash": true,
+    "profiles_counts_and_name_hashes_unchanged": {
+      "default_all_tags": {
+        "settings": {
+          "ENABLED_TAGS": "",
+          "STATUTORY_REPORTS_ENABLED": false,
+          "STATUTORY_REPORT_MCP_REVIEW_ENABLED": false
+        },
+        "tool_count": 241,
+        "tool_names_sha256": "89bd4a6459d1d87381003c103434beb237ebe46322d57bfb99ac875fa3c90902",
+        "primary_skill_counts": {
+          "activity-input": 19,
+          "cfp-input": 2,
+          "emissions-analysis": 8,
+          "ems-operations": 172,
+          "measures-targets": 20,
+          "setup": 1,
+          "statutory-reports": 19
+        }
+      },
+      "shared_reports_without_review": {
+        "settings": {
+          "ENABLED_TAGS": "",
+          "STATUTORY_REPORTS_ENABLED": true,
+          "STATUTORY_REPORT_MCP_REVIEW_ENABLED": false
+        },
+        "tool_count": 254,
+        "tool_names_sha256": "1827838017ed338118c5b68ab43deff21f46b175d7c8888b99b77ae60f15ef42",
+        "primary_skill_counts": {
+          "activity-input": 19,
+          "cfp-input": 2,
+          "emissions-analysis": 8,
+          "ems-operations": 172,
+          "measures-targets": 20,
+          "setup": 1,
+          "statutory-reports": 32
+        }
+      },
+      "all_registered_tools": {
+        "settings": {
+          "ENABLED_TAGS": "",
+          "STATUTORY_REPORTS_ENABLED": true,
+          "STATUTORY_REPORT_MCP_REVIEW_ENABLED": true
+        },
+        "tool_count": 256,
+        "tool_names_sha256": "136ab228a69ad1f4a25ba6e10ff317d4af1129e74b6b6b5f092545db05b86727",
+        "primary_skill_counts": {
+          "activity-input": 19,
+          "cfp-input": 2,
+          "emissions-analysis": 8,
+          "ems-operations": 172,
+          "measures-targets": 20,
+          "setup": 1,
+          "statutory-reports": 34
+        }
+      },
+      "prd_readonly_tag_profile": {
+        "settings": {
+          "ENABLED_TAGS": "analytics,core,data,ems,fields,master,org,report",
+          "STATUTORY_REPORTS_ENABLED": false,
+          "STATUTORY_REPORT_MCP_REVIEW_ENABLED": false
+        },
+        "tool_count": 30,
+        "tool_names_sha256": "d08d192cc410996ab0145374836014fb101b791ebd17e78ebb9b9bbc807449a7",
+        "primary_skill_counts": {
+          "activity-input": 5,
+          "emissions-analysis": 8,
+          "ems-operations": 5,
+          "setup": 1,
+          "statutory-reports": 11
+        }
+      }
+    },
+    "tool_skill_assignments_unchanged": true,
+    "skills7_individual_zip_bytes_unchanged": true,
+    "changed_archives": [
+      "econipass-chatgpt.zip",
+      "econipass-claude-code.zip",
+      "econipass-claude-hosted.zip",
+      "econipass-codex.zip",
+      "econipass-cursor-desktop.zip",
+      "econipass-gemini-cli.zip",
+      "econipass-github-copilot-cli.zip",
+      "econipass-plugin.zip",
+      "econipass-vscode-copilot.zip",
+      "econipass-windsurf.zip"
+    ],
+    "unchanged_archives": [
+      "activity-input.skill.zip",
+      "cfp-input.skill.zip",
+      "econipass-amazon-q-cli.zip",
+      "econipass-anthropic-messages.zip",
+      "econipass-cline.zip",
+      "econipass-copilot-studio.zip",
+      "econipass-cursor-hosted.zip",
+      "econipass-dify.zip",
+      "econipass-gemini-code-assist.zip",
+      "econipass-gemini-enterprise.zip",
+      "econipass-github-copilot-cloud.zip",
+      "econipass-goose.zip",
+      "econipass-jetbrains-junie.zip",
+      "econipass-langchain-langgraph.zip",
+      "econipass-m365-copilot.zip",
+      "econipass-n8n.zip",
+      "econipass-openai-agents-sdk.zip",
+      "econipass-openai-responses.zip",
+      "econipass-perplexity.zip",
+      "econipass-querypie-aip.zip",
+      "econipass-roo-code.zip",
+      "econipass-zed.zip",
+      "emissions-analysis.skill.zip",
+      "ems-operations.skill.zip",
+      "measures-targets.skill.zip",
+      "setup.skill.zip",
+      "statutory-reports.skill.zip"
+    ],
+    "changed_entries": [
+      {
+        "archive": "econipass-chatgpt.zip",
+        "entry": "plugin/tool-skill-map.json",
+        "old_sha256": "64e885efed0ed8df878efe53721fcd302e5754fdff0768aeb4ab84d9aacce345",
+        "new_sha256": "224f3ae9b21e1f3ea594b85d2d0e7cc161d593d36dd75ed6679e5aa6f7381065",
+        "only_semantic_change": "source_files_sha256.measures.py"
+      },
+      {
+        "archive": "econipass-claude-code.zip",
+        "entry": "plugin/tool-skill-map.json",
+        "old_sha256": "64e885efed0ed8df878efe53721fcd302e5754fdff0768aeb4ab84d9aacce345",
+        "new_sha256": "224f3ae9b21e1f3ea594b85d2d0e7cc161d593d36dd75ed6679e5aa6f7381065",
+        "only_semantic_change": "source_files_sha256.measures.py"
+      },
+      {
+        "archive": "econipass-claude-hosted.zip",
+        "entry": "plugin/tool-skill-map.json",
+        "old_sha256": "64e885efed0ed8df878efe53721fcd302e5754fdff0768aeb4ab84d9aacce345",
+        "new_sha256": "224f3ae9b21e1f3ea594b85d2d0e7cc161d593d36dd75ed6679e5aa6f7381065",
+        "only_semantic_change": "source_files_sha256.measures.py"
+      },
+      {
+        "archive": "econipass-codex.zip",
+        "entry": "plugin/tool-skill-map.json",
+        "old_sha256": "64e885efed0ed8df878efe53721fcd302e5754fdff0768aeb4ab84d9aacce345",
+        "new_sha256": "224f3ae9b21e1f3ea594b85d2d0e7cc161d593d36dd75ed6679e5aa6f7381065",
+        "only_semantic_change": "source_files_sha256.measures.py"
+      },
+      {
+        "archive": "econipass-cursor-desktop.zip",
+        "entry": "plugin/tool-skill-map.json",
+        "old_sha256": "64e885efed0ed8df878efe53721fcd302e5754fdff0768aeb4ab84d9aacce345",
+        "new_sha256": "224f3ae9b21e1f3ea594b85d2d0e7cc161d593d36dd75ed6679e5aa6f7381065",
+        "only_semantic_change": "source_files_sha256.measures.py"
+      },
+      {
+        "archive": "econipass-gemini-cli.zip",
+        "entry": "plugin/tool-skill-map.json",
+        "old_sha256": "64e885efed0ed8df878efe53721fcd302e5754fdff0768aeb4ab84d9aacce345",
+        "new_sha256": "224f3ae9b21e1f3ea594b85d2d0e7cc161d593d36dd75ed6679e5aa6f7381065",
+        "only_semantic_change": "source_files_sha256.measures.py"
+      },
+      {
+        "archive": "econipass-github-copilot-cli.zip",
+        "entry": "plugin/tool-skill-map.json",
+        "old_sha256": "64e885efed0ed8df878efe53721fcd302e5754fdff0768aeb4ab84d9aacce345",
+        "new_sha256": "224f3ae9b21e1f3ea594b85d2d0e7cc161d593d36dd75ed6679e5aa6f7381065",
+        "only_semantic_change": "source_files_sha256.measures.py"
+      },
+      {
+        "archive": "econipass-plugin.zip",
+        "entry": "tool-skill-map.json",
+        "old_sha256": "64e885efed0ed8df878efe53721fcd302e5754fdff0768aeb4ab84d9aacce345",
+        "new_sha256": "224f3ae9b21e1f3ea594b85d2d0e7cc161d593d36dd75ed6679e5aa6f7381065",
+        "only_semantic_change": "source_files_sha256.measures.py"
+      },
+      {
+        "archive": "econipass-vscode-copilot.zip",
+        "entry": "plugin/tool-skill-map.json",
+        "old_sha256": "64e885efed0ed8df878efe53721fcd302e5754fdff0768aeb4ab84d9aacce345",
+        "new_sha256": "224f3ae9b21e1f3ea594b85d2d0e7cc161d593d36dd75ed6679e5aa6f7381065",
+        "only_semantic_change": "source_files_sha256.measures.py"
+      },
+      {
+        "archive": "econipass-windsurf.zip",
+        "entry": "configuration/legacy-cascade-presets.json",
+        "old_sha256": "ee744574608fb863bb4d5ddb059828fe824a3aa23329dd2d785c5f1fa490f66f",
+        "new_sha256": "f018fe65284515508a93af8b40db999df9d08e0358ff2b841096214ca6596d98",
+        "only_semantic_change": "tool_skill_map_sha256 binding"
+      }
+    ],
+    "new_or_removed_zip_entries": 0,
+    "all_other_ZIP_entries_identical_including_skill_text_native_config_auth_fields": true,
+    "legacy_Cascade_workflow_index_only_hash_binding_changed": true,
+    "top_level_platform_support_only_provenance_change": "53476d10 already independently reviewed; not ZIP payload input behavior change"
+  },
+  "native_candidate_evidence": "candidate-native-equivalence-v1.2.0-canonical-date-license-held-20261026.json",
+  "native_candidate_evidence_sha256": "bd6a8e8c5ce8b3c30b53b76f983d4c33f942d10ef9360c967e83d1b15c0e0518",
+  "current_counts": {
+    "product_kits": 29,
+    "historical_native_trials": 13,
+    "historical_native_limited_successes": 12,
+    "historical_hosted_limited_successes": 1,
+    "current_native_input_equivalent_limited_successes": 8,
+    "current_hosted_skill_input_equivalent_platforms": 1,
+    "current_limited_input_equivalence_platforms": 9,
+    "failed_Roo_preserved": 1,
+    "full_platform_acceptance": 0,
+    "fresh_native_executions": 3,
+    "fresh_native_limited_successes": 3,
+    "current_total_limited_platforms": 12,
+    "UI_blocked_before_import": 1,
+    "fresh_hosted_imports": 0,
+    "blocked_before_package_load": 2,
+    "other_not_executed_including_ChatGPT_held": 14,
+    "Linux_blocked_before_package_load": 1,
+    "requires_native_revalidation_after_environment_recovery": 1
+  },
+  "current_local_validation": {
+    "date_impact": {
+      "passed": 471,
+      "skipped": 0,
+      "existing_modules": 2,
+      "invocations": 1,
+      "receipt_sha256": "ce04f75d5f7188b011c2dc43f01f5b02729e780420c81759f218a564171cc033"
+    },
+    "packages": {
+      "passed": 65,
+      "skipped": 0,
+      "existing_modules": 2,
+      "invocations": 1,
+      "receipt_sha256": "26669119641e137fae55636711bdbe4d649dedb21feb30b1275b201fd3f5a7b6"
+    },
+    "formal_audit_proposal": {
+      "passed": 116,
+      "skipped": 0,
+      "overlay_only": true
+    },
+    "new_full_Linux_suite_or_CI": false
+  },
+  "historical_Linux377_only": {
+    "MCP_passed": 5308,
+    "smoke_skipped": 6,
+    "synthetic_E2E": {
+      "tools": 241,
+      "passed": 239,
+      "expected_refusals": 2
+    },
+    "root_suite": {
+      "passed": 210,
+      "skipped": 1
+    },
+    "real_synthetic_PG_impact": {
+      "passed": 35,
+      "skipped": 0
+    },
+    "source14_equals_current": false,
+    "proof_limit": "Source377 history only; measures.py and map now differ. No claim of full Linux validation of e794."
+  },
+  "new_source_audit": {
+    "approved_prior_95c": {
+      "patch_sha256": "95c004d728213f76100aa710b482585e8e39a3a6925b694cb9b38a03c48c07e5",
+      "application_commit": "1169e186719931b535a0d7076f53373bae0c281c",
+      "applied": true
+    },
+    "current_date_source": "e79417e3b208f5abeaacbd7472b753e59feafa5b",
+    "date_source_proposal_patch_sha256": "94378fa474fe0644fbb13b9234df5e661e75a8387d87092aa8af7bf5aec95a4e",
+    "date_source_proposal_applied": true,
+    "human_approval": "APPROVED_AND_APPLIED_COMMIT_6f09904b",
+    "fixed_tools": 30,
+    "fixed_tags": 8,
+    "PRD": "STOP",
+    "Mac_formal_contract": {
+      "passed": 116,
+      "skipped": 0,
+      "proposal_overlay_only": true
+    },
+    "actual_protected3": "Approved943 bytes9810/eae4/0d95 applied in6f09904b; source14/map unchanged frome794.",
+    "approved_date_source_943": {
+      "patch_sha256": "94378fa474fe0644fbb13b9234df5e661e75a8387d87092aa8af7bf5aec95a4e",
+      "application_commit": "6f09904ba5eedc0805b3895341b032f0770f807b",
+      "human_approved": true,
+      "applied": true
+    }
+  },
+  "existing_predecessor_connector_baseline": {
+    "client": "Codex existing EcoNiPass connector",
+    "candidate_source_deployed": false,
+    "new_OAuth_grants": 0,
+    "authenticated_read_baseline_only": true,
+    "organizations_read": "succeeded; customer IDs/names omitted",
+    "EMS_import_read": "succeeded; business values omitted",
+    "CFP_workbook_reception": {
+      "file_types": [
+        "master",
+        "base_unit",
+        "activity_amount",
+        "pcf_certification_period",
+        "aist_idea"
+      ],
+      "original_files_saved_and_size_SHA_matched": true,
+      "ZIP_CRC_and_XML": "PASS",
+      "customer_file_content_name_and_digest_published": false
+    },
+    "CFP_write_preview": "REFUSED_EXISTING_CONNECTION_HAS_NO_WRITE_SCOPE",
+    "confirmation_token_issued": false,
+    "upload_or_replacement_or_business_validation": false,
+    "candidate29_counts_promoted": false,
+    "evidence_receipts_sha256": {
+      "codex-existing-connector-read-baseline.json": "dde264049ed8336e10244bace490528498cc123638597f427df61a50047d49b0",
+      "codex-existing-EMS-read-baseline.json": "222f6e7f2eb3ac49c1ffd99806a07e486775fc8b1d7dc9c79091993aced16589",
+      "codex-existing-CFP-five-downloads-receipt.json": "aa522ede0e493f3a9293a812cafa35fca46c8838db2b8097080fbd9486956e58",
+      "codex-existing-EMS-template-reception-receipt.json": "5bbb92f6adecc62c97df10ee9adad349d1f930964e58662e4a35d4f8990a39a7"
+    },
+    "EMS_template_reception": {
+      "profile": "SIMPLE_KWH",
+      "formats": [
+        "csv",
+        "xlsx"
+      ],
+      "actual_files_saved_and_size_SHA_matched": true,
+      "CSV_columns": 6,
+      "XLSX_sheets": 6,
+      "XLSX_CRC_and_XML": "PASS",
+      "original_files_and_customer_file_digests_published": false
+    }
+  },
+  "public_proposed_common30_inputs_match_candidate": true,
+  "current_public_all37_regeneration": {
+    "status": "PASS",
+    "receipt_sha256": "56dcf1d51dbe68991b4c17d211b4ff954e99662c6f55ff37af6997ad599699d7",
+    "scope": "Fresh regeneration using current dirty public inputs and fixed generator6f; allZIPhashes/CRC/entrybytes match83f9. Public commit/push not inferred."
+  },
+  "existing_f831_Draft": {
+    "id": 423591210,
+    "draft": true,
+    "published_at": null,
+    "release_json_sha256": "f8317e75b008d3a09cb058d32236b6c882bde245e536fb5ba3840346f5efc287",
+    "target_public_revision": "bda0b2ff29819a8ea12c7dd3dd11f648489c7aaa",
+    "observed_at_utc": "2026-10-25T23:31:50.119776+00:00",
+    "new83f9_uploaded_to_this_Draft": false
+  },
+  "fully_accepted_platforms": 0,
+  "published": false,
+  "deployed": false,
+  "previous_immutable_package": "candidate-package-v1.2.0-current-clients-license-held-20261026.json",
+  "state_observation": {
+    "kind": "canonical_date_candidate_pre_deployment_publication_snapshot",
+    "observed_at_utc": "2026-10-26T00:38:56.122704+00:00",
+    "live_external_state": false,
+    "scope": "Current candidate83f9 source and local evidence; prior f831 Draft remains distinct. Later actions do not follow from this snapshot.",
+    "later_current_state_locations": {
+      "public_PR": "https://github.com/emmatch-dev/econipass-mcp-plugins/pull/5",
+      "releases": "https://github.com/emmatch-dev/econipass-mcp-plugins/releases"
+    }
+  },
+  "date_implementation_revision": "e79417e3b208f5abeaacbd7472b753e59feafa5b",
+  "fresh_native3": {
+    "final_readback_sha256": "1c5e958ca1faa249ef20e413d855e46932de9441705aa1da97969c8cdcccccc2",
+    "independent_actual_review_sha256": "5a838a310cee521883523cd73275b9bba429b594d5e9a8adf167cf892dcf2de8",
+    "metadata_commands": 15,
+    "native_limited_clients": 3,
+    "authenticated_business_UAT": false,
+    "new_hosted_imports_model_or_remoteMCP_calls": 0
+  },
+  "Aru_precheck": {
+    "platform": "querypie-aip",
+    "status": "native_import_blocked_before_load",
+    "UI_precheck_count": 1,
+    "completed_imports": 0,
+    "root_cause": "Unestablished; native file/folder selection controls stayed disabled and were cancelled. No package or vendor defect inferred.",
+    "receipt_sha256": "9d3d072ecabaf8945110716a3360cd83522a2bb377bd093060a2fd085e07b079",
+    "counted_within_remaining_unaccepted15": true,
+    "native_limited_success_count_increment": 0,
+    "model_MCP_grants_or_customer_data_transmission": 0
+  },
+  "candidate_CI_DEV_release_status": "NOT_STARTED_FOR_CANDIDATE_WAITING_OTHER_ACTIVE_WORKFLOWS_TERMINAL",
+  "CI_deploy_status_observation_receipt_sha256": "d75d25b0f940c632e16f1300ecebd83b5c659d9d0fff55a7cb054633c9a91873",
+  "v2_observation_preserved": {
+    "public_proposal_manifest_sha256": "33ad4712f9f31e97def938c817247b460cfd7433f8ae49fb8c2ee9f2ba270c48",
+    "file_sha256_at_v2": "bf33df0f324edd893ef6af6e9b89b68ba72594e385813996df08639a916db673",
+    "state_observation": {
+      "kind": "canonical_date_candidate_pre_deployment_publication_snapshot",
+      "observed_at_utc": "2026-10-26T00:25:17.298308+00:00",
+      "live_external_state": false,
+      "scope": "Current candidate83f9 source and local evidence; prior f831 Draft remains distinct. Later actions do not follow from this snapshot.",
+      "later_current_state_locations": {
+        "public_PR": "https://github.com/emmatch-dev/econipass-mcp-plugins/pull/5",
+        "releases": "https://github.com/emmatch-dev/econipass-mcp-plugins/releases"
+      }
+    },
+    "counts": {
+      "product_kits": 29,
+      "historical_native_trials": 13,
+      "historical_native_limited_successes": 12,
+      "historical_hosted_limited_successes": 1,
+      "current_native_input_equivalent_limited_successes": 8,
+      "current_hosted_skill_input_equivalent_platforms": 1,
+      "current_limited_input_equivalence_platforms": 9,
+      "failed_Roo_preserved": 1,
+      "requires_native_revalidation": 1,
+      "full_platform_acceptance": 0,
+      "fresh_native_executions": 3,
+      "fresh_native_limited_successes": 3,
+      "current_total_limited_platforms": 12,
+      "remaining_unaccepted_platforms": 15,
+      "UI_blocked_before_import": 1,
+      "not_executed_including_ChatGPT_held": 14,
+      "fresh_hosted_imports": 0
+    }
+  },
+  "post_v2_status": {
+    "observed_at_utc": "2026-10-26T00:38:56.122704+00:00",
+    "phase": "post_v2_source6f_candidate83f9_predeployment_snapshot",
+    "counts": {
+      "product_kits": 29,
+      "limited_confirmations": 12,
+      "failed_Roo": 1,
+      "blocked_before_package_load": 2,
+      "other_not_executed_including_ChatGPT_held": 14,
+      "fully_accepted": 0,
+      "fresh_native_clients": 3,
+      "fresh_native_metadata_commands": 15,
+      "fresh_hosted_imports": 0
+    },
+    "Linux_Codex_preload": {
+      "platform": "codex",
+      "status": "blocked_before_package_load",
+      "scope": "Linux test-environment setup only; native package/runtime/image/container/CLI metadata trial never started.",
+      "setup_timeout_seconds": 180,
+      "STOP_observed_at_utc": "2026-10-26T00:30:55.408580+00:00",
+      "root_cause": "Unestablished; timeout and unavailable Docker/guest access do not identify a package or Codex defect.",
+      "native_package_runtime_image_container_commands_executed": 0,
+      "automatic_retry": false,
+      "native_trial_success": false,
+      "cleanup": "Separate cleanup-only recovery is under review; cleanup completion is not asserted.",
+      "evidence_sha256": {
+        "STOP": "c2fe37ee89d518c847b6f5b34a58cf9ed7f3e5ba8a982c0f2f411d2b2239d0de",
+        "root_startup_readback": "9f3685f8271a97390e229f1e362133df9aa5afd6304a7b2199a958201107d2be",
+        "root_guest_inventory_refusal": "5a3684e042978bae26c8dc15539e4102c3c5c499870ac92d5af214b1acd6ebb9"
+      }
+    },
+    "Aru_preload": {
+      "platform": "querypie-aip",
+      "status": "native_import_blocked_before_load",
+      "completed_imports": 0,
+      "cause": "Unestablished",
+      "private_UI_account_catalog_and_paths_published": false
+    },
+    "public37_byte_gate": {
+      "status": "PASS",
+      "receipt_sha256": "56dcf1d51dbe68991b4c17d211b4ff954e99662c6f55ff37af6997ad599699d7",
+      "archives": 37,
+      "entries": 1016,
+      "scope": "Fresh regeneration using current dirty public inputs and fixed generator6f; allZIPhashes/CRC/entrybytes match83f9. Public commit/push not inferred.",
+      "public_HEAD_at_observation": "bda0b2ff29819a8ea12c7dd3dd11f648489c7aaa"
+    },
+    "stage_helper_independent_review": {
+      "checks": 386,
+      "findings": 0,
+      "receipt_sha256": "56e6998198d52c29489fcaa57ac828868f96a4ef95d1ac0a02c715a78f7c479c",
+      "local_assets": 38,
+      "metadata_synthetic_controls": 14,
+      "live_Draft83f9_upload_or_metadata_readback": false
+    },
+    "candidate_CI_image_DEV_publication": "NOT_STARTED_OR_NOT_PERFORMED; waiting separate workflow terminal",
+    "LICENSE_newOAuth_ChatGPT": "HELD",
+    "source6f_release83f9_map224f_unchanged": true,
+    "old_f831_Draft_unchanged_by_this_preparation": true
+  },
+  "new83f9_stage": {
+    "prepared": true,
+    "assets": 38,
+    "preparation_sha256": "8778bbba1a15909fc2ec178ec1e824c2311f61cbe6208c7f2602210e82c501b8",
+    "manifest_sha256": "34fab98cfd0e479bb92e5cd97e286485671e9a604ce9b99a95061a018601a1b6",
+    "metadata_helper_sha256": "485c022104f27dfd5e02b06ee1c0e766fe0584f68d2fa3e74be32b74efca6c92",
+    "independent_review": {
+      "checks": 386,
+      "findings": 0,
+      "receipt_sha256": "56e6998198d52c29489fcaa57ac828868f96a4ef95d1ac0a02c715a78f7c479c",
+      "local_assets": 38,
+      "metadata_synthetic_controls": 14,
+      "live_Draft83f9_upload_or_metadata_readback": false
+    },
+    "uploaded": false,
+    "live_Draft_metadata_verified": false
+  }
+}

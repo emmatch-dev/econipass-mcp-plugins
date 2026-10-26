@@ -1,0 +1,999 @@
+{
+  "schema_version": 2,
+  "phase": "current_client_configuration_license_held_candidate",
+  "packaging_source_revision": "355e24babeac05182d97001e3004177ff666bb9a",
+  "implementation_source_revision": "6d3fc5d6ac4719618621302a51a81d75e157c5c8",
+  "metadata_revision": "3775093d517eac5ef183afc148d56016058fea63",
+  "source_base_commit": "06ee31fbe3c2a5a5700c08d72054240242c476e3",
+  "version": "1.2.0",
+  "release_json_sha256": "f8317e75b008d3a09cb058d32236b6c882bde245e536fb5ba3840346f5efc287",
+  "source_binding": {
+    "source_base_commit": "06ee31fbe3c2a5a5700c08d72054240242c476e3",
+    "tool_skill_map_sha256": "64e885efed0ed8df878efe53721fcd302e5754fdff0768aeb4ab84d9aacce345",
+    "source_files_sha256": {
+      "services/mcp-server/src/econipass_mcp/server.py": "79e93bcbbaf291a657133fb12c90927504caa1e9a78ce3e8e7445959981bdf7f",
+      "services/mcp-server/src/econipass_mcp/request_identity.py": "df67efc7fc50f9fb1e69823b3c34a4d108a39415271a40c13b85a8d380309dd6",
+      "services/mcp-server/src/econipass_mcp/tool_metadata.py": "1ae38691c6c31fcb73e79b69540c50e15036d603b4a166ac3e48f87cce884ca4",
+      "services/mcp-server/src/econipass_mcp/tools/ems_catalog.py": "ad216864d5275827495cbffd8c5fa182e496eae6d6208b809abe09fd8688a01d",
+      "services/mcp-server/src/econipass_mcp/tools/ems_operations.py": "3dee467cdb92da8e8374f633a0feb2325c5d245a89190d3a67905bcb5dd10a3d",
+      "services/mcp-server/src/econipass_mcp/tools/cfp.py": "a3ca3637c492b17072fef6d8794b5b838f289ac97a61bd4376069b7fc668cf39",
+      "services/mcp-server/src/econipass_mcp/tools/audit.py": "38b5703e435061a5c054601502c4c04081b90b8b8e491c02263e45fa3f9fb017",
+      "services/mcp-server/src/econipass_mcp/tools/downloads.py": "407725d6d9c277e37bc30424bd3e1f81b5fb0c0471fbbe92e1e64708a82546dc",
+      "services/mcp-server/src/econipass_mcp/tools/measures.py": "db96a1d914e922dff4dd5b9d63334b9412db839c743dd22cc674544ad8a85d5f",
+      "services/mcp-server/src/econipass_mcp/tools/tasks.py": "cdfee11b7c73547f02c598e6419979140b302dbae5c45637ef5e7c6e4c11360f",
+      "services/mcp-server/src/econipass_mcp/tools/activities.py": "7002f3bc948f95fa2614d36ca755706fcfd1b3bd95cd87f4688ae245d152dd42",
+      "services/mcp-server/src/econipass_mcp/tools/statutory_reports_v2.py": "8220f68c38d148c8d93da06db6bb14046f5296126149a8c924ffc611d5fd7d2f",
+      "services/mcp-server/src/econipass_mcp/tools/statutory_paper.py": "57f98d5e9951a7d1db37b57ba9a90f4312327d01a57d541a3f14babacde312e0",
+      "services/mcp-server/src/econipass_mcp/data/ems_operations.json": "778ae7ee1e905ede3d45a98ed892395a4becdae18e09bb89b0bd8e8dd24c1de6"
+    }
+  },
+  "skills": 7,
+  "product_kits": 29,
+  "archives": 37,
+  "total_zip_entries": 1016,
+  "license_decision": "HELD_BY_USER",
+  "LICENSE_entries": 0,
+  "PDF_entries": 0,
+  "rights_grant_inferred": false,
+  "artifacts": {
+    "activity-input.skill.zip": {
+      "sha256": "4832bb779dce8ffb2cc8599724529f24d00821de75a85296be4c721af5bdf059",
+      "bytes": 4140,
+      "entries": 3,
+      "LICENSE_entries": 0,
+      "CRC": "pass"
+    },
+    "cfp-input.skill.zip": {
+      "sha256": "635d628db2afa4404bd69c2493c840620e1b2113e5cfb90202a879aac303c04d",
+      "bytes": 6055,
+      "entries": 3,
+      "LICENSE_entries": 0,
+      "CRC": "pass"
+    },
+    "econipass-amazon-q-cli.zip": {
+      "sha256": "3dc25e39f7e28c1be62a6d494ff3b39721897e1d1e8c44a3bc8b32ea86d42328",
+      "bytes": 63914,
+      "entries": 31,
+      "LICENSE_entries": 0,
+      "CRC": "pass"
+    },
+    "econipass-anthropic-messages.zip": {
+      "sha256": "195f8f48937e0f83e761b672778897c046bffd8b05f563e0c9af97a5e8d9f0a0",
+      "bytes": 69750,
+      "entries": 32,
+      "LICENSE_entries": 0,
+      "CRC": "pass"
+    },
+    "econipass-chatgpt.zip": {
+      "sha256": "98a99a167277a4c9eaec03adaed3368b711bbbc835c3c51973e3f1980edec98c",
+      "bytes": 120609,
+      "entries": 39,
+      "LICENSE_entries": 0,
+      "CRC": "pass"
+    },
+    "econipass-claude-code.zip": {
+      "sha256": "5a440b94c8a4ee67f7064bd7b67f9a7d5c9462a97d890dd832cb10586d3b0195",
+      "bytes": 120356,
+      "entries": 39,
+      "LICENSE_entries": 0,
+      "CRC": "pass"
+    },
+    "econipass-claude-hosted.zip": {
+      "sha256": "3add03c6016f76698d01b1d8def5f2baf4eea644bae0e0f0596ec36619173ad9",
+      "bytes": 120625,
+      "entries": 39,
+      "LICENSE_entries": 0,
+      "CRC": "pass"
+    },
+    "econipass-cline.zip": {
+      "sha256": "0910ed390e299bb8cad8a430edc5f6d5bc27077ab56bbea6906b53d986e76182",
+      "bytes": 63038,
+      "entries": 30,
+      "LICENSE_entries": 0,
+      "CRC": "pass"
+    },
+    "econipass-codex.zip": {
+      "sha256": "3bf130c7fc82ff0ee09537b45d8dfc75f793976535884e3bfafc52f8178e248c",
+      "bytes": 120765,
+      "entries": 40,
+      "LICENSE_entries": 0,
+      "CRC": "pass"
+    },
+    "econipass-copilot-studio.zip": {
+      "sha256": "cf67bd70cdced85a647dda74a10e4e9ca90833d4e11d0e982f59b68a9aef93ea",
+      "bytes": 62868,
+      "entries": 29,
+      "LICENSE_entries": 0,
+      "CRC": "pass"
+    },
+    "econipass-cursor-desktop.zip": {
+      "sha256": "3b362fe206328b597ddd39258718aa8bafbb7d28295c7a24c4d228f6c0f58b45",
+      "bytes": 120769,
+      "entries": 40,
+      "LICENSE_entries": 0,
+      "CRC": "pass"
+    },
+    "econipass-cursor-hosted.zip": {
+      "sha256": "3f20e7bd56491411198fb3688e1b0506c48557c10676e1255af13cacbabb36cc",
+      "bytes": 62970,
+      "entries": 30,
+      "LICENSE_entries": 0,
+      "CRC": "pass"
+    },
+    "econipass-dify.zip": {
+      "sha256": "203aab761f8ea9a4cb8799e8bc2ac4caf6a8b0051098ba0ecebd3c625973fee8",
+      "bytes": 62943,
+      "entries": 29,
+      "LICENSE_entries": 0,
+      "CRC": "pass"
+    },
+    "econipass-gemini-cli.zip": {
+      "sha256": "db82d833986365f8b93060e3a7e0df317284ce4c2d3523c6a121f66236b5ad98",
+      "bytes": 121016,
+      "entries": 40,
+      "LICENSE_entries": 0,
+      "CRC": "pass"
+    },
+    "econipass-gemini-code-assist.zip": {
+      "sha256": "3704110017a54ad8664ff2d6b37869fead94366ce2de940609d8d5a4473b563c",
+      "bytes": 63209,
+      "entries": 30,
+      "LICENSE_entries": 0,
+      "CRC": "pass"
+    },
+    "econipass-gemini-enterprise.zip": {
+      "sha256": "904b0dea968e114a4bb2bc4857a5840911d5fe7b26d17ca3fa300525717a36a5",
+      "bytes": 63167,
+      "entries": 29,
+      "LICENSE_entries": 0,
+      "CRC": "pass"
+    },
+    "econipass-github-copilot-cli.zip": {
+      "sha256": "0dcab8d2eabdb164829573138dbd688cd0b2607a4a28f3319aa35624d82e65c2",
+      "bytes": 120765,
+      "entries": 40,
+      "LICENSE_entries": 0,
+      "CRC": "pass"
+    },
+    "econipass-github-copilot-cloud.zip": {
+      "sha256": "5784af85a4b8cb8bfd52cdaea1d85e97affb6e4ebfc10c82c3d3ba427e641d99",
+      "bytes": 63701,
+      "entries": 30,
+      "LICENSE_entries": 0,
+      "CRC": "pass"
+    },
+    "econipass-goose.zip": {
+      "sha256": "4b90bf95ee1a8bde2301edefeeb2d916af04cb589c546f191f25cf61bc7157f5",
+      "bytes": 63090,
+      "entries": 30,
+      "LICENSE_entries": 0,
+      "CRC": "pass"
+    },
+    "econipass-jetbrains-junie.zip": {
+      "sha256": "fc46a7751b401964c7d1f1bee961e2d34f1c6e589349216776f60219866165f0",
+      "bytes": 63530,
+      "entries": 31,
+      "LICENSE_entries": 0,
+      "CRC": "pass"
+    },
+    "econipass-langchain-langgraph.zip": {
+      "sha256": "15ba5b75a6332ef47092df3017a475bbaa7cc110d16b352ed90655baf13cd131",
+      "bytes": 69931,
+      "entries": 32,
+      "LICENSE_entries": 0,
+      "CRC": "pass"
+    },
+    "econipass-m365-copilot.zip": {
+      "sha256": "1d30d2af3ab13603092039cfc02f58f0a6bcd23e730a42e71537925356253716",
+      "bytes": 62802,
+      "entries": 29,
+      "LICENSE_entries": 0,
+      "CRC": "pass"
+    },
+    "econipass-n8n.zip": {
+      "sha256": "ec87879208369a49b944f64e1070d373a61d0ed44142b19c4644d3128fc5d201",
+      "bytes": 63266,
+      "entries": 29,
+      "LICENSE_entries": 0,
+      "CRC": "pass"
+    },
+    "econipass-openai-agents-sdk.zip": {
+      "sha256": "bb19e2e83ff416f2d029427f76481e3baf859db7d9681fd662e2fa81b2f0eac8",
+      "bytes": 69627,
+      "entries": 32,
+      "LICENSE_entries": 0,
+      "CRC": "pass"
+    },
+    "econipass-openai-responses.zip": {
+      "sha256": "b7c7cc7663d242530b47c4814c416f5021fd12a85b9b6a2a92a41258de70de95",
+      "bytes": 69499,
+      "entries": 32,
+      "LICENSE_entries": 0,
+      "CRC": "pass"
+    },
+    "econipass-perplexity.zip": {
+      "sha256": "dee5473d17021cf5b7abbcbc7a6c9c90b92ca26d2ebd64d0e84e73d9ff385731",
+      "bytes": 62846,
+      "entries": 29,
+      "LICENSE_entries": 0,
+      "CRC": "pass"
+    },
+    "econipass-plugin.zip": {
+      "sha256": "639c0201896d20cf740e94e447e5b1c7c4034832b28d42cbb6a09c8b61eaddd9",
+      "bytes": 91578,
+      "entries": 30,
+      "LICENSE_entries": 0,
+      "CRC": "pass"
+    },
+    "econipass-querypie-aip.zip": {
+      "sha256": "52bf062d4797eabb02000dbef2aca19c75b5572d975ea82d5a9f493d6571060c",
+      "bytes": 62845,
+      "entries": 29,
+      "LICENSE_entries": 0,
+      "CRC": "pass"
+    },
+    "econipass-roo-code.zip": {
+      "sha256": "beac2fc8a81dda7c9175e0ac313c6290248f14f9715d500ce3e28b6e25e11772",
+      "bytes": 64081,
+      "entries": 31,
+      "LICENSE_entries": 0,
+      "CRC": "pass"
+    },
+    "econipass-vscode-copilot.zip": {
+      "sha256": "9f2e223d2b0ff5dad1ac2bb0c6b85a90f8fd7ff3b5d9cc8a8eadd07caa19d1c4",
+      "bytes": 120743,
+      "entries": 40,
+      "LICENSE_entries": 0,
+      "CRC": "pass"
+    },
+    "econipass-windsurf.zip": {
+      "sha256": "1a60524423d35046f34c3789dc8ca213cb23ccb48b1edb78ca9440b28e0bc422",
+      "bytes": 95578,
+      "entries": 45,
+      "LICENSE_entries": 0,
+      "CRC": "pass"
+    },
+    "econipass-zed.zip": {
+      "sha256": "5e5819e7a1e12432cb13c64b29e8adac332e75e3357120285a358493fc8f67af",
+      "bytes": 62889,
+      "entries": 30,
+      "LICENSE_entries": 0,
+      "CRC": "pass"
+    },
+    "emissions-analysis.skill.zip": {
+      "sha256": "42853c3b6d7e4b8bc24f95a5e811db79e1a93afd964baf16c9690ad778a273fe",
+      "bytes": 2245,
+      "entries": 2,
+      "LICENSE_entries": 0,
+      "CRC": "pass"
+    },
+    "ems-operations.skill.zip": {
+      "sha256": "f73f2f0c1da4acb9445b11bc1d700df61b399affca57afed546a56f5a0a6929e",
+      "bytes": 9184,
+      "entries": 3,
+      "LICENSE_entries": 0,
+      "CRC": "pass"
+    },
+    "measures-targets.skill.zip": {
+      "sha256": "30389a5620b853d6395691dbb5995034670540bcfce3bafad62dfdfe632590bd",
+      "bytes": 3980,
+      "entries": 3,
+      "LICENSE_entries": 0,
+      "CRC": "pass"
+    },
+    "setup.skill.zip": {
+      "sha256": "56527d1d834f20081ab6cc9205bcbe8db37333db60568876fe84a4e4685861dd",
+      "bytes": 2367,
+      "entries": 2,
+      "LICENSE_entries": 0,
+      "CRC": "pass"
+    },
+    "statutory-reports.skill.zip": {
+      "sha256": "1aed1c4c158b9ee35b79723786767d2d917cfaaccbbc4394f4a04b0260f9640d",
+      "bytes": 6148,
+      "entries": 4,
+      "LICENSE_entries": 0,
+      "CRC": "pass"
+    }
+  },
+  "packaging_source_hashes": {
+    ".claude-plugin/plugin.json": "bb7207592a40efdfc473fd00e372be9655d755106aeb6edce18a9d288f90cd9c",
+    ".codex-plugin/plugin.json": "b15f95ed7fa1f9d96fe36b31f9ab24fc3bf05998956275d52213696f1bc1a7ad",
+    ".mcp.json": "1043c85c0da00028db8c016b7011fbdade28a403305b5e0ae4e291ad2aa74d2d",
+    "GEMINI.md": "bd720241608895f55364e9b8585466222ef9a667a2d8c1e0bd5f7ab7fb478721",
+    "README.md": "2b0d3db31b31935b1412428789a91cc5f3cd9c188c141fcce9fb1754ac10206d",
+    "assets/icon.png": "49f0cb6b564f28e1703f30ba6a217c18077de2e673c719d4c93849b9a92e377e",
+    "gemini-extension.json": "c649bf71c5d33951b5dbda55b345d3cf6c2bb1b14beda7aa78e696615e0a604a",
+    "mcp.json": "8400cc7e1116027ca474544bc918fd494035a4f459f5f7eabe550600a0adb9ac",
+    "plugin.json": "a05b3333ee918b8ffddb808fb3b842cdf40fa78ddb237d191dfecc44aad848ba",
+    "skills/activity-input/SKILL.md": "27a83e0230b3fdb6b2eef20b782469e268223a49ef5ac9e5bd6fc338b79ebfc9",
+    "skills/activity-input/agents/openai.yaml": "ae076d52b00ed951dca432ca99ef11c30ca48221afc8320348e26170354f0ee7",
+    "skills/activity-input/references/record-rules.md": "20f9f554813076592e537968b52cba300c2118b51852421f4ceda760339173d3",
+    "skills/cfp-input/SKILL.md": "28899e861bc64fd1c9faa8c637005771b75901ae3d709384c270b55073732251",
+    "skills/cfp-input/agents/openai.yaml": "eafcd989b252d7699e39e860b92726ed7fdd90da6b385a37ff4b7f9becab77d2",
+    "skills/cfp-input/references/workbooks.md": "27c215d8cf0e1025fcd0655d067b752f80a9e7e53eeaca8fab1c46b6983cc62b",
+    "skills/emissions-analysis/SKILL.md": "7600f72cf00670da96531db0bc1d2ab73d70f39510b2e4fcb528137ffcd0325d",
+    "skills/emissions-analysis/agents/openai.yaml": "a4300f9f5546448f87330c916560f366b3ab903256947826ae90fc101c26e27e",
+    "skills/ems-operations/SKILL.md": "d238c774e58e90e0363753c5c6942e17ac0d77ea346304a02dbf62bd5cebbc89",
+    "skills/ems-operations/agents/openai.yaml": "1a215860957e7ec72e02166b67c4cea6d4f507848459151b3bc92662c79c9877",
+    "skills/ems-operations/references/workflows.md": "07b11ce605e8d1672e83634997b6e9bb8c722d0110a623ef65e066601ee4e217",
+    "skills/measures-targets/SKILL.md": "f2c5e4690871c8feb1a6855676c64323518b481abdb66523f8fd32581bc04387",
+    "skills/measures-targets/agents/openai.yaml": "a6714d09c9bcd8d6ec933b7822cace9ed9d596ed38728fa40499096998afb0b2",
+    "skills/measures-targets/references/task-activity-rules.md": "d5f7591442ed6afb51f47a56a705bac91bd553f8008d89f159b7db06edcb5bfd",
+    "skills/setup/SKILL.md": "67e2bbc6fbc1ca107529998718d2bb371fce7511fd869026f16d6e4ecfaebc2c",
+    "skills/setup/agents/openai.yaml": "b198095f0a5cadd891f3bf54c0cdb453303fbab6adf7c90beff08c34cec62be6",
+    "skills/statutory-reports/SKILL.md": "e981804a69f4607d3db58daf359c86e86dcfa9df07c5d923c52239df70982b17",
+    "skills/statutory-reports/agents/openai.yaml": "76e93d413abceced19b2803e1fb8b2d4a15f21efb6901326a20d96a0395d16f3",
+    "skills/statutory-reports/references/legacy-xml.md": "98b4d0784713815193026fd9d0c5efc353e13d6c12f5793001e4986f7b34e60c",
+    "skills/statutory-reports/references/shared-reports.md": "e38e84390ef9df4c70d2eeb3b633c5d1d3c5af70067ed2fb7f06a40a4d123f02",
+    "tool-skill-map.json": "64e885efed0ed8df878efe53721fcd302e5754fdff0768aeb4ab84d9aacce345"
+  },
+  "difference_from9640": {
+    "release_json_sha256": "9640f2d6c3dbeb683d3031596ee3a62101686096e8c9bf80d43f5bc48854a27d",
+    "changed_ZIPs": [
+      "econipass-amazon-q-cli.zip",
+      "econipass-gemini-enterprise.zip",
+      "econipass-jetbrains-junie.zip",
+      "econipass-n8n.zip",
+      "econipass-windsurf.zip"
+    ],
+    "same_ZIPs": 32,
+    "added_entries": 17,
+    "removed_entries": 0
+  },
+  "native_candidate_evidence": "candidate-native-equivalence-v1.2.0-current-clients-license-held-20261026.json",
+  "native_candidate_evidence_sha256": "c083fb198123b9863a716b29b8c9ecc628c8f6fb3ba0fd1b389d077582af811a",
+  "native_candidate_trials": {
+    "product_kits": 29,
+    "fresh_native_trials": 0,
+    "fresh_hosted_imports": 0,
+    "historical_native_trials_rebound": 13,
+    "historical_native_limited_passes": 12,
+    "historical_Roo_failure_preserved": 1,
+    "hosted_limited_platform_rebound": 1,
+    "current_limited_success_platforms": 13,
+    "current_not_passed_platforms": 1,
+    "not_executed_for_current_candidate": 15,
+    "fully_accepted_platforms": 0,
+    "public_authenticated_business_acceptance": 0,
+    "unchecked_success_inherited": 0
+  },
+  "current_public_source_byte_gate": {
+    "status": "PASS_FRESH_CURRENT_PUBLIC_INPUTS_ALL37_ZIP_AND1016_ENTRY_BYTE_GATE",
+    "pinned_private_generator_revision": "355e24babeac05182d97001e3004177ff666bb9a",
+    "public_common_metadata_revision": "3775093d517eac5ef183afc148d56016058fea63",
+    "public_packaging_inputs_revision": "355e24babeac05182d97001e3004177ff666bb9a",
+    "implementation_source_revision": "6d3fc5d6ac4719618621302a51a81d75e157c5c8",
+    "packaging_source_revision": "355e24babeac05182d97001e3004177ff666bb9a",
+    "release_json_sha256": "f8317e75b008d3a09cb058d32236b6c882bde245e536fb5ba3840346f5efc287",
+    "source_binding": {
+      "source_base_commit": "06ee31fbe3c2a5a5700c08d72054240242c476e3",
+      "tool_skill_map_sha256": "64e885efed0ed8df878efe53721fcd302e5754fdff0768aeb4ab84d9aacce345",
+      "source_files_sha256": {
+        "services/mcp-server/src/econipass_mcp/server.py": "79e93bcbbaf291a657133fb12c90927504caa1e9a78ce3e8e7445959981bdf7f",
+        "services/mcp-server/src/econipass_mcp/request_identity.py": "df67efc7fc50f9fb1e69823b3c34a4d108a39415271a40c13b85a8d380309dd6",
+        "services/mcp-server/src/econipass_mcp/tool_metadata.py": "1ae38691c6c31fcb73e79b69540c50e15036d603b4a166ac3e48f87cce884ca4",
+        "services/mcp-server/src/econipass_mcp/tools/ems_catalog.py": "ad216864d5275827495cbffd8c5fa182e496eae6d6208b809abe09fd8688a01d",
+        "services/mcp-server/src/econipass_mcp/tools/ems_operations.py": "3dee467cdb92da8e8374f633a0feb2325c5d245a89190d3a67905bcb5dd10a3d",
+        "services/mcp-server/src/econipass_mcp/tools/cfp.py": "a3ca3637c492b17072fef6d8794b5b838f289ac97a61bd4376069b7fc668cf39",
+        "services/mcp-server/src/econipass_mcp/tools/audit.py": "38b5703e435061a5c054601502c4c04081b90b8b8e491c02263e45fa3f9fb017",
+        "services/mcp-server/src/econipass_mcp/tools/downloads.py": "407725d6d9c277e37bc30424bd3e1f81b5fb0c0471fbbe92e1e64708a82546dc",
+        "services/mcp-server/src/econipass_mcp/tools/measures.py": "db96a1d914e922dff4dd5b9d63334b9412db839c743dd22cc674544ad8a85d5f",
+        "services/mcp-server/src/econipass_mcp/tools/tasks.py": "cdfee11b7c73547f02c598e6419979140b302dbae5c45637ef5e7c6e4c11360f",
+        "services/mcp-server/src/econipass_mcp/tools/activities.py": "7002f3bc948f95fa2614d36ca755706fcfd1b3bd95cd87f4688ae245d152dd42",
+        "services/mcp-server/src/econipass_mcp/tools/statutory_reports_v2.py": "8220f68c38d148c8d93da06db6bb14046f5296126149a8c924ffc611d5fd7d2f",
+        "services/mcp-server/src/econipass_mcp/tools/statutory_paper.py": "57f98d5e9951a7d1db37b57ba9a90f4312327d01a57d541a3f14babacde312e0",
+        "services/mcp-server/src/econipass_mcp/data/ems_operations.json": "778ae7ee1e905ede3d45a98ed892395a4becdae18e09bb89b0bd8e8dd24c1de6"
+      }
+    },
+    "public_common_plugin_file_count": 30,
+    "public_common_plugin_files_exact": true,
+    "archives": 37,
+    "entries": 1016,
+    "all_ZIP_hashes_CRC_and_entry_bytes_match": true,
+    "LICENSE_entries": 0,
+    "inputs": {
+      "public": {
+        "plugins/econipass/.mcp.json": "1043c85c0da00028db8c016b7011fbdade28a403305b5e0ae4e291ad2aa74d2d",
+        "plugins/econipass/gemini-extension.json": "c649bf71c5d33951b5dbda55b345d3cf6c2bb1b14beda7aa78e696615e0a604a",
+        "plugins/econipass/plugin.json": "a05b3333ee918b8ffddb808fb3b842cdf40fa78ddb237d191dfecc44aad848ba",
+        "plugins/econipass/README.md": "2b0d3db31b31935b1412428789a91cc5f3cd9c188c141fcce9fb1754ac10206d",
+        "plugins/econipass/tool-skill-map.json": "64e885efed0ed8df878efe53721fcd302e5754fdff0768aeb4ab84d9aacce345",
+        "plugins/econipass/GEMINI.md": "bd720241608895f55364e9b8585466222ef9a667a2d8c1e0bd5f7ab7fb478721",
+        "plugins/econipass/mcp.json": "8400cc7e1116027ca474544bc918fd494035a4f459f5f7eabe550600a0adb9ac",
+        "plugins/econipass/.claude-plugin/plugin.json": "bb7207592a40efdfc473fd00e372be9655d755106aeb6edce18a9d288f90cd9c",
+        "plugins/econipass/skills/measures-targets/SKILL.md": "f2c5e4690871c8feb1a6855676c64323518b481abdb66523f8fd32581bc04387",
+        "plugins/econipass/skills/measures-targets/references/task-activity-rules.md": "d5f7591442ed6afb51f47a56a705bac91bd553f8008d89f159b7db06edcb5bfd",
+        "plugins/econipass/skills/measures-targets/agents/openai.yaml": "a6714d09c9bcd8d6ec933b7822cace9ed9d596ed38728fa40499096998afb0b2",
+        "plugins/econipass/skills/setup/SKILL.md": "67e2bbc6fbc1ca107529998718d2bb371fce7511fd869026f16d6e4ecfaebc2c",
+        "plugins/econipass/skills/setup/agents/openai.yaml": "b198095f0a5cadd891f3bf54c0cdb453303fbab6adf7c90beff08c34cec62be6",
+        "plugins/econipass/skills/cfp-input/SKILL.md": "28899e861bc64fd1c9faa8c637005771b75901ae3d709384c270b55073732251",
+        "plugins/econipass/skills/cfp-input/references/workbooks.md": "27c215d8cf0e1025fcd0655d067b752f80a9e7e53eeaca8fab1c46b6983cc62b",
+        "plugins/econipass/skills/cfp-input/agents/openai.yaml": "eafcd989b252d7699e39e860b92726ed7fdd90da6b385a37ff4b7f9becab77d2",
+        "plugins/econipass/skills/emissions-analysis/SKILL.md": "7600f72cf00670da96531db0bc1d2ab73d70f39510b2e4fcb528137ffcd0325d",
+        "plugins/econipass/skills/emissions-analysis/agents/openai.yaml": "a4300f9f5546448f87330c916560f366b3ab903256947826ae90fc101c26e27e",
+        "plugins/econipass/skills/activity-input/SKILL.md": "27a83e0230b3fdb6b2eef20b782469e268223a49ef5ac9e5bd6fc338b79ebfc9",
+        "plugins/econipass/skills/activity-input/references/record-rules.md": "20f9f554813076592e537968b52cba300c2118b51852421f4ceda760339173d3",
+        "plugins/econipass/skills/activity-input/agents/openai.yaml": "ae076d52b00ed951dca432ca99ef11c30ca48221afc8320348e26170354f0ee7",
+        "plugins/econipass/skills/ems-operations/SKILL.md": "d238c774e58e90e0363753c5c6942e17ac0d77ea346304a02dbf62bd5cebbc89",
+        "plugins/econipass/skills/ems-operations/references/workflows.md": "07b11ce605e8d1672e83634997b6e9bb8c722d0110a623ef65e066601ee4e217",
+        "plugins/econipass/skills/ems-operations/agents/openai.yaml": "1a215860957e7ec72e02166b67c4cea6d4f507848459151b3bc92662c79c9877",
+        "plugins/econipass/skills/statutory-reports/SKILL.md": "e981804a69f4607d3db58daf359c86e86dcfa9df07c5d923c52239df70982b17",
+        "plugins/econipass/skills/statutory-reports/references/shared-reports.md": "e38e84390ef9df4c70d2eeb3b633c5d1d3c5af70067ed2fb7f06a40a4d123f02",
+        "plugins/econipass/skills/statutory-reports/references/legacy-xml.md": "98b4d0784713815193026fd9d0c5efc353e13d6c12f5793001e4986f7b34e60c",
+        "plugins/econipass/skills/statutory-reports/agents/openai.yaml": "76e93d413abceced19b2803e1fb8b2d4a15f21efb6901326a20d96a0395d16f3",
+        "plugins/econipass/assets/icon.png": "49f0cb6b564f28e1703f30ba6a217c18077de2e673c719d4c93849b9a92e377e",
+        "plugins/econipass/.codex-plugin/plugin.json": "b15f95ed7fa1f9d96fe36b31f9ab24fc3bf05998956275d52213696f1bc1a7ad",
+        "plugins/platform-support.json": "c5c7ea0dd5effa1b2a91fc9245408bcacb39ff87afe844c81723dd5f20c9485c",
+        "plugins/adapters/github-copilot-cloud.json": "1d40308ca4907a8a63863148eb8f33df5b1e288459660617ba1a18b07b34ee55",
+        "plugins/adapters/roo-code-bridge.json": "0616c9e9eba0e9cde96db40022a0179c550913db5325b4319c85f3cccee63b6c"
+      },
+      "pinned_private_generator_and_API_samples": {
+        "plugins/scripts/build_packages.py": "40024cc49dbed9d183ab7b9b6af67e1f5bbc33c661bfc0fbcbaba8452849c8aa",
+        "plugins/api-examples/README.md": "0ad0f6b1ce35994839df523f15ea17bf195d1ac7e2bb8f7826a21beb66b83207",
+        "plugins/api-examples/_common.py": "faa72de7142a43a6cc8414427d17594359da5009711dfd3eda30eb3decf0f22c",
+        "plugins/api-examples/anthropic-messages.py": "5053bb61d17b1eb69d6d97f28b308cbae18abb3e47f7dc6420f27a778ddd508a",
+        "plugins/api-examples/langchain-langgraph.py": "9d2a4c40a25e88e2a916f98f5deff204d9fbeaf1cff76d307343d71f323420f5",
+        "plugins/api-examples/openai-agents-sdk.py": "0b59d84ddeb7dd962b1a9bafd338cf2faefe7d5fc88cb618574df273b46cc1ac",
+        "plugins/api-examples/openai-responses.py": "a1dd84f43e322c4f87200fd1f5fcfe513ecc7b67766ae7761c195d6fac532419"
+      },
+      "private_source_hash_binding_only": {
+        "services/mcp-server/src/econipass_mcp/server.py": "79e93bcbbaf291a657133fb12c90927504caa1e9a78ce3e8e7445959981bdf7f",
+        "services/mcp-server/src/econipass_mcp/request_identity.py": "df67efc7fc50f9fb1e69823b3c34a4d108a39415271a40c13b85a8d380309dd6",
+        "services/mcp-server/src/econipass_mcp/tool_metadata.py": "1ae38691c6c31fcb73e79b69540c50e15036d603b4a166ac3e48f87cce884ca4",
+        "services/mcp-server/src/econipass_mcp/tools/ems_catalog.py": "ad216864d5275827495cbffd8c5fa182e496eae6d6208b809abe09fd8688a01d",
+        "services/mcp-server/src/econipass_mcp/tools/ems_operations.py": "3dee467cdb92da8e8374f633a0feb2325c5d245a89190d3a67905bcb5dd10a3d",
+        "services/mcp-server/src/econipass_mcp/tools/cfp.py": "a3ca3637c492b17072fef6d8794b5b838f289ac97a61bd4376069b7fc668cf39",
+        "services/mcp-server/src/econipass_mcp/tools/audit.py": "38b5703e435061a5c054601502c4c04081b90b8b8e491c02263e45fa3f9fb017",
+        "services/mcp-server/src/econipass_mcp/tools/downloads.py": "407725d6d9c277e37bc30424bd3e1f81b5fb0c0471fbbe92e1e64708a82546dc",
+        "services/mcp-server/src/econipass_mcp/tools/measures.py": "db96a1d914e922dff4dd5b9d63334b9412db839c743dd22cc674544ad8a85d5f",
+        "services/mcp-server/src/econipass_mcp/tools/tasks.py": "cdfee11b7c73547f02c598e6419979140b302dbae5c45637ef5e7c6e4c11360f",
+        "services/mcp-server/src/econipass_mcp/tools/activities.py": "7002f3bc948f95fa2614d36ca755706fcfd1b3bd95cd87f4688ae245d152dd42",
+        "services/mcp-server/src/econipass_mcp/tools/statutory_reports_v2.py": "8220f68c38d148c8d93da06db6bb14046f5296126149a8c924ffc611d5fd7d2f",
+        "services/mcp-server/src/econipass_mcp/tools/statutory_paper.py": "57f98d5e9951a7d1db37b57ba9a90f4312327d01a57d541a3f14babacde312e0",
+        "services/mcp-server/src/econipass_mcp/data/ems_operations.json": "778ae7ee1e905ede3d45a98ed892395a4becdae18e09bb89b0bd8e8dd24c1de6"
+      }
+    },
+    "artifact_results": [
+      {
+        "name": "activity-input.skill.zip",
+        "sha256": "4832bb779dce8ffb2cc8599724529f24d00821de75a85296be4c721af5bdf059",
+        "entries": 3,
+        "all_entry_bytes_match_rebuilt_current_public_inputs": true,
+        "CRC": "pass",
+        "LICENSE_entries": 0
+      },
+      {
+        "name": "cfp-input.skill.zip",
+        "sha256": "635d628db2afa4404bd69c2493c840620e1b2113e5cfb90202a879aac303c04d",
+        "entries": 3,
+        "all_entry_bytes_match_rebuilt_current_public_inputs": true,
+        "CRC": "pass",
+        "LICENSE_entries": 0
+      },
+      {
+        "name": "econipass-amazon-q-cli.zip",
+        "sha256": "3dc25e39f7e28c1be62a6d494ff3b39721897e1d1e8c44a3bc8b32ea86d42328",
+        "entries": 31,
+        "all_entry_bytes_match_rebuilt_current_public_inputs": true,
+        "CRC": "pass",
+        "LICENSE_entries": 0
+      },
+      {
+        "name": "econipass-anthropic-messages.zip",
+        "sha256": "195f8f48937e0f83e761b672778897c046bffd8b05f563e0c9af97a5e8d9f0a0",
+        "entries": 32,
+        "all_entry_bytes_match_rebuilt_current_public_inputs": true,
+        "CRC": "pass",
+        "LICENSE_entries": 0
+      },
+      {
+        "name": "econipass-chatgpt.zip",
+        "sha256": "98a99a167277a4c9eaec03adaed3368b711bbbc835c3c51973e3f1980edec98c",
+        "entries": 39,
+        "all_entry_bytes_match_rebuilt_current_public_inputs": true,
+        "CRC": "pass",
+        "LICENSE_entries": 0
+      },
+      {
+        "name": "econipass-claude-code.zip",
+        "sha256": "5a440b94c8a4ee67f7064bd7b67f9a7d5c9462a97d890dd832cb10586d3b0195",
+        "entries": 39,
+        "all_entry_bytes_match_rebuilt_current_public_inputs": true,
+        "CRC": "pass",
+        "LICENSE_entries": 0
+      },
+      {
+        "name": "econipass-claude-hosted.zip",
+        "sha256": "3add03c6016f76698d01b1d8def5f2baf4eea644bae0e0f0596ec36619173ad9",
+        "entries": 39,
+        "all_entry_bytes_match_rebuilt_current_public_inputs": true,
+        "CRC": "pass",
+        "LICENSE_entries": 0
+      },
+      {
+        "name": "econipass-cline.zip",
+        "sha256": "0910ed390e299bb8cad8a430edc5f6d5bc27077ab56bbea6906b53d986e76182",
+        "entries": 30,
+        "all_entry_bytes_match_rebuilt_current_public_inputs": true,
+        "CRC": "pass",
+        "LICENSE_entries": 0
+      },
+      {
+        "name": "econipass-codex.zip",
+        "sha256": "3bf130c7fc82ff0ee09537b45d8dfc75f793976535884e3bfafc52f8178e248c",
+        "entries": 40,
+        "all_entry_bytes_match_rebuilt_current_public_inputs": true,
+        "CRC": "pass",
+        "LICENSE_entries": 0
+      },
+      {
+        "name": "econipass-copilot-studio.zip",
+        "sha256": "cf67bd70cdced85a647dda74a10e4e9ca90833d4e11d0e982f59b68a9aef93ea",
+        "entries": 29,
+        "all_entry_bytes_match_rebuilt_current_public_inputs": true,
+        "CRC": "pass",
+        "LICENSE_entries": 0
+      },
+      {
+        "name": "econipass-cursor-desktop.zip",
+        "sha256": "3b362fe206328b597ddd39258718aa8bafbb7d28295c7a24c4d228f6c0f58b45",
+        "entries": 40,
+        "all_entry_bytes_match_rebuilt_current_public_inputs": true,
+        "CRC": "pass",
+        "LICENSE_entries": 0
+      },
+      {
+        "name": "econipass-cursor-hosted.zip",
+        "sha256": "3f20e7bd56491411198fb3688e1b0506c48557c10676e1255af13cacbabb36cc",
+        "entries": 30,
+        "all_entry_bytes_match_rebuilt_current_public_inputs": true,
+        "CRC": "pass",
+        "LICENSE_entries": 0
+      },
+      {
+        "name": "econipass-dify.zip",
+        "sha256": "203aab761f8ea9a4cb8799e8bc2ac4caf6a8b0051098ba0ecebd3c625973fee8",
+        "entries": 29,
+        "all_entry_bytes_match_rebuilt_current_public_inputs": true,
+        "CRC": "pass",
+        "LICENSE_entries": 0
+      },
+      {
+        "name": "econipass-gemini-cli.zip",
+        "sha256": "db82d833986365f8b93060e3a7e0df317284ce4c2d3523c6a121f66236b5ad98",
+        "entries": 40,
+        "all_entry_bytes_match_rebuilt_current_public_inputs": true,
+        "CRC": "pass",
+        "LICENSE_entries": 0
+      },
+      {
+        "name": "econipass-gemini-code-assist.zip",
+        "sha256": "3704110017a54ad8664ff2d6b37869fead94366ce2de940609d8d5a4473b563c",
+        "entries": 30,
+        "all_entry_bytes_match_rebuilt_current_public_inputs": true,
+        "CRC": "pass",
+        "LICENSE_entries": 0
+      },
+      {
+        "name": "econipass-gemini-enterprise.zip",
+        "sha256": "904b0dea968e114a4bb2bc4857a5840911d5fe7b26d17ca3fa300525717a36a5",
+        "entries": 29,
+        "all_entry_bytes_match_rebuilt_current_public_inputs": true,
+        "CRC": "pass",
+        "LICENSE_entries": 0
+      },
+      {
+        "name": "econipass-github-copilot-cli.zip",
+        "sha256": "0dcab8d2eabdb164829573138dbd688cd0b2607a4a28f3319aa35624d82e65c2",
+        "entries": 40,
+        "all_entry_bytes_match_rebuilt_current_public_inputs": true,
+        "CRC": "pass",
+        "LICENSE_entries": 0
+      },
+      {
+        "name": "econipass-github-copilot-cloud.zip",
+        "sha256": "5784af85a4b8cb8bfd52cdaea1d85e97affb6e4ebfc10c82c3d3ba427e641d99",
+        "entries": 30,
+        "all_entry_bytes_match_rebuilt_current_public_inputs": true,
+        "CRC": "pass",
+        "LICENSE_entries": 0
+      },
+      {
+        "name": "econipass-goose.zip",
+        "sha256": "4b90bf95ee1a8bde2301edefeeb2d916af04cb589c546f191f25cf61bc7157f5",
+        "entries": 30,
+        "all_entry_bytes_match_rebuilt_current_public_inputs": true,
+        "CRC": "pass",
+        "LICENSE_entries": 0
+      },
+      {
+        "name": "econipass-jetbrains-junie.zip",
+        "sha256": "fc46a7751b401964c7d1f1bee961e2d34f1c6e589349216776f60219866165f0",
+        "entries": 31,
+        "all_entry_bytes_match_rebuilt_current_public_inputs": true,
+        "CRC": "pass",
+        "LICENSE_entries": 0
+      },
+      {
+        "name": "econipass-langchain-langgraph.zip",
+        "sha256": "15ba5b75a6332ef47092df3017a475bbaa7cc110d16b352ed90655baf13cd131",
+        "entries": 32,
+        "all_entry_bytes_match_rebuilt_current_public_inputs": true,
+        "CRC": "pass",
+        "LICENSE_entries": 0
+      },
+      {
+        "name": "econipass-m365-copilot.zip",
+        "sha256": "1d30d2af3ab13603092039cfc02f58f0a6bcd23e730a42e71537925356253716",
+        "entries": 29,
+        "all_entry_bytes_match_rebuilt_current_public_inputs": true,
+        "CRC": "pass",
+        "LICENSE_entries": 0
+      },
+      {
+        "name": "econipass-n8n.zip",
+        "sha256": "ec87879208369a49b944f64e1070d373a61d0ed44142b19c4644d3128fc5d201",
+        "entries": 29,
+        "all_entry_bytes_match_rebuilt_current_public_inputs": true,
+        "CRC": "pass",
+        "LICENSE_entries": 0
+      },
+      {
+        "name": "econipass-openai-agents-sdk.zip",
+        "sha256": "bb19e2e83ff416f2d029427f76481e3baf859db7d9681fd662e2fa81b2f0eac8",
+        "entries": 32,
+        "all_entry_bytes_match_rebuilt_current_public_inputs": true,
+        "CRC": "pass",
+        "LICENSE_entries": 0
+      },
+      {
+        "name": "econipass-openai-responses.zip",
+        "sha256": "b7c7cc7663d242530b47c4814c416f5021fd12a85b9b6a2a92a41258de70de95",
+        "entries": 32,
+        "all_entry_bytes_match_rebuilt_current_public_inputs": true,
+        "CRC": "pass",
+        "LICENSE_entries": 0
+      },
+      {
+        "name": "econipass-perplexity.zip",
+        "sha256": "dee5473d17021cf5b7abbcbc7a6c9c90b92ca26d2ebd64d0e84e73d9ff385731",
+        "entries": 29,
+        "all_entry_bytes_match_rebuilt_current_public_inputs": true,
+        "CRC": "pass",
+        "LICENSE_entries": 0
+      },
+      {
+        "name": "econipass-plugin.zip",
+        "sha256": "639c0201896d20cf740e94e447e5b1c7c4034832b28d42cbb6a09c8b61eaddd9",
+        "entries": 30,
+        "all_entry_bytes_match_rebuilt_current_public_inputs": true,
+        "CRC": "pass",
+        "LICENSE_entries": 0
+      },
+      {
+        "name": "econipass-querypie-aip.zip",
+        "sha256": "52bf062d4797eabb02000dbef2aca19c75b5572d975ea82d5a9f493d6571060c",
+        "entries": 29,
+        "all_entry_bytes_match_rebuilt_current_public_inputs": true,
+        "CRC": "pass",
+        "LICENSE_entries": 0
+      },
+      {
+        "name": "econipass-roo-code.zip",
+        "sha256": "beac2fc8a81dda7c9175e0ac313c6290248f14f9715d500ce3e28b6e25e11772",
+        "entries": 31,
+        "all_entry_bytes_match_rebuilt_current_public_inputs": true,
+        "CRC": "pass",
+        "LICENSE_entries": 0
+      },
+      {
+        "name": "econipass-vscode-copilot.zip",
+        "sha256": "9f2e223d2b0ff5dad1ac2bb0c6b85a90f8fd7ff3b5d9cc8a8eadd07caa19d1c4",
+        "entries": 40,
+        "all_entry_bytes_match_rebuilt_current_public_inputs": true,
+        "CRC": "pass",
+        "LICENSE_entries": 0
+      },
+      {
+        "name": "econipass-windsurf.zip",
+        "sha256": "1a60524423d35046f34c3789dc8ca213cb23ccb48b1edb78ca9440b28e0bc422",
+        "entries": 45,
+        "all_entry_bytes_match_rebuilt_current_public_inputs": true,
+        "CRC": "pass",
+        "LICENSE_entries": 0
+      },
+      {
+        "name": "econipass-zed.zip",
+        "sha256": "5e5819e7a1e12432cb13c64b29e8adac332e75e3357120285a358493fc8f67af",
+        "entries": 30,
+        "all_entry_bytes_match_rebuilt_current_public_inputs": true,
+        "CRC": "pass",
+        "LICENSE_entries": 0
+      },
+      {
+        "name": "emissions-analysis.skill.zip",
+        "sha256": "42853c3b6d7e4b8bc24f95a5e811db79e1a93afd964baf16c9690ad778a273fe",
+        "entries": 2,
+        "all_entry_bytes_match_rebuilt_current_public_inputs": true,
+        "CRC": "pass",
+        "LICENSE_entries": 0
+      },
+      {
+        "name": "ems-operations.skill.zip",
+        "sha256": "f73f2f0c1da4acb9445b11bc1d700df61b399affca57afed546a56f5a0a6929e",
+        "entries": 3,
+        "all_entry_bytes_match_rebuilt_current_public_inputs": true,
+        "CRC": "pass",
+        "LICENSE_entries": 0
+      },
+      {
+        "name": "measures-targets.skill.zip",
+        "sha256": "30389a5620b853d6395691dbb5995034670540bcfce3bafad62dfdfe632590bd",
+        "entries": 3,
+        "all_entry_bytes_match_rebuilt_current_public_inputs": true,
+        "CRC": "pass",
+        "LICENSE_entries": 0
+      },
+      {
+        "name": "setup.skill.zip",
+        "sha256": "56527d1d834f20081ab6cc9205bcbe8db37333db60568876fe84a4e4685861dd",
+        "entries": 2,
+        "all_entry_bytes_match_rebuilt_current_public_inputs": true,
+        "CRC": "pass",
+        "LICENSE_entries": 0
+      },
+      {
+        "name": "statutory-reports.skill.zip",
+        "sha256": "1aed1c4c158b9ee35b79723786767d2d917cfaaccbbc4394f4a04b0260f9640d",
+        "entries": 4,
+        "all_entry_bytes_match_rebuilt_current_public_inputs": true,
+        "CRC": "pass",
+        "LICENSE_entries": 0
+      }
+    ],
+    "scope": "All37 archives rebuilt from the current public maintained plugin/matrix/adapter bytes plus explicitly pinned private builder and distributed SDK sample inputs; all1016 entries compared. This does not assert every generated ZIP entry exists directly in public Git.",
+    "no_runtime_acceptance_inferred": true,
+    "evidence_sha256": "d7b7aceaaf1cb0a8a063ee5732702c053f6f449565ded77d33feafaf586b4112",
+    "current_uncommitted_public_inputs_compared": true,
+    "committed_public_HEAD_match_claimed": false,
+    "no_runtime_or_deployment_acceptance_inferred": true
+  },
+  "current_Mac_client_configuration_validation": {
+    "runtime": "Mac Python3.11.16 / FastMCP3.4.10 / mcp1.30.0 / pytest9.1.1",
+    "passed": 65,
+    "skipped": 0,
+    "code_and_test_freeze_sha256": "c55eb9250449eb9bf2ba17dc06fc0072d055addfc938a8b794125dd93c2cf7d7",
+    "code_and_tests_exact_in_source355": true,
+    "validation_receipt_sha256": "0911e320ed5bcd833766bdde4d896e981c851f4670f1a1d25f1c57a0bd9e53ef",
+    "independent_code_review_sha256": "8a02399944b8258a777619805c8773a86331d36cccbc7e18bafc5ceb6502afa8",
+    "final_docs_only_patch_sha256": "58ee1a9f272ae65ab9f1b0f6a51b20f765ce0bc74adee66707cf102851fe2de8",
+    "final_docs_independent_review_sha256": "7ab49076b118f9937400b0ebbcbdd9551d380b06a57b47c529f41d2e0f856fc2",
+    "final_source_freeze_sha256": "3a344358eaed68ca92f22f1841cbdeb3b25fada842461c45be83bda8676f4dba",
+    "final_source_validator": "passed_7_skills_29_kits",
+    "CI_version_lint": "passed",
+    "scope": "65 tests bind identical builder/test bytes; final Gemini/n8n changes are docs-only with separate final source validation/review, not a fresh Linux65 run."
+  },
+  "source_bound_Linux_validation": {
+    "source_revision": "3775093d517eac5ef183afc148d56016058fea63",
+    "implementation_source_revision": "6d3fc5d6ac4719618621302a51a81d75e157c5c8",
+    "source14_and_map_exactly_equal_current_packaging_source": true,
+    "scope": "Separate Linux validation checkout including audit95c proposal overlay; actual protected files remain unapproved/unapplied.",
+    "MCP_suite": {
+      "passed": 5308,
+      "skipped": 6,
+      "failed": 0,
+      "skip_scope": "real-connection remote smoke not enabled"
+    },
+    "plugins_included_in_that_Linux_suite": 55,
+    "current_client_configuration_65_tests_executed_on_Linux": false,
+    "synthetic_E2E": {
+      "tools": 241,
+      "ok": 239,
+      "expected_refused": 2,
+      "failed": 0
+    },
+    "isolated_root_owner_suite": {
+      "passed": 210,
+      "same_existing_skip": 1,
+      "failed": 0,
+      "network": "none",
+      "added_capability": "DAC_READ_SEARCH"
+    },
+    "real_synthetic_PostgreSQL_backend_impact": {
+      "passed": 35,
+      "skipped": 0
+    },
+    "actionlint_workflows": 27,
+    "YAML_workflows": 27,
+    "CI_version_lint": "passed_for_source377_validation_inputs",
+    "prior_root_overlay_failed_cases_preserved": true,
+    "prior_11_child_exception_causes_not_directly_observed": true,
+    "tests_receipt_sha256": "b3ede183ab2dc7247bac1237bcb2e7972cd36169a2a4df5e60818164bba4a8b5",
+    "backend_impact_receipt_sha256": "8f5a1ad3e17a33a39a1ed00a638f2e0e0deb4259dac43c58fcab8aa362b508c3",
+    "cleanup_receipt_sha256": "b0ebf6ec4d712001f88a59ba9a98f6f055bcca5809468798b9a8032c624861e8",
+    "independent_closure_receipt_sha256": "86a6741a5b584a71af6ca4ab4c073a61bb10d408bd029370b3e44400fc9bd9cc",
+    "independent_closure": "passed_376_checks_no_findings",
+    "cleanup": {
+      "owned_task_VM_stopped": true,
+      "two_task_configs_original_hashes_restored": true,
+      "owned_resources_absence_verified": true,
+      "default_context_verified": true,
+      "other_VM_states_unchanged_claimed": false,
+      "other_profile_snapshot_differences_observed_cause_not_asserted": true
+    },
+    "candidate_CI_image_DEV_or_authenticated_business_acceptance_inferred": false
+  },
+  "new_source_audit_proposal": {
+    "source": "6d3fc5d6ac4719618621302a51a81d75e157c5c8",
+    "patch_sha256": "95c004d728213f76100aa710b482585e8e39a3a6925b694cb9b38a03c48c07e5",
+    "protected_files": 1,
+    "supporting_documents": 2,
+    "applied": false,
+    "human_approval": "PENDING_FOR_NEW_MERGED_SOURCE",
+    "actual_protected_files": "unchanged_from_06ee_base",
+    "scope": "Prior0a691 approval/application10f and old CI do not authorize or validate the new merged source. Final review/approval remains separate."
+  },
+  "release_staging": {
+    "assets": 38,
+    "release_json_sha256": "f8317e75b008d3a09cb058d32236b6c882bde245e536fb5ba3840346f5efc287",
+    "manifest_sha256": "f5dc3da2524452bc3f532a3929323eca6e8bdf89146cdcc752ee0f90538b1245",
+    "helper_sha256": "ff7aebb5b0e1e27fa114b75e9a56701801b8b2e43a8bc8348d0f9e26ceff163d",
+    "preparation_receipt_sha256": "74fe523e9ea35dd304c6e180a3be6b48f6753a35ec13c7f2c8184596677b0079",
+    "helper_validation_receipt_sha256": "2f3ed27ce3b07252f819dd681c723f4334876bda123bbc48f83cad0e94d1b298",
+    "ZIP_entries": 1016,
+    "local38_assets_check": "PASS",
+    "metadata_boundary_cases": 14,
+    "network_calls": 0,
+    "uploaded": false
+  },
+  "history_relocation_provenance": [
+    {
+      "source": "docs/ACCEPTANCE.md",
+      "source_sha256": "aaab736c2738e30bf88502321ed1a88f50d32d9dd3ccd3116b3fa0a2d3cc5cae",
+      "destination": "docs/history/ACCEPTANCE-v1.2.0-candidate-377-9640-20261026.md",
+      "destination_sha256": "0794a416377b5b0ea99aec66fc41e49022c0d5ea4bfbb1c706832b6dabc9d959",
+      "relocations": [
+        {
+          "kind": "markdown",
+          "original": "candidate-package-v1.2.0-merged-ems-license-held-20261026.json",
+          "relocated": "../candidate-package-v1.2.0-merged-ems-license-held-20261026.json",
+          "semantic_target": "docs/candidate-package-v1.2.0-merged-ems-license-held-20261026.json"
+        },
+        {
+          "kind": "markdown",
+          "original": "acceptance-summary.json",
+          "relocated": "acceptance-summary-v1.2.0-candidate-377-9640-20261026.json",
+          "semantic_target": "docs/history/acceptance-summary-v1.2.0-candidate-377-9640-20261026.json"
+        },
+        {
+          "kind": "markdown",
+          "original": "candidate-native-load-v1.2.0-merged-ems-license-held-20261026.json",
+          "relocated": "../candidate-native-load-v1.2.0-merged-ems-license-held-20261026.json",
+          "semantic_target": "docs/candidate-native-load-v1.2.0-merged-ems-license-held-20261026.json"
+        },
+        {
+          "kind": "markdown",
+          "original": "history/ACCEPTANCE-v1.2.0-candidate-275a-6cc85-20261026.md",
+          "relocated": "ACCEPTANCE-v1.2.0-candidate-275a-6cc85-20261026.md",
+          "semantic_target": "docs/history/ACCEPTANCE-v1.2.0-candidate-275a-6cc85-20261026.md"
+        },
+        {
+          "kind": "markdown",
+          "original": "history/acceptance-summary-v1.2.0-candidate-275a-6cc85-20261026.json",
+          "relocated": "acceptance-summary-v1.2.0-candidate-275a-6cc85-20261026.json",
+          "semantic_target": "docs/history/acceptance-summary-v1.2.0-candidate-275a-6cc85-20261026.json"
+        }
+      ],
+      "machine_record_special_case": "Current machine-readable link now points to same historical companion JSON."
+    },
+    {
+      "source": "docs/acceptance-summary.json",
+      "source_sha256": "4ec2c845dad9ed9e5ae081120dfbd533bee5c57335d671ff6e505edf15f0c9a1",
+      "destination": "docs/history/acceptance-summary-v1.2.0-candidate-377-9640-20261026.json",
+      "destination_sha256": "6aba5b826e57995900a3d735372abbd1bd58d895904ca218affd3b5891cf4b92",
+      "relocations": [
+        {
+          "location": "/candidate/package_details",
+          "original": "candidate-package-v1.2.0-merged-ems-license-held-20261026.json",
+          "relocated": "../candidate-package-v1.2.0-merged-ems-license-held-20261026.json",
+          "semantic_target": "docs/candidate-package-v1.2.0-merged-ems-license-held-20261026.json"
+        },
+        {
+          "location": "/validation/historical275a_validation",
+          "original": "history/acceptance-summary-v1.2.0-candidate-275a-6cc85-20261026.json",
+          "relocated": "acceptance-summary-v1.2.0-candidate-275a-6cc85-20261026.json",
+          "semantic_target": "docs/history/acceptance-summary-v1.2.0-candidate-275a-6cc85-20261026.json"
+        },
+        {
+          "location": "/validation/historical5ee_validation",
+          "original": "history/acceptance-summary-v1.2.0-candidate-5ee-5c4-20261025.json",
+          "relocated": "acceptance-summary-v1.2.0-candidate-5ee-5c4-20261025.json",
+          "semantic_target": "docs/history/acceptance-summary-v1.2.0-candidate-5ee-5c4-20261025.json"
+        },
+        {
+          "location": "/current_candidate_native_load/evidence",
+          "original": "candidate-native-load-v1.2.0-merged-ems-license-held-20261026.json",
+          "relocated": "../candidate-native-load-v1.2.0-merged-ems-license-held-20261026.json",
+          "semantic_target": "docs/candidate-native-load-v1.2.0-merged-ems-license-held-20261026.json"
+        },
+        {
+          "location": "/historical_evidence_not_inherited/v1_1_0",
+          "original": "history/acceptance-summary-v1.1.0-20261021.json",
+          "relocated": "acceptance-summary-v1.1.0-20261021.json",
+          "semantic_target": "docs/history/acceptance-summary-v1.1.0-20261021.json"
+        },
+        {
+          "location": "/historical_evidence_not_inherited/MIT_candidate_native13",
+          "original": "candidate-native-load-v1.2.0-20261025.json",
+          "relocated": "../candidate-native-load-v1.2.0-20261025.json",
+          "semantic_target": "docs/candidate-native-load-v1.2.0-20261025.json"
+        },
+        {
+          "location": "/historical_evidence_not_inherited/previous_no_LICENSE_native13",
+          "original": "candidate-native-load-v1.2.0-license-held-20261025.json",
+          "relocated": "../candidate-native-load-v1.2.0-license-held-20261025.json",
+          "semantic_target": "docs/candidate-native-load-v1.2.0-license-held-20261025.json"
+        },
+        {
+          "location": "/historical_evidence_not_inherited/previous_5909_status",
+          "original": "history/acceptance-summary-v1.2.0-candidate-5909-20261025.json",
+          "relocated": "acceptance-summary-v1.2.0-candidate-5909-20261025.json",
+          "semantic_target": "docs/history/acceptance-summary-v1.2.0-candidate-5909-20261025.json"
+        },
+        {
+          "location": "/historical_evidence_not_inherited/previous_5ee_status",
+          "original": "history/acceptance-summary-v1.2.0-candidate-5ee-5c4-20261025.json",
+          "relocated": "acceptance-summary-v1.2.0-candidate-5ee-5c4-20261025.json",
+          "semantic_target": "docs/history/acceptance-summary-v1.2.0-candidate-5ee-5c4-20261025.json"
+        },
+        {
+          "location": "/historical_evidence_not_inherited/previous_5ee_native13",
+          "original": "candidate-native-load-v1.2.0-cfp-security-license-held-20261025.json",
+          "relocated": "../candidate-native-load-v1.2.0-cfp-security-license-held-20261025.json",
+          "semantic_target": "docs/candidate-native-load-v1.2.0-cfp-security-license-held-20261025.json"
+        },
+        {
+          "location": "/historical_evidence_not_inherited/previous_5ee_package",
+          "original": "candidate-package-v1.2.0-cfp-security-license-held-20261025.json",
+          "relocated": "../candidate-package-v1.2.0-cfp-security-license-held-20261025.json",
+          "semantic_target": "docs/candidate-package-v1.2.0-cfp-security-license-held-20261025.json"
+        },
+        {
+          "location": "/historical_evidence_not_inherited/previous275a_status",
+          "original": "history/acceptance-summary-v1.2.0-candidate-275a-6cc85-20261026.json",
+          "relocated": "acceptance-summary-v1.2.0-candidate-275a-6cc85-20261026.json",
+          "semantic_target": "docs/history/acceptance-summary-v1.2.0-candidate-275a-6cc85-20261026.json"
+        },
+        {
+          "location": "/historical_evidence_not_inherited/previous275a_native13",
+          "original": "candidate-native-load-v1.2.0-cfp-ems-security-license-held-20261025.json",
+          "relocated": "../candidate-native-load-v1.2.0-cfp-ems-security-license-held-20261025.json",
+          "semantic_target": "docs/candidate-native-load-v1.2.0-cfp-ems-security-license-held-20261025.json"
+        },
+        {
+          "location": "/historical_evidence_not_inherited/previous275a_package",
+          "original": "candidate-package-v1.2.0-cfp-ems-security-license-held-20261025.json",
+          "relocated": "../candidate-package-v1.2.0-cfp-ems-security-license-held-20261025.json",
+          "semantic_target": "docs/candidate-package-v1.2.0-cfp-ems-security-license-held-20261025.json"
+        }
+      ]
+    }
+  ],
+  "previous_immutable_package": "candidate-package-v1.2.0-merged-ems-license-held-20261026.json",
+  "candidate_independent_review_sha256": "1a4eb3c199fa3758f75e917d5e27169c6834ec0a885a7b71e025563fc4d00ca9",
+  "fully_accepted_platforms": 0,
+  "published": false,
+  "deployed": false,
+  "state_observation": {
+    "kind": "observed_pre_draft_preparation_snapshot",
+    "observed_at_utc": "2026-10-25T18:32:22.688302+00:00",
+    "live_external_state": false,
+    "scope": "All not-created/uploaded/deployed/published/accepted state fields describe the preparation observation only. Source, payload and test evidence remains source-bound; subsequent external actions are not inferred from this snapshot.",
+    "later_current_state_locations": {
+      "public_PR": "https://github.com/emmatch-dev/econipass-mcp-plugins/pull/5",
+      "GitHub_release": "https://github.com/emmatch-dev/econipass-mcp-plugins/releases/tag/econipass-mcp-plugin-v1.2.0"
+    },
+    "later_Draft_creation_or_publication_inferred": false
+  }
+}

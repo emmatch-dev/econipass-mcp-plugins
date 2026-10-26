@@ -1,30 +1,33 @@
-# 配布経路と公開範囲
+# EcoNiPass DEV 1.2.0の配布・公開
 
-このリポジトリはEcoNiPass MCPクライアント用の配布リポジトリです。
-接続先はDEVの`https://api.dev.app.econipass.com/mcp`で、利用にはEcoNiPassの
-アカウントと必要な業務権限が必要です。公開配布によって業務データが公開されることはありません。
+現在の配布先と検証・受入の範囲は[README](../README.md)と[受入記録](../docs/ACCEPTANCE.md)を確認してください。
+以下は[a72時点の履歴](https://github.com/emmatch-dev/econipass-mcp-plugins/blob/a72fb24fa8ca97db94091e9452a07d5a69195cbf/plugins/PUBLISHING.md)です。「未upload」「未配備」「候補」などは各観測時点の記録で、後続の現在値を示しません。
 
-## GitHub配布
+## a72以前の記録
 
-- 共通プラグインとCodex／Claude Codeのマーケットプレイス定義を収録します。
-- GitHub Releaseに37 ZIPと`release.json`を添付します。
-- Releaseノートにバージョン、配布ソース、DEV配備と公開確認の結果、
-  未実施の実機受入を記録します。
-- 設定・スキル・指示書は利用者が選んだ環境へ導入し、認証はその環境の接続画面、
-  PATは専用credential storeで扱います。tokenやclient secretをGitへ保存しません。
+この文書は **日付検証修正候補の配備・公開前の観測時点（2026-10-26T00:38:56.122704+00:00）の記録** です。旧f831のDraftと新83f9候補を区別します。後続の現行状況は[PR #5](https://github.com/emmatch-dev/econipass-mcp-plugins/pull/5)と[Releases](https://github.com/emmatch-dev/econipass-mcp-plugins/releases)で確認してください。
 
-このリポジトリにはサーバー実装、データベース、顧客データ、配備権限を含めません。
-共通プラグイン内のソース識別子とhashは配布物の追跡用メタデータです。
+新候補は確認対象commit`6f09904ba5eedc0805b3895341b032f0770f807b`（日付実装e79417e3）、release SHA`83f900b69c53acea93f5dbdee7ddc1d7611acd324f23bae77790b40576e952bc`、map SHA`224f3ae9b21e1f3ea594b85d2d0e7cc161d593d36dd75ed6679e5aa6f7381065`。
+37ZIP＋release.jsonの38資産を扱い、接続先はDEVの`https://api.dev.app.econipass.com/mcp`です。
+旧f831のDraft423591210と新83f9は別候補で、新候補のupload・配備・一般公開は未実施です。
+[候補hash](../docs/candidate-package-v1.2.0-canonical-date-license-held-20261026.json)と[受入記録](../docs/ACCEPTANCE.md)を正本とします。
 
-## 外部ディレクトリへの掲載
+## 後続のgate
 
-GitHub上での配布と、各製品の公式プラグインディレクトリ掲載は別です。
-2026-10-20時点で、OpenAI等への審査申請・承認・ディレクトリ公開は未実施です。
+1. 95c監査1169反映と、日付修正後の94378監査の明示承認・6f099反映を確認済みです。別作業の実行中CI・配備の終端を確認してから新候補をpushします。
+2. 最終sourceの必須CI、merge後SHA、image buildを確認し、backend/MCPとKongの通常DEV配備を別々に検証する。
+3. 現在の公開原本と固定builderから全37 ZIP・1,016entryを再生成し、hash・CRC・全entry byte一致を確認済みです。最終public commit／pushとの束縛は別に行います。
+4. fresh native metadata成功3とpackage load前blocked2（Linux Codex環境準備timeout／QueryPie/Aru import前UI blocked）を区別する。現在は限定12・Roo失敗1・blocked2・他未実施14・総合受入0です。
+5. 新候補の38資産stageとGET検証helperは別に固定し、386項目の独立レビューは指摘0です。最終public SHAへの束縛は未完了で、旧f831や旧9640のstage/helperは保持します。
+6. 既存Draftへの後続反映が必要なら、actualmetadata・資産ID・不一致一覧を読んでから具体的差分をreviewする。結果不明時にcreateやuploadを自動再試行せず、clobber・削除・tag付替えを推測で行わない。
+7. 公開前metadata、認証済みasset実bytes、公開後匿名GET・size/SHA/CRC・tag先commitを別gateで記録する。Draftの存在は一般公開ではありません。
 
-正式な公開者と申請権限、会社・プライバシー・サポート等の正式URL、
-公開対象環境、審査専用アカウントとサンプルテナントを確定してから、
-各製品の申請手順に従います。既存利用者のアカウントを審査へ流用しません。
-表示名の`EcoNiPass`は、ディレクトリ側の公開者確認が完了したことを意味しません。
+旧1.1.0のRelease/tag/assets、旧f831候補とDraft、全過去のnative/equivalence記録を保持します。
+既存Codex接続の前駆環境読み取りは、未配備の新候補や29環境総合受入の証拠へ加算しません。
+秘密・顧客値・workbook・ローカル絶対pathを公開せず、backendコードを本公開repoへコピーしません。
 
-[OpenAIの申請手順](https://developers.openai.com/plugins/deploy/submission)と
-[プラットフォーム一覧](PLATFORMS.md)の公式資料を参照してください。
+## LICENSEと公式ディレクトリ
+
+LICENSE適用・新OAuth・ChatGPT受入は保留です。候補のLICENSE0を確認し、MIT等の権利付与を推定しません。
+ClaudeのLICENSE条件、OpenAIの公開者確認、Registryの組織認証・規約／metadata CC0同意は未完了で、公式申請は行っていません。
+DEVを本番として申告せず、scope不足によるCFP投入preview拒否を業務投入成功として扱いません。

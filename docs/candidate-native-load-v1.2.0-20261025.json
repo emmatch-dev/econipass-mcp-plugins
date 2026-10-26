@@ -1,0 +1,257 @@
+{
+  "schema_version": 1,
+  "as_of": "2026-10-25 JST",
+  "phase": "unapproved_license_local_review_candidate",
+  "implementation_source_revision": "9286735044fd4635e11c5022e677d7cc2b7f9691",
+  "license_approval": "pending_human",
+  "published": false,
+  "deployed": false,
+  "release_json_sha256": "2191c7f2e5f7f45d31343344dbb077a9a6c85df26b1e09fc14d63f6e9c65f77f",
+  "source_receipt_sha256": "8ff1bd794763ef6638f181e1de52d1eb4ba6ddb307b40bc3ce991dacacc62236",
+  "counts": {
+    "product_kits": 29,
+    "limited_review_candidate_partial": 13,
+    "fresh_native_platform_trials": 6,
+    "exact_byte_prior_reviewed_platform_references": 7,
+    "full_platform_acceptance": 0,
+    "final_or_public_partial_attested": 0,
+    "new_oauth_grants": 0,
+    "real_model_calls": 0,
+    "remote_MCP_calls": 0,
+    "customer_operations": 0
+  },
+  "scope": "Local native loading, package metadata, configuration and SDK fixtures only. Six fresh trials and seven exact-archive-byte references to independently reviewed fixtures. No authenticated remote MCP, customer business writes, provider model calls or new real OAuth grants. CLI, Desktop, IDE, Web and mobile results are not interchangeable.",
+  "platforms": [
+    {
+      "id": "codex",
+      "review_candidate_status": "passed",
+      "proof_mode": "fresh_native_execution",
+      "stage": "native_package_metadata_read_pass",
+      "surface": "Linux arm64 CLI only",
+      "native_version": "0.163.0-alpha.11.2",
+      "candidate_artifact": "econipass-codex.zip",
+      "candidate_artifact_sha256": "e51a7dd24ec38c56a49642e9cd2c1ff3316f7cace6a9867e06309517cec91331",
+      "local_plugin_installed_and_enabled": true,
+      "all7_skills_enabled": true,
+      "Mac_Desktop_IDE_unverified": true,
+      "full_platform_acceptance": false,
+      "final_or_public_partial_attested": false
+    },
+    {
+      "id": "chatgpt",
+      "review_candidate_status": "user_held",
+      "full_platform_acceptance": false,
+      "final_or_public_partial_attested": false
+    },
+    {
+      "id": "claude-code",
+      "review_candidate_status": "passed",
+      "proof_mode": "fresh_native_execution",
+      "stage": "native_package_load_pass",
+      "candidate_artifact": "econipass-claude-code.zip",
+      "candidate_artifact_sha256": "c1b1311c3250d896231ad94116270a723f84c652a7d26b3de675b405b5b918d5",
+      "full_platform_acceptance": false,
+      "final_or_public_partial_attested": false
+    },
+    {
+      "id": "claude-hosted",
+      "review_candidate_status": "not_executed",
+      "full_platform_acceptance": false,
+      "final_or_public_partial_attested": false
+    },
+    {
+      "id": "querypie-aip",
+      "review_candidate_status": "not_executed",
+      "full_platform_acceptance": false,
+      "final_or_public_partial_attested": false
+    },
+    {
+      "id": "github-copilot-cli",
+      "review_candidate_status": "passed",
+      "proof_mode": "fresh_native_execution",
+      "stage": "native_package_load_pass",
+      "candidate_artifact": "econipass-github-copilot-cli.zip",
+      "candidate_artifact_sha256": "7872361d84467c8296e897bebca95d59d00579145d6d9a70bedba3fed8fd3a65",
+      "full_platform_acceptance": false,
+      "final_or_public_partial_attested": false
+    },
+    {
+      "id": "vscode-copilot",
+      "review_candidate_status": "passed",
+      "proof_mode": "fresh_native_execution",
+      "stage": "native_cli_mcp_config_only_pass",
+      "candidate_artifact": "econipass-vscode-copilot.zip",
+      "candidate_artifact_sha256": "91e1a11995e7f0253317faabd09b820a3305b0101964660b51a595a99ab1b14f",
+      "full_platform_acceptance": false,
+      "final_or_public_partial_attested": false
+    },
+    {
+      "id": "copilot-studio",
+      "review_candidate_status": "not_executed",
+      "full_platform_acceptance": false,
+      "final_or_public_partial_attested": false
+    },
+    {
+      "id": "gemini-cli",
+      "review_candidate_status": "passed",
+      "proof_mode": "fresh_native_execution",
+      "stage": "native_package_load_pass",
+      "candidate_artifact": "econipass-gemini-cli.zip",
+      "candidate_artifact_sha256": "1ad5b7aa227cbd2d975d034dc637bfb38fb8f2f9ce23f4d32099055fbce6f2b1",
+      "full_platform_acceptance": false,
+      "final_or_public_partial_attested": false
+    },
+    {
+      "id": "gemini-code-assist",
+      "review_candidate_status": "not_executed",
+      "full_platform_acceptance": false,
+      "final_or_public_partial_attested": false
+    },
+    {
+      "id": "cursor-desktop",
+      "review_candidate_status": "passed",
+      "proof_mode": "fresh_native_execution",
+      "stage": "native_cli_mcp_config_only_pass",
+      "candidate_artifact": "econipass-cursor-desktop.zip",
+      "candidate_artifact_sha256": "7dbc3e49f5d83bdd87e1f72c60d216f0eb1efdcc413e4c829b3f18080c3f1ddb",
+      "full_platform_acceptance": false,
+      "final_or_public_partial_attested": false
+    },
+    {
+      "id": "cursor-hosted",
+      "review_candidate_status": "not_executed",
+      "full_platform_acceptance": false,
+      "final_or_public_partial_attested": false
+    },
+    {
+      "id": "m365-copilot",
+      "review_candidate_status": "not_executed",
+      "full_platform_acceptance": false,
+      "final_or_public_partial_attested": false
+    },
+    {
+      "id": "gemini-enterprise",
+      "review_candidate_status": "not_executed",
+      "full_platform_acceptance": false,
+      "final_or_public_partial_attested": false
+    },
+    {
+      "id": "perplexity",
+      "review_candidate_status": "not_executed",
+      "full_platform_acceptance": false,
+      "final_or_public_partial_attested": false
+    },
+    {
+      "id": "windsurf",
+      "review_candidate_status": "not_executed",
+      "full_platform_acceptance": false,
+      "final_or_public_partial_attested": false
+    },
+    {
+      "id": "jetbrains-junie",
+      "review_candidate_status": "not_executed",
+      "full_platform_acceptance": false,
+      "final_or_public_partial_attested": false
+    },
+    {
+      "id": "zed",
+      "review_candidate_status": "not_executed",
+      "full_platform_acceptance": false,
+      "final_or_public_partial_attested": false
+    },
+    {
+      "id": "goose",
+      "review_candidate_status": "passed",
+      "proof_mode": "exact_byte_reference_to_prior_independently_reviewed_native_trial",
+      "stage": "native_config_and_skills_load_pass",
+      "candidate_artifact": "econipass-goose.zip",
+      "candidate_artifact_sha256": "9123374645cd2a50311085b905aef03a3cb9cec7e03d019d018afceca5111eec",
+      "full_platform_acceptance": false,
+      "final_or_public_partial_attested": false
+    },
+    {
+      "id": "amazon-q-cli",
+      "review_candidate_status": "not_executed",
+      "full_platform_acceptance": false,
+      "final_or_public_partial_attested": false
+    },
+    {
+      "id": "cline",
+      "review_candidate_status": "passed",
+      "proof_mode": "exact_byte_reference_to_prior_independently_reviewed_native_trial",
+      "stage": "native_config_and_skills_load_pass",
+      "candidate_artifact": "econipass-cline.zip",
+      "candidate_artifact_sha256": "1346bf402b5a87ee1c67bd8052f85c24f6585109484a04cf0727a354ec953681",
+      "full_platform_acceptance": false,
+      "final_or_public_partial_attested": false
+    },
+    {
+      "id": "roo-code",
+      "review_candidate_status": "passed",
+      "proof_mode": "exact_byte_reference_to_prior_independently_reviewed_native_trial",
+      "stage": "native_skill_metadata_only_pass",
+      "candidate_artifact": "econipass-roo-code.zip",
+      "candidate_artifact_sha256": "ac946249f5ac4d8b499157ec16f5d2297a4798f1c2b8065c0d36b7752b34bb0e",
+      "full_platform_acceptance": false,
+      "final_or_public_partial_attested": false
+    },
+    {
+      "id": "openai-responses",
+      "review_candidate_status": "passed",
+      "proof_mode": "exact_byte_reference_to_prior_independently_reviewed_native_trial",
+      "stage": "native_sdk_offline_fixture_validation",
+      "candidate_artifact": "econipass-openai-responses.zip",
+      "candidate_artifact_sha256": "b1e9877531085eca338e6ce80895351810b431b5733ba175b70662e6fac67235",
+      "full_platform_acceptance": false,
+      "final_or_public_partial_attested": false
+    },
+    {
+      "id": "openai-agents-sdk",
+      "review_candidate_status": "passed",
+      "proof_mode": "exact_byte_reference_to_prior_independently_reviewed_native_trial",
+      "stage": "native_sdk_offline_fixture_validation",
+      "candidate_artifact": "econipass-openai-agents-sdk.zip",
+      "candidate_artifact_sha256": "de0aaceef41972dfbe3e177806940ba23835e2f0fb89dd883334c0c33340af5e",
+      "full_platform_acceptance": false,
+      "final_or_public_partial_attested": false
+    },
+    {
+      "id": "anthropic-messages",
+      "review_candidate_status": "passed",
+      "proof_mode": "exact_byte_reference_to_prior_independently_reviewed_native_trial",
+      "stage": "native_sdk_offline_fixture_validation",
+      "candidate_artifact": "econipass-anthropic-messages.zip",
+      "candidate_artifact_sha256": "464d8fb14e81bffb0b3c44b82404a992e42caa3018e82e60fe975ef6b9b97c29",
+      "full_platform_acceptance": false,
+      "final_or_public_partial_attested": false
+    },
+    {
+      "id": "langchain-langgraph",
+      "review_candidate_status": "passed",
+      "proof_mode": "exact_byte_reference_to_prior_independently_reviewed_native_trial",
+      "stage": "native_sdk_offline_fixture_validation",
+      "candidate_artifact": "econipass-langchain-langgraph.zip",
+      "candidate_artifact_sha256": "4f9615172c70739f4e9d61fa4829c23386578448e0dbd4883ea4716ff766febf",
+      "full_platform_acceptance": false,
+      "final_or_public_partial_attested": false
+    },
+    {
+      "id": "n8n",
+      "review_candidate_status": "not_executed",
+      "full_platform_acceptance": false,
+      "final_or_public_partial_attested": false
+    },
+    {
+      "id": "dify",
+      "review_candidate_status": "not_executed",
+      "full_platform_acceptance": false,
+      "final_or_public_partial_attested": false
+    },
+    {
+      "id": "github-copilot-cloud",
+      "review_candidate_status": "not_executed",
+      "full_platform_acceptance": false,
+      "final_or_public_partial_attested": false
+    }
+  ]
+}

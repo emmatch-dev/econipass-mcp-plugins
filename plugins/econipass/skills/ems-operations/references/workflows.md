@@ -2,6 +2,12 @@
 
 Read the section relevant to the user's task. Current exposed tool schemas determine fields, limits, and availability.
 
+## Receiving a downloaded file
+
+The twelve download/export read tools default to `delivery_mode="metadata"`. This returns the same small JSON in text and structured content: file name, MIME, byte size, SHA-256 and delivery state, without the file body or a resource URI. `delivery.server_fetched=true` means the server received the native response; `delivery.file_embedded=false` and `delivery.client_receipt_confirmed=false` mean no file is provided or confirmed received by the client. Do not prepare or claim a completed import from this metadata alone.
+
+Only a compatible host or SDK should explicitly request `delivery_mode="embedded"`, receive and save the actual embedded resource bytes, then compare size and SHA-256. Even then, `client_receipt_confirmed` remains false until client-side receipt is independently checked. Preserve the original file before editing. The opaque embedded URI is not a public link or a separately retrievable resource. Do not turn Base64 into model text, expose internal signed URLs, bypass authentication, or invent an EMS browser procedure that has not been verified. The delivery argument belongs at the top level of the MCP call; it is not a native query, body or upload parameter.
+
 ## File imports and recovery
 
 For readings, start with `download_ems_import_template`; use the schema's `profile` and `dataset` for electricity, FEMS/BEMS, or temperature input. `list_ems_jma_temperature_stations` resolves JMA station IDs for the `JMA_OBSDL` profile. File arguments are `file_name` and Base64 `content_base64`, not local paths or URLs.
@@ -24,17 +30,27 @@ Related file families use their own schemas and receipts:
 
 Readings and asset data accept CSV/XLSX; mappings, topology, and analysis factors accept XLSX only. Decoded upload limits are 10 MiB generally and 5 MiB for asset data; use any lower limit in the actual schema. Downloads are bounded to 32 MiB. Do not describe a partial or rejected download as a complete file.
 
-`list_ems_imports` can filter by creation interval, filename, import ID, site, and status. Its end must be after its start. `list_ems_import_data_rows` can filter saved storage status, source row number, and measurement point code. `list_ems_processing_jobs` takes either `status` or `statuses`, not both. Pass multi-status values as a JSON array to the tool.
+`list_ems_import_transactions` reads CSV import transaction history across matching imports; preserve its native filters and pagination rather than confusing transactions with accepted input rows. `list_ems_imports` can filter by creation interval, filename, import ID, site, and status. Its end must be after its start. `list_ems_import_data_rows` can filter saved storage status, source row number, and measurement point code. `list_ems_processing_jobs` takes either `status` or `statuses`, not both. Pass multi-status values as a JSON array to the tool.
+
+Use `list_ems_import_transactions` for the saved CSV/XLSX ledger across receipts. Select exactly one of `site_id` or `unscoped=true`, preserve the import/dataset/storage/search filters, and page through the native result. `from_at` is inclusive and `to_at` is exclusive; `sort` selects imported or observed time. Original source values, original matching errors, and current resolution details are separate evidence.
+
+`list_ems_import_summaries` accepts up to 20 receipt IDs in `parameters.import_ids` as a JSON array under the same site/unscoped scope. It returns current storage counts and separate original-source and registered-reading periods. Failed or unknown summaries are not zero counts or receipt-time totals. `export_ems_import_transactions` retrieves the complete filtered ledger on the server without page arguments. Its default response contains metadata only; explicitly choose `delivery_mode="embedded"` through a compatible host or SDK to receive and save the CSV body. Preserve its CSV bytes and source decimal text; the MCP 32 MiB limit still applies, so narrow the receipt/period filters or use the WEB screen for larger exports.
 
 ## Master and reading maintenance
 
 Read the matching site/asset/point/device/stream/source list before creating, retiring, closing, replacing, or changing a mapping. Preserve effective dates and timezone semantics; a change to current master data is not automatically a repair of historical readings.
 
+`update_ems_site_validity` can move a site's `valid_from_at` earlier only, with an explicit reason. It cannot move the effective start later or repair historical readings by itself. Inspect the existing site and affected interval before preview/execution.
+
 Use `list_ems_unresolved_identities` and existing mapping data before `reconcile_ems_unresolved_identity`. Use `list_ems_reading_history` before `correct_ems_reading`, `void_ems_reading`, or `start_ems_counter_segment`. Read `get_ems_processing_job` before a requested `requeue_ems_processing_job`; an unknown prior result is not permission to requeue. `get_ems_dashboard_health` and `list_ems_quality_issues` support diagnosis; `resolve_ems_quality_issue` changes issue state and requires confirmation. Do not resolve an issue merely to hide a warning.
+
+Filter unresolved identities by `import_id` when checking exact receipt membership. Before assignment or reprocessing, inspect `affected_imports`: a shared identity may affect other receipts as well. Confirm the actual files, row counts and periods covered by the requested change; the receipt currently open does not limit its effects.
 
 ## Durable intake and effective master plans
 
 Use `list_ems_intake_jobs`, `get_ems_intake_job`, and `get_ems_intake_unassigned_analysis` to resume an existing intake session. `upload_ems_intake_job` creates the durable job; its native form fields, including the required stable `idempotency_key`, belong in `parameters`. The key is not an invented HTTP header. Preserve the original file bytes, resulting job ID, validation details and file digest. `commit_ems_intake_job` is a separate write with its own preview and authorization; a completed upload is not a committed reading.
+
+For source-file analysis, `get_ems_intake_unassigned_analysis` supports up to eight `identity_ids` in one snapshot, `points_search`, and unscoped receipts. Preserve its selected series and detail pages together. When timezone is unknown, keep it unknown and use raw resolution; do not invent daily buckets. Source analysis excludes canonical EMS totals until registration and must not be reported as registered usage.
 
 `act_ems_intake_on_job` allows only its exposed `retry` or `cancel` action. Inspect the existing state first, especially after an unknown result. For unassigned data, inspect `list_ems_intake_assignment_candidates` before `reconcile_ems_intake_many` or `register_ems_unresolved_identity_point`. Confirm the intended identity, device/point, effective period and history effects; never infer a measurement unit from a label.
 
@@ -66,7 +82,7 @@ For action work, read `list_ems_supervision_actions` and `list_ems_supervision_a
 
 Use `list_ems_workspace_analyses` and `resolve_ems_workspace_analysis` to recover a saved query. Resolve its current selectors and access before interpreting results. Create/update/delete operations preserve `expected_version`; deletion is a concrete change to a saved object, not a temporary filter reset.
 
-`get_ems_workspace_provenance` reads underlying evidence. `create_ems_workspace_report` saves a report snapshot and is a write; afterward use `get_ems_workspace_report` and `export_ems_workspace_report` for the saved evidence. Exports support the exact exposed CSV/PDF format. Preserve snapshot hashes and distinguish saved evidence from live recalculation, reviewer acceptance, external delivery and legal filing.
+`get_ems_workspace_provenance` reads underlying evidence. `create_ems_workspace_report` saves a report snapshot and is a write; afterward use `get_ems_workspace_report` and `export_ems_workspace_report` for the saved evidence. Exports support the exact exposed CSV/PDF format. `regenerate_ems_workspace_report` is a separate write requiring the saved report identifier and a reason; inspect the original snapshot and current report first. Regeneration is not a simple re-download and does not establish external acceptance. Preserve snapshot hashes and distinguish saved evidence from live recalculation, reviewer acceptance, external delivery and legal filing.
 
 Inspect `list_ems_workspace_schedules` before creating, changing or deleting a schedule. Preview the recurrence/timezone, report selection, visibility and effective settings with the user; authorization for a one-time report does not authorize recurring report generation. This scheduler creates saved report snapshots and does not configure external delivery destinations. Schedule registration does not establish that a later run succeeded.
 

@@ -1,7 +1,12 @@
 {
   "schema_version": 1,
-  "reviewed_on": "2026-10-08",
-  "source_revision": "7ca723a1e877500f4df7f49a3c76a46a48dbb9bd",
+  "reviewed_on": "2026-10-26",
+  "source_revision": "355e24babeac05182d97001e3004177ff666bb9a",
+  "initial_review": {
+    "reviewed_on": "2026-10-08",
+    "source_revision": "7ca723a1e877500f4df7f49a3c76a46a48dbb9bd"
+  },
+  "source_revision_meaning": "Reviewed implementation basis before this metadata-only provenance correction. The date records configuration-document review, not fresh native execution, authentication, deployment or general availability.",
   "scope": "Repository-documented connection surfaces and provider packaging evidence, not general-availability certification.",
   "global_constraints": [
     "Standard endpoint is /mcp over Streamable HTTP; QueryPie DEV compatibility alone uses /sse.",
@@ -392,7 +397,7 @@
       "delivery": {
         "kind": "ui_instructions",
         "instructions": "Attach routing cards to the agent/task instructions; this is not a Gemini CLI extension import.",
-        "configuration": "Admin custom MCP data-store connector: Streamable HTTP URL, OAuth client ID/secret and displayed redirect URI; confidential preregistration in EcoNiPass."
+        "configuration": "Admin custom MCP data-store connector: Streamable HTTP URL, OAuth client ID/secret and displayed redirect URI; confidential preregistration in EcoNiPass. After connection, actions are disabled initially. Open the data store Actions > Reload custom actions, review any reauthentication request, select only required read actions (at most100 enabled at a time), then Enable actions. An Active data store alone does not enable tools; change the enabled action set as needed instead of enabling the whole catalog."
       },
       "auth": {
         "mode": "oauth_preregistered_confidential",
@@ -408,7 +413,9 @@
         "services/mcp-server/docs/other-clients.md:83"
       ],
       "limitations": [
-        "No SSE; fixed-client setup per tenant; verify actual token authentication method against EcoNiPass client_secret_basic profile."
+        "No SSE; fixed-client setup per tenant; verify actual token authentication method against EcoNiPass client_secret_basic profile.",
+        "All imported actions start disabled. Enable at most100 actions simultaneously. Importing a catalog larger than100 is distinct from enabling more than100 actions; no claim is made that catalog import itself fails.",
+        "Reload custom actions can reauthenticate. Preserve the initial mcp:read scope; persistent offline_access or additional write scopes require separate consent. Instruction cards are setup guidance, not an imported connector/app manifest."
       ],
       "acceptance": "not_live_tested",
       "repository_status": "documented_connection"
@@ -443,11 +450,11 @@
     },
     {
       "id": "windsurf",
-      "label": "Windsurf Cascade / successor Devin Desktop",
+      "label": "Windsurf / Devin Desktop: legacy Cascade and Devin Local",
       "delivery": {
         "kind": "skills_and_mcp",
-        "instructions": "Copy skills into .windsurf/skills (legacy supported), .devin/skills or .agents/skills.",
-        "configuration": "mcp_config.json: mcpServers.<name>.serverUrl (url also supported); OAuth and tool permissions stay interactive."
+        "instructions": "Copy skills into .windsurf/skills (legacy supported), .devin/skills or .agents/skills. For legacy Cascade, start with configuration/mcp_config.json (setup only), then select one business file from configuration/presets/ using configuration/legacy-cascade-presets.json. Replace only the econipass server entry; never combine presets or register duplicate servers. For Devin Local / Devin CLI v3000.3 or later, instead merge configuration/.devin/mcp_config.json into the project .devin/mcp_config.json and copy skills to .devin/skills or .agents/skills. Choose the selected agent surface; do not merge the legacy Cascade presets into this Local configuration.",
+        "configuration": "Legacy Cascade mcp_config.json uses mcpServers.econipass.serverUrl and disabledTools. Each supplied alternative contains exactly one server and enables at most 100 known tools. Devin Local / CLI v3000.3+ uses project .devin/mcp_config.json with url and transport=http; older main config.json entries are migrated by the product. OAuth and tool permissions stay interactive; validate the two surfaces independently."
       },
       "auth": {
         "mode": "oauth_authorization_code",
@@ -458,13 +465,21 @@
       },
       "official_sources": [
         "https://docs.devin.ai/desktop/cascade/skills",
-        "https://docs.devin.ai/desktop/cascade/mcp"
+        "https://docs.devin.ai/desktop/cascade/mcp",
+        "https://docs.devin.ai/cli/extensibility/mcp/configuration",
+        "https://docs.devin.ai/desktop/devin-local",
+        "https://docs.devin.ai/cli/extensibility/skills/overview"
       ],
       "repository_sources": [
         "services/mcp-server/docs/other-clients.md:125"
       ],
       "limitations": [
-        "Official Windsurf URLs now redirect to Devin Desktop docs; existing Windsurf version must be checked."
+        "Legacy Cascade has a 100 active-tool total across all MCP servers. The setup default exposes only organization lookup; choose one business preset before the task. Other active servers must fit the remaining capacity or be disabled.",
+        "The index records the full catalog, registration-profile count/hash and business classification. Before use, read every unfiltered tools/list page; require unique known logical names and an exact recorded profile count/sorted-name hash. The hash is SHA-256 of sorted names joined by newline with one final newline. Compare enabled counts in Cascade too; UI counts alone do not validate names.",
+        "disabledTools is a blacklist, not a runtime allowlist or authorization boundary. Unknown future server tools are not automatically hidden. On any catalog difference, stop using the connection, regenerate and review presets from the refreshed source inventory, then recheck the total. Generation rejects unknown business domains or more than 100 tools; it does not enforce a changing remote catalog.",
+        "The seven EMS groups follow skills/ems-operations/references/workflows.md and share setup plus read-only master lookup context. Coverage across presets does not mean all workflows run in one preset; switch the single econipass entry when crossing domains, retain explicit confirmations and recheck the catalog.",
+        "Official Windsurf URLs now redirect to Devin Desktop docs. Check the installed version and selected agent; new tabs default to Devin Local when available. The documented legacy Cascade 100-tool cap is not asserted for Local. Separate configuration, tool catalog and authenticated acceptance are required for each surface; no real-client acceptance is asserted.",
+        "Devin Local OAuth requires separate explicit user authorization. When authorized, use devin mcp login econipass --scopes mcp:read; scope is a login flag, not an invented JSON field. No login or new grant is executed by packaging; while new OAuth is held, leave this step unexecuted. Do not add auto-approval, resource overrides or stored credentials."
       ],
       "acceptance": "not_live_tested",
       "repository_status": "documented_connection"
@@ -474,8 +489,8 @@
       "label": "JetBrains Junie",
       "delivery": {
         "kind": "skills_and_mcp",
-        "instructions": "Use .junie/skills/<name>/SKILL.md or .agents/skills; .junie/guidelines.md can carry routing context.",
-        "configuration": "Settings > Tools > AI Assistant > MCP: JSON mcpServers.<name>.url; select HTTP and authorize."
+        "instructions": "Copy each bundled skills/<name>/ folder with references to .junie/skills/<name>/ or ~/.junie/skills/<name>/. Current Junie also supports .agents/skills in trusted projects or the user scope. Verify the selected installed Junie version discovers all seven skills.",
+        "configuration": "Native Junie plugin/CLI: merge configuration/.junie/mcp/mcp.json into project .junie/mcp/mcp.json or ~/.junie/mcp/mcp.json; the native IDE menu is Tools > Junie > MCP Settings. The existing configuration/mcp.json contains the same HTTP url fragment. Use Junie's OAuth Authorize flow only after consent. AI Chat/ACP through AI Assistant is a separate host route: verify the actual forwarded tools and configuration source; configuring AI Assistant does not by itself prove native Junie acceptance."
       },
       "auth": {
         "mode": "oauth_authorization_code",
@@ -485,15 +500,17 @@
         ]
       },
       "official_sources": [
-        "https://www.jetbrains.com/help/air/skills.html",
-        "https://www.jetbrains.com/help/ai-assistant/mcp.html",
-        "https://www.jetbrains.com/guide/ai/article/junie/"
+        "https://junie.jetbrains.com/docs/agent-skills.html",
+        "https://junie.jetbrains.com/docs/junie-cli-mcp-configuration.html",
+        "https://junie.jetbrains.com/docs/junie-ide-plugin.html",
+        "https://www.jetbrains.com/help/ai-assistant/mcp.html"
       ],
       "repository_sources": [
         "services/mcp-server/docs/other-clients.md:125"
       ],
       "limitations": [
-        "Skill discovery and OAuth must be checked in the installed Junie/IDE version; Air docs do not establish every historical IDE version."
+        "Native Junie plugin/CLI and AI Chat/ACP have distinct configuration and forwarding paths; record the installed surface, version and actual MCP host.",
+        "Skill discovery, account entitlement and OAuth remain live acceptance gates. Air or AI Assistant configuration alone does not establish Junie-native acceptance."
       ],
       "acceptance": "not_live_tested",
       "repository_status": "documented_connection"
@@ -558,11 +575,11 @@
     },
     {
       "id": "amazon-q-cli",
-      "label": "Amazon Q Developer CLI (legacy product name)",
+      "label": "Amazon Q Developer CLI (legacy) / Kiro CLI (successor alias)",
       "delivery": {
         "kind": "context_and_mcp",
-        "instructions": "Provide routing cards through agent prompt/context; do not assume the old CLI discovers portable plugins.",
-        "configuration": "Agent configuration: mcpServers.<name> with type=http and url; start /mcp authentication."
+        "instructions": "Legacy Q: provide routing cards through agent prompt/context. Kiro CLI: copy each bundled skills/<name>/ folder, including references, to .kiro/skills/<name>/ or ~/.kiro/skills/<name>/. Do not assume automatic .agents/skills discovery in Kiro. Kiro is a successor alias within this existing target; accept Q and Kiro separately.",
+        "configuration": "Legacy Q: merge configuration/mcp.json into the chosen agent configuration (mcpServers.econipass with type=http and url); use /mcp for authentication. Kiro CLI: merge configuration/.kiro/settings/mcp.json into project .kiro/settings/mcp.json or ~/.kiro/settings/mcp.json. The successor-only server alias is ep and oauthScopes is explicitly [mcp:read]. Select one route; do not import both fragments into Kiro for the same endpoint. Review any existing ep alias before merging; no automatic login or grant."
       },
       "auth": {
         "mode": "oauth_authorization_code",
@@ -574,16 +591,29 @@
       "official_sources": [
         "https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/command-line-mcp-config-CLI.html",
         "https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/qdev-mcp.html",
+        "https://kiro.dev/docs/mcp/configuration/",
+        "https://kiro.dev/docs/skills/",
+        "https://kiro.dev/docs/upgrade-guides/migrating-from-q/",
         "https://kiro.dev/docs/custom-agents/configuration-reference/"
       ],
       "repository_sources": [
         "services/mcp-server/docs/other-clients.md:125"
       ],
       "limitations": [
-        "AWS also documents Kiro as the successor. Kiro paths/skills are different and require separate version acceptance; legacy Q config is retained here."
+        "Legacy Q and Kiro CLI have separate installation, version, account, OAuth and client acceptance gates; a result for one is not a result for the other.",
+        "Kiro defaults to OIDC scopes if none are specified. Keep the provided mcp:read scope; adding offline_access or write scopes needs separate consent.",
+        "The short ep alias reduces the documented @server/tool selector length. All 256 registered bare tool names produce selectors of at most 60 characters; the installed client's actual model namespace and complete catalog must still be accepted, including optional report-v2 tools.",
+        "No portable plugin auto-discovery, Kiro IDE/Web acceptance, installer, credential, configuration overwrite or new OAuth grant is supplied by this kit."
       ],
       "acceptance": "not_live_tested",
-      "repository_status": "documented_connection"
+      "repository_status": "documented_connection",
+      "compatibility_aliases": [
+        "kiro-cli"
+      ],
+      "acceptance_by_surface": {
+        "amazon-q-cli": "not_live_tested",
+        "kiro-cli": "not_live_tested"
+      }
     },
     {
       "id": "cline",
@@ -779,7 +809,7 @@
       "delivery": {
         "kind": "ui_instructions",
         "instructions": "AI Agent system message/task context receives the routing cards; MCP Client Tool supplies the tools.",
-        "configuration": "MCP Client Tool UI: endpoint, Bearer/Header credential, selected tools. Use a node/version that supports the standard /mcp HTTP endpoint."
+        "configuration": "MCP Client Tool UI: use a node typeVersion1.2 or later that exposes HTTP Streamable, select that transport and the standard /mcp endpoint, then choose a protected Bearer/Header PAT credential and selected tools. The corresponding workflow parameter names are serverTransport=httpStreamable and endpointUrl; these are node parameters, not fields to import from connection.json."
       },
       "auth": {
         "mode": "personal_access_token",
@@ -790,14 +820,15 @@
         ]
       },
       "official_sources": [
-        "https://docs.n8n.io/integrations/builtin/cluster-nodes/sub-nodes/n8n-nodes-langchain.toolmcp"
+        "https://docs.n8n.io/integrations/builtin/cluster-nodes/sub-nodes/n8n-nodes-langchain.toolmcp",
+        "https://github.com/n8n-io/n8n/blob/cfbd9a56cba2e73901dc1962e47727adbea0b23e/packages/%40n8n/nodes-langchain/nodes/mcp/McpClientTool/McpClientTool.node.ts"
       ],
       "repository_sources": [
         "services/mcp-server/docs/other-clients.md:158"
       ],
       "limitations": [
-        "Docs retain an SSE Endpoint label; confirm actual Streamable HTTP behavior in installed version instead of changing EcoNiPass URL to /sse.",
-        "Generic connection.json is a setup guide, not a validated n8n workflow import."
+        "The old node typeVersion1 is SSE-only; do not put /mcp into its sseEndpoint field or change EcoNiPass URL to /sse. Verify installed node support and actual HTTP Streamable selection.",
+        "Generic connection.json is a setup guide, not a validated n8n workflow import. This package does not install nodes, configure credentials or enable EcoNiPass PAT features."
       ],
       "acceptance": "not_live_tested",
       "repository_status": "documented_connection"

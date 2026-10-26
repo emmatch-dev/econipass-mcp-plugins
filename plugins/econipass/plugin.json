@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "econipass",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "EcoNiPass DEV MCP workflows for emissions, EMS, CFP input, measures and statutory reports.",
   "author": {"name": "EcoNiPass"},
   "repository": "https://github.com/emmatch-dev/econipass-mcp-plugins",

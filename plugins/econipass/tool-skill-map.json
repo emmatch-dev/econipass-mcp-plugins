@@ -2,18 +2,26 @@
   "version": 1,
   "source_paths": [
     "services/mcp-server/src/econipass_mcp/server.py",
+    "services/mcp-server/src/econipass_mcp/request_identity.py",
+    "services/mcp-server/src/econipass_mcp/tool_metadata.py",
     "services/mcp-server/src/econipass_mcp/tools/ems_catalog.py",
+    "services/mcp-server/src/econipass_mcp/tools/ems_operations.py",
     "services/mcp-server/src/econipass_mcp/tools/cfp.py",
+    "services/mcp-server/src/econipass_mcp/tools/audit.py",
+    "services/mcp-server/src/econipass_mcp/tools/downloads.py",
+    "services/mcp-server/src/econipass_mcp/tools/measures.py",
+    "services/mcp-server/src/econipass_mcp/tools/tasks.py",
+    "services/mcp-server/src/econipass_mcp/tools/activities.py",
     "services/mcp-server/src/econipass_mcp/tools/statutory_reports_v2.py",
     "services/mcp-server/src/econipass_mcp/tools/statutory_paper.py",
     "services/mcp-server/src/econipass_mcp/data/ems_operations.json"
   ],
   "verification": {
     "method": "Local runtime registration only; no tool calls or authenticated tenant tests.",
-    "observed_date": "2026-10-20",
+    "observed_date": "2026-10-26",
     "profile_hash_format": "SHA-256 of sorted logical tool names, joined by newline with one final newline.",
     "availability_note": "Profiles describe source registration and tag filters, not a live environment or a grant. Actual tools, authorization, contracts and client rendering must be checked separately. The PRD read-only tag profile is a source allowlist check, not proof of PRD deployment.",
-    "source_note": "source_base_commit is the release branch base; source_files_sha256 identifies the exact registration snapshot in this package."
+    "source_note": "source_base_commit is the release branch base; source_files_sha256 binds the exact maintained registration, contract and business-operation inputs. It is not an attestation of deployment or tenant acceptance."
   },
   "profiles": {
     "default_all_tags": {
@@ -22,14 +30,14 @@
         "STATUTORY_REPORTS_ENABLED": false,
         "STATUTORY_REPORT_MCP_REVIEW_ENABLED": false
       },
-      "tool_count": 228,
-      "tool_names_sha256": "4c3e4d507596c776e7be7c01de7f408ccbbcd9b03f93208550fea38550f48df2",
+      "tool_count": 241,
+      "tool_names_sha256": "89bd4a6459d1d87381003c103434beb237ebe46322d57bfb99ac875fa3c90902",
       "primary_skill_counts": {
         "activity-input": 19,
         "cfp-input": 2,
         "emissions-analysis": 8,
-        "ems-operations": 167,
-        "measures-targets": 12,
+        "ems-operations": 172,
+        "measures-targets": 20,
         "setup": 1,
         "statutory-reports": 19
       }
@@ -40,14 +48,14 @@
         "STATUTORY_REPORTS_ENABLED": true,
         "STATUTORY_REPORT_MCP_REVIEW_ENABLED": false
       },
-      "tool_count": 241,
-      "tool_names_sha256": "6a1eeb2b44e9be194c8e9e64d30c12f5ec253d821182979f776414650d44f896",
+      "tool_count": 254,
+      "tool_names_sha256": "1827838017ed338118c5b68ab43deff21f46b175d7c8888b99b77ae60f15ef42",
       "primary_skill_counts": {
         "activity-input": 19,
         "cfp-input": 2,
         "emissions-analysis": 8,
-        "ems-operations": 167,
-        "measures-targets": 12,
+        "ems-operations": 172,
+        "measures-targets": 20,
         "setup": 1,
         "statutory-reports": 32
       }
@@ -58,14 +66,14 @@
         "STATUTORY_REPORTS_ENABLED": true,
         "STATUTORY_REPORT_MCP_REVIEW_ENABLED": true
       },
-      "tool_count": 243,
-      "tool_names_sha256": "c9a6bbda816db596e86bf1ffa14cc29e7ed3b37628bd2ea13630bef31f880dd8",
+      "tool_count": 256,
+      "tool_names_sha256": "136ab228a69ad1f4a25ba6e10ff317d4af1129e74b6b6b5f092545db05b86727",
       "primary_skill_counts": {
         "activity-input": 19,
         "cfp-input": 2,
         "emissions-analysis": 8,
-        "ems-operations": 167,
-        "measures-targets": 12,
+        "ems-operations": 172,
+        "measures-targets": 20,
         "setup": 1,
         "statutory-reports": 34
       }
@@ -159,6 +167,12 @@
     },
     "correct_ems_reading": {
       "primary_skill": "ems-operations"
+    },
+    "create_activity": {
+      "primary_skill": "measures-targets"
+    },
+    "create_activity_comment": {
+      "primary_skill": "measures-targets"
     },
     "create_ems_analysis_factor": {
       "primary_skill": "ems-operations"
@@ -283,6 +297,9 @@
     "export_ems_electrical_topology": {
       "primary_skill": "ems-operations"
     },
+    "export_ems_import_transactions": {
+      "primary_skill": "ems-operations"
+    },
     "export_ems_point_device_mappings": {
       "primary_skill": "ems-operations"
     },
@@ -318,6 +335,12 @@
     },
     "generate_statutory_report_package_v2": {
       "primary_skill": "statutory-reports"
+    },
+    "get_activity": {
+      "primary_skill": "measures-targets"
+    },
+    "get_activity_custom_fields": {
+      "primary_skill": "measures-targets"
     },
     "get_co2_emission_target": {
       "primary_skill": "measures-targets"
@@ -428,6 +451,9 @@
     "get_measure": {
       "primary_skill": "measures-targets"
     },
+    "get_measure_custom_fields": {
+      "primary_skill": "measures-targets"
+    },
     "get_my_organizations": {
       "primary_skill": "setup"
     },
@@ -462,6 +488,9 @@
       "primary_skill": "emissions-analysis"
     },
     "get_task": {
+      "primary_skill": "measures-targets"
+    },
+    "get_task_custom_fields": {
       "primary_skill": "measures-targets"
     },
     "get_xml_overrides": {
@@ -522,6 +551,12 @@
       "primary_skill": "ems-operations"
     },
     "list_ems_import_errors": {
+      "primary_skill": "ems-operations"
+    },
+    "list_ems_import_summaries": {
+      "primary_skill": "ems-operations"
+    },
+    "list_ems_import_transactions": {
       "primary_skill": "ems-operations"
     },
     "list_ems_imports": {
@@ -689,6 +724,9 @@
     "reconcile_ems_unresolved_identity": {
       "primary_skill": "ems-operations"
     },
+    "regenerate_ems_workspace_report": {
+      "primary_skill": "ems-operations"
+    },
     "register_ems_unresolved_identity_point": {
       "primary_skill": "ems-operations"
     },
@@ -770,6 +808,9 @@
     "test_ems_supervision_notification": {
       "primary_skill": "ems-operations"
     },
+    "update_activity": {
+      "primary_skill": "measures-targets"
+    },
     "update_ems_demand_alert_rule": {
       "primary_skill": "ems-operations"
     },
@@ -780,6 +821,9 @@
       "primary_skill": "ems-operations"
     },
     "update_ems_site_timezone": {
+      "primary_skill": "ems-operations"
+    },
+    "update_ems_site_validity": {
       "primary_skill": "ems-operations"
     },
     "update_ems_supervision_action": {
@@ -795,6 +839,9 @@
       "primary_skill": "ems-operations"
     },
     "update_measure": {
+      "primary_skill": "measures-targets"
+    },
+    "update_task": {
       "primary_skill": "measures-targets"
     },
     "upload_cfp_input_file": {
@@ -843,13 +890,21 @@
       "primary_skill": "ems-operations"
     }
   },
-  "source_base_commit": "b818582b07472cddda000e759858618af501797b",
+  "source_base_commit": "06ee31fbe3c2a5a5700c08d72054240242c476e3",
   "source_files_sha256": {
-    "services/mcp-server/src/econipass_mcp/server.py": "1184da6d6632dc269d7394adc3b2428680343dc52816a7b7a5efa7409cb36972",
+    "services/mcp-server/src/econipass_mcp/server.py": "79e93bcbbaf291a657133fb12c90927504caa1e9a78ce3e8e7445959981bdf7f",
+    "services/mcp-server/src/econipass_mcp/request_identity.py": "df67efc7fc50f9fb1e69823b3c34a4d108a39415271a40c13b85a8d380309dd6",
+    "services/mcp-server/src/econipass_mcp/tool_metadata.py": "1ae38691c6c31fcb73e79b69540c50e15036d603b4a166ac3e48f87cce884ca4",
     "services/mcp-server/src/econipass_mcp/tools/ems_catalog.py": "ad216864d5275827495cbffd8c5fa182e496eae6d6208b809abe09fd8688a01d",
-    "services/mcp-server/src/econipass_mcp/tools/cfp.py": "f8f6bb8f612f0e6e610cc3021b5eccf6d39ea9d55908299d302bbdd103215333",
-    "services/mcp-server/src/econipass_mcp/tools/statutory_reports_v2.py": "2b24aa44cbf693c8d68e345ca7597836654012bce8f539000c6dd8e3b6ca3c78",
-    "services/mcp-server/src/econipass_mcp/tools/statutory_paper.py": "c4cbcfe4a34bf00c1ab1b08dfe2080ed5a41b42ad03a4b096302b80995689bba",
-    "services/mcp-server/src/econipass_mcp/data/ems_operations.json": "c2c023c37b9d89681e60f44420d5febef469c36a85646461305acb96dcb243ed"
+    "services/mcp-server/src/econipass_mcp/tools/ems_operations.py": "3dee467cdb92da8e8374f633a0feb2325c5d245a89190d3a67905bcb5dd10a3d",
+    "services/mcp-server/src/econipass_mcp/tools/cfp.py": "a3ca3637c492b17072fef6d8794b5b838f289ac97a61bd4376069b7fc668cf39",
+    "services/mcp-server/src/econipass_mcp/tools/audit.py": "38b5703e435061a5c054601502c4c04081b90b8b8e491c02263e45fa3f9fb017",
+    "services/mcp-server/src/econipass_mcp/tools/downloads.py": "407725d6d9c277e37bc30424bd3e1f81b5fb0c0471fbbe92e1e64708a82546dc",
+    "services/mcp-server/src/econipass_mcp/tools/measures.py": "e0994ce630bcb308a20858af382286b586888184d098a33eea3aa4d6a13cbd1d",
+    "services/mcp-server/src/econipass_mcp/tools/tasks.py": "cdfee11b7c73547f02c598e6419979140b302dbae5c45637ef5e7c6e4c11360f",
+    "services/mcp-server/src/econipass_mcp/tools/activities.py": "7002f3bc948f95fa2614d36ca755706fcfd1b3bd95cd87f4688ae245d152dd42",
+    "services/mcp-server/src/econipass_mcp/tools/statutory_reports_v2.py": "8220f68c38d148c8d93da06db6bb14046f5296126149a8c924ffc611d5fd7d2f",
+    "services/mcp-server/src/econipass_mcp/tools/statutory_paper.py": "57f98d5e9951a7d1db37b57ba9a90f4312327d01a57d541a3f14babacde312e0",
+    "services/mcp-server/src/econipass_mcp/data/ems_operations.json": "778ae7ee1e905ede3d45a98ed892395a4becdae18e09bb89b0bd8e8dd24c1de6"
   }
 }
