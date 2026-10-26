@@ -1,5 +1,33 @@
 # プラグイン配布物の検証記録
 
+この文書は **日付検証修正候補の配備・公開前の観測時点（2026-10-26T00:38:56.122704+00:00）の記録** です。旧f831のDraftと新83f9候補を区別します。後続の現行状況は[PR #5](https://github.com/emmatch-dev/econipass-mcp-plugins/pull/5)と[Releases](https://github.com/emmatch-dev/econipass-mcp-plugins/releases)で確認してください。
+
+## 2026-10-26 日付検証修正候補
+
+確認対象commit6f09904b（日付実装e79417e3）、release SHA`83f900b69c53acea93f5dbdee7ddc1d7611acd324f23bae77790b40576e952bc`、map224f3ae9です。
+既存日付・確認境界471件とplugins65件はそれぞれ1起動で成功・skip0、CI同版lint成功です。
+94378監査は別checkout overlayのformal116成功・skip0とworkflow27検査・独立レビューを経て、
+利用者の明示承認後に実保護targetへ6f09904bで反映しました。旧95cの反映commitは1169e186です。
+
+37 ZIP・1,016entryを新規生成し、全CRC・安全パス・LICENSE/PDF0を確認しました。
+f831比10ZIPの10entryが変わり、うち9はmapのmeasures.py source SHA、1はWindsurfのmap SHA束縛です。
+他27ZIP、7個別スキル、全業務指示と認証設定は同一です。source14の1件とmapが変わっているため、
+旧source377のLinux全結果や旧native13全入力一致は継承しません。
+現在の公開原本からの全37 ZIP・1,016entry再生成は成功し、全hash・CRC・entry bytesが83f9と一致しました。
+
+現在は限定確認12（入力一致9＋fresh3）・Roo失敗1・package load前blocked2（Linux Codex＋QueryPie/Aru）・他未実施14・総合受入0です。
+既存Codex接続のCFP5種類とEMSテンプレートCSV／XLSXの受領・保存・応答SHA一致・構造確認、EMS読み取りは前駆環境の別baselineであり、新候補の受入ではありません。
+Claude Code／Gemini CLI／Copilot CLIでnative metadata15操作を新規実行し限定成功3を確認しました。
+新たなhostedスキルimport・モデル・remote MCP呼び出しは0、CI・image・DEV・公開は未実施です。
+[候補hash](../docs/candidate-package-v1.2.0-canonical-date-license-held-20261026.json)と[入力一致範囲](../docs/candidate-native-equivalence-v1.2.0-canonical-date-license-held-20261026.json)を参照してください。
+
+
+新83f9の38資産stageとGET専用helperは用意済みで、386項目の独立レビューは指摘0です。
+これはローカル準備と合成metadata14対照の確認で、新候補のDraft upload・live metadata・公開後匿名取得は未実施です。
+## 以下は355/f831候補およびそれ以前の時点記録
+
+以下のsource・「同一」「現候補」「新規」は各観測時点の記録で、新e794/83f9の成功を示しません。
+
 この文書は **Draft作成前の準備時点（2026-10-25T18:32:22.688302+00:00）の記録** です。未作成・未upload・未配備・未公開・未受入の記載は、その時点の状態を示します。後続の現行状況は[PR #5](https://github.com/emmatch-dev/econipass-mcp-plugins/pull/5)と[GitHub Release](https://github.com/emmatch-dev/econipass-mcp-plugins/releases/tag/econipass-mcp-plugin-v1.2.0)で確認し、この準備記録を後続の実施結果として扱わないでください。
 
 この文書のcommand・source bindingは非公開backendで実行した検証の記録です。

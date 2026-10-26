@@ -1,7 +1,12 @@
 {
   "schema_version": 1,
-  "reviewed_on": "2026-10-08",
-  "source_revision": "7ca723a1e877500f4df7f49a3c76a46a48dbb9bd",
+  "reviewed_on": "2026-10-26",
+  "source_revision": "355e24babeac05182d97001e3004177ff666bb9a",
+  "initial_review": {
+    "reviewed_on": "2026-10-08",
+    "source_revision": "7ca723a1e877500f4df7f49a3c76a46a48dbb9bd"
+  },
+  "source_revision_meaning": "Reviewed implementation basis before this metadata-only provenance correction. The date records configuration-document review, not fresh native execution, authentication, deployment or general availability.",
   "scope": "Repository-documented connection surfaces and provider packaging evidence, not general-availability certification.",
   "global_constraints": [
     "Standard endpoint is /mcp over Streamable HTTP; QueryPie DEV compatibility alone uses /sse.",

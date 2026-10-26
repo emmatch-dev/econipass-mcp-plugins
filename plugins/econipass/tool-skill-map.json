@@ -900,7 +900,7 @@
     "services/mcp-server/src/econipass_mcp/tools/cfp.py": "a3ca3637c492b17072fef6d8794b5b838f289ac97a61bd4376069b7fc668cf39",
     "services/mcp-server/src/econipass_mcp/tools/audit.py": "38b5703e435061a5c054601502c4c04081b90b8b8e491c02263e45fa3f9fb017",
     "services/mcp-server/src/econipass_mcp/tools/downloads.py": "407725d6d9c277e37bc30424bd3e1f81b5fb0c0471fbbe92e1e64708a82546dc",
-    "services/mcp-server/src/econipass_mcp/tools/measures.py": "db96a1d914e922dff4dd5b9d63334b9412db839c743dd22cc674544ad8a85d5f",
+    "services/mcp-server/src/econipass_mcp/tools/measures.py": "e0994ce630bcb308a20858af382286b586888184d098a33eea3aa4d6a13cbd1d",
     "services/mcp-server/src/econipass_mcp/tools/tasks.py": "cdfee11b7c73547f02c598e6419979140b302dbae5c45637ef5e7c6e4c11360f",
     "services/mcp-server/src/econipass_mcp/tools/activities.py": "7002f3bc948f95fa2614d36ca755706fcfd1b3bd95cd87f4688ae245d152dd42",
     "services/mcp-server/src/econipass_mcp/tools/statutory_reports_v2.py": "8220f68c38d148c8d93da06db6bb14046f5296126149a8c924ffc611d5fd7d2f",

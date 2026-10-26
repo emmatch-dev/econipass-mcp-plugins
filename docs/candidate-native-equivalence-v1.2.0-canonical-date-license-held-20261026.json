@@ -1,0 +1,682 @@
+{
+  "schema_version": 3,
+  "phase": "canonical_date_candidate_scoped_input_equivalence",
+  "observed_at_utc": "2026-10-26T00:25:17.298308+00:00",
+  "packaging_and_implementation_source_revision": "e79417e3b208f5abeaacbd7472b753e59feafa5b",
+  "old_release_json_sha256": "f8317e75b008d3a09cb058d32236b6c882bde245e536fb5ba3840346f5efc287",
+  "new_release_json_sha256": "83f900b69c53acea93f5dbdee7ddc1d7611acd324f23bae77790b40576e952bc",
+  "source_binding": {
+    "source_base_commit": "06ee31fbe3c2a5a5700c08d72054240242c476e3",
+    "tool_skill_map_sha256": "224f3ae9b21e1f3ea594b85d2d0e7cc161d593d36dd75ed6679e5aa6f7381065",
+    "source_files_sha256": {
+      "services/mcp-server/src/econipass_mcp/server.py": "79e93bcbbaf291a657133fb12c90927504caa1e9a78ce3e8e7445959981bdf7f",
+      "services/mcp-server/src/econipass_mcp/request_identity.py": "df67efc7fc50f9fb1e69823b3c34a4d108a39415271a40c13b85a8d380309dd6",
+      "services/mcp-server/src/econipass_mcp/tool_metadata.py": "1ae38691c6c31fcb73e79b69540c50e15036d603b4a166ac3e48f87cce884ca4",
+      "services/mcp-server/src/econipass_mcp/tools/ems_catalog.py": "ad216864d5275827495cbffd8c5fa182e496eae6d6208b809abe09fd8688a01d",
+      "services/mcp-server/src/econipass_mcp/tools/ems_operations.py": "3dee467cdb92da8e8374f633a0feb2325c5d245a89190d3a67905bcb5dd10a3d",
+      "services/mcp-server/src/econipass_mcp/tools/cfp.py": "a3ca3637c492b17072fef6d8794b5b838f289ac97a61bd4376069b7fc668cf39",
+      "services/mcp-server/src/econipass_mcp/tools/audit.py": "38b5703e435061a5c054601502c4c04081b90b8b8e491c02263e45fa3f9fb017",
+      "services/mcp-server/src/econipass_mcp/tools/downloads.py": "407725d6d9c277e37bc30424bd3e1f81b5fb0c0471fbbe92e1e64708a82546dc",
+      "services/mcp-server/src/econipass_mcp/tools/measures.py": "e0994ce630bcb308a20858af382286b586888184d098a33eea3aa4d6a13cbd1d",
+      "services/mcp-server/src/econipass_mcp/tools/tasks.py": "cdfee11b7c73547f02c598e6419979140b302dbae5c45637ef5e7c6e4c11360f",
+      "services/mcp-server/src/econipass_mcp/tools/activities.py": "7002f3bc948f95fa2614d36ca755706fcfd1b3bd95cd87f4688ae245d152dd42",
+      "services/mcp-server/src/econipass_mcp/tools/statutory_reports_v2.py": "8220f68c38d148c8d93da06db6bb14046f5296126149a8c924ffc611d5fd7d2f",
+      "services/mcp-server/src/econipass_mcp/tools/statutory_paper.py": "57f98d5e9951a7d1db37b57ba9a90f4312327d01a57d541a3f14babacde312e0",
+      "services/mcp-server/src/econipass_mcp/data/ems_operations.json": "778ae7ee1e905ede3d45a98ed892395a4becdae18e09bb89b0bd8e8dd24c1de6"
+    }
+  },
+  "source14_full_match": false,
+  "source14_changed": [
+    "services/mcp-server/src/econipass_mcp/tools/measures.py"
+  ],
+  "old_common30_full_match": false,
+  "new_common30_changed_only": "tool-skill-map.json",
+  "new_native_executions": 3,
+  "new_hosted_imports": 0,
+  "native_rows": [
+    {
+      "platform": "codex",
+      "artifact": "econipass-codex.zip",
+      "old_artifact_sha256": "3bf130c7fc82ff0ee09537b45d8dfc75f793976535884e3bfafc52f8178e248c",
+      "new_artifact_sha256": "6b8924c7ebba2143c8f30cc2a5396554567bbf706ddf9d4caf566779a3e41c8c",
+      "whole_ZIP_identical": false,
+      "changed_entry_names": [
+        "plugin/tool-skill-map.json"
+      ],
+      "historical_receipt_sha256": "c6337d7a4f7fd44855ddddf042fb19cf3cdeeae99fa23a3a81e00cdcf5e286db",
+      "historical_status": "passed",
+      "historical_stage": "native_package_metadata_read_pass",
+      "fresh_execution": false,
+      "server_source14_full_match": false,
+      "affected_server_date_function_executed_in_historical_native_trial": false,
+      "input_kind": "whole_common_plugin_directory_was_installed_linked_or_passed_to_native_validator",
+      "actual_input_full_match": false,
+      "actual_common_plugin_unchanged_entries": 29,
+      "actual_common_plugin_total_entries": 30,
+      "actual_input_mismatched_entry": "tool-skill-map.json",
+      "skill_manifest_and_MCP_config_entries_equal": true,
+      "limited_result_for_new_candidate": "blocked_before_package_load",
+      "historical_success_inherited": false,
+      "proof_limit": "Old whole-plugin input remains different. New Linux environment setup timed out before any package/runtime/container/native execution; no candidate acceptance or package defect inferred.",
+      "new_preload_attempt": {
+        "platform": "codex",
+        "status": "blocked_before_package_load",
+        "scope": "Linux test-environment setup only; native package/runtime/image/container/CLI metadata trial never started.",
+        "setup_timeout_seconds": 180,
+        "STOP_observed_at_utc": "2026-10-26T00:30:55.408580+00:00",
+        "root_cause": "Unestablished; timeout and unavailable Docker/guest access do not identify a package or Codex defect.",
+        "native_package_runtime_image_container_commands_executed": 0,
+        "automatic_retry": false,
+        "native_trial_success": false,
+        "cleanup": "Separate cleanup-only recovery is under review; cleanup completion is not asserted.",
+        "evidence_sha256": {
+          "STOP": "c2fe37ee89d518c847b6f5b34a58cf9ed7f3e5ba8a982c0f2f411d2b2239d0de",
+          "root_startup_readback": "9f3685f8271a97390e229f1e362133df9aa5afd6304a7b2199a958201107d2be",
+          "root_guest_inventory_refusal": "5a3684e042978bae26c8dc15539e4102c3c5c499870ac92d5af214b1acd6ebb9"
+        }
+      }
+    },
+    {
+      "platform": "claude-code",
+      "artifact": "econipass-claude-code.zip",
+      "old_artifact_sha256": "5a440b94c8a4ee67f7064bd7b67f9a7d5c9462a97d890dd832cb10586d3b0195",
+      "new_artifact_sha256": "39598c7c04738bf9595a20c4fb9fbf5c3558afb26e2779e56e487df3c1b65552",
+      "whole_ZIP_identical": false,
+      "changed_entry_names": [
+        "plugin/tool-skill-map.json"
+      ],
+      "historical_receipt_sha256": "fcde998dccb09666f23ffc977b9afe7c7e20e9f05c8fa31d68d7b915eba784c5",
+      "historical_status": "passed",
+      "historical_stage": "native_package_load_pass",
+      "fresh_execution": true,
+      "server_source14_full_match": false,
+      "affected_server_date_function_executed_in_historical_native_trial": false,
+      "input_kind": "whole_common_plugin_directory_was_installed_linked_or_passed_to_native_validator",
+      "actual_input_full_match": false,
+      "actual_common_plugin_unchanged_entries": 29,
+      "actual_common_plugin_total_entries": 30,
+      "actual_input_mismatched_entry": "tool-skill-map.json",
+      "skill_manifest_and_MCP_config_entries_equal": true,
+      "limited_result_for_new_candidate": "fresh_native_metadata_package_read_pass",
+      "historical_success_inherited": false,
+      "proof_limit": "Fresh local metadata/skill/MCP recognition for the exact83f9 candidate; no real model, remote MCP, authentication or business execution. Original whole-input mismatch remains recorded separately.",
+      "original_vs_candidate_input_full_match": false,
+      "fresh_native_confirmation": {
+        "receipt_sha256": "129d2982936f4f29adc580b4f6268a22e37fbe1c07e210609b4be49c939f3ff8",
+        "status": "passed",
+        "native_version": "2.1.308 (Claude Code)",
+        "native_command_count": 3,
+        "source_commit": "6f09904ba5eedc0805b3895341b032f0770f807b",
+        "release_json_sha256": "83f900b69c53acea93f5dbdee7ddc1d7611acd324f23bae77790b40576e952bc"
+      },
+      "fresh_candidate_input_full_match": true
+    },
+    {
+      "platform": "github-copilot-cli",
+      "artifact": "econipass-github-copilot-cli.zip",
+      "old_artifact_sha256": "0dcab8d2eabdb164829573138dbd688cd0b2607a4a28f3319aa35624d82e65c2",
+      "new_artifact_sha256": "d8fbd640269df05e17c883557efdad49bff8fb5d6eaf417b99f17dcc6728faa4",
+      "whole_ZIP_identical": false,
+      "changed_entry_names": [
+        "plugin/tool-skill-map.json"
+      ],
+      "historical_receipt_sha256": "6d425ced8ba0d8f8a6ba2b907100e60c0693926d782cfa31aaa0c6a27ba83264",
+      "historical_status": "passed",
+      "historical_stage": "native_package_load_pass",
+      "fresh_execution": true,
+      "server_source14_full_match": false,
+      "affected_server_date_function_executed_in_historical_native_trial": false,
+      "input_kind": "whole_common_plugin_directory_was_installed_linked_or_passed_to_native_validator",
+      "actual_input_full_match": false,
+      "actual_common_plugin_unchanged_entries": 29,
+      "actual_common_plugin_total_entries": 30,
+      "actual_input_mismatched_entry": "tool-skill-map.json",
+      "skill_manifest_and_MCP_config_entries_equal": true,
+      "limited_result_for_new_candidate": "fresh_native_metadata_package_read_pass",
+      "historical_success_inherited": false,
+      "proof_limit": "Fresh local metadata/skill/MCP recognition for the exact83f9 candidate; no real model, remote MCP, authentication or business execution. Original whole-input mismatch remains recorded separately.",
+      "original_vs_candidate_input_full_match": false,
+      "fresh_native_confirmation": {
+        "receipt_sha256": "2410c1776ab8c09308a5da63064091ef0ebb62b6634e8056463bb82a8832752a",
+        "status": "passed",
+        "native_version": "GitHub Copilot CLI 1.0.100.\nRun 'copilot update' to check for updates.",
+        "native_command_count": 6,
+        "source_commit": "6f09904ba5eedc0805b3895341b032f0770f807b",
+        "release_json_sha256": "83f900b69c53acea93f5dbdee7ddc1d7611acd324f23bae77790b40576e952bc"
+      },
+      "fresh_candidate_input_full_match": true
+    },
+    {
+      "platform": "vscode-copilot",
+      "artifact": "econipass-vscode-copilot.zip",
+      "old_artifact_sha256": "9f2e223d2b0ff5dad1ac2bb0c6b85a90f8fd7ff3b5d9cc8a8eadd07caa19d1c4",
+      "new_artifact_sha256": "1c5fc676f915806cd8f4e09265cfd0b8e983c450d3842ebb72a2b057c79fe998",
+      "whole_ZIP_identical": false,
+      "changed_entry_names": [
+        "plugin/tool-skill-map.json"
+      ],
+      "historical_receipt_sha256": "57be3a8db272bbc6e97b8294e4e1a59f2c4f7ffc91d11d312911e7314e224d14",
+      "historical_status": "passed",
+      "historical_stage": "native_cli_mcp_config_only_pass",
+      "fresh_execution": false,
+      "server_source14_full_match": false,
+      "affected_server_date_function_executed_in_historical_native_trial": false,
+      "input_kind": "native_CLI_MCP_config_only",
+      "actual_input_full_match": true,
+      "actual_input_entries_sha256": {
+        "configuration/.vscode/mcp.json": "6a3e60b25e47a715d9d159ab0a7bd5dae94a41771b80465f082451f290c10ea4"
+      },
+      "limited_result_for_new_candidate": "limited_configuration_input_equivalence",
+      "historical_success_inherited": false,
+      "proof_limit": "Only configuration JSON was passed to native add-MCP; whole kit ZIP differs and plugin/IDE loading is not covered."
+    },
+    {
+      "platform": "gemini-cli",
+      "artifact": "econipass-gemini-cli.zip",
+      "old_artifact_sha256": "db82d833986365f8b93060e3a7e0df317284ce4c2d3523c6a121f66236b5ad98",
+      "new_artifact_sha256": "6455eb6ac4f7587efa7772e056425ef4a7797d2b176688d17d9e6ac96e8025cd",
+      "whole_ZIP_identical": false,
+      "changed_entry_names": [
+        "plugin/tool-skill-map.json"
+      ],
+      "historical_receipt_sha256": "cfd22e2904316fed1ecfe6f19337469daaef13dcc4882061b6b75a2d925f3fb9",
+      "historical_status": "passed",
+      "historical_stage": "native_package_load_pass",
+      "fresh_execution": true,
+      "server_source14_full_match": false,
+      "affected_server_date_function_executed_in_historical_native_trial": false,
+      "input_kind": "whole_common_plugin_directory_was_installed_linked_or_passed_to_native_validator",
+      "actual_input_full_match": false,
+      "actual_common_plugin_unchanged_entries": 29,
+      "actual_common_plugin_total_entries": 30,
+      "actual_input_mismatched_entry": "tool-skill-map.json",
+      "skill_manifest_and_MCP_config_entries_equal": true,
+      "limited_result_for_new_candidate": "fresh_native_metadata_package_read_pass",
+      "historical_success_inherited": false,
+      "proof_limit": "Fresh local metadata/skill/MCP recognition for the exact83f9 candidate; no real model, remote MCP, authentication or business execution. Original whole-input mismatch remains recorded separately.",
+      "original_vs_candidate_input_full_match": false,
+      "fresh_native_confirmation": {
+        "receipt_sha256": "7594cd8da6113f587cf8a32860baed93f333900bd6b3d6e6507c1a2be40567d0",
+        "status": "passed",
+        "native_version": "0.64.0",
+        "native_command_count": 6,
+        "source_commit": "6f09904ba5eedc0805b3895341b032f0770f807b",
+        "release_json_sha256": "83f900b69c53acea93f5dbdee7ddc1d7611acd324f23bae77790b40576e952bc"
+      },
+      "fresh_candidate_input_full_match": true
+    },
+    {
+      "platform": "cursor-desktop",
+      "artifact": "econipass-cursor-desktop.zip",
+      "old_artifact_sha256": "3b362fe206328b597ddd39258718aa8bafbb7d28295c7a24c4d228f6c0f58b45",
+      "new_artifact_sha256": "71508f248c2b8d37885c1215826070c99efec29972aca42f60b940b7c1df4c07",
+      "whole_ZIP_identical": false,
+      "changed_entry_names": [
+        "plugin/tool-skill-map.json"
+      ],
+      "historical_receipt_sha256": "a950f2c6b1d1ca0ad137a33352be4238ec5d107bc2b0bde04c4fd9733acb9a89",
+      "historical_status": "passed",
+      "historical_stage": "native_cli_mcp_config_only_pass",
+      "fresh_execution": false,
+      "server_source14_full_match": false,
+      "affected_server_date_function_executed_in_historical_native_trial": false,
+      "input_kind": "native_CLI_MCP_config_only",
+      "actual_input_full_match": true,
+      "actual_input_entries_sha256": {
+        "configuration/.cursor/mcp.json": "64dcc47d224e45a40a6ae0ef8c76e6e4e632b11e5224ae27c721ee2b2ed166dd"
+      },
+      "limited_result_for_new_candidate": "limited_configuration_input_equivalence",
+      "historical_success_inherited": false,
+      "proof_limit": "Only configuration JSON was passed to native add-MCP; whole kit ZIP differs and plugin/IDE loading is not covered."
+    },
+    {
+      "platform": "goose",
+      "artifact": "econipass-goose.zip",
+      "old_artifact_sha256": "4b90bf95ee1a8bde2301edefeeb2d916af04cb589c546f191f25cf61bc7157f5",
+      "new_artifact_sha256": "4b90bf95ee1a8bde2301edefeeb2d916af04cb589c546f191f25cf61bc7157f5",
+      "whole_ZIP_identical": true,
+      "changed_entry_names": [],
+      "historical_receipt_sha256": "3a47bdb7eca002960193f2a5e74d4150b9b95280197396880228a92f19832e5c",
+      "historical_status": "passed",
+      "historical_stage": "native_config_and_skills_load_pass",
+      "fresh_execution": false,
+      "server_source14_full_match": false,
+      "affected_server_date_function_executed_in_historical_native_trial": false,
+      "input_kind": "whole_selected_kit_unchanged",
+      "actual_input_full_match": true,
+      "limited_result_for_new_candidate": "limited_historical_input_equivalence",
+      "historical_success_inherited": false,
+      "proof_limit": "Same candidate kit bytes only; server source14 differs and no new runtime/authenticated execution is inferred."
+    },
+    {
+      "platform": "cline",
+      "artifact": "econipass-cline.zip",
+      "old_artifact_sha256": "0910ed390e299bb8cad8a430edc5f6d5bc27077ab56bbea6906b53d986e76182",
+      "new_artifact_sha256": "0910ed390e299bb8cad8a430edc5f6d5bc27077ab56bbea6906b53d986e76182",
+      "whole_ZIP_identical": true,
+      "changed_entry_names": [],
+      "historical_receipt_sha256": "3ac8a2f0e48522041a4b85b0422c95e816d7428d673c634e7f58a4fcaed6cd01",
+      "historical_status": "passed",
+      "historical_stage": "native_config_and_skills_load_pass",
+      "fresh_execution": false,
+      "server_source14_full_match": false,
+      "affected_server_date_function_executed_in_historical_native_trial": false,
+      "input_kind": "whole_selected_kit_unchanged",
+      "actual_input_full_match": true,
+      "limited_result_for_new_candidate": "limited_historical_input_equivalence",
+      "historical_success_inherited": false,
+      "proof_limit": "Same candidate kit bytes only; server source14 differs and no new runtime/authenticated execution is inferred."
+    },
+    {
+      "platform": "roo-code",
+      "artifact": "econipass-roo-code.zip",
+      "old_artifact_sha256": "beac2fc8a81dda7c9175e0ac313c6290248f14f9715d500ce3e28b6e25e11772",
+      "new_artifact_sha256": "beac2fc8a81dda7c9175e0ac313c6290248f14f9715d500ce3e28b6e25e11772",
+      "whole_ZIP_identical": true,
+      "changed_entry_names": [],
+      "historical_receipt_sha256": "498057c062860cc1a2e3cae2afa1611d0447c2dc03c83afbd803ae135e568c6b",
+      "historical_status": "not_passed",
+      "historical_stage": "native_skill_metadata_check_failed",
+      "fresh_execution": false,
+      "server_source14_full_match": false,
+      "affected_server_date_function_executed_in_historical_native_trial": false,
+      "input_kind": "whole_selected_kit_unchanged",
+      "actual_input_full_match": true,
+      "limited_result_for_new_candidate": "not_passed_preserved",
+      "historical_success_inherited": false,
+      "proof_limit": "Same candidate kit bytes only; server source14 differs and no new runtime/authenticated execution is inferred."
+    },
+    {
+      "platform": "openai-responses",
+      "artifact": "econipass-openai-responses.zip",
+      "old_artifact_sha256": "b7c7cc7663d242530b47c4814c416f5021fd12a85b9b6a2a92a41258de70de95",
+      "new_artifact_sha256": "b7c7cc7663d242530b47c4814c416f5021fd12a85b9b6a2a92a41258de70de95",
+      "whole_ZIP_identical": true,
+      "changed_entry_names": [],
+      "historical_receipt_sha256": "64a4a1969002a3887590c1ff28d74fb05175917096abe9f9a2ba22e56ab4585b",
+      "historical_status": "passed",
+      "historical_stage": "native_sdk_offline_fixture_validation",
+      "fresh_execution": false,
+      "server_source14_full_match": false,
+      "affected_server_date_function_executed_in_historical_native_trial": false,
+      "input_kind": "whole_selected_kit_unchanged",
+      "actual_input_full_match": true,
+      "limited_result_for_new_candidate": "limited_historical_input_equivalence",
+      "historical_success_inherited": false,
+      "proof_limit": "Same candidate kit bytes only; server source14 differs and no new runtime/authenticated execution is inferred."
+    },
+    {
+      "platform": "openai-agents-sdk",
+      "artifact": "econipass-openai-agents-sdk.zip",
+      "old_artifact_sha256": "bb19e2e83ff416f2d029427f76481e3baf859db7d9681fd662e2fa81b2f0eac8",
+      "new_artifact_sha256": "bb19e2e83ff416f2d029427f76481e3baf859db7d9681fd662e2fa81b2f0eac8",
+      "whole_ZIP_identical": true,
+      "changed_entry_names": [],
+      "historical_receipt_sha256": "ad22543fb42fe279b4e897b68f8880ad57875d39a6a76ec9d176c94b9ffe6a58",
+      "historical_status": "passed",
+      "historical_stage": "native_sdk_offline_fixture_validation",
+      "fresh_execution": false,
+      "server_source14_full_match": false,
+      "affected_server_date_function_executed_in_historical_native_trial": false,
+      "input_kind": "whole_selected_kit_unchanged",
+      "actual_input_full_match": true,
+      "limited_result_for_new_candidate": "limited_historical_input_equivalence",
+      "historical_success_inherited": false,
+      "proof_limit": "Same candidate kit bytes only; server source14 differs and no new runtime/authenticated execution is inferred."
+    },
+    {
+      "platform": "anthropic-messages",
+      "artifact": "econipass-anthropic-messages.zip",
+      "old_artifact_sha256": "195f8f48937e0f83e761b672778897c046bffd8b05f563e0c9af97a5e8d9f0a0",
+      "new_artifact_sha256": "195f8f48937e0f83e761b672778897c046bffd8b05f563e0c9af97a5e8d9f0a0",
+      "whole_ZIP_identical": true,
+      "changed_entry_names": [],
+      "historical_receipt_sha256": "eea232ad72f9526b05725abfdc8912373392eeeae04ec3b7ec3c6307276a27ad",
+      "historical_status": "passed",
+      "historical_stage": "native_sdk_offline_fixture_validation",
+      "fresh_execution": false,
+      "server_source14_full_match": false,
+      "affected_server_date_function_executed_in_historical_native_trial": false,
+      "input_kind": "whole_selected_kit_unchanged",
+      "actual_input_full_match": true,
+      "limited_result_for_new_candidate": "limited_historical_input_equivalence",
+      "historical_success_inherited": false,
+      "proof_limit": "Same candidate kit bytes only; server source14 differs and no new runtime/authenticated execution is inferred."
+    },
+    {
+      "platform": "langchain-langgraph",
+      "artifact": "econipass-langchain-langgraph.zip",
+      "old_artifact_sha256": "15ba5b75a6332ef47092df3017a475bbaa7cc110d16b352ed90655baf13cd131",
+      "new_artifact_sha256": "15ba5b75a6332ef47092df3017a475bbaa7cc110d16b352ed90655baf13cd131",
+      "whole_ZIP_identical": true,
+      "changed_entry_names": [],
+      "historical_receipt_sha256": "11197853ed0f237a97e6ee1579db4476e3bf5d11743cf948fd60bff25cb49cb0",
+      "historical_status": "passed",
+      "historical_stage": "native_sdk_offline_fixture_validation",
+      "fresh_execution": false,
+      "server_source14_full_match": false,
+      "affected_server_date_function_executed_in_historical_native_trial": false,
+      "input_kind": "whole_selected_kit_unchanged",
+      "actual_input_full_match": true,
+      "limited_result_for_new_candidate": "limited_historical_input_equivalence",
+      "historical_success_inherited": false,
+      "proof_limit": "Same candidate kit bytes only; server source14 differs and no new runtime/authenticated execution is inferred."
+    }
+  ],
+  "hosted_skills": [
+    {
+      "skill": "ems-operations",
+      "artifact": "ems-operations.skill.zip",
+      "artifact_sha256": "f73f2f0c1da4acb9445b11bc1d700df61b399affca57afed546a56f5a0a6929e",
+      "source_entry_count": 3,
+      "source_entry_sha256": {
+        "ems-operations/SKILL.md": "d238c774e58e90e0363753c5c6942e17ac0d77ea346304a02dbf62bd5cebbc89",
+        "ems-operations/agents/openai.yaml": "1a215860957e7ec72e02166b67c4cea6d4f507848459151b3bc92662c79c9877",
+        "ems-operations/references/workflows.md": "07b11ce605e8d1672e83634997b6e9bb8c722d0110a623ef65e066601ee4e217"
+      },
+      "provider_wrapper_sha256": "7807d6356518276db651c230a3861293fb961737f59b0d4cbffc3793ce990875",
+      "historical_version": "v3",
+      "same7_input_ZIPs_and_provider_sources": true,
+      "new_import_or_UI_observation": false,
+      "scope": "Historical Web skill import/readback inputs only; no new MCP server, authentication or business delivery acceptance."
+    },
+    {
+      "skill": "activity-input",
+      "artifact": "activity-input.skill.zip",
+      "artifact_sha256": "4832bb779dce8ffb2cc8599724529f24d00821de75a85296be4c721af5bdf059",
+      "source_entry_count": 3,
+      "source_entry_sha256": {
+        "activity-input/SKILL.md": "27a83e0230b3fdb6b2eef20b782469e268223a49ef5ac9e5bd6fc338b79ebfc9",
+        "activity-input/agents/openai.yaml": "ae076d52b00ed951dca432ca99ef11c30ca48221afc8320348e26170354f0ee7",
+        "activity-input/references/record-rules.md": "20f9f554813076592e537968b52cba300c2118b51852421f4ceda760339173d3"
+      },
+      "provider_wrapper_sha256": "22d95cab49913dfec00ae0223d9b26e7cd3675b624f79fe76aed540573815975",
+      "historical_version": "v2",
+      "same7_input_ZIPs_and_provider_sources": true,
+      "new_import_or_UI_observation": false,
+      "scope": "Historical Web skill import/readback inputs only; no new MCP server, authentication or business delivery acceptance."
+    },
+    {
+      "skill": "cfp-input",
+      "artifact": "cfp-input.skill.zip",
+      "artifact_sha256": "635d628db2afa4404bd69c2493c840620e1b2113e5cfb90202a879aac303c04d",
+      "source_entry_count": 3,
+      "source_entry_sha256": {
+        "cfp-input/SKILL.md": "28899e861bc64fd1c9faa8c637005771b75901ae3d709384c270b55073732251",
+        "cfp-input/agents/openai.yaml": "eafcd989b252d7699e39e860b92726ed7fdd90da6b385a37ff4b7f9becab77d2",
+        "cfp-input/references/workbooks.md": "27c215d8cf0e1025fcd0655d067b752f80a9e7e53eeaca8fab1c46b6983cc62b"
+      },
+      "provider_wrapper_sha256": "03d0ee671169a14557d63a44852dab6ad5eb4701d60972ac61a5c36593adf482",
+      "historical_version": "v2",
+      "same7_input_ZIPs_and_provider_sources": true,
+      "new_import_or_UI_observation": false,
+      "scope": "Historical Web skill import/readback inputs only; no new MCP server, authentication or business delivery acceptance."
+    },
+    {
+      "skill": "emissions-analysis",
+      "artifact": "emissions-analysis.skill.zip",
+      "artifact_sha256": "42853c3b6d7e4b8bc24f95a5e811db79e1a93afd964baf16c9690ad778a273fe",
+      "source_entry_count": 2,
+      "source_entry_sha256": {
+        "emissions-analysis/SKILL.md": "7600f72cf00670da96531db0bc1d2ab73d70f39510b2e4fcb528137ffcd0325d",
+        "emissions-analysis/agents/openai.yaml": "a4300f9f5546448f87330c916560f366b3ab903256947826ae90fc101c26e27e"
+      },
+      "provider_wrapper_sha256": "399a671906ad2fdcfde2bad937ee11a66f23d6e96db28a6b20fe9b50c3616d97",
+      "historical_version": "v2",
+      "same7_input_ZIPs_and_provider_sources": true,
+      "new_import_or_UI_observation": false,
+      "scope": "Historical Web skill import/readback inputs only; no new MCP server, authentication or business delivery acceptance."
+    },
+    {
+      "skill": "measures-targets",
+      "artifact": "measures-targets.skill.zip",
+      "artifact_sha256": "30389a5620b853d6395691dbb5995034670540bcfce3bafad62dfdfe632590bd",
+      "source_entry_count": 3,
+      "source_entry_sha256": {
+        "measures-targets/SKILL.md": "f2c5e4690871c8feb1a6855676c64323518b481abdb66523f8fd32581bc04387",
+        "measures-targets/agents/openai.yaml": "a6714d09c9bcd8d6ec933b7822cace9ed9d596ed38728fa40499096998afb0b2",
+        "measures-targets/references/task-activity-rules.md": "d5f7591442ed6afb51f47a56a705bac91bd553f8008d89f159b7db06edcb5bfd"
+      },
+      "provider_wrapper_sha256": "3ebf8c1642a272cc37eb022123d79cdc5ddbb28bb709e4c436497b03056f4ea7",
+      "historical_version": "v2",
+      "same7_input_ZIPs_and_provider_sources": true,
+      "new_import_or_UI_observation": false,
+      "scope": "Historical Web skill import/readback inputs only; no new MCP server, authentication or business delivery acceptance."
+    },
+    {
+      "skill": "setup",
+      "artifact": "setup.skill.zip",
+      "artifact_sha256": "56527d1d834f20081ab6cc9205bcbe8db37333db60568876fe84a4e4685861dd",
+      "source_entry_count": 2,
+      "source_entry_sha256": {
+        "setup/SKILL.md": "67e2bbc6fbc1ca107529998718d2bb371fce7511fd869026f16d6e4ecfaebc2c",
+        "setup/agents/openai.yaml": "b198095f0a5cadd891f3bf54c0cdb453303fbab6adf7c90beff08c34cec62be6"
+      },
+      "provider_wrapper_sha256": "2b9786ef709ce98e596263099713b94f5336d9ecb785825eb78c630dc8ccb952",
+      "historical_version": "v2",
+      "same7_input_ZIPs_and_provider_sources": true,
+      "new_import_or_UI_observation": false,
+      "scope": "Historical Web skill import/readback inputs only; no new MCP server, authentication or business delivery acceptance."
+    },
+    {
+      "skill": "statutory-reports",
+      "artifact": "statutory-reports.skill.zip",
+      "artifact_sha256": "1aed1c4c158b9ee35b79723786767d2d917cfaaccbbc4394f4a04b0260f9640d",
+      "source_entry_count": 4,
+      "source_entry_sha256": {
+        "statutory-reports/SKILL.md": "e981804a69f4607d3db58daf359c86e86dcfa9df07c5d923c52239df70982b17",
+        "statutory-reports/agents/openai.yaml": "76e93d413abceced19b2803e1fb8b2d4a15f21efb6901326a20d96a0395d16f3",
+        "statutory-reports/references/legacy-xml.md": "98b4d0784713815193026fd9d0c5efc353e13d6c12f5793001e4986f7b34e60c",
+        "statutory-reports/references/shared-reports.md": "e38e84390ef9df4c70d2eeb3b633c5d1d3c5af70067ed2fb7f06a40a4d123f02"
+      },
+      "provider_wrapper_sha256": "88807ccc147b2566932d6d70fc47d0a86150d0faeecbb85e3b74f9a850c7ffea",
+      "historical_version": "v2",
+      "same7_input_ZIPs_and_provider_sources": true,
+      "new_import_or_UI_observation": false,
+      "scope": "Historical Web skill import/readback inputs only; no new MCP server, authentication or business delivery acceptance."
+    }
+  ],
+  "counts": {
+    "product_kits": 29,
+    "historical_native_trials": 13,
+    "historical_native_limited_successes": 12,
+    "historical_hosted_limited_successes": 1,
+    "current_native_input_equivalent_limited_successes": 8,
+    "current_hosted_skill_input_equivalent_platforms": 1,
+    "current_limited_input_equivalence_platforms": 9,
+    "failed_Roo_preserved": 1,
+    "full_platform_acceptance": 0,
+    "fresh_native_executions": 3,
+    "fresh_native_limited_successes": 3,
+    "current_total_limited_platforms": 12,
+    "UI_blocked_before_import": 1,
+    "fresh_hosted_imports": 0,
+    "blocked_before_package_load": 2,
+    "other_not_executed_including_ChatGPT_held": 14,
+    "Linux_blocked_before_package_load": 1,
+    "requires_native_revalidation_after_environment_recovery": 1
+  },
+  "original_summary_sha256": "1e4635cab32d20712990fe5d70565e7972afe61df4ceb1207f0e988aa6641be9",
+  "original_after_seal_sha256": "78139baa92709f8d99225ab4e61e99311405f73dd657dc1f19eb02b37ed2d9cb",
+  "prior_f831_equivalence_preserved_sha256": "c083fb198123b9863a716b29b8c9ecc628c8f6fb3ba0fd1b389d077582af811a",
+  "harness_interpretation": {
+    "shared_native_harness_sha256": "ba2dbf7f97b03156dcc2d27ca8507d58772417db6c28d01d8db2a052b5ef21df",
+    "four_common_plugin_input_trials": [
+      "codex",
+      "claude-code",
+      "github-copilot-cli",
+      "gemini-cli"
+    ],
+    "two_config_only_trials": [
+      "cursor-desktop",
+      "vscode-copilot"
+    ],
+    "no_assumption_changed_map_was_unread": true
+  },
+  "Claude_directory_gate": {
+    "fresh_manifest_errors": 0,
+    "fresh_manifest_warnings": 0,
+    "directory_LICENSE_MISSING_blocking_errors": 1,
+    "ready": false,
+    "LICENSE_application": "HELD",
+    "fresh_validator_scope": "Selected Claude Code metadata commands only; not directory submission."
+  },
+  "runtime_business_acceptance_inferred": false,
+  "new_OAuth_LICENSE_ChatGPT": "HELD",
+  "source_public_remote_or_VM_edits": 0,
+  "source_evidence_sha256": {
+    "scoped_input_comparison": "416cfd1b9bb930dd957230bbe9073b5f5157b119ac649c01745d8691110718df",
+    "date_candidate_build": "26669119641e137fae55636711bdbe4d649dedb21feb30b1275b201fd3f5a7b6",
+    "fresh_native3_final_readback": "1c5e958ca1faa249ef20e413d855e46932de9441705aa1da97969c8cdcccccc2",
+    "fresh_native3_independent_review": "5a838a310cee521883523cd73275b9bba429b594d5e9a8adf167cf892dcf2de8"
+  },
+  "previous_immutable_equivalence": "candidate-native-equivalence-v1.2.0-current-clients-license-held-20261026.json",
+  "previous_immutable_equivalence_sha256": "c083fb198123b9863a716b29b8c9ecc628c8f6fb3ba0fd1b389d077582af811a",
+  "all13_ZIPs_and_source14_identical": false,
+  "all7_hosted_skill_ZIPs_and20_source_entries_identical": true,
+  "state_observation": {
+    "kind": "canonical_date_candidate_pre_deployment_publication_snapshot",
+    "observed_at_utc": "2026-10-26T00:38:56.122704+00:00",
+    "live_external_state": false,
+    "scope": "Current candidate83f9 source and local evidence; prior f831 Draft remains distinct. Later actions do not follow from this snapshot.",
+    "later_current_state_locations": {
+      "public_PR": "https://github.com/emmatch-dev/econipass-mcp-plugins/pull/5",
+      "releases": "https://github.com/emmatch-dev/econipass-mcp-plugins/releases"
+    }
+  },
+  "reviewed_source_revision": "6f09904ba5eedc0805b3895341b032f0770f807b",
+  "date_implementation_revision": "e79417e3b208f5abeaacbd7472b753e59feafa5b",
+  "new_native_metadata_commands": 15,
+  "fresh_native3": {
+    "source_commit": "6f09904ba5eedc0805b3895341b032f0770f807b",
+    "release_json_sha256": "83f900b69c53acea93f5dbdee7ddc1d7611acd324f23bae77790b40576e952bc",
+    "metadata_commands": 15,
+    "fresh_clients": {
+      "claude": {
+        "receipt_sha256": "129d2982936f4f29adc580b4f6268a22e37fbe1c07e210609b4be49c939f3ff8",
+        "status": "passed",
+        "native_version": "2.1.308 (Claude Code)",
+        "native_command_count": 3
+      },
+      "gemini": {
+        "receipt_sha256": "7594cd8da6113f587cf8a32860baed93f333900bd6b3d6e6507c1a2be40567d0",
+        "status": "passed",
+        "native_version": "0.64.0",
+        "native_command_count": 6
+      },
+      "copilot": {
+        "receipt_sha256": "2410c1776ab8c09308a5da63064091ef0ebb62b6634e8056463bb82a8832752a",
+        "status": "passed",
+        "native_version": "GitHub Copilot CLI 1.0.100.\nRun 'copilot update' to check for updates.",
+        "native_command_count": 6
+      }
+    },
+    "final_readback_sha256": "1c5e958ca1faa249ef20e413d855e46932de9441705aa1da97969c8cdcccccc2",
+    "independent_actual_review_sha256": "5a838a310cee521883523cd73275b9bba429b594d5e9a8adf167cf892dcf2de8",
+    "new_OAuth_model_remoteMCP_business_calls": 0,
+    "full_platform_acceptance": false
+  },
+  "Aru_precheck": {
+    "platform": "querypie-aip",
+    "status": "native_import_blocked_before_load",
+    "UI_precheck_count": 1,
+    "completed_imports": 0,
+    "root_cause": "Unestablished; native file/folder selection controls stayed disabled and were cancelled. No package or vendor defect inferred.",
+    "receipt_sha256": "9d3d072ecabaf8945110716a3360cd83522a2bb377bd093060a2fd085e07b079",
+    "counted_within_remaining_unaccepted15": true,
+    "native_limited_success_count_increment": 0,
+    "model_MCP_grants_or_customer_data_transmission": 0
+  },
+  "v2_observation_preserved": {
+    "public_proposal_manifest_sha256": "33ad4712f9f31e97def938c817247b460cfd7433f8ae49fb8c2ee9f2ba270c48",
+    "file_sha256_at_v2": "2ac9536b4e296cfab1e8fcecd34f5ee8d9d5479ad30f650ffc235a9600d188b4",
+    "state_observation": {
+      "kind": "canonical_date_candidate_pre_deployment_publication_snapshot",
+      "observed_at_utc": "2026-10-26T00:25:17.298308+00:00",
+      "live_external_state": false,
+      "scope": "Current candidate83f9 source and local evidence; prior f831 Draft remains distinct. Later actions do not follow from this snapshot.",
+      "later_current_state_locations": {
+        "public_PR": "https://github.com/emmatch-dev/econipass-mcp-plugins/pull/5",
+        "releases": "https://github.com/emmatch-dev/econipass-mcp-plugins/releases"
+      }
+    },
+    "counts": {
+      "product_kits": 29,
+      "historical_native_trials": 13,
+      "historical_native_limited_successes": 12,
+      "historical_hosted_limited_successes": 1,
+      "current_native_input_equivalent_limited_successes": 8,
+      "current_hosted_skill_input_equivalent_platforms": 1,
+      "current_limited_input_equivalence_platforms": 9,
+      "failed_Roo_preserved": 1,
+      "requires_native_revalidation": 1,
+      "full_platform_acceptance": 0,
+      "fresh_native_executions": 3,
+      "fresh_native_limited_successes": 3,
+      "current_total_limited_platforms": 12,
+      "remaining_unaccepted_platforms": 15,
+      "UI_blocked_before_import": 1,
+      "not_executed_including_ChatGPT_held": 14,
+      "fresh_hosted_imports": 0
+    }
+  },
+  "post_v2_status": {
+    "observed_at_utc": "2026-10-26T00:38:56.122704+00:00",
+    "phase": "post_v2_source6f_candidate83f9_predeployment_snapshot",
+    "counts": {
+      "product_kits": 29,
+      "limited_confirmations": 12,
+      "failed_Roo": 1,
+      "blocked_before_package_load": 2,
+      "other_not_executed_including_ChatGPT_held": 14,
+      "fully_accepted": 0,
+      "fresh_native_clients": 3,
+      "fresh_native_metadata_commands": 15,
+      "fresh_hosted_imports": 0
+    },
+    "Linux_Codex_preload": {
+      "platform": "codex",
+      "status": "blocked_before_package_load",
+      "scope": "Linux test-environment setup only; native package/runtime/image/container/CLI metadata trial never started.",
+      "setup_timeout_seconds": 180,
+      "STOP_observed_at_utc": "2026-10-26T00:30:55.408580+00:00",
+      "root_cause": "Unestablished; timeout and unavailable Docker/guest access do not identify a package or Codex defect.",
+      "native_package_runtime_image_container_commands_executed": 0,
+      "automatic_retry": false,
+      "native_trial_success": false,
+      "cleanup": "Separate cleanup-only recovery is under review; cleanup completion is not asserted.",
+      "evidence_sha256": {
+        "STOP": "c2fe37ee89d518c847b6f5b34a58cf9ed7f3e5ba8a982c0f2f411d2b2239d0de",
+        "root_startup_readback": "9f3685f8271a97390e229f1e362133df9aa5afd6304a7b2199a958201107d2be",
+        "root_guest_inventory_refusal": "5a3684e042978bae26c8dc15539e4102c3c5c499870ac92d5af214b1acd6ebb9"
+      }
+    },
+    "Aru_preload": {
+      "platform": "querypie-aip",
+      "status": "native_import_blocked_before_load",
+      "completed_imports": 0,
+      "cause": "Unestablished",
+      "private_UI_account_catalog_and_paths_published": false
+    },
+    "public37_byte_gate": {
+      "status": "PASS",
+      "receipt_sha256": "56dcf1d51dbe68991b4c17d211b4ff954e99662c6f55ff37af6997ad599699d7",
+      "archives": 37,
+      "entries": 1016,
+      "scope": "Fresh regeneration using current dirty public inputs and fixed generator6f; allZIPhashes/CRC/entrybytes match83f9. Public commit/push not inferred.",
+      "public_HEAD_at_observation": "bda0b2ff29819a8ea12c7dd3dd11f648489c7aaa"
+    },
+    "stage_helper_independent_review": {
+      "checks": 386,
+      "findings": 0,
+      "receipt_sha256": "56e6998198d52c29489fcaa57ac828868f96a4ef95d1ac0a02c715a78f7c479c",
+      "local_assets": 38,
+      "metadata_synthetic_controls": 14,
+      "live_Draft83f9_upload_or_metadata_readback": false
+    },
+    "candidate_CI_image_DEV_publication": "NOT_STARTED_OR_NOT_PERFORMED; waiting separate workflow terminal",
+    "LICENSE_newOAuth_ChatGPT": "HELD",
+    "source6f_release83f9_map224f_unchanged": true,
+    "old_f831_Draft_unchanged_by_this_preparation": true
+  }
+}

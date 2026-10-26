@@ -1,86 +1,76 @@
-# DEV 1.2.0現行クライアント設定候補の受入・公式掲載状況
+# DEV 1.2.0日付検証修正候補の受入状況
 
-この文書は **Draft作成前の準備時点（2026-10-25T18:32:22.688302+00:00）の記録** です。未作成・未upload・未配備・未公開・未受入の記載は、その時点の状態を示します。後続の現行状況は[PR #5](https://github.com/emmatch-dev/econipass-mcp-plugins/pull/5)と[GitHub Release](https://github.com/emmatch-dev/econipass-mcp-plugins/releases/tag/econipass-mcp-plugin-v1.2.0)で確認し、この準備記録を後続の実施結果として扱わないでください。
+この文書は **日付検証修正候補の配備・公開前の観測時点（2026-10-26T00:38:56.122704+00:00）の記録** です。旧f831のDraftと新83f9候補を区別します。後続の現行状況は[PR #5](https://github.com/emmatch-dev/econipass-mcp-plugins/pull/5)と[Releases](https://github.com/emmatch-dev/econipass-mcp-plugins/releases)で確認してください。
 
-確認日: 2026-10-26 JST。配布設定source `355e24babeac05182d97001e3004177ff666bb9a`、
-MCP実装 `6d3fc5d6ac4719618621302a51a81d75e157c5c8`、metadata `3775093d517eac5ef183afc148d56016058fea63`、
-基点 `06ee31fbe3c2a5a5700c08d72054240242c476e3` です。
-**候補未配備・未公開、認証済み総合受入0／29、公開版の部分確認0／29です。**
+確認対象commit`6f09904ba5eedc0805b3895341b032f0770f807b`（日付実装e79417e3）、release SHA`83f900b69c53acea93f5dbdee7ddc1d7611acd324f23bae77790b40576e952bc`、対応表SHA`224f3ae9b21e1f3ea594b85d2d0e7cc161d593d36dd75ed6679e5aa6f7381065`。
+37 ZIP・1,016エントリ・LICENSE/PDF0。新候補は未配備・未公開です。
+[候補hash](candidate-package-v1.2.0-canonical-date-license-held-20261026.json)と[入力一致の範囲](candidate-native-equivalence-v1.2.0-canonical-date-license-held-20261026.json)、[機械記録](acceptance-summary.json)を正本にします。
 
-release.json SHAは `f8317e75b008d3a09cb058d32236b6c882bde245e536fb5ba3840346f5efc287`、
-対応表SHAは `64e885efed0ed8df878efe53721fcd302e5754fdff0768aeb4ab84d9aacce345`。
-37 ZIP・1,016エントリ・共通30ファイル・14ソース束縛・LICENSE/PDF混入0を確認しました。
-[候補hash](candidate-package-v1.2.0-current-clients-license-held-20261026.json)、[機械可読記録](acceptance-summary.json)、[入力一致による再紐付け](candidate-native-equivalence-v1.2.0-current-clients-license-held-20261026.json)が正本です。
+## 実装・ローカル検証・監査
 
-## 設定補完と未完了の配備
+日付helperはnative DTOに合わせ`YYYY-MM-DD`だけを受け付け、compact／ISO週日付を確認発行前に拒否します。
+既存日付・確認境界471件、plugins65件は各1まとめ起動・skip0で成功し、CI同版lintも成功しました。
+旧95c監査3ファイルは承認を受け`1169e186`に反映済みです。その後の日付修正sourceには
+新94378監査（patch SHA`94378fa474fe0644fbb13b9234df5e661e75a8387d87092aa8af7bf5aec95a4e`）も明示承認を受け`6f09904b`へ反映済みです。
+新案の別checkout overlayで既存formal116件・skip0、actionlint27・YAML27・lintが成功しました。
+固定30操作・8タグ・PRD STOPは維持し、CI・image・通常DEV・一般公開の成功へ読み替えません。
 
-旧Cascadeは他MCPを含む100有効ツール上限に合わせ、組織確認だけの既定と業務別13設定を用意しました。
-各設定は1〜64ツール、全256ツールは横断して到達できます。設定は一つだけ選びます。
-除外リストは未知ツールを自動で隠せないため、実catalog全ページの名前・件数・hashを記録profileと
-照合し、差分時は利用を止めて再生成します。新Devin Localは別の専用設定です。
-Junie自身のMCP設定、旧Qを保持したKiro alias `ep` と `oauthScopes: mcp:read`、
-Gemini Enterpriseの初期Actions全OFF・Reload後最大100の選択、n8n v1.2以降のHTTP Streamableも補完しました。
-[プラットフォーム別の手順](../plugins/PLATFORMS.md)を確認してください。5クライアントの新たな実機試験はしていません。
+通常241／共有法定帳票254／最大256／固定PRD参照30はsource登録数で、実環境catalogの件数ではありません。
+旧Linux377のMCP5,308成功・smoke6skip、synthetic E2E239成功＋想定拒否2、root210成功＋skip1、
+実synthetic PG35成功は履歴です。今はsource14のうち日付helperとmapが変わっており、
+新e794全体のLinux・CI・配備検証として継承しません。
 
-サーバー実装・共通30ファイル・map・14sourceは旧9640候補とbyte同一です。
-通常241／共有法定帳票254／最大256／固定PRD参照30はオフライン登録数で、実環境の公開数ではありません。
-EMS固定契約167操作・担当172tool・download12、CFP取得のbounded metadata既定／明示embeddedを維持します。
-metadataでは本体・取得可能URLを返さず、クライアント受領／保存確認は別です。
-新監査95c案は未承認・未適用で、実protected3ファイルは06ee基点のbyteを維持しています。
-旧0a監査承認・10f反映・旧CI、既存DEV06eeのbackend/Kong成功は履歴です。
-新候補のCI・image build・通常DEV配備・公開結果は未実施で、それらの成功へ流用しません。
+## 配布候補と入力一致
 
-## ソース別のローカル検証
+旧f831比10 ZIPの各1entryが変わり、27 ZIPは完全同一です。差分は共通対応表9コピーと
+Windsurf preset indexのmap SHAだけです。業務指示・7個別skill ZIP・native認証設定は同一です。
+現在の公開原本から全37 ZIP・1,016entryを再生成し、全hash・CRC・entry bytesの一致を確認しました。公開HEADのcommit／pushを示す検証ではありません。
 
-| 検証 | 結果と範囲 |
+| 状態 | 環境数・範囲 |
 | --- | --- |
-| Linux source377 MCP | 5,308成功／6skip。skipは未指定の実接続smoke。内包pluginsは旧55件 |
-| 同synthetic E2E | 241操作＝239成功＋想定対象不在2拒否、失敗0 |
-| 同root限定suite | 210成功／既存と同じskip1。専用隔離container・network none・限定capability |
-| 同backend影響 | 実synthetic PostgreSQLで35成功／skip0 |
-| 同workflow/lint | CI同版lint・actionlint27・YAML27成功 |
-| 新クライアント設定 | Mac65成功／skip0。builder/testはc55eb freezeと同一。最終58eeは文書変更だけで別validator・レビューを確認 |
-| 新候補 | 公開原本＋source355固定builder/API7から37 ZIP・全1,016entryを再生成しbyte一致 |
+| 限定確認 | 12。入力一致native8＋Claude Webスキル1、新規native metadata確認3 |
+| 旧失敗保持 | Roo1。原因未確定、再試行なし |
+| package load前blocked | 2。Linux Codexは試験環境準備timeout、QueryPie/Aruはimport前UI blocked。原因はどちらも未確定 |
+| 他未実施 | 14。ChatGPT保留を含む |
+| 総合受入・公開版業務受入 | 0／29 |
 
-Linuxはsource377の別試験checkoutで95c監査案の試験overlayを含みます。実worktreeへの適用や人間承認ではありません。
-source14/mapの一致によってサーバー実装へ束縛しますが、新355の全ソースをLinuxで試験したとは主張しません。
-旧root overlay失敗23件を保存し、そのうち11件の旧子例外原因は直接観測していません。
-最終独立closureは376チェック・指摘0。専用VM停止、2設定の元hash復元、所有資源の不在とdefault contextを確認しました。
-他VMの状態が不変だったとは主張しません。これらはCI・配備・実テナント受入の証拠ではありません。
+Cursor／VS Codeはharnessがnativeへ渡した設定JSONだけが一致し、whole ZIPは異なります。
+他7nativeキットはwhole ZIPが一致（6限定成功とRoo失敗）します。
+元の4whole-input不一致は保持し、そのうち3環境だけは新候補の実metadata検証で確認し直しました。
+CodexもSKILL・manifest・MCP設定29/30entryは一致しますが、変更mapをnativeが読まなかったとは推定しません。
+Claude Webは7個別ZIP・保存済みprovider wrapper7件の20ソースが一致し、新たなhostedスキルimport・UI観測は0です。
+全source14やcommon30の同一性はfalseであり、旧全ZIP一致の記録を新候補へ差し替えません。
 
-## 29環境の入力一致による再紐付け
+Linux Codexは試験環境の準備が180秒でtimeoutしました。package、runtime、image、container、native metadata試験は未実行です。
+原因は未確定・再試行なしで、パッケージ不正やCodex不具合とは扱いません。cleanup-only回復は別review中で、完了を主張しません。
 
-旧9640で実行したMac12試行は11限定成功・Roo1未合格、Linux Codexは導入／metadata確認1限定成功でした。
-その13キットと共通ZIPが新候補と完全一致すること、元receipt・前後seal・source14/mapが維持されることを確認しました。
-Claude Webの旧EMS v3／他6 v2についても7 ZIP・20ソース・保存済みprovider wrapper7件の内容を照合しました。
-新候補についての新規native実行、import、現在UI観測は0で、履歴の実行日時とhashを保持した再紐付けです。
+QueryPie系Aruの専用試験projectでは、ZIP・フォルダ選択後のnative controlsが無効のままで、import前に中止しました。
+完了import0・原因未確定で、パッケージ不正やvendor不具合とは断定しません。新MCP接続・OAuth・モデル送信は0です。
+組織catalog名・個人情報・私有画面は公開しません。
 
-| 状態 | 環境数 |
-| --- | --- |
-| 元Mac試験の限定成功を入力一致で再紐付け | 11 |
-| 元Linux Codex CLI試験の限定成功を再紐付け | 1 |
-| 元Claude Webスキル導入の限定確認を再紐付け | 1 |
-| Roo metadata列挙の失敗を維持 | 1 |
-| 未実施（ChatGPT保留を含む） | 15 |
-| 総合受入／公開版の部分確認 | 0 |
+## 既存Codex接続の前駆環境baseline
 
-Rooの初期化raceは疑いで、因果は未確定・再試行なしです。exit0を成功へ読み替えていません。
-Cursor／VS Codeは設定のみ、SDKは合成fixture、Claude hostedはWebのスキルのみです。
-認証済みcatalog、tenant/scope拒否、refresh/revoke、CFP／EMS実ファイル受領・保存・投入／置換は未受入です。
-旧9640の[時点記録](history/ACCEPTANCE-v1.2.0-candidate-377-9640-20261026.md)と
-[同時点の機械記録](history/acceptance-summary-v1.2.0-candidate-377-9640-20261026.json)を保存しています。
-旧native/package JSONも変更していません。
+既存接続だけで組織情報とEMS取込の読み取りが成功しました。CFPはmaster・base_unit・activity_amount・
+pcf_certification_period・aist_ideaの5種類で原本を受領・保存し、応答のsize／SHAと一致、CRC・XMLを確認しました。
+この接続には更新scopeがなく、投入previewはscope境界で拒否されました。確認token発行、投入・置換、native業務検証はありません。
+EMSテンプレートもSIMPLE_KWHのCSV（6列）とXLSX（6シート）を実受領・保存し、応答SHAと一致、XLSXのCRC/XMLを確認しました。
+新OAuthは0。顧客値・事業所ID・ファイル本体・ファイル名・顧客ファイルdigestは公開しません。
+未配備の83f9候補や29環境の総合受入には加算しません。
 
-## 公開と保留
 
-| 公開先 | 状況 |
-| --- | --- |
-| GitHub | DEV1.1.0公開済み。1.2.0は未公開。新38資産をローカル準備し、公開前draft=true／published_at=nullを含む14対照を確認。uploadなし |
-| MCP Registry | namespace未登録。metadata CC0を含む規約同意・組織認証は未実施 |
-| OpenAI | 公開者本人・法人確認が必要。未upload・未申請 |
-| Claude | 共通ZIP同一性で旧manifestエラー／警告0とdirectory LICENSE_MISSING blocking1を再紐付け。新validator実行なし・未申請 |
+新83f9の38資産stageとGET専用helperは用意済みで、386項目の独立レビューは指摘0です。
+これはローカル準備と合成metadata14対照の確認で、新候補のDraft upload・live metadata・公開後匿名取得は未実施です。
 
-LICENSE適用、新OAuth、ChatGPT受入は利用者指示で保留しています。MIT候補は配布せず、権利付与を推定しません。
-Registryの[認証仕様](https://github.com/modelcontextprotocol/registry/blob/main/docs/modelcontextprotocol-io/authentication.mdx)と
-[Terms](https://github.com/modelcontextprotocol/registry/blob/main/docs/modelcontextprotocol-io/terms-of-service.mdx)への同意は別の手続です。
-DEV URLを本番として申告せず、審査情報・個人情報・ローカル絶対pathを公開しません。
+## 公開・保留・履歴
+
+GitHubで一般公開済みの版は1.1.0です。既存1.2.0 Draft ID423591210は旧f831の38資産を持ち、
+対象public SHAはbda0b2ffです。新83f9はこのDraftへuploadしていません。旧候補・stage・assetsを変更していません。
+LICENSE適用、新OAuth、ChatGPT受入を保留し、公式申請は未実施です。
+ClaudeのLICENSE条件、OpenAIの公開者確認、Registryの組織認証・規約／CC0同意が未完了です。
+旧common ZIPのmanifestエラー0は履歴です。今回のClaude Codeのfresh metadata検証もエラー／警告0ですが、
+公式ディレクトリのLICENSE_MISSING blocking1は継続し、掲載申請の成功を意味しません。
+
+旧f831の[pre-Draft時点記録](ACCEPTANCE-v1.2.0-candidate-355-f831-20261026.md)と
+[同時点の機械記録](acceptance-summary-v1.2.0-candidate-355-f831-20261026.json)、
+旧9640の[時点記録](history/ACCEPTANCE-v1.2.0-candidate-377-9640-20261026.md)を保持します。
+旧candidate/native/equivalence JSONも変更しません。

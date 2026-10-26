@@ -1,6 +1,6 @@
 # EcoNiPass MCP プラグイン
 
-この文書は **Draft作成前の準備時点（2026-10-25T18:32:22.688302+00:00）の記録** です。未作成・未upload・未配備・未公開・未受入の記載は、その時点の状態を示します。後続の現行状況は[PR #5](https://github.com/emmatch-dev/econipass-mcp-plugins/pull/5)と[GitHub Release](https://github.com/emmatch-dev/econipass-mcp-plugins/releases/tag/econipass-mcp-plugin-v1.2.0)で確認し、この準備記録を後続の実施結果として扱わないでください。
+この文書は **日付検証修正候補の配備・公開前の観測時点（2026-10-26T00:38:56.122704+00:00）の記録** です。旧f831のDraftと新83f9候補を区別します。後続の現行状況は[PR #5](https://github.com/emmatch-dev/econipass-mcp-plugins/pull/5)と[Releases](https://github.com/emmatch-dev/econipass-mcp-plugins/releases)で確認してください。
 
 EcoNiPassの排出量分析、EMS、CFP入力、削減対策、法定報告を支援する7スキルと、
 29の利用環境向け導入キットを配布します。接続先は **DEV** の
@@ -90,27 +90,35 @@ Junie専用MCP配置、旧Qを維持したKiro設定と明示scope、Gemini Ente
 
 ## 配備・受入・公開の状況
 
-配布設定ソース`355e24ba`、MCP実装`6d3fc5d6`、対応表metadata`3775093d`、基点`06ee31fb`です。
-CFPとEMS12取得操作では既定metadata／明示embeddedを使い分け、取得・本体同梱・受領保存を分離します。
-新監査95c案は未承認・未適用、最終CI・image build・DEV配備・1.2.0公開は未実施です。
-既存DEV06eeや旧0a監査承認・旧CIの結果を、この候補の配備成功へ流用しません。
+タスク・活動・独自項目の日付について、Pythonが受け付ける`20261026`やISO週日付を
+native APIへ送る前に拒否するよう修正しました。確認トークンを発行してから422になる不一致を防ぎます。
+修正を含む確認対象commitは`6f09904ba5eedc0805b3895341b032f0770f807b`（日付実装e79417e3）、release SHAは`83f900b69c53acea93f5dbdee7ddc1d7611acd324f23bae77790b40576e952bc`、対応表SHAは`224f3ae9b21e1f3ea594b85d2d0e7cc161d593d36dd75ed6679e5aa6f7381065`です。
+既存日付・確認境界471テスト、配布65テストはいずれもskip0で成功しました。
+監査95cは`1169e186`、日付修正後の94378は利用者の明示承認を受け`6f09904b`へ反映済みです。
+別作業の実行中CI・配備が終わるのを待っており、新候補のCI・image build・DEV配備・一般公開は未実施です。
 
-Linuxではsource377のMCP5,308成功・実接続smoke6skip、synthetic E2E241操作（239成功・
-想定対象不在2拒否）、root限定210成功・既存skip1、実PG影響35成功・skip0を確認しました。
-これは95c監査案の試験overlayを含む別checkoutの検証で、実保護ファイルへの反映やCIではありません。
-新クライアント設定の65テストはMacで同じcode/test bytesを検証し、最後の文書変更は別に確認しました。
+37 ZIP・1,016エントリを生成し、全CRC・安全パス・LICENSE/PDF混入0を確認しました。
+旧f831比10 ZIPの各1エントリが変わり、他27 ZIPは同一です。変更は対応表9コピーと
+Windsurfの対応表hash1件だけで、ソース14件中の差は日付helper1件、業務スキルと認証設定は不変です。
+現在の公開原本と固定generatorから全37 ZIP・1,016entryを再生成し、全hash・CRC・entry bytesが新候補と一致しました。公開commit／pushの成功とは区別します。
 
-新候補の37 ZIP・1,016エントリを公開原本と固定生成処理から再生成し、全byteを照合しました。
-旧9640候補から5 ZIPが変わり、他32 ZIP・共通30ファイル・ソース14件は同一です。
-既存native13試験とClaude7スキルも該当ZIP・ソース・保存済みroundtripの一致で再紐付けしました。
-**今回の新規実機実行・importは0**です。元のローカル12限定成功・Roo1失敗、Claude Webの
-スキル導入限定1件を保持し、全29環境は **限定成功13／未合格1／未実施15、総合受入0／29** です。
-Rooの初期化raceは疑いで、原因未確定・再試行なしです。
-Cursor／VS Codeは設定のみ、SDKは合成fixture、Claude hostedはWebのスキルのみです。
-公開版の部分確認、認証済みCFP／EMSの実取得・保存・投入／置換受入は0です。
+旧13nativeのうち8限定成功とRoo1失敗は実入力の一致を確認でき、Claude Webの7個別スキル・
+保存済み20ソースも同一です。入力pluginのmapが変わった4環境のうち、Claude Code／Gemini CLI／Copilot CLIは新候補を実機で再検証済みです。
+CodexはLinux試験環境の準備が180秒でtimeoutし、package／runtime／image／container／native実行の前段でblockedです。原因未確定・自動再試行なしで、旧成功を継承しません。
+現候補は **限定確認12／Roo失敗1／package load前blocked2（Linux Codex＋QueryPie/Aru）／他未実施14、総合受入0／29** です。
+今回Claude Code／Gemini CLI／Copilot CLIの3環境で15件のnative metadata操作を新規実行し、7スキルとMCP設定の認識を確認しました。新たなhostedスキルimport・認証済みremote呼び出しは0。Cursor／VS Codeは設定だけ、SDKは合成fixture、Webはスキルだけです。
 
-[入力一致の記録](docs/candidate-native-equivalence-v1.2.0-current-clients-license-held-20261026.json)と[候補hash](docs/candidate-package-v1.2.0-current-clients-license-held-20261026.json)を参照してください。
-38資産のローカル準備と公開前metadata14対照を確認しましたが、upload・Release作成は行っていません。
-新OAuth、ChatGPT受入、LICENSE適用の保留は維持します。
-[受入・公式掲載状況](docs/ACCEPTANCE.md)、[機械可読記録](docs/acceptance-summary.json)、
-[検証記録](plugins/VALIDATION.md)、[公開手順](plugins/PUBLISHING.md)を参照してください。
+既存Codex接続では前駆環境の組織・EMS読み取り、CFP5種類とEMSテンプレートCSV／XLSXの原本受領・保存・応答SHA一致・構造を確認しました。
+更新scopeのない接続による投入previewは拒否され、token発行・投入・置換はありません。
+この前駆環境の結果を、未配備の新候補や29環境の総合受入へ加算しません。顧客ファイルは公開しません。
+
+QueryPie系Aruはimport前のUIでblockedとなり、完了import0・原因未確定です。
+
+
+新83f9の38資産stageとGET専用helperは用意済みで、386項目の独立レビューは指摘0です。
+これはローカル準備と合成metadata14対照の確認で、新候補のDraft upload・live metadata・公開後匿名取得は未実施です。
+
+GitHubの既存1.2.0 Draftは旧f831候補の38資産で、新83f9候補は未uploadです。
+[入力一致の記録](docs/candidate-native-equivalence-v1.2.0-canonical-date-license-held-20261026.json)、[候補hash](docs/candidate-package-v1.2.0-canonical-date-license-held-20261026.json)、
+[受入記録](docs/ACCEPTANCE.md)と[機械可読記録](docs/acceptance-summary.json)を確認してください。
+新OAuth、ChatGPT受入、LICENSE適用は保留し、公式掲載は未申請です。
