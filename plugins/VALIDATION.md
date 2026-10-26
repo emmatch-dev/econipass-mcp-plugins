@@ -1,5 +1,10 @@
 # プラグイン配布物の検証記録
 
+現在の配布先と検証・受入の範囲は[README](../README.md)と[受入記録](../docs/ACCEPTANCE.md)を確認してください。
+以下は[a72時点の履歴](https://github.com/emmatch-dev/econipass-mcp-plugins/blob/a72fb24fa8ca97db94091e9452a07d5a69195cbf/plugins/VALIDATION.md)です。「未upload」「未配備」「候補」などは各観測時点の記録で、後続の現在値を示しません。
+
+## a72以前の記録
+
 この文書は **日付検証修正候補の配備・公開前の観測時点（2026-10-26T00:38:56.122704+00:00）の記録** です。旧f831のDraftと新83f9候補を区別します。後続の現行状況は[PR #5](https://github.com/emmatch-dev/econipass-mcp-plugins/pull/5)と[Releases](https://github.com/emmatch-dev/econipass-mcp-plugins/releases)で確認してください。
 
 ## 2026-10-26 日付検証修正候補

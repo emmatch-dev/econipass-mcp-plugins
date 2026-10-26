@@ -1,18 +1,13 @@
-# EcoNiPass MCP プラグイン
+# EcoNiPass MCP プラグイン（DEV prerelease）
 
-この文書は **日付検証修正候補の配備・公開前の観測時点（2026-10-26T00:38:56.122704+00:00）の記録** です。旧f831のDraftと新83f9候補を区別します。後続の現行状況は[PR #5](https://github.com/emmatch-dev/econipass-mcp-plugins/pull/5)と[Releases](https://github.com/emmatch-dev/econipass-mcp-plugins/releases)で確認してください。
+EcoNiPassの排出量分析、EMS、CFP入力、削減対策、法定報告を支援する7スキルと、29環境向け導入キットです。
+接続先は **DEV** の `https://api.dev.app.econipass.com/mcp` です。
+配布版・公開状態・取得可能な資産は [GitHub Releases](https://github.com/emmatch-dev/econipass-mcp-plugins/releases) で確認してください。
+公開日時とtagの対象commitはRelease metadataを参照します。
 
-EcoNiPassの排出量分析、EMS、CFP入力、削減対策、法定報告を支援する7スキルと、
-29の利用環境向け導入キットを配布します。接続先は **DEV** の
-`https://api.dev.app.econipass.com/mcp` です。
-
-公開済みのReleaseは **1.1.0**、このブランチの **1.2.0は公開準備中**です。
-1.2.0のサーバー変更は未配備で、ソース登録・配布物の検証を実機受入と分けて記録しています。
 利用にはEcoNiPassアカウント、対象事業所の権限、必要なOAuth scopeが必要です。
-配布物は業務データや認証情報を含みません。
-
-ライセンスの適用は保留しています。1.2.0候補にはLICENSEを同梱せず、MIT等の利用許諾を
-追加していません。以前作成したMITレビュー候補は公開せず、Claude公式掲載はLICENSE条件で停止しています。
+配布物に業務データや認証情報は含みません。今回のLICENSE適用、追加OAuth認可、ChatGPT受入は保留中です。
+公式ディレクトリの掲載申請は未完了で、MIT等の利用許諾は追加していません。
 
 ## ダウンロード
 
@@ -32,7 +27,7 @@ EcoNiPassの排出量分析、EMS、CFP入力、削減対策、法定報告を�
 
 ## Codex / Claude Code
 
-公開済みの版と接続先を確認して導入します。
+取得する版と接続先を確認して導入します。
 
 ```bash
 codex plugin marketplace add emmatch-dev/econipass-mcp-plugins
@@ -88,37 +83,28 @@ Junie専用MCP配置、旧Qを維持したKiro設定と明示scope、Gemini Ente
 最大100の選択、n8n v1.2以降のHTTP Streamable選択も補完しました。
 設定補完はそのクライアントでの実機受入を意味しません。[詳細](plugins/PLATFORMS.md)を参照してください。
 
-## 配備・受入・公開の状況
+## 検証・配備・受入
 
-タスク・活動・独自項目の日付について、Pythonが受け付ける`20261026`やISO週日付を
-native APIへ送る前に拒否するよう修正しました。確認トークンを発行してから422になる不一致を防ぎます。
-修正を含む確認対象commitは`6f09904ba5eedc0805b3895341b032f0770f807b`（日付実装e79417e3）、release SHAは`83f900b69c53acea93f5dbdee7ddc1d7611acd324f23bae77790b40576e952bc`、対応表SHAは`224f3ae9b21e1f3ea594b85d2d0e7cc161d593d36dd75ed6679e5aa6f7381065`です。
-既存日付・確認境界471テスト、配布65テストはいずれもskip0で成功しました。
-監査95cは`1169e186`、日付修正後の94378は利用者の明示承認を受け`6f09904b`へ反映済みです。
-別作業の実行中CI・配備が終わるのを待っており、新候補のCI・image build・DEV配備・一般公開は未実施です。
+実装source `a113b01cb250c9d57c225e7c487570d99783bc22` は全必須CIとimage build／promoteを通過しました。
+[CI](https://github.com/emmatch-dev/econipass-backend/actions/runs/40270099289)と
+[image workflow](https://github.com/emmatch-dev/econipass-backend/actions/runs/40270099317)は、DEV配備・業務受入とは別の結果です。
+MCP実装84ファイルと配布source14の同一性、更新を含むアプリの新監査を分けて記録します。アプリ監査：fadbfebaで再監査したアプリ2,196ファイル（digest 24487902…）とMCP84ファイル（digest daa9dd60…）の束縛がa113に一致。
 
-37 ZIP・1,016エントリを生成し、全CRC・安全パス・LICENSE/PDF混入0を確認しました。
-旧f831比10 ZIPの各1エントリが変わり、他27 ZIPは同一です。変更は対応表9コピーと
-Windsurfの対応表hash1件だけで、ソース14件中の差は日付helper1件、業務スキルと認証設定は不変です。
-現在の公開原本と固定generatorから全37 ZIP・1,016entryを再生成し、全hash・CRC・entry bytesが新候補と一致しました。公開commit／pushの成功とは区別します。
+1.2.0の37 ZIP＋`release.json`、計38資産を認証済みGETで受領し、size／SHA・全CRC・1,016エントリを確認しました。
+`release.json` SHA-256は `83f900b69c53acea93f5dbdee7ddc1d7611acd324f23bae77790b40576e952bc` です。配布状態はReleasesで確認してください。
 
-旧13nativeのうち8限定成功とRoo1失敗は実入力の一致を確認でき、Claude Webの7個別スキル・
-保存済み20ソースも同一です。入力pluginのmapが変わった4環境のうち、Claude Code／Gemini CLI／Copilot CLIは新候補を実機で再検証済みです。
-CodexはLinux試験環境の準備が180秒でtimeoutし、package／runtime／image／container／native実行の前段でblockedです。原因未確定・自動再試行なしで、旧成功を継承しません。
-現候補は **限定確認12／Roo失敗1／package load前blocked2（Linux Codex＋QueryPie/Aru）／他未実施14、総合受入0／29** です。
-今回Claude Code／Gemini CLI／Copilot CLIの3環境で15件のnative metadata操作を新規実行し、7スキルとMCP設定の認識を確認しました。新たなhostedスキルimport・認証済みremote呼び出しは0。Cursor／VS Codeは設定だけ、SDKは合成fixture、Webはスキルだけです。
+| 確認項目 | 結果 |
+| --- | --- |
+| DEV backend／MCP | [成功：a113・attempt1、deploy／verify／finalize](https://github.com/emmatch-dev/econipass-backend/actions/runs/40274300029) |
+| Kong | [成功：a113・attempt1、deploy／verify／finalize](https://github.com/emmatch-dev/econipass-backend/actions/runs/40275773734) |
+| 公開API／MCP／OAuth／CORS | full API／MCP／OAuth／CORS helperの1回検証が成功。frontendは200・非空HTML（画面操作の受入とは別） |
+| 新sourceでの認証済みCFP | 5種類でサーバー取得＋metadata応答成功、500なし。embedded受領・保存・投入／置換は未受入 |
+| 新sourceでの認証済みEMS | CSV／XLSXのサーバー取得＋metadata応答成功、500なし。embedded受領・保存・更新は未受入 |
 
-既存Codex接続では前駆環境の組織・EMS読み取り、CFP5種類とEMSテンプレートCSV／XLSXの原本受領・保存・応答SHA一致・構造を確認しました。
-更新scopeのない接続による投入previewは拒否され、token発行・投入・置換はありません。
-この前駆環境の結果を、未配備の新候補や29環境の総合受入へ加算しません。顧客ファイルは公開しません。
+29環境の状況は **限定確認12／Rooの元失敗1／package load前blocked2／他未実施14、総合受入0／29** です。
+限定確認には設定読取・合成fixture・スキルだけの確認が含まれます。
+RooはMCPを無効にした別の隔離診断で7スキルのmetadataを読めましたが、配布ZIP全体・MCP接続・業務受入には加算していません。
+Linux Codexの試験環境準備とQueryPie/Aruのimport前UIはblockedです。
 
-QueryPie系Aruはimport前のUIでblockedとなり、完了import0・原因未確定です。
-
-
-新83f9の38資産stageとGET専用helperは用意済みで、386項目の独立レビューは指摘0です。
-これはローカル準備と合成metadata14対照の確認で、新候補のDraft upload・live metadata・公開後匿名取得は未実施です。
-
-GitHubの既存1.2.0 Draftは旧f831候補の38資産で、新83f9候補は未uploadです。
-[入力一致の記録](docs/candidate-native-equivalence-v1.2.0-canonical-date-license-held-20261026.json)、[候補hash](docs/candidate-package-v1.2.0-canonical-date-license-held-20261026.json)、
-[受入記録](docs/ACCEPTANCE.md)と[機械可読記録](docs/acceptance-summary.json)を確認してください。
-新OAuth、ChatGPT受入、LICENSE適用は保留し、公式掲載は未申請です。
+[受入の範囲](docs/ACCEPTANCE.md)と[機械可読の概要](docs/acceptance-summary.json)を確認してください。
+[以前の観測記録](https://github.com/emmatch-dev/econipass-mcp-plugins/blob/a72fb24fa8ca97db94091e9452a07d5a69195cbf/README.md)は固定commitの履歴です。
