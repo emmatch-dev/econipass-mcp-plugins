@@ -1,5 +1,9 @@
 # EcoNiPass MCP プラグイン（DEV preview）
 
+> [v1.2.0のクライアントDEV preview](https://github.com/emmatch-dev/econipass-mcp-plugins/releases/tag/econipass-mcp-plugin-v1.2.0)をprereleaseとして公開しました。公開日時は2026-10-27 07:18:52 JST（2026-10-26T22:18:52Z）です。Authorization headerなしの匿名GETで38資産のSHA・sizeと37 ZIP・1,016エントリのCRC、LICENSE混入0を確認しました。旧v1.1.0のtag・資産は保持しています。
+>
+> 公開tagは公開時の原本`df81a01051bb662cef1c4af87b181b087f05e9ed`に固定します。この追加観測を反映するmainの更新対象は文書5件だけで、梱包入力33ファイルと38公開資産を変更しません。配布物の生成source dd389と、この公開tag・後続の文書更新を区別します。
+
 排出量分析、EMS、CFP入力、削減対策、法定報告を支援する7スキルと29環境向け導入キットです。
 接続先は **DEV** の `https://api.dev.app.econipass.com/mcp` です。版と公開状態は[GitHub Releases](https://github.com/emmatch-dev/econipass-mcp-plugins/releases)で確認してください。
 
@@ -96,8 +100,12 @@ release SHA-256は `ff0b309c334bb2878ae5585e0de15d90ae96833eb9ce8f5d02d96f5507d4
 | DEV backend | `38ad8275a0a19e82f3c568d165d1b63e5dbcd3de`。[通常配備・検証・finalize成功](https://github.com/emmatch-dev/econipass-backend/actions/runs/40285257680) |
 | 連動Kong | [候補TLS証明書の残存7日条件で停止](https://github.com/emmatch-dev/econipass-backend/actions/runs/40290693074)。新runtime resource作成・Kong切替の前段 |
 | 公開API／MCP／OAuth／CORS | 2026-10-26の既存公開経路の契約検証成功。Kongの新規配備成功とは別の結果 |
-| CFP／EMS | 既存接続でCFP5種・EMS CSV/XLSXのサーバー取得とmetadata応答が成功。今回7件で500なし。ファイル保存・投入・置換は未受入 |
-| 29環境 | 新候補でCLI7環境の25 metadata確認とSDK4合成fixtureが成功。限定確認11、環境条件未解消2、未実施16（ChatGPT保留を含む）、総合受入0／29 |
+| CFP／EMS | 既存接続でCFP5種・EMS CSV/XLSXのサーバー取得とmetadata応答が成功。今回7件で500なし。MCP業務ファイルの保存・投入・置換は未受入 |
+| Claude Web | 2026-10-27、7スキルの実ダウンロードで元source全20エントリが候補と一致。EMS v4は保存後の再読込と有効状態、他6スキルはv2の有効状態を確認 |
+| 29環境 | CLI7環境の25 metadata確認、SDK4合成fixture、Claude hostedのスキル保存・読戻し1環境を限定確認12として記録。環境条件未解消2、未実施15（ChatGPT保留を含む）、総合受入0／29 |
+
+Claude Webの取得ZIPには`skills/` prefixとhost生成の`.claude-plugin/plugin.json`が加わるため、元sourceの一致を確認し、ZIP全体のbyte一致は主張しません。
+同日の既存DEVコネクタ画面では271件（interactive15／readonly129／write-delete127）と追加EMS17操作のタイトルを確認しました。権限変更・新OAuth・tool実行は0で、schema・業務実行・最大273件の照合は未確認です。
 
 生成sourceと現在のDEV backendでは、MCPの引数・tool名・docstringを除くASTは同じです。
 差分となるサーバー2箇所のdocstringは、ダッシュボードの5種の軽量応答と3種の明示選択の説明を訂正します。

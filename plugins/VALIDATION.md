@@ -1,4 +1,12 @@
-> v1.2.0の現行候補はff0bのクライアントDEV previewです。37 ZIP＋release.json、EMS17操作追加と最大273のソース登録を含みます。65テスト・7スキル検査・CLI7環境25 metadata・SDK4合成fixtureが成功しました。総合受入0/29、Kong候補TLSとサーバー説明修正の配備は未完了です。LICENSE・新OAuth・ChatGPTは保留です。現行状態は[受入記録](../docs/ACCEPTANCE.md)、公開状態は[Releases](https://github.com/emmatch-dev/econipass-mcp-plugins/releases)を参照してください。
+> [v1.2.0のクライアントDEV preview](https://github.com/emmatch-dev/econipass-mcp-plugins/releases/tag/econipass-mcp-plugin-v1.2.0)をprereleaseとして公開しました。公開日時は2026-10-27 07:18:52 JST（2026-10-26T22:18:52Z）です。Authorization headerなしの匿名GETで38資産のSHA・sizeと37 ZIP・1,016エントリのCRC、LICENSE混入0を確認しました。旧v1.1.0のtag・資産は保持しています。
+>
+> 公開tagは公開時の原本`df81a01051bb662cef1c4af87b181b087f05e9ed`に固定します。この追加観測を反映するmainの更新対象は文書5件だけで、梱包入力33ファイルと38公開資産を変更しません。配布物の生成source dd389と、この公開tag・後続の文書更新を区別します。
+>
+> 公開済み配布物はff0bのクライアントDEV previewです。生成source dd389、37 ZIP＋release.json、EMS17操作追加と最大273のソース登録を保持します。65テスト・7スキル検査・CLI7環境25 metadata・SDK4合成fixtureが成功しています。
+>
+> Claude Webでは7スキルの実ダウンロードで元source全20エントリが候補と一致し、EMS v4の保存後再読込・有効状態と他6スキルのv2・有効状態を確認しました。限定確認12（CLI7＋SDK合成4＋Claude hosted1）・環境条件未解消2・未実施15・総合受入0/29です。ZIP全体のbyte一致、remote MCPや業務実行の受入は主張しません。
+>
+> 既存DEVコネクタ画面の271件とEMS17操作タイトルの可視性も確認しました。権限変更・新OAuth・tool実行は0で、schema・業務実行・最大273件の照合は未確認です。Kong候補TLSとサーバー説明修正の承認・CI・配備は未完了です。LICENSE・新OAuth・ChatGPTは保留です。現行状態は[受入記録](../docs/ACCEPTANCE.md)、公開状態は[Releases](https://github.com/emmatch-dev/econipass-mcp-plugins/releases)を参照してください。
 >
 > 以下は以前のsource・候補・準備時点の履歴です。現行候補や現在の配備完了を示すものとして継承しません。
 
