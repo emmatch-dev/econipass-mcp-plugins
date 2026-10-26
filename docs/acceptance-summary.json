@@ -1,151 +1,149 @@
 {
-  "schema_version": 4,
-  "observed_at_utc": "2026-10-26T06:35:11.051765+00:00",
+  "schema_version": 5,
+  "observed_at_utc": "2026-10-26T13:55:45.753149+00:00",
   "environment": "DEV",
   "plugin_version": "1.2.0",
+  "release_type": "client DEV preview prerelease",
+  "publication_state_authority": "GitHub Releases; this document does not assert publication",
   "distribution": {
-    "releases_url": "https://github.com/emmatch-dev/econipass-mcp-plugins/releases",
-    "publication_time_and_tag_commit_source": "GitHub tag/Release metadata; this source document does not claim publication",
-    "implementation_source_revision": "a113b01cb250c9d57c225e7c487570d99783bc22",
-    "artifact_source_revision": "6f09904ba5eedc0805b3895341b032f0770f807b",
-    "release_json_sha256": "83f900b69c53acea93f5dbdee7ddc1d7611acd324f23bae77790b40576e952bc",
-    "tool_skill_map_sha256": "224f3ae9b21e1f3ea594b85d2d0e7cc161d593d36dd75ed6679e5aa6f7381065",
     "skills": 7,
     "product_kits": 29,
     "ZIPs": 37,
     "ZIP_entries": 1016,
-    "release_type": "DEV prerelease"
+    "assets": 38,
+    "producer_source": "dd389bd50ba75a280dedb207b75c52434a6a5b5a",
+    "release_json_sha256": "ff0b309c334bb2878ae5585e0de15d90ae96833eb9ce8f5d02d96f5507d4dbef",
+    "tool_skill_map_sha256": "d4663c7e2819586125b942a180bce689ada706dc975975fa4ded49fd0c36d003",
+    "source_profile_tool_counts": [
+      258,
+      271,
+      273,
+      30
+    ],
+    "live_catalog_counts_inferred": false,
+    "current_candidate_auth_and_anonymous_release_GET": "not yet performed"
   },
-  "verified": {
-    "canonical_CI": {
-      "run_id": 40270099289,
-      "source_revision": "a113b01cb250c9d57c225e7c487570d99783bc22",
+  "runtime": {
+    "normal_backend": {
+      "source": "38ad8275a0a19e82f3c568d165d1b63e5dbcd3de",
+      "run_id": 40285257680,
+      "status": "success",
       "attempt": 1,
-      "conclusion": "success"
-    },
-    "image_build_and_promote": {
-      "run_id": 40270099317,
-      "source_revision": "a113b01cb250c9d57c225e7c487570d99783bc22",
-      "attempt": 1,
-      "conclusion": "success"
-    },
-    "authenticated_Draft_asset_GET": {
-      "assets": 38,
-      "verified_at_utc": "2026-10-26T01:13:13Z",
-      "bytes_size_SHA_CRC": "pass",
-      "anonymous_publication_readback_inferred": false
-    }
-  },
-  "runtime_results": {
-    "DEV_backend_MCP": {
-      "source_revision": "a113b01cb250c9d57c225e7c487570d99783bc22",
-      "workflow_run_id": 40274300029,
-      "attempt": 1,
-      "conclusion": "success",
-      "deploy_verify_finalize_jobs": [
-        121416390995,
-        121417694505,
-        121417788417
-      ],
-      "observed_at_utc": "2026-10-26T06:18:36.466112+00:00"
+      "actual_deploy_verify_finalize_jobs": [
+        121462535157,
+        121464247189,
+        121464374997
+      ]
     },
     "Kong": {
-      "source_revision": "a113b01cb250c9d57c225e7c487570d99783bc22",
-      "workflow_run_id": 40275773734,
-      "attempt": 1,
-      "conclusion": "success",
-      "deploy_verify_finalize_jobs": [
-        121418279217,
-        121418943840,
-        121419078442
-      ],
-      "observed_at_utc": "2026-10-26T06:18:36.466112+00:00"
+      "run_id": 40290693074,
+      "status": "blocked by candidate GitHub Secret certificate lifetime floor",
+      "new_Kong_resources_created_in_failed_step": false,
+      "new_Kong_cutover_reached": false,
+      "complete_rollout_G3": "NOT_MET"
     },
-    "public_API_MCP_OAuth_CORS": {
-      "status": "PASS_FULL_EDGE_CONTRACT",
-      "attempts": 1,
-      "observed_at_utc": "2026-10-26T06:30:29.645244+00:00",
-      "source_revision": "a113b01cb250c9d57c225e7c487570d99783bc22",
-      "source_binding": "Completed DEV/Kong workflows, not source SHA from health response",
-      "frontend_200_nonempty_HTML": true,
-      "frontend_UI_acceptance": false,
-      "receipt_sha256": "026bbd184f8d4d15814810ad29be249d5777495ee71dbcefdc7ca451e54fa845"
+    "producer_server_descriptions": {
+      "source": "dd389bd50ba75a280dedb207b75c52434a6a5b5a",
+      "approval_CI_deployment": "pending",
+      "docstrings_excluded_AST_arguments_and_names_match_deployed38ad": true,
+      "source14_bytes_equal_deployed_backend": false
     },
-    "new_source_authenticated_CFP": {
-      "status": "PASS_SERVER_FETCH_METADATA",
-      "observed_at_utc": "2026-10-26T06:32:16.974Z",
-      "source_revision": "a113b01cb250c9d57c225e7c487570d99783bc22",
+    "public_edge": {
+      "status": "pass",
+      "receipt_sha256": "502be85fd84d2bf38bf48e0a071fd24a90f9324af2a215fb0fbb0ba020f59869",
+      "does_not_prove_new_Kong_rollout": true
+    },
+    "existing_connection": {
+      "status": "CFP5_EMS2_SERVER_FETCH_METADATA_PASS",
       "HTTP500_observed": false,
-      "client_receipt_confirmed": false,
-      "embedded_calls": 0,
+      "receipt_sha256": "ccf2706a201c0f670f733ddbb64492d404824bd8f461ca6fafe520eb35aaf173",
       "files_saved": 0,
-      "write_or_preview_calls": 0,
-      "new_OAuth_calls": 0,
-      "delivery_mode_input_exposed": false,
-      "full29_increment": 0,
-      "receipt_sha256": "b3153369dbdd46d94d4cf04cae667923f94fdedd036f7eeb10f1cc642cb847db",
-      "file_types": 5,
-      "CFP_upload_replace": false
-    },
-    "new_source_authenticated_EMS": {
-      "status": "PASS_SERVER_FETCH_METADATA",
-      "observed_at_utc": "2026-10-26T06:32:16.974Z",
-      "source_revision": "a113b01cb250c9d57c225e7c487570d99783bc22",
-      "HTTP500_observed": false,
-      "client_receipt_confirmed": false,
-      "embedded_calls": 0,
-      "files_saved": 0,
-      "write_or_preview_calls": 0,
-      "new_OAuth_calls": 0,
-      "delivery_mode_input_exposed": false,
-      "full29_increment": 0,
-      "receipt_sha256": "b3153369dbdd46d94d4cf04cae667923f94fdedd036f7eeb10f1cc642cb847db",
-      "file_types": 2,
-      "EMS_mutation": false
+      "upload_replace_write_accepted": false,
+      "new_OAuth": 0
     }
   },
-  "counts": {
-    "product_kits": 29,
-    "current_total_limited_platforms": 12,
-    "failed_Roo_preserved": 1,
-    "blocked_before_package_load": 2,
-    "other_not_executed_including_ChatGPT_held": 14,
-    "full_platform_acceptance": 0
-  },
-  "Roo_isolated_diagnostic": {
-    "native_project_skill_metadata": 7,
-    "TEMP_MCP_disabled": true,
-    "whole_ZIP_input_identical": false,
-    "acceptance_increment": 0,
-    "old_failure_preserved": true
+  "acceptance": {
+    "fresh_native_CLI_platforms": 7,
+    "fresh_native_metadata_commands": 25,
+    "synthetic_SDK_platforms": 4,
+    "limited_platforms": 11,
+    "environment_preconditions_unresolved_before_load": 2,
+    "current_candidate_not_executed": 16,
+    "ChatGPT_held_within_not_executed": 1,
+    "full_platform_acceptance": 0,
+    "prior_limited12_inherited": false,
+    "native_receipt_sha256": "d089a3d4c8402b062fb4f1b70f1eb5eb85c43ac40dfdeef38759e212b713ccb0",
+    "native_results": [
+      {
+        "platform": "claude-code",
+        "status": "PASS_LIMITED_METADATA",
+        "stage": "native_package_load_pass",
+        "commands": 3
+      },
+      {
+        "platform": "gemini-cli",
+        "status": "PASS_LIMITED_METADATA",
+        "stage": "native_package_load_pass",
+        "commands": 6
+      },
+      {
+        "platform": "github-copilot-cli",
+        "status": "PASS_LIMITED_METADATA",
+        "stage": "native_package_load_pass",
+        "commands": 6
+      },
+      {
+        "platform": "goose",
+        "status": "PASS_LIMITED_METADATA",
+        "stage": "native_config_and_skills_load_pass",
+        "commands": 3
+      },
+      {
+        "platform": "cline",
+        "status": "PASS_LIMITED_METADATA",
+        "stage": "native_config_and_skills_load_pass",
+        "commands": 3
+      },
+      {
+        "platform": "cursor-desktop",
+        "status": "PASS_LIMITED_METADATA",
+        "stage": "native_cli_mcp_config_only_pass",
+        "commands": 2
+      },
+      {
+        "platform": "vscode-copilot",
+        "status": "PASS_LIMITED_METADATA",
+        "stage": "native_cli_mcp_config_only_pass",
+        "commands": 2
+      }
+    ],
+    "SDK_results": [
+      {
+        "platform": "openai-responses",
+        "status": "PASS_LIMITED_SYNTHETIC_FIXTURE"
+      },
+      {
+        "platform": "anthropic-messages",
+        "status": "PASS_LIMITED_SYNTHETIC_FIXTURE"
+      },
+      {
+        "platform": "openai-agents-sdk",
+        "status": "PASS_LIMITED_SYNTHETIC_FIXTURE"
+      },
+      {
+        "platform": "langchain-langgraph",
+        "status": "PASS_LIMITED_SYNTHETIC_FIXTURE"
+      }
+    ]
   },
   "holds": {
     "LICENSE_application": true,
     "new_OAuth": true,
     "ChatGPT_acceptance": true,
-    "official_directory_submission": "not_completed",
+    "official_directory_submission": "not completed",
     "STG_PRD": "STOP"
   },
-  "history_url": "https://github.com/emmatch-dev/econipass-mcp-plugins/blob/a72fb24fa8ca97db94091e9452a07d5a69195cbf/docs/acceptance-summary.json",
-  "unresolved_values_are_not_success_or_zero": true,
-  "source_boundary": {
-    "MCP_implementation_files": 84,
-    "MCP_implementation_and_distribution_source14_match83f9": true,
-    "app_entire_tree_same_as_6f_or0d80_claimed": false,
-    "app_new_source_audit": {
-      "audit_source_revision": "fadbfeba33414dd9475f1c4e9df1568c17dc516c",
-      "latest_source_revision": "a113b01cb250c9d57c225e7c487570d99783bc22",
-      "app_files": 2196,
-      "app_inventory_sha256": "24487902d2cb8ce2ff0532d5c23eb8e7799870137deb288db9902a9e8b47ee51",
-      "MCP_files": 84,
-      "MCP_inventory_sha256": "daa9dd60b50b019aedcc0dff7f049d1dd8cc9807c24d5b3f60914887dc960219",
-      "independent_source_review": "pass",
-      "source_row_projection_real_tenant_UAT": false
-    }
-  },
-  "existing_readonly_checks": {
-    "org_month_EMS_import_read": "pass",
-    "customer_values_included": false,
-    "existing_connection_only": true
-  }
+  "source_audit_three_file_proposal": "awaiting explicit human approval; source protected files unchanged",
+  "history_url": "https://github.com/emmatch-dev/econipass-mcp-plugins/blob/661361786a2202ca256cced6e044255615b2438e/docs/acceptance-summary.json",
+  "customer_values_included": false
 }

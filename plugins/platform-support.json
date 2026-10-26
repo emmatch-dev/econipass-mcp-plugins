@@ -602,7 +602,7 @@
       "limitations": [
         "Legacy Q and Kiro CLI have separate installation, version, account, OAuth and client acceptance gates; a result for one is not a result for the other.",
         "Kiro defaults to OIDC scopes if none are specified. Keep the provided mcp:read scope; adding offline_access or write scopes needs separate consent.",
-        "The short ep alias reduces the documented @server/tool selector length. All 256 registered bare tool names produce selectors of at most 60 characters; the installed client's actual model namespace and complete catalog must still be accepted, including optional report-v2 tools.",
+        "The short ep alias reduces the documented @server/tool selector length. All 273 registered bare tool names produce selectors of at most 60 characters; the installed client's actual model namespace and complete catalog must still be accepted, including optional report-v2 tools.",
         "No portable plugin auto-discovery, Kiro IDE/Web acceptance, installer, credential, configuration overwrite or new OAuth grant is supplied by this kit."
       ],
       "acceptance": "not_live_tested",

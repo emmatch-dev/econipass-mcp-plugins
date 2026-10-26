@@ -1,47 +1,36 @@
-# DEV向けMCP配布物の検証・受入
+# v1.2.0 クライアントDEV previewの受入
 
-配布版・公開状態は [GitHub Releases](https://github.com/emmatch-dev/econipass-mcp-plugins/releases)、公開日時とtagの対象commitはRelease metadataで確認してください。
-この文書は **2026-10-26T06:35:11.051765+00:00** の確認範囲を示します。
+この版は7スキル・29環境向けのクライアント配布物です。公開状態は[GitHub Releases](https://github.com/emmatch-dev/econipass-mcp-plugins/releases)で確認してください。総合受入は0／29です。
 
-実装sourceは `a113b01cb250c9d57c225e7c487570d99783bc22`。全必須CIとimage build／promoteが成功しています。
-[CI](https://github.com/emmatch-dev/econipass-backend/actions/runs/40270099289)と[image workflow](https://github.com/emmatch-dev/econipass-backend/actions/runs/40270099317)を参照してください。
-配布物のsource bindingは`release.json`で確認できます。MCP実装84ファイルと配布source14は83f9の束縛と同一です。アプリは更新を含み、旧6f099／0d80との全体同一性は主張しません。新sourceのアプリ監査：fadbfebaで再監査したアプリ2,196ファイル（digest 24487902…）とMCP84ファイル（digest daa9dd60…）の束縛がa113に一致。
-新しい台帳source_row投影の実tenant受入は未実施です。今回のmetadata応答確認からその成功は推定しません。
+生成sourceは`dd389bd50ba75a280dedb207b75c52434a6a5b5a`、release SHAは`ff0b309c334bb2878ae5585e0de15d90ae96833eb9ce8f5d02d96f5507d4dbef`です。
+37 ZIP・1,016エントリのCRC・SHA・安全パス・LICENSE/PDF混入0を確認しました。公開後匿名取得は別の検証です。
 
-1.2.0の38資産（37 ZIP＋`release.json`）は2026-10-26T01:13:13Zに認証済みGETで実bytesを受領し、size／SHA／CRC・1,016エントリを確認しました。
-release SHA-256: `83f900b69c53acea93f5dbdee7ddc1d7611acd324f23bae77790b40576e952bc`。対応表SHA-256: `224f3ae9b21e1f3ea594b85d2d0e7cc161d593d36dd75ed6679e5aa6f7381065`。
-この確認は、公開後匿名GETやクライアントの業務受入を意味しません。
+## 新候補の限定確認
 
-| 実行環境・機能 | 確認結果 |
+| 分類 | 確認結果 |
 | --- | --- |
-| DEV backend／MCPの配備 | [成功：a113・attempt1、deploy／verify／finalize](https://github.com/emmatch-dev/econipass-backend/actions/runs/40274300029) |
-| Kongの配備 | [成功：a113・attempt1、deploy／verify／finalize](https://github.com/emmatch-dev/econipass-backend/actions/runs/40275773734) |
-| 公開API／MCP／OAuth／CORS | full API／MCP／OAuth／CORS helperの1回検証が成功。frontendは200・非空HTML（画面操作の受入とは別） |
-| 新sourceでの認証済みCFP | 5種類でサーバー取得＋metadata応答成功、500なし。embedded受領・保存・投入／置換は未受入 |
-| 新sourceでの認証済みEMS | CSV／XLSXのサーバー取得＋metadata応答成功、500なし。embedded受領・保存・更新は未受入 |
+| Claude Code／Gemini CLI／Copilot CLI | 7スキルとMCP設定のネイティブ認識。15 metadata操作成功 |
+| Goose／Cline | 7スキルとMCP設定のネイティブ読取。6 metadata操作成功 |
+| Cursor／保持済みVS Code | 隔離profileへのMCP設定保存と読戻し。4 metadata操作成功。スキル本文の認識・IDE業務操作は未確認 |
+| OpenAI Responses／Anthropic Messages／OpenAI Agents SDK／LangChain-LangGraph | 実SDKを使う4つのローカル合成fixtureが成功。実モデル・remote MCPは未実行 |
 
-## クライアント受入の範囲
+CLI7環境25操作とSDK4環境の合成fixtureを限定確認11と記録します。ネットワーク・Keychain・既存ユーザー設定を隔離し、新OAuth・実モデル・業務更新は0です。
+環境条件未解消2（Linux Codex、QueryPie/Aru）は新候補未ロードです。残り16は新候補未実施で、ChatGPT保留1を含みます。
+Rooの旧候補での失敗とMCP無効の別診断、Claude hostedの旧スキル取込は履歴に残し、新候補の受入へ加算しません。
 
-| 状態 | 環境数・範囲 |
-| --- | --- |
-| 限定確認 | 12。過去入力一致9と、新しいnative metadata確認3 |
-| 元失敗を保持 | Roo1 |
-| package load前blocked | 2。Linux Codexの環境準備、QueryPie/Aruのimport前UI |
-| 他未実施 | 14。ChatGPT保留を含む |
-| 総合受入 | 0／29 |
+## 現在のDEVと残る配備
 
-Claude Code／Gemini CLI／Copilot CLIの3環境では15件のmetadata操作で7スキルとMCP設定を認識しました。
-Cursor／VS Codeは設定だけ、SDKは合成fixture、Claude Webは7個別スキルの過去入力一致です。
-Rooは元の0スキル検出を保持し、TEMP設定のMCPを無効にした別診断では7スキルのmetadataを確認しました。
-別診断は配布ZIPと入力が異なり、スキル本文の利用・MCP接続・認証済み業務の受入へ加算していません。
-Linux Codexのstartup失敗後、専用VMの停止と元設定の復元は完了しました。native受入は未実行です。
+DEV backend38adは[通常配備・外部検証・finalize](https://github.com/emmatch-dev/econipass-backend/actions/runs/40285257680)に成功しました。
+[連動Kong40290693074](https://github.com/emmatch-dev/econipass-backend/actions/runs/40290693074)は、GitHub Secretから渡る候補証明書が残存7日の条件を満たさず停止しています。新Kong resource作成と切替は未到達で、完全なrolloutは未完了です。
+公開中のAPI証明書は2027-01-01まで有効です。Secretの候補とpublic leafの同一性は未確認です。共有TLSの隔離済み旧更新経路を再開せず、適格な証明書ペアを待ちます。
 
-前駆環境のCFP5種・EMS CSV／XLSX取得や読み取りを、上表の新source結果へ流用しません。
-CFP投入・置換・更新の受入は読み取り・ファイル受領と分けます。権限のない操作は成功へ加算しません。
-今回の既存読み取り接続では組織アクセス・月次ゲート・EMS取込一覧を確認しました。接続の入力定義にはdelivery_modeが露出しておらず、embedded呼出し・保存・preview・投入・置換は0です。新しいmetadata応答を受信できた事実と、ファイル本体の受領・業務更新は分けます。
-sourceの束縛は完了したDEV／Kong workflowによるもので、health応答自体がsource SHAを提示したわけではありません。
-顧客値・事業所ID・名称・原本ファイル・顧客ファイルdigest・資格情報は公開しません。
+配布物生成source dd389とbackend38adは、MCPのdocstringを除くAST・引数・tool名が一致しています。
+サーバー2箇所の説明修正は監査3ファイルの人間承認・CI・配備が残っています。対応表14ソースのbyte一致やserved説明の更新を主張しません。
 
-今回のLICENSE適用、追加OAuth認可、ChatGPT受入は保留です。公式ディレクトリ申請は未完了です。
-固定PRD参照profileは30操作・8タグの監査境界を維持し、STG／PRD配備は進めていません。
-[機械可読概要](acceptance-summary.json)と[a72時点の履歴](https://github.com/emmatch-dev/econipass-mcp-plugins/blob/a72fb24fa8ca97db94091e9452a07d5a69195cbf/docs/ACCEPTANCE.md)を参照してください。
+現在の公開API／MCP／OAuth metadata／CORSの契約検証は成功しました。
+既存接続で組織・対象月・EMS取込一覧を確認し、CFP5種・EMS CSV/XLSXのサーバー取得とmetadata応答が成功しました。今回の7件で500は観測していません。
+接続のdelivery_mode入力は未露出のため、embedded受信・ファイル保存・投入・置換は0です。今回選んだ事業所は新しい認可済み一覧の直接所属先であり、旧記録とのデータ比較は行っていません。
+顧客ID・名称・値・ファイル・顧客ファイルdigest・資格情報は公開しません。
+
+LICENSE適用・新OAuth・ChatGPT受入は保留、公式ディレクトリ掲載とSTG/PRD配備は未完了です。
+[以前のa113時点の記録](https://github.com/emmatch-dev/econipass-mcp-plugins/blob/661361786a2202ca256cced6e044255615b2438e/docs/ACCEPTANCE.md)と[機械可読の記録](acceptance-summary.json)を参照してください。
