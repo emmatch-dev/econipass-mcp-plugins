@@ -1,3 +1,7 @@
+> v1.2.0の現行候補はff0bのクライアントDEV previewです。37 ZIP＋release.json、EMS17操作追加と最大273のソース登録を含みます。65テスト・7スキル検査・CLI7環境25 metadata・SDK4合成fixtureが成功しました。総合受入0/29、Kong候補TLSとサーバー説明修正の配備は未完了です。LICENSE・新OAuth・ChatGPTは保留です。現行状態は[受入記録](../docs/ACCEPTANCE.md)、公開状態は[Releases](https://github.com/emmatch-dev/econipass-mcp-plugins/releases)を参照してください。
+>
+> 以下は以前のsource・候補・準備時点の履歴です。現行候補や現在の配備完了を示すものとして継承しません。
+
 # EcoNiPass DEV 1.2.0の配布・公開
 
 現在の配布先と検証・受入の範囲は[README](../README.md)と[受入記録](../docs/ACCEPTANCE.md)を確認してください。

@@ -30,13 +30,13 @@
         "STATUTORY_REPORTS_ENABLED": false,
         "STATUTORY_REPORT_MCP_REVIEW_ENABLED": false
       },
-      "tool_count": 241,
-      "tool_names_sha256": "89bd4a6459d1d87381003c103434beb237ebe46322d57bfb99ac875fa3c90902",
+      "tool_count": 258,
+      "tool_names_sha256": "82a11ea17015e8b3cbc67bd807e635d2fcd6479e7b841778848f83a2c226937f",
       "primary_skill_counts": {
         "activity-input": 19,
         "cfp-input": 2,
         "emissions-analysis": 8,
-        "ems-operations": 172,
+        "ems-operations": 189,
         "measures-targets": 20,
         "setup": 1,
         "statutory-reports": 19
@@ -48,13 +48,13 @@
         "STATUTORY_REPORTS_ENABLED": true,
         "STATUTORY_REPORT_MCP_REVIEW_ENABLED": false
       },
-      "tool_count": 254,
-      "tool_names_sha256": "1827838017ed338118c5b68ab43deff21f46b175d7c8888b99b77ae60f15ef42",
+      "tool_count": 271,
+      "tool_names_sha256": "470e846765515dade9aeb39b9baa8a47d5950d54343a8fc79625e60c880dc42f",
       "primary_skill_counts": {
         "activity-input": 19,
         "cfp-input": 2,
         "emissions-analysis": 8,
-        "ems-operations": 172,
+        "ems-operations": 189,
         "measures-targets": 20,
         "setup": 1,
         "statutory-reports": 32
@@ -66,13 +66,13 @@
         "STATUTORY_REPORTS_ENABLED": true,
         "STATUTORY_REPORT_MCP_REVIEW_ENABLED": true
       },
-      "tool_count": 256,
-      "tool_names_sha256": "136ab228a69ad1f4a25ba6e10ff317d4af1129e74b6b6b5f092545db05b86727",
+      "tool_count": 273,
+      "tool_names_sha256": "66a8b0e3d801c75fb4bb015d1d49179d9f772936f3331bfec5dcc0a52eb6efe7",
       "primary_skill_counts": {
         "activity-input": 19,
         "cfp-input": 2,
         "emissions-analysis": 8,
-        "ems-operations": 172,
+        "ems-operations": 189,
         "measures-targets": 20,
         "setup": 1,
         "statutory-reports": 34
@@ -96,6 +96,9 @@
     }
   },
   "tools": {
+    "accept_ems_intake_job_revisions": {
+      "primary_skill": "ems-operations"
+    },
     "accept_statutory_report_proposal_v2": {
       "primary_skill": "statutory-reports"
     },
@@ -137,6 +140,9 @@
     },
     "cancel_input_exclusion": {
       "primary_skill": "activity-input"
+    },
+    "change_ems_measurement_point_meter_role": {
+      "primary_skill": "ems-operations"
     },
     "check_shoene_obligation": {
       "primary_skill": "statutory-reports"
@@ -382,6 +388,9 @@
     "get_ems_demand_delivery_settings": {
       "primary_skill": "ems-operations"
     },
+    "get_ems_ghg_monthly_electricity": {
+      "primary_skill": "ems-operations"
+    },
     "get_ems_import": {
       "primary_skill": "ems-operations"
     },
@@ -394,6 +403,9 @@
     "get_ems_management_overview": {
       "primary_skill": "ems-operations"
     },
+    "get_ems_measurement_point_metric_series": {
+      "primary_skill": "ems-operations"
+    },
     "get_ems_mv_plan": {
       "primary_skill": "ems-operations"
     },
@@ -401,6 +413,9 @@
       "primary_skill": "ems-operations"
     },
     "get_ems_processing_job": {
+      "primary_skill": "ems-operations"
+    },
+    "get_ems_site_calendar": {
       "primary_skill": "ems-operations"
     },
     "get_ems_supervision_action_options": {
@@ -586,6 +601,9 @@
     "list_ems_mv_adjustments": {
       "primary_skill": "ems-operations"
     },
+    "list_ems_mv_outcomes": {
+      "primary_skill": "ems-operations"
+    },
     "list_ems_mv_plans": {
       "primary_skill": "ems-operations"
     },
@@ -742,7 +760,19 @@
     "reject_statutory_report_proposal_v2": {
       "primary_skill": "statutory-reports"
     },
+    "remove_ems_site_calendar_day": {
+      "primary_skill": "ems-operations"
+    },
+    "reparent_ems_asset": {
+      "primary_skill": "ems-operations"
+    },
     "replace_ems_device_installation": {
+      "primary_skill": "ems-operations"
+    },
+    "replace_ems_site_calendar_days": {
+      "primary_skill": "ems-operations"
+    },
+    "request_ems_reaggregation": {
       "primary_skill": "ems-operations"
     },
     "requeue_ems_processing_job": {
@@ -767,6 +797,9 @@
       "primary_skill": "ems-operations"
     },
     "retire_ems_measurement_point": {
+      "primary_skill": "ems-operations"
+    },
+    "retire_ems_site": {
       "primary_skill": "ems-operations"
     },
     "retry_ems_supervision_delivery": {
@@ -811,13 +844,31 @@
     "update_activity": {
       "primary_skill": "measures-targets"
     },
+    "update_ems_asset": {
+      "primary_skill": "ems-operations"
+    },
     "update_ems_demand_alert_rule": {
       "primary_skill": "ems-operations"
     },
     "update_ems_demand_delivery_settings": {
       "primary_skill": "ems-operations"
     },
+    "update_ems_device": {
+      "primary_skill": "ems-operations"
+    },
+    "update_ems_electrical_edge": {
+      "primary_skill": "ems-operations"
+    },
+    "update_ems_electrical_node": {
+      "primary_skill": "ems-operations"
+    },
     "update_ems_intake_connection": {
+      "primary_skill": "ems-operations"
+    },
+    "update_ems_measurement_point": {
+      "primary_skill": "ems-operations"
+    },
+    "update_ems_site": {
       "primary_skill": "ems-operations"
     },
     "update_ems_site_timezone": {
@@ -892,7 +943,7 @@
   },
   "source_base_commit": "06ee31fbe3c2a5a5700c08d72054240242c476e3",
   "source_files_sha256": {
-    "services/mcp-server/src/econipass_mcp/server.py": "79e93bcbbaf291a657133fb12c90927504caa1e9a78ce3e8e7445959981bdf7f",
+    "services/mcp-server/src/econipass_mcp/server.py": "254ae8a35be2e9769739c3981357f5032425720844385742e65f1f77c7449703",
     "services/mcp-server/src/econipass_mcp/request_identity.py": "df67efc7fc50f9fb1e69823b3c34a4d108a39415271a40c13b85a8d380309dd6",
     "services/mcp-server/src/econipass_mcp/tool_metadata.py": "1ae38691c6c31fcb73e79b69540c50e15036d603b4a166ac3e48f87cce884ca4",
     "services/mcp-server/src/econipass_mcp/tools/ems_catalog.py": "ad216864d5275827495cbffd8c5fa182e496eae6d6208b809abe09fd8688a01d",
@@ -905,6 +956,6 @@
     "services/mcp-server/src/econipass_mcp/tools/activities.py": "7002f3bc948f95fa2614d36ca755706fcfd1b3bd95cd87f4688ae245d152dd42",
     "services/mcp-server/src/econipass_mcp/tools/statutory_reports_v2.py": "8220f68c38d148c8d93da06db6bb14046f5296126149a8c924ffc611d5fd7d2f",
     "services/mcp-server/src/econipass_mcp/tools/statutory_paper.py": "57f98d5e9951a7d1db37b57ba9a90f4312327d01a57d541a3f14babacde312e0",
-    "services/mcp-server/src/econipass_mcp/data/ems_operations.json": "778ae7ee1e905ede3d45a98ed892395a4becdae18e09bb89b0bd8e8dd24c1de6"
+    "services/mcp-server/src/econipass_mcp/data/ems_operations.json": "2f289b9a1ad24593b7f57f339ff106e1e23198c4292172b8e16569ea003c4f51"
   }
 }

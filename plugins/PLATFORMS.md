@@ -1,9 +1,9 @@
 # EcoNiPass MCP のプラットフォーム別配布
 
-確認日: 2026-10-26。機械可読の正本は [platform-support.json](platform-support.json)。
-配布設定の対象ソースは `355e24babeac05182d97001e3004177ff666bb9a` です。
-初版の2026-10-08・ソース`7ca723a1e877500f4df7f49a3c76a46a48dbb9bd`から、
-以下のクライアント別設定と導入条件を更新しています。実機受入の範囲は[受入記録](../docs/ACCEPTANCE.md)で確認してください。
+初版の製品仕様確認日: 2026-10-08、初版ソース: `7ca723a1e877500f4df7f49a3c76a46a48dbb9bd`。
+2026-10-26の配布候補は `dd389bd50ba75a280dedb207b75c52434a6a5b5a` を生成元とし、最大273ツールの対応表へ同期しています。
+機械可読の正本は [platform-support.json](platform-support.json)、今回の確認範囲は[受入記録](../docs/ACCEPTANCE.md)です。
+初版の日付や今回の同期は、未実施環境の製品仕様・実機受入を再確認した意味ではありません。
 
 ここでいう対象は、既存の EcoNiPass 接続ガイドに設定経路があるクライアントです。
 **29 種類すべてで実機受入が済んだという意味ではありません。**
@@ -37,7 +37,7 @@
 
 Junie native と Q/Kiro successor の上記経路は 2026-10-26 の公式資料に合わせた導入案です。クライアントの実行・ログイン・認可は行っていません。キットの `skills/` 自体をネイティブ探索先へ重ねず、その直下の7つのスキルフォルダーと参照文書を配置します。
 
-Kiro では旧 Q と新 Kiro の設定断片を同じ接続先へ重複登録しません。同梱の Kiro 設定は既定 OIDC scope の代わりに `mcp:read` を指定し、新しい認可を自動実行しません。短い `ep` は、公式の `@server/tool` 形式で登録256操作の最長 selector を60文字に抑えます。内部モデル名の変換式まではこの静的確認で保証せず、任意 report-v2 を含む実際の全 tool catalog を導入版で確認します。新 Kiro の成功を旧 Q の成功に数えたり、その逆に流用したりしません。
+Kiro では旧 Q と新 Kiro の設定断片を同じ接続先へ重複登録しません。同梱の Kiro 設定は既定 OIDC scope の代わりに `mcp:read` を指定し、新しい認可を自動実行しません。短い `ep` は、公式の `@server/tool` 形式で登録273操作の最長 selector を60文字に抑えます。内部モデル名の変換式まではこの静的確認で保証せず、任意 report-v2 を含む実際の全 tool catalog を導入版で確認します。新 Kiro の成功を旧 Q の成功に数えたり、その逆に流用したりしません。
 
 共通 Agent Plugins は、ルート `plugin.json` と `mcp.json` の同じ版の schema 宣言、
 `skills/<name>/SKILL.md` を使います。互換 manifest の単純なファイル名変更ではありません。
@@ -51,8 +51,8 @@ Windsurf用キットの `configuration/mcp_config.json` は、接続確認と所
 `configuration/legacy-cascade-presets.json` の一覧から該当する
 `configuration/presets/<業務>.mcp_config.json` を**一つ**選び、既存設定の
 `econipass` エントリだけを入れ替えます。設定全体を上書きしたり、複数プリセットを
-別サーバー名で並べたりしないでください。13プリセットで現行最大256ツールを網羅し、
-各設定は最大64ツールです。他の有効MCPサーバーを含む合計を100以内にします。
+別サーバー名で並べたりしないでください。13プリセットで現行最大273ツールを網羅し、
+各設定は最大78ツールです。他の有効MCPサーバーを含む合計を100以内にします。
 
 EMSの7分類は同梱の `skills/ems-operations/references/workflows.md` に沿います。
 取込・復旧、マスタ・実測、監視、費用・アラート、監督・タスク、共有分析、M&Vに分け、
@@ -160,8 +160,8 @@ code review は `readOnlyHint: true` のツールに限られます。更新と�
 ## 既存資料との差分と受入
 
 - 古い Copilot/Gemini ガイドの「持ち込み token は対象外」は、現在の PAT 実装とは分けて読みます。
-  配布物はPAT発行やサーバー設定変更を行いません。利用環境の管理者に、
-  PATの有効化と許可scopeを確認してください。
+  配布物の利用は[導入手順](../README.md)と[接続確認スキル](econipass/skills/setup/SKILL.md)に従い、現在の接続schema・権限を確認します。
+  PAT発行や新scope付与は今回の受入に含めません。
 - Cline の bridge-only、Perplexity の macOS-only、古い tool 件数は今回の対応条件へ転載しません。
   現公式資料と実際の `tools/list` で確認します。
 - Gemini CLI の `type: http` と `url` は
