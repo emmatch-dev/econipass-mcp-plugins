@@ -1,10 +1,10 @@
 {
   "schema_version": 5,
-  "observed_at_utc": "2026-10-26T13:55:45.753149+00:00",
+  "observed_at_utc": "2026-10-26T22:22:46.524846+00:00",
   "environment": "DEV",
   "plugin_version": "1.2.0",
   "release_type": "client DEV preview prerelease",
-  "publication_state_authority": "GitHub Releases; this document does not assert publication",
+  "publication_state_authority": "GitHub Releases and saved post-publication anonymous asset readback",
   "distribution": {
     "skills": 7,
     "product_kits": 29,
@@ -21,7 +21,7 @@
       30
     ],
     "live_catalog_counts_inferred": false,
-    "current_candidate_auth_and_anonymous_release_GET": "not yet performed"
+    "current_candidate_auth_and_anonymous_release_GET": "anonymous38 passed after publication; authenticated stage is separate"
   },
   "runtime": {
     "normal_backend": {
@@ -60,15 +60,33 @@
       "files_saved": 0,
       "upload_replace_write_accepted": false,
       "new_OAuth": 0
+    },
+    "existing_connector_UI": {
+      "observed_at_utc": "2026-10-26T22:17:14.185Z",
+      "platform": "claude-hosted",
+      "existing_connector_only": true,
+      "endpoint": "https://api.dev.app.econipass.com/mcp",
+      "UI_groups": {
+        "interactive": 15,
+        "readonly": 129,
+        "write_delete": 127
+      },
+      "UI_displayed_total": 271,
+      "added_EMS17_titles_visible": 17,
+      "scope": "UI title presence only; no schema, business execution or all273 verification",
+      "receipt_sha256": "d62e8f3f91e87e68efb31c4e9a80b95a0818cb958d435b22c777138bde5081d8",
+      "permission_changes": 0,
+      "new_OAuth": 0,
+      "tool_invocations": 0
     }
   },
   "acceptance": {
     "fresh_native_CLI_platforms": 7,
     "fresh_native_metadata_commands": 25,
     "synthetic_SDK_platforms": 4,
-    "limited_platforms": 11,
+    "limited_platforms": 12,
     "environment_preconditions_unresolved_before_load": 2,
-    "current_candidate_not_executed": 16,
+    "current_candidate_not_executed": 15,
     "ChatGPT_held_within_not_executed": 1,
     "full_platform_acceptance": 0,
     "prior_limited12_inherited": false,
@@ -134,6 +152,33 @@
         "platform": "langchain-langgraph",
         "status": "PASS_LIMITED_SYNTHETIC_FIXTURE"
       }
+    ],
+    "hosted_skill_load_platforms": 1,
+    "hosted_results": [
+      {
+        "platform": "claude-hosted",
+        "surface": "Web custom Skills",
+        "observed_on_jst": "2026-10-27",
+        "status": "PASS_LIMITED_SKILL_LOAD_SAVED_READBACK",
+        "fresh_EMS_replacement_uploads": 1,
+        "EMS_version": "v4",
+        "EMS_reloaded_and_enabled": true,
+        "other6_version": "v2",
+        "seven_enabled": true,
+        "actual_downloads": 7,
+        "original_source_entries_compared": 20,
+        "all_original_source_entries_exact": true,
+        "host_source_prefix": "skills/",
+        "host_generated_additional_entry": ".claude-plugin/plugin.json",
+        "raw_ZIP_equality_claimed": false,
+        "receipt_sha256": "085705c7a0404deaf11e1cfd4b65399eb66b0dd9162c2194406819d84f44e5c0",
+        "independent_review_sha256": "558fa78e4694ecaaf83b9a5eca47ba61701680c45974ec2d576b628a41aacaa7",
+        "new_OAuth": 0,
+        "remote_MCP_calls": 0,
+        "real_model_calls": 0,
+        "business_writes": 0,
+        "full_acceptance": false
+      }
     ]
   },
   "holds": {
@@ -145,5 +190,39 @@
   },
   "source_audit_three_file_proposal": "awaiting explicit human approval; source protected files unchanged",
   "history_url": "https://github.com/emmatch-dev/econipass-mcp-plugins/blob/661361786a2202ca256cced6e044255615b2438e/docs/acceptance-summary.json",
-  "customer_values_included": false
+  "customer_values_included": false,
+  "observation_date_jst": "2026-10-27",
+  "document_state": "post-publication observation snapshot",
+  "publication": {
+    "status": "PUBLISHED_DEV_PREVIEW_PRERELEASE",
+    "tag": "econipass-mcp-plugin-v1.2.0",
+    "release_url": "https://github.com/emmatch-dev/econipass-mcp-plugins/releases/tag/econipass-mcp-plugin-v1.2.0",
+    "tag_source_commit": "df81a01051bb662cef1c4af87b181b087f05e9ed",
+    "published_at_utc": "2026-10-26T22:18:52Z",
+    "published_at_jst": "2026-10-27T07:18:52+09:00",
+    "draft": false,
+    "prerelease": true,
+    "asset_IDs_unchanged": true,
+    "anonymous_readback": {
+      "status": "PASS_ANONYMOUS_PUBLIC38_ASSETS_EXACT",
+      "assets": 38,
+      "all_SHA_and_size_exact": true,
+      "ZIPs": 37,
+      "ZIP_entries": 1016,
+      "all_ZIP_CRC_pass": true,
+      "LICENSE_entries": 0,
+      "authorization_header_used": false,
+      "receipt_sha256": "c3210123af8097f4ccb6efee276ff67d5fc62f69831b907659422ae25732189a",
+      "authenticated_business_or_official_directory_acceptance_inferred": false
+    },
+    "old_v1_1_0_tag_and_assets_preserved": true,
+    "old_release_preservation_receipt_sha256": "dee4fe56ca0feda8b4c99050a63ecc24b5ead2c3894ec7e38307d161d2706386",
+    "main_documentation_update": {
+      "scope": "five documentation files only; distinct from the fixed published tag source",
+      "files": 5,
+      "packaging_input_files_unchanged": 33,
+      "published_assets_unchanged": 38,
+      "published_tag_source_unchanged": true
+    }
+  }
 }
