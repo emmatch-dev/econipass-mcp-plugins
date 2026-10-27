@@ -8,8 +8,8 @@
 接続先は **DEV** の `https://api.dev.app.econipass.com/mcp` です。版と公開状態は[GitHub Releases](https://github.com/emmatch-dev/econipass-mcp-plugins/releases)で確認してください。
 
 この版はクライアント配布物のpreviewです。EMSの17操作追加を取り込みました。
-DEV backendの配備は成功していますが、連動Kong配備は候補TLS証明書の期限検査で停止しています。
-サーバー側の説明修正も監査承認・CI・配備が残っています。全操作・全29環境の受入やGAは未完了です。
+DEV backendは20fの通常配備・外部検証・finalizeに成功しました。連動Kongの新runは候補TLS証明書の残存7日検査で停止し、完全なrolloutは未完了です。
+サーバー説明修正の監査3ファイルは利用者の承認後に適用し、PR #1806の7 CI成功を経て20fへmergeしました。統合CIの全7 jobとimage buildの非skip 9 jobも成功しています。配備後の認証済みUATはアクセス制約で未実施です。全操作・全29環境の受入やGAは未完了です。
 利用にはEcoNiPassアカウント、事業所の権限と必要なOAuth scopeが必要です。
 LICENSE適用・新OAuth認可・ChatGPT受入は保留中で、MIT等の利用許諾は追加していません。
 
@@ -96,23 +96,29 @@ release SHA-256は `ff0b309c334bb2878ae5585e0de15d90ae96833eb9ce8f5d02d96f5507d4
 
 | 対象 | 確認状態 |
 | --- | --- |
-| 配布物の生成source | `dd389bd50ba75a280dedb207b75c52434a6a5b5a`。サーバー説明修正を含む。backendへの反映は承認・CI・配備待ち |
-| DEV backend | `38ad8275a0a19e82f3c568d165d1b63e5dbcd3de`。[通常配備・検証・finalize成功](https://github.com/emmatch-dev/econipass-backend/actions/runs/40285257680) |
-| 連動Kong | [候補TLS証明書の残存7日条件で停止](https://github.com/emmatch-dev/econipass-backend/actions/runs/40290693074)。新runtime resource作成・Kong切替の前段 |
-| 公開API／MCP／OAuth／CORS | 2026-10-26の既存公開経路の契約検証成功。Kongの新規配備成功とは別の結果 |
-| CFP／EMS | 既存接続でCFP5種・EMS CSV/XLSXのサーバー取得とmetadata応答が成功。今回7件で500なし。MCP業務ファイルの保存・投入・置換は未受入 |
+| 配布物の生成source | `dd389bd50ba75a280dedb207b75c52434a6a5b5a`。20fのapp／MCP sourceと同じ。梱包入力33ファイル・ff0b・公開38資産は不変 |
+| DEV backend | `20f4bd2ecd3dc3bd4cb27c8feb8d31192882599e`。[通常配備run40425777373](https://github.com/emmatch-dev/econipass-backend/actions/runs/40425777373)はattempt1、14 job成功。配備・外部検証・finalizeを完了し、finalizeは2026-10-27 09:34:31 JSTに終了 |
+| 承認済みbackend source | [PR #1806](https://github.com/emmatch-dev/econipass-backend/pull/1806)を2026-10-27 08:41:57 JSTにmerge。[統合CI](https://github.com/emmatch-dev/econipass-backend/actions/runs/40421511292)の全7 jobと[image build](https://github.com/emmatch-dev/econipass-backend/actions/runs/40421511490)の非skip 9 jobが成功。対応表14ファイルのGit source bytesも公開候補と一致 |
+| 連動Kong | [新run40427278443](https://github.com/emmatch-dev/econipass-backend/actions/runs/40427278443)はsource20f・attempt1で失敗。step12の候補TLS証明書の残存7日検査で停止し、新resource作成・Kong切替へ未到達。push起点40425667397のskipとは別のrun |
+| 以前の38ad配備 | [通常配備40285257680](https://github.com/emmatch-dev/econipass-backend/actions/runs/40285257680)は成功。[当時の連動Kong40290693074](https://github.com/emmatch-dev/econipass-backend/actions/runs/40290693074)は候補TLS証明書の残存7日条件で停止した履歴 |
+| 以前の公開API／MCP／OAuth／CORS | source38ad時点の2026-10-26の既存公開経路の契約検証成功。20fの配備後UATやKongの新規配備成功へ継承しない |
+| CFP／EMS（38ad） | 既存接続でCFP5種・EMS CSV/XLSXのサーバー取得とmetadata応答が成功。当時7件で500なし。MCP業務ファイルの保存・投入・置換は未受入 |
 | Claude Web | 2026-10-27、7スキルの実ダウンロードで元source全20エントリが候補と一致。EMS v4は保存後の再読込と有効状態、他6スキルはv2の有効状態を確認 |
 | 29環境 | CLI7環境の25 metadata確認、SDK4合成fixture、Claude hostedのスキル保存・読戻し1環境を限定確認12として記録。環境条件未解消2、未実施15（ChatGPT保留を含む）、総合受入0／29 |
 
 Claude Webの取得ZIPには`skills/` prefixとhost生成の`.claude-plugin/plugin.json`が加わるため、元sourceの一致を確認し、ZIP全体のbyte一致は主張しません。
 同日の既存DEVコネクタ画面では271件（interactive15／readonly129／write-delete127）と追加EMS17操作のタイトルを確認しました。権限変更・新OAuth・tool実行は0で、schema・業務実行・最大273件の照合は未確認です。
 
-生成sourceと現在のDEV backendでは、MCPの引数・tool名・docstringを除くASTは同じです。
+その後、既存Claude Web接続ではToolSearchに`delivery_mode`が露出し、EMS XLSXとCFP masterを明示的な`metadata`で各1回取得しました。metadataは会話へ届き、`server_fetched=true`、`file_embedded=false`、`client_receipt_confirmed=false`、`resource_uri=null`を確認しました。通常MCP呼出し計2・model prompt計3、新OAuth・業務更新・embedded・業務ファイル保存は0です。この追加観測は38adに限定し、20fのDEV受入や全hostのschemaへ継承せず、限定12・総合0／29を維持します。
+
+生成source dd389と現在のDEV source20fはapp／MCP sourceが同じで、対応表の14ファイルもGit source bytesが一致しています。Git sourceの一致と通常配備の受入は別に確認しました。
 差分となるサーバー2箇所のdocstringは、ダッシュボードの5種の軽量応答と3種の明示選択の説明を訂正します。
-このserved metadataの修正は未配備です。対応表の14ソースhashを現在の稼働sourceとのbyte一致と読み替えないでください。
+監査3ファイルの承認・適用、CI・image buildと20fの通常DEV配備を完了しました。この配備sourceにサーバー説明修正を含みます。配備後の既存Claude画面確認はブラウザー制御がWork設定で無効のため停止し、EcoNiPassツールも現セッションでは利用できません。20fの認証済みUATは未実施で、以前の38adでのmetadata受領を継承しません。
 
 公開中のAPI証明書は2027-01-01まで有効です。配備が拒否したのはGitHub Secretから渡る候補証明書で、両者の同一性は未確認です。
-期限検査は維持し、適格な証明書ペアが用意できるまでKongの新規配備を止めています。
+期限検査は維持しています。新しい連動Kong runではsnapshot・切替・capsuleの後続工程がskipし、tail cleanupの成功をrollout成功へ読み替えません。
+repository-levelの候補証明書ペアは更新metadataが2026-08-16のままです。隔離済みの共有旧更新経路は再開していません。既存DEV 2台へのSSHは各1回timeoutとなり、接続経路の確認が残っています。証明書・秘密鍵の読取やhost変更は行っていません。
+TLS metadata読取の追加案v2はprotected 2ファイルの人間承認待ちで、共有sourceへ未適用です。
 
 新OAuth、ChatGPT受入、LICENSE適用は保留し、公式ディレクトリ申請とSTG/PRD配備は未完了です。
 [受入記録](docs/ACCEPTANCE.md)と[機械可読の概要](docs/acceptance-summary.json)、[以前の配備時点の記録](https://github.com/emmatch-dev/econipass-mcp-plugins/blob/661361786a2202ca256cced6e044255615b2438e/README.md)を確認してください。

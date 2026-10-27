@@ -4,9 +4,13 @@
 >
 > 公開済み配布物はff0bのクライアントDEV previewです。生成source dd389、37 ZIP＋release.json、EMS17操作追加と最大273のソース登録を保持します。65テスト・7スキル検査・CLI7環境25 metadata・SDK4合成fixtureが成功しています。
 >
-> Claude Webでは7スキルの実ダウンロードで元source全20エントリが候補と一致し、EMS v4の保存後再読込・有効状態と他6スキルのv2・有効状態を確認しました。限定確認12（CLI7＋SDK合成4＋Claude hosted1）・環境条件未解消2・未実施15・総合受入0/29です。ZIP全体のbyte一致、remote MCPや業務実行の受入は主張しません。
+> Claude Webでは7スキルの実ダウンロードで元source全20エントリが候補と一致し、EMS v4の保存後再読込・有効状態と他6スキルのv2・有効状態を確認しました。限定確認12（CLI7＋SDK合成4＋Claude hosted1）・環境条件未解消2・未実施15・総合受入0/29です。このスキル保存・読戻しだけでは、ZIP全体のbyte一致やremote MCP・業務実行の受入を主張しません。
 >
-> 既存DEVコネクタ画面の271件とEMS17操作タイトルの可視性も確認しました。権限変更・新OAuth・tool実行は0で、schema・業務実行・最大273件の照合は未確認です。Kong候補TLSとサーバー説明修正の承認・CI・配備は未完了です。LICENSE・新OAuth・ChatGPTは保留です。現行状態は[受入記録](../docs/ACCEPTANCE.md)、公開状態は[Releases](https://github.com/emmatch-dev/econipass-mcp-plugins/releases)を参照してください。
+> 先の既存DEVコネクタ画面確認は271件とEMS17操作タイトルの可視性に限る観測です。後続のClaude Web接続では`delivery_mode`が露出し、EMS XLSXとCFP masterを明示`metadata`で各1回取得しました。metadataは会話に届き、server取得true・本体同梱false・clientファイル受領false・resource URI nullを確認しました。通常MCP呼出し計2・model prompt計3、新OAuth・業務更新・embedded・業務ファイル保存は0です。source38adでの結果に限定し、20fのDEV受入・全hostのschemaや総合受入へ拡張しません。限定12・総合0/29は不変です。
+>
+> 説明修正に必要な監査3ファイルは利用者承認後に適用し、PR #1806のhead88cc・7 CI成功後、2026-10-26T23:41:57Zにsource20fへmergeしました。app／MCP sourceは生成source dd389と同じで、ff0b・梱包入力33ファイル・公開38資産は不変です。[統合CI40421511292](https://github.com/emmatch-dev/econipass-backend/actions/runs/40421511292)の全7 jobと[image build40421511490](https://github.com/emmatch-dev/econipass-backend/actions/runs/40421511490)の非skip 9 jobは成功しました。[通常DEV40425777373](https://github.com/emmatch-dev/econipass-backend/actions/runs/40425777373)もattempt1・14 job成功で配備・外部検証・finalizeを完了し、2026-10-27T00:34:31Zにfinalizeしました。サーバー説明修正を含む20fと公開候補の14ファイルはGit source bytesが一致しています。配備後の認証済みUATはブラウザー制御無効・EcoNiPassツール利用不可のため未実施で、38adのmetadata受領を継承しません。
+>
+> 新しい[連動Kong40427278443](https://github.com/emmatch-dev/econipass-backend/actions/runs/40427278443)はsource20f・attempt1で失敗しました。step12の候補TLS証明書の残存7日検査で停止し、新resource作成・Kong切替へ未到達です。後続snapshot・切替・capsuleはskipし、tail cleanupの成功をrollout成功へ読み替えません。旧38adのKong失敗とpush起点40425667397のskipは別の履歴です。候補ペアの更新metadataは2026-08-16のままで、隔離した共有旧更新経路は再開していません。既存DEV 2台へのSSHは各1回timeoutとなり、接続経路の確認が残っています。TLS metadata読取案v2はprotected 2ファイルの人間承認待ち・共有source未適用です。LICENSE・新OAuth・ChatGPT・STG/PRD停止は維持します。現行状態は[受入記録](../docs/ACCEPTANCE.md)、公開状態は[Releases](https://github.com/emmatch-dev/econipass-mcp-plugins/releases)を参照してください。
 >
 > 以下は以前のsource・候補・準備時点の履歴です。現行候補や現在の配備完了を示すものとして継承しません。
 
