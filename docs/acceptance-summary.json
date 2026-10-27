@@ -1,6 +1,6 @@
 {
   "schema_version": 5,
-  "observed_at_utc": "2026-10-26T22:22:46.524846+00:00",
+  "observed_at_utc": "2026-10-27T00:39:03.000211+00:00",
   "environment": "DEV",
   "plugin_version": "1.2.0",
   "release_type": "client DEV preview prerelease",
@@ -25,33 +25,81 @@
   },
   "runtime": {
     "normal_backend": {
-      "source": "38ad8275a0a19e82f3c568d165d1b63e5dbcd3de",
-      "run_id": 40285257680,
+      "source": "20f4bd2ecd3dc3bd4cb27c8feb8d31192882599e",
+      "run_id": 40425777373,
       "status": "success",
+      "acceptance": "NORMAL_DEV_ACCEPTED",
       "attempt": 1,
+      "non_skipped_success_jobs": 14,
       "actual_deploy_verify_finalize_jobs": [
-        121462535157,
-        121464247189,
-        121464374997
-      ]
+        121934023314,
+        121935546910,
+        121935678645
+      ],
+      "finalize_completed_at_utc": "2026-10-27T00:34:31Z",
+      "actor_and_triggering_actor_match": true,
+      "receipt_sha256": "ab816b13343ba8b1fe20bf0ab57b9d82922c19f80ecc2e77173c76159531633c",
+      "Kong_rollout_accepted": false,
+      "full29_acceptance_inferred": false
     },
     "Kong": {
-      "run_id": 40290693074,
-      "status": "blocked by candidate GitHub Secret certificate lifetime floor",
-      "new_Kong_resources_created_in_failed_step": false,
+      "run_id": 40427278443,
+      "status": "completed",
+      "conclusion": "failure",
+      "complete_rollout_G3": "NOT_MET",
+      "rollout_accepted": false,
+      "push_triggered_skipped_run_separate": 40425667397,
+      "prior_38ad_failed_linked_run_separate": 40290693074,
+      "TLS_supply_followup": {
+        "repository_candidate_pair_metadata_updated_on": "2026-08-16",
+        "environment_pair_override_metadata_present": false,
+        "secret_value_or_private_key_digest_inspected": false,
+        "shared_old_update_route_quarantined": true,
+        "shared_old_update_route_resumed": false,
+        "existing_DEV_SSH_targets_attempted": 2,
+        "SSH_attempts_per_target": 1,
+        "SSH_result": "both connection timeouts; access route pending",
+        "host_certificate_or_private_key_reads": 0,
+        "host_mutations": 0,
+        "TLS_metadata_readonly_proposal_v2": {
+          "protected_files": 2,
+          "human_approval": "pending",
+          "shared_source_applied": false,
+          "status": "proposal only"
+        }
+      },
+      "backend_source": "20f4bd2ecd3dc3bd4cb27c8feb8d31192882599e",
+      "attempt": 1,
+      "job_id": 121936295410,
+      "failed_step": 12,
+      "executed_error": "Kong TLS certificateは失効済み、または7日以内に失効します。",
+      "new_Kong_resources_created": false,
       "new_Kong_cutover_reached": false,
-      "complete_rollout_G3": "NOT_MET"
+      "snapshot_deploy_capsule_steps13_to18": "skipped",
+      "tail_cleanup_steps19_to23": "success; not rollout acceptance",
+      "failure_receipt_sha256": "36e022cb0d491d81a70af0a0431727c0431b326b76b016cea357d048e74c7180"
     },
     "producer_server_descriptions": {
       "source": "dd389bd50ba75a280dedb207b75c52434a6a5b5a",
-      "approval_CI_deployment": "pending",
+      "approval_CI_deployment": "human-approved audit3 applied; PR and postmerge CI/image passed; normal DEV20f accepted",
       "docstrings_excluded_AST_arguments_and_names_match_deployed38ad": true,
-      "source14_bytes_equal_deployed_backend": false
+      "source14_bytes_equal_deployed_backend": true,
+      "audit3_human_approved": true,
+      "audit3_applied": true,
+      "protected_validator_sha256": "60778e142fa3f843e8dcc8fafa49e64bbce6e2b5b9d570a10e930e135994d956",
+      "merged_source": "20f4bd2ecd3dc3bd4cb27c8feb8d31192882599e",
+      "app_MCP_source_equal_producer_dd389": true,
+      "source14_binding_scope": "Git source files at deployed20f, not a live byte read from running containers",
+      "source14_exact_receipt_sha256": "d1bfdedea16f4765ba87f364f9b825f2f53e7220fe7676b6a63eac88b49442a6",
+      "description_corrections_in_deployed_source": true,
+      "postdeployment_authenticated_UAT_completed": false,
+      "prior38ad_AST_comparison_historical": true
     },
     "public_edge": {
       "status": "pass",
       "receipt_sha256": "502be85fd84d2bf38bf48e0a071fd24a90f9324af2a215fb0fbb0ba020f59869",
-      "does_not_prove_new_Kong_rollout": true
+      "does_not_prove_new_Kong_rollout": true,
+      "observation_scope": "prior source38ad public route contract; not inherited as source20f authenticated UAT"
     },
     "existing_connection": {
       "status": "CFP5_EMS2_SERVER_FETCH_METADATA_PASS",
@@ -59,7 +107,8 @@
       "receipt_sha256": "ccf2706a201c0f670f733ddbb64492d404824bd8f461ca6fafe520eb35aaf173",
       "files_saved": 0,
       "upload_replace_write_accepted": false,
-      "new_OAuth": 0
+      "new_OAuth": 0,
+      "backend_source": "38ad8275a0a19e82f3c568d165d1b63e5dbcd3de"
     },
     "existing_connector_UI": {
       "observed_at_utc": "2026-10-26T22:17:14.185Z",
@@ -77,7 +126,124 @@
       "receipt_sha256": "d62e8f3f91e87e68efb31c4e9a80b95a0818cb958d435b22c777138bde5081d8",
       "permission_changes": 0,
       "new_OAuth": 0,
-      "tool_invocations": 0
+      "tool_invocations": 0,
+      "backend_source": "38ad8275a0a19e82f3c568d165d1b63e5dbcd3de"
+    },
+    "approved_merged_backend_source": {
+      "source": "20f4bd2ecd3dc3bd4cb27c8feb8d31192882599e",
+      "PR": 1806,
+      "PR_head": "88cc0cc281778f98f2bdbf183a86b91492757b59",
+      "PR_CI_run": 40414570107,
+      "PR_CI_passed_checks": 7,
+      "merged_at_utc": "2026-10-26T23:41:57Z",
+      "postmerge_CI": {
+        "run_id": 40421511292,
+        "status": "completed",
+        "conclusion": "success",
+        "successful_jobs": 7,
+        "run_final_receipt_sha256": "417127381f4c4378b2e8f33de6ec64d8879d3af1fa602d28ca6df268fc5c2f65"
+      },
+      "postmerge_image_build": {
+        "run_id": 40421511490,
+        "status": "completed",
+        "conclusion": "success",
+        "successful_non_skipped_jobs": 9,
+        "skipped_jobs": 29,
+        "run_final_receipt_sha256": "7a086c62a63324b32e85af98318a5f21118b745a699db786ada91dd49d9d033b"
+      },
+      "DEV_deployment": "NORMAL_DEV_ACCEPTED run40425777373 attempt1",
+      "app_MCP_source_equal_producer_dd389": true,
+      "packaging_input_files_unchanged": 33,
+      "published_assets_unchanged": 38,
+      "source14_Git_bytes_exact": true
+    },
+    "Claude_Web_metadata_reception": {
+      "observed_on_jst": "2026-10-27",
+      "backend_source": "38ad8275a0a19e82f3c568d165d1b63e5dbcd3de",
+      "status": "PASS_LIMITED_METADATA_RECEPTION_ONLY",
+      "host": "existing Claude Web connector",
+      "schema_report": {
+        "delivery_mode_exposed_in_this_host": true,
+        "delivery_mode_optional": true,
+        "delivery_mode_values": [
+          "metadata",
+          "embedded"
+        ],
+        "delivery_mode_default": "metadata",
+        "all_hosts_or_all273_schema_exposure_inferred": false,
+        "root_connector_previously_saved_declaration": "delivery_mode not exposed; separate host observation"
+      },
+      "operations": [
+        {
+          "operation": "download_ems_import_template",
+          "format": "xlsx",
+          "profile": "SIMPLE_KWH",
+          "delivery_mode": "metadata",
+          "ordinary_MCP_calls": 1
+        },
+        {
+          "operation": "download_cfp_input_template",
+          "file_type": "master",
+          "time_zone_offset": 9,
+          "year_month": "omitted",
+          "delivery_mode": "metadata",
+          "ordinary_MCP_calls": 1,
+          "same_conversation_previously_confirmed_target": true
+        }
+      ],
+      "model_received_metadata": true,
+      "server_fetched": true,
+      "file_embedded": false,
+      "client_receipt_confirmed": false,
+      "resource_uri": null,
+      "MIME_XLSX_present": true,
+      "ordinary_MCP_calls_total": 2,
+      "model_prompts_total": 3,
+      "new_OAuth": 0,
+      "business_writes": 0,
+      "embedded": 0,
+      "client_files_saved": 0,
+      "automatic_retries": 0,
+      "independent_review_sha256": "566b8ec646b9dbb3398d67cd5da608221a5e9adb6cc2cc2d869e275b8ffd8033",
+      "receipt_sha256": {
+        "EMS": "c22935d50b4c06c229e16261baafcdd2c0c406e2510e3f5286b42626f75d63bc",
+        "CFP": "dee396c14449cf68c21ffbe4cfb769522decadf0495c59c88a4644a3a8f5145f",
+        "CFP_native_UI_public_field_whitelist": "3b5f57f8464d3f21e22bf52a2514a6e4ab88d9e7a1565094912c6091601bf7cc"
+      },
+      "same_platform_added_again": false,
+      "limited_platforms_after": 12,
+      "full_platform_acceptance_after": 0,
+      "acceptance_inherited_by_source20f_or_later_DEV": false,
+      "private_screenshots_or_customer_identifiers_values_file_names_hashes_sizes_published": false
+    },
+    "prior_normal_backend38ad": {
+      "source": "38ad8275a0a19e82f3c568d165d1b63e5dbcd3de",
+      "run_id": 40285257680,
+      "status": "success",
+      "attempt": 1,
+      "actual_deploy_verify_finalize_jobs": [
+        121462535157,
+        121464247189,
+        121464374997
+      ]
+    },
+    "prior_Kong38ad": {
+      "run_id": 40290693074,
+      "status": "blocked by candidate GitHub Secret certificate lifetime floor",
+      "new_Kong_resources_created_in_failed_step": false,
+      "new_Kong_cutover_reached": false,
+      "complete_rollout_G3": "NOT_MET"
+    },
+    "postdeployment_authenticated_UAT": {
+      "source": "20f4bd2ecd3dc3bd4cb27c8feb8d31192882599e",
+      "status": "ACCESS_BLOCKED_NOT_EXECUTED",
+      "browser_observation": "Local browser use is disabled in Work settings",
+      "EcoNiPass_tool_namespace_available": false,
+      "browser_retries_or_alternative_UI_bypass": 0,
+      "new_model_or_MCP_calls_after_deploy": 0,
+      "prior38ad_metadata_results_inherited": false,
+      "normal_DEV_workflow_verification_is_separate": true,
+      "receipt_sha256": "162bb6ee86b1cd2783a4d1b386266bad9b2eec93746907a651314d6a46e7dfb1"
     }
   },
   "acceptance": {
@@ -177,7 +343,8 @@
         "remote_MCP_calls": 0,
         "real_model_calls": 0,
         "business_writes": 0,
-        "full_acceptance": false
+        "full_acceptance": false,
+        "scope": "Web skill import and saved-source roundtrip trial only; later38ad metadata reception is recorded separately without a platform increment"
       }
     ]
   },
@@ -188,11 +355,11 @@
     "official_directory_submission": "not completed",
     "STG_PRD": "STOP"
   },
-  "source_audit_three_file_proposal": "awaiting explicit human approval; source protected files unchanged",
+  "source_audit_three_file_proposal": "Human-approved audit3 applied and merged through PR1806; PR/postmerge CI and image passed; normal DEV20f accepted; linked Kong and authenticated UAT remain separate",
   "history_url": "https://github.com/emmatch-dev/econipass-mcp-plugins/blob/661361786a2202ca256cced6e044255615b2438e/docs/acceptance-summary.json",
   "customer_values_included": false,
   "observation_date_jst": "2026-10-27",
-  "document_state": "post-publication observation snapshot",
+  "document_state": "normal DEV20f accepted; fresh linked Kong failed at TLS gate; postdeployment authenticated UAT access-blocked and not performed snapshot",
   "publication": {
     "status": "PUBLISHED_DEV_PREVIEW_PRERELEASE",
     "tag": "econipass-mcp-plugin-v1.2.0",
